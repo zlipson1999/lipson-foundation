@@ -9,23 +9,28 @@ This codebase follows the 22 August 2026 public-copy rules in the foundation kit
 - No donate processor, no official tagline, no host name, no session days, no start date, no invented numbers
 - Formal program name is **In Your Corner** (do not use the short mark in body copy)
 - Brand: navy `#1C2433` · gold `#C6A15A` · paper `#F7F1E4`
-- Logo: `public/brand/phoenix-dog-tag.svg` (foundation header mark) · `public/brand/glove-tag.svg` (In Your Corner)
+- Logos: `public/brand/lipson-primary.png` (gold on navy) · `public/brand/lipson-reverse.png` (navy on cream) · `public/brand/iyc-tag.png` (In Your Corner mark)
 
-Copy lives in `lib/site.ts` and the page files. It is taken from the public-safe fact sheet and program description.
+Copy lives in `lib/site.ts` and the page files. It is taken from the public-safe fact sheet, program description, and the marks you supplied.
 
 ## Pages
 
 | Path | Role |
 | --- | --- |
-| `/` | Foundation first — who we are, who we serve, our team, then programs |
-| `/about` | About us — origin, underserved communities we serve, board, FAQ |
-| `/programs` | What we offer — In Your Corner plus The Ring, The Corner, The Crew, Career Night |
+| `/` | Home |
+| `/about` | About us |
+| `/team` | Board and staff |
+| `/programs` | What we offer |
 | `/in-your-corner` | Flagship program |
-| `/help` | Host, refer, career night, meals, planning asks |
-| `/contact` | Zachary Lipson — 845-642-1874 · zlipson@lipsonfoundation.org |
+| `/events` | Events — empty until dates are real |
+| `/news` | News — empty until there is something to report |
+| `/donate` | Sponsor a dinner, session, or season (inquiry form, no checkout) |
+| `/forms` | Form hub — contact, get involved, donate |
+| `/help` | Get involved form |
+| `/contact` | Contact form |
 | `/privacy` | How inquiries are treated |
 
-Contact and help forms store submissions in `.data/inquiries.json` during development.
+Forms store submissions in `.data/inquiries.json` during development.
 
 ## Run locally
 

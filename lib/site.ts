@@ -13,10 +13,14 @@ export const site = {
 } as const
 
 export const navItems = [
+  { href: "/", label: "Home" },
   { href: "/about", label: "About us" },
+  { href: "/team", label: "The team" },
   { href: "/programs", label: "Programs" },
-  { href: "/help", label: "How to help" },
-  { href: "/contact", label: "Contact" },
+  { href: "/events", label: "Events" },
+  { href: "/news", label: "News" },
+  { href: "/donate", label: "Donate" },
+  { href: "/forms", label: "Forms" },
 ] as const
 
 export const board = [
@@ -36,6 +40,8 @@ export const board = [
     note: "",
   },
 ] as const
+
+export const staff: { name: string; role: string; note: string }[] = []
 
 export const whoWeServe = [
   {
@@ -132,6 +138,44 @@ export const programMenu = [
   },
 ] as const
 
+export const formPages = [
+  {
+    href: "/contact",
+    title: "Contact",
+    body: "A question, a hosting conversation, or a note for Zachary Lipson.",
+  },
+  {
+    href: "/help",
+    title: "Get involved",
+    body: "Host a hall, refer a young person, train as a veteran, lead a career night, or help with meals.",
+  },
+  {
+    href: "/donate",
+    title: "Donate",
+    body: "Sponsor a dinner, a session, or a season. No payment is taken on this site. We follow up.",
+  },
+] as const
+
+export const donateAsks = [
+  { value: "dinner", title: "$100", body: "Covers dinner for a session" },
+  { value: "session", title: "$150", body: "Sponsors a full session" },
+  { value: "season", title: "$500", body: "Sponsors one young person for a season" },
+  { value: "other", title: "Another amount", body: "We will talk first" },
+] as const
+
+export const events: {
+  title: string
+  when: string
+  where: string
+  body: string
+}[] = []
+
+export const newsItems: {
+  title: string
+  date: string
+  body: string
+}[] = []
+
 export const helpPaths = [
   {
     title: "Veteran posts",
@@ -151,7 +195,7 @@ export const helpPaths = [
   },
   {
     title: "Supporters",
-    body: "Planning asks only: $150 sponsors a full session. $500 sponsors one young person for a season. $100 covers dinner for a session. There is no donate button on this site.",
+    body: "Planning asks: $150 sponsors a full session. $500 sponsors one young person for a season. $100 covers dinner. Use the Donate page to start that conversation. There is no checkout on this site.",
   },
 ] as const
 
@@ -166,11 +210,49 @@ export const sessionShape = [
   },
   {
     title: "Completely free",
-    body: "Equipment, coaching, and dinner included. No dues, no fees, no equipment to buy, no fundraiser to sell.",
+    body: "Gloves, wraps, coaching, water, and dinner included. No dues, no fees, no equipment to buy, no fundraiser to sell.",
   },
   {
     title: "Non-contact",
     body: "Footwork, bag work, mitt work, and fitness. No sparring. No head contact of any kind.",
+  },
+] as const
+
+export const youthOffer = [
+  {
+    title: "Train twice a week",
+    body: "60 minutes of boxing and conditioning, then dinner together. That meal is where conversation happens.",
+  },
+  {
+    title: "Equipment provided",
+    body: "Gloves, wraps, coaching, water, and dinner. Families do not buy a kit to walk in.",
+  },
+  {
+    title: "Mentorship that is real",
+    body: "Relationships with veterans and community members — after the work is shared, not assigned on day one.",
+  },
+  {
+    title: "Confidence beyond the gym",
+    body: "Show up on time. Control yourself. Work when it is hard. Respect the person across from you.",
+  },
+] as const
+
+export const veteranOffer = [
+  {
+    title: "Stay connected",
+    body: "Train alongside fellow veterans as part of a mission-driven community.",
+  },
+  {
+    title: "A healthy physical outlet",
+    body: "Fitness, structure, and less isolation — without anyone having to talk about feelings first.",
+  },
+  {
+    title: "Be in a young person’s corner",
+    body: "Share life experience, career knowledge, and encouragement when you are ready.",
+  },
+  {
+    title: "Continue serving",
+    body: "A reason to show up on a weeknight. A lasting impact on the next generation.",
   },
 ] as const
 
@@ -198,7 +280,7 @@ export const faqs = [
   {
     question: "Can I donate online?",
     answer:
-      "Not on this site. There is no payment processor. If you want to sponsor a session, a meal, or a season for a young person, use the contact form and we will follow up.",
+      "There is a Donate page, but no payment processor. If you want to sponsor a session, a meal, or a season for a young person, use that form and we will follow up.",
   },
   {
     question: "How do I reach you?",

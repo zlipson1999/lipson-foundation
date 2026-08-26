@@ -21,13 +21,13 @@ export function MobileNav() {
       <SheetTrigger
         nativeButton={false}
         render={
-          <Button type="button" variant="secondary" size="lg" className="md:hidden" />
+          <Button type="button" variant="secondary" size="lg" className="lg:hidden" />
         }
       >
         <ListIcon data-icon="inline-start" />
         Menu
       </SheetTrigger>
-      <SheetContent side="right" className="w-[min(100%,20rem)]">
+      <SheetContent side="right" className="w-[min(100%,20rem)] overflow-y-auto">
         <SheetHeader>
           <SheetTitle className="sr-only">Site menu</SheetTitle>
           <SheetDescription className="sr-only">
@@ -70,14 +70,23 @@ export function MobileNav() {
               </SheetClose>
             ))}
         </nav>
-        <div className="mt-auto p-4">
+        <div className="mt-auto flex flex-col gap-2 p-4">
+          <Button
+            className="w-full bg-gold text-primary hover:bg-gold/90"
+            size="lg"
+            nativeButton={false}
+            render={<Link href="/donate" />}
+          >
+            Donate
+          </Button>
           <Button
             className="w-full"
             size="lg"
+            variant="outline"
             nativeButton={false}
-            render={<Link href="/contact" />}
+            render={<Link href="/forms" />}
           >
-            Write to us
+            Forms
           </Button>
         </div>
       </SheetContent>

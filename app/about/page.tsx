@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Container, PageIntro } from "@/components/container"
-import { BoardList } from "@/components/board-list"
 import { Button } from "@/components/ui/button"
 import {
   Accordion,
@@ -120,15 +119,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="team" className="mt-16 flex scroll-mt-28 flex-col gap-6">
-        <h2 className="text-3xl">Our team</h2>
-        <p className="max-w-2xl text-base leading-relaxed text-muted-foreground">
-          Named board of {site.legalName}. Zachary Lipson is Founder and
-          President.
-        </p>
-        <BoardList />
-      </section>
-
       <section className="mt-16 flex flex-col gap-6">
         <h2 className="text-3xl">Questions we hear</h2>
         <Accordion defaultValue={["What is Lipson Foundation?"]}>
@@ -146,16 +136,16 @@ export default function AboutPage() {
       </section>
 
       <div className="mt-12 flex flex-col gap-3 sm:flex-row">
-        <Button size="lg" nativeButton={false} render={<Link href="/programs" />}>
-          Our programs
+        <Button size="lg" nativeButton={false} render={<Link href="/team" />}>
+          The team
         </Button>
         <Button
           size="lg"
           variant="outline"
           nativeButton={false}
-          render={<Link href="/contact" />}
+          render={<Link href="/programs" />}
         >
-          Write to us
+          Programs
         </Button>
       </div>
     </Container>

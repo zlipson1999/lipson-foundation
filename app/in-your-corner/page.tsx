@@ -10,7 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { groups, sessionShape, site } from "@/lib/site"
+import { groups, sessionShape, site, veteranOffer, youthOffer } from "@/lib/site"
 
 export const metadata: Metadata = {
   title: "In Your Corner",
@@ -23,11 +23,11 @@ export default function InYourCornerPage() {
     <Container className="pb-20">
       <div className="flex items-start gap-4">
         <Image
-          src="/brand/glove-tag.svg"
-          alt=""
-          width={56}
-          height={70}
-          className="mt-14 h-16 w-auto"
+          src="/brand/iyc-tag.png"
+          alt="In Your Corner"
+          width={96}
+          height={123}
+          className="mt-14 h-24 w-auto"
           unoptimized
         />
         <PageIntro
@@ -60,6 +60,35 @@ export default function InYourCornerPage() {
           connection happens without anyone having to talk about feelings first.
         </p>
       </div>
+
+      <section className="mt-12 grid gap-6 lg:grid-cols-2">
+        <div className="border border-border bg-card p-6">
+          <h2 className="text-2xl">For youth (ages 12–17)</h2>
+          <ul className="mt-4 flex flex-col gap-4">
+            {youthOffer.map((item) => (
+              <li key={item.title}>
+                <p className="font-heading text-base">{item.title}</p>
+                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                  {item.body}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="border border-border bg-card p-6">
+          <h2 className="text-2xl">For veterans</h2>
+          <ul className="mt-4 flex flex-col gap-4">
+            {veteranOffer.map((item) => (
+              <li key={item.title}>
+                <p className="font-heading text-base">{item.title}</p>
+                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                  {item.body}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
       <div className="mt-12 grid gap-4 sm:grid-cols-2">
         {sessionShape.map((item) => (

@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { Container, PageIntro } from "@/components/container"
 import { HelpForm } from "@/components/help-form"
 import {
@@ -44,9 +45,12 @@ export default function HelpPage() {
         <AlertTitle>Planning asks — not a checkout</AlertTitle>
         <AlertDescription>
           $100 covers dinner for a session. $150 sponsors a full session. $500
-          sponsors one young person for a season. There is no donate processor
-          on this site. If that is how you want to help, tell us in the form
-          and we will follow up.
+          sponsors one young person for a season. Use the{" "}
+          <Link href="/donate" className="underline underline-offset-4">
+            Donate
+          </Link>{" "}
+          page to start that conversation. There is no payment processor on this
+          site.
         </AlertDescription>
       </Alert>
 

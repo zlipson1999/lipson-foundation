@@ -13,12 +13,12 @@ import { programMenu } from "@/lib/site"
 
 export function ProgramsNav() {
   return (
-    <NavigationMenu className="hidden md:flex">
+    <NavigationMenu className="hidden lg:flex">
       <NavigationMenuList>
         <NavigationMenuItem className="flex items-center">
           <Link
             href="/programs"
-            className="px-2 py-1.5 text-sm text-primary-foreground/80 transition-colors hover:text-gold"
+            className="px-2 py-1.5 text-[13px] text-primary-foreground/80 transition-colors hover:text-gold"
           >
             Programs
           </Link>

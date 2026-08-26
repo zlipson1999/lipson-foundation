@@ -84,3 +84,26 @@ export async function submitHelp(formData: FormData): Promise<ActionResult> {
 
   return persist("involved", fields)
 }
+
+export async function submitDonate(formData: FormData): Promise<ActionResult> {
+  const fields = {
+    name: read(formData, "name"),
+    email: read(formData, "email"),
+    ask: read(formData, "ask") || "other",
+    message: read(formData, "message"),
+  }
+
+  const missing = requireFields(fields, ["name", "email", "message"])
+  if (missing) return { ok: false, error: missing }
+  if (!emailPattern.test(fields.email)) {
+    return { ok: false, error: "Please enter a valid email address." }
+  }
+  if (fields.message.length < 12) {
+    return {
+      ok: false,
+      error: "Please share a little more so we know how to follow up.",
+    }
+  }
+
+  return persist("give", fields)
+}
