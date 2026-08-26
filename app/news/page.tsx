@@ -60,7 +60,7 @@ export default function NewsPage() {
             <li key={item.title}>
               <Card>
                 <CardHeader>
-                  <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-gold">
+                  <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-gold-ink">
                     {item.date}
                   </p>
                   <CardTitle className="text-2xl">{item.title}</CardTitle>

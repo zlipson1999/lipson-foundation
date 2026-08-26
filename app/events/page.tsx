@@ -61,7 +61,7 @@ export default function EventsPage() {
             <li key={event.title}>
               <Card>
                 <CardHeader>
-                  <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-gold">
+                  <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-gold-ink">
                     {event.when}
                   </p>
                   <CardTitle className="text-2xl">{event.title}</CardTitle>

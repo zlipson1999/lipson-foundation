@@ -5,6 +5,15 @@ import type { ActionResult } from "@/lib/actions"
 
 export type FormKind = "contact" | "help" | "donate"
 
+/**
+ * `via` tells the form what actually happened. On the static export nothing
+ * is submitted — an email draft is opened — so the confirmation copy must
+ * not claim the note was received.
+ */
+export type SubmitResult =
+  | { ok: true; via: "server" | "email" }
+  | { ok: false; error: string }
+
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const subjects: Record<FormKind, string> = {
@@ -67,7 +76,7 @@ function validate(kind: FormKind, fields: Record<string, string>): string | null
 
 // On the static (GitHub Pages) build there is no server, so we open a
 // pre-filled email draft to the foundation instead of persisting the inquiry.
-function submitByEmail(kind: FormKind, fields: Record<string, string>): ActionResult {
+function submitByEmail(kind: FormKind, fields: Record<string, string>): SubmitResult {
   const subject = `[${site.domain}] ${subjects[kind]}`
   const body = Object.entries(fields)
     .filter(([, value]) => value)
@@ -75,13 +84,13 @@ function submitByEmail(kind: FormKind, fields: Record<string, string>): ActionRe
     .join("\n")
   const href = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
   window.location.href = href
-  return { ok: true }
+  return { ok: true, via: "email" }
 }
 
 export async function submitForm(
   kind: FormKind,
   formData: FormData
-): Promise<ActionResult> {
+): Promise<SubmitResult> {
   if (process.env.NEXT_PUBLIC_STATIC_EXPORT) {
     const fields = collect(kind, formData)
     const error = validate(kind, fields)
@@ -90,7 +99,12 @@ export async function submitForm(
   }
 
   const actions = await import("@/lib/actions")
-  if (kind === "contact") return actions.submitContact(formData)
-  if (kind === "help") return actions.submitHelp(formData)
-  return actions.submitDonate(formData)
+  const result: ActionResult =
+    kind === "contact"
+      ? await actions.submitContact(formData)
+      : kind === "help"
+        ? await actions.submitHelp(formData)
+        : await actions.submitDonate(formData)
+
+  return result.ok ? { ok: true, via: "server" } : result
 }

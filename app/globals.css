@@ -40,6 +40,7 @@
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
   --color-gold: var(--gold);
+  --color-gold-ink: var(--gold-ink);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -69,6 +70,9 @@
   --input: #d9cdb3;
   --ring: #c6a15a;
   --gold: #c6a15a;
+  /* Same hue as --gold, darkened to meet WCAG AA for text on
+     paper/card/secondary. --gold itself is only legible on navy. */
+  --gold-ink: #795d2a;
   --chart-1: #1c2433;
   --chart-2: #c6a15a;
   --chart-3: #5a6170;
@@ -105,6 +109,7 @@
   --input: #3a4458;
   --ring: #c6a15a;
   --gold: #c6a15a;
+  --gold-ink: #c6a15a;
   --chart-1: #c6a15a;
   --chart-2: #f7f1e4;
   --chart-3: #8a7040;
@@ -122,7 +127,13 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-current;
+  }
+  /* Links carry no focus ring of their own. currentColor tracks the
+     surface, so this clears 3:1 on both the navy chrome and paper pages. */
+  a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
   }
   html {
     @apply font-sans scroll-smooth;

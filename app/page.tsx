@@ -211,7 +211,7 @@ export default function HomePage() {
             unoptimized
           />
           <div className="flex flex-col gap-4">
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
+            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold-ink">
               Flagship program — the first of many
             </p>
             <h2 className="text-3xl sm:text-4xl">In Your Corner</h2>

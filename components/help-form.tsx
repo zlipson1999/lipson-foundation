@@ -16,8 +16,11 @@ import { Input } from "@/components/ui/input"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Textarea } from "@/components/ui/textarea"
 import { Spinner } from "@/components/ui/spinner"
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { submitForm } from "@/lib/submit"
+import {
+  FormConfirmation,
+  FormError,
+} from "@/components/form-confirmation"
 
 const roles = [
   { value: "host", label: "Host sessions at a veterans post" },
@@ -30,29 +33,35 @@ const roles = [
 
 export function HelpForm() {
   const [pending, setPending] = useState(false)
-  const [sent, setSent] = useState(false)
+  const [sent, setSent] = useState<"server" | "email" | null>(null)
+  const [error, setError] = useState<string | null>(null)
 
   async function onSubmit(formData: FormData) {
     setPending(true)
+    setError(null)
     const result = await submitForm("help", formData)
     setPending(false)
     if (!result.ok) {
+      setError(result.error)
       toast.error(result.error)
       return
     }
-    setSent(true)
-    toast.success("We received your note.")
+    setSent(result.via)
+    if (result.via === "server") toast.success("We received your note.")
   }
 
   if (sent) {
-    return (
-      <Alert className="border-gold bg-secondary">
-        <AlertTitle>Glad you wrote.</AlertTitle>
-        <AlertDescription>
-          We will follow up to match what you can offer with what the program
-          actually needs. Thank you.
-        </AlertDescription>
-      </Alert>
+    return sent === "email" ? (
+      <FormConfirmation title="Your email draft is open.">
+        Nothing has been sent yet. Send the draft that just opened and we
+        will follow up to match what you can offer with what the program
+        actually needs.
+      </FormConfirmation>
+    ) : (
+      <FormConfirmation title="Glad you wrote.">
+        We will follow up to match what you can offer with what the program
+        actually needs. Thank you.
+      </FormConfirmation>
     )
   }
 
@@ -104,6 +113,7 @@ export function HelpForm() {
           </FieldDescription>
         </Field>
       </FieldGroup>
+      {error ? <FormError message={error} /> : null}
       <Button type="submit" size="lg" disabled={pending}>
         {pending ? (
           <Spinner data-icon="inline-start" />

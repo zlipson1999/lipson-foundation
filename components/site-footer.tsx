@@ -18,7 +18,7 @@ export function SiteFooter() {
               memberships, no fees, ever.
             </p>
           </div>
-          <div className="flex flex-col gap-3">
+          <nav className="flex flex-col gap-3" aria-label="Footer">
             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-gold">
               Explore
             </p>
@@ -34,7 +34,7 @@ export function SiteFooter() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
           <div className="flex flex-col gap-3">
             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-gold">
               Contact

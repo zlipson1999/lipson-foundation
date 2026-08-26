@@ -6,7 +6,7 @@ export function BoardList() {
       {board.map((person) => (
         <li key={person.name} className="flex flex-col gap-2 border border-border bg-card p-5">
           <p className="font-heading text-lg">{person.name}</p>
-          <p className="text-sm text-gold">{person.role}</p>
+          <p className="text-sm text-gold-ink">{person.role}</p>
           {person.note ? (
             <p className="text-sm leading-relaxed text-muted-foreground">
               {person.note}
