@@ -9,7 +9,7 @@ This codebase follows the 22 August 2026 public-copy rules in the foundation kit
 - No donate processor, no official tagline, no host name, no session days, no start date, no invented numbers
 - Formal program name is **In Your Corner** (do not use the short mark in body copy)
 - Brand: navy `#1C2433` · gold `#C6A15A` · paper `#F7F1E4`
-- Logos: `public/brand/lipson-primary.png` (gold on navy) · `public/brand/lipson-reverse.png` (navy on cream) · `public/brand/iyc-tag.png` (In Your Corner mark)
+- Logos: `public/brand/lipson-tag.png` (official navy dog-tag with gold phoenix) · `public/brand/iyc-tag.png` (In Your Corner mark)
 
 Copy lives in `lib/site.ts` and the page files. It is taken from the public-safe fact sheet, program description, and the marks you supplied.
 

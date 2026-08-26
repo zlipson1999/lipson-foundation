@@ -3,7 +3,6 @@ import Image from "next/image"
 
 export function Logo({
   className,
-  inverse = false,
   size = "default",
 }: {
   className?: string
@@ -11,11 +10,11 @@ export function Logo({
   size?: "default" | "lg"
 }) {
   const height = size === "lg" ? 72 : 56
-  const width = Math.round(height * (408 / 689))
+  const width = Math.round(height * (685 / 1219))
   return (
     <span className={cn("inline-flex items-center", className)}>
       <Image
-        src={inverse ? "/brand/lipson-primary.png" : "/brand/lipson-reverse.png"}
+        src="/brand/lipson-tag.png"
         alt="Lipson Foundation"
         width={width}
         height={height}

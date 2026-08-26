@@ -99,10 +99,10 @@ export default function HomePage() {
             </div>
           </div>
           <Image
-            src="/brand/lipson-primary.png"
-            alt="Lipson Foundation phoenix dog-tag"
+            src="/brand/lipson-tag.png"
+            alt="Lipson Foundation"
             width={200}
-            height={338}
+            height={356}
             className="relative z-10 mx-auto h-56 w-auto sm:h-64 lg:mx-0 lg:h-72"
             unoptimized
             priority
