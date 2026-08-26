@@ -18,8 +18,10 @@ import { Logo } from "@/components/logo"
 export function MobileNav() {
   return (
     <Sheet>
+      {/* Button renders a native <button>, so nativeButton must stay true here.
+          Setting it false made Base UI add role="button" and tabindex="0" to a
+          real button. The nativeButton={false} pattern is for link triggers. */}
       <SheetTrigger
-        nativeButton={false}
         render={
           <Button type="button" variant="secondary" size="lg" className="lg:hidden" />
         }
@@ -35,7 +37,7 @@ export function MobileNav() {
           </SheetDescription>
           <Logo />
         </SheetHeader>
-        <nav className="flex flex-col gap-1 px-4 py-2">
+        <nav className="flex flex-col gap-1 px-4 py-2" aria-label="Site">
           {navItems.map((item) => (
             <SheetClose
               key={item.href}
