@@ -53,6 +53,25 @@ export const promises = [
   },
 ] as const
 
+/**
+ * Every public route, for the sitemap. Keep in step with the files in app/.
+ * /work, /give, /involved and /updates are redirects only and are not listed.
+ */
+export const routes = [
+  { path: "/", priority: 1, changeFrequency: "monthly" },
+  { path: "/about", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/in-your-corner", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/programs", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/donate", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/team", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/help", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/forms", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/contact", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/events", priority: 0.5, changeFrequency: "weekly" },
+  { path: "/news", priority: 0.5, changeFrequency: "weekly" },
+  { path: "/privacy", priority: 0.3, changeFrequency: "yearly" },
+] as const
+
 export const navItems = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About us" },

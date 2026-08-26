@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageMetadata } from "@/lib/seo"
 import Link from "next/link"
 import { NewspaperIcon } from "@phosphor-icons/react/ssr"
 import { Container, PageIntro } from "@/components/container"
@@ -19,10 +20,11 @@ import {
 } from "@/components/ui/empty"
 import { newsItems } from "@/lib/site"
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "News",
   description: "News and updates from Lipson Foundation Inc.",
-}
+  route: "/news",
+})
 
 export default function NewsPage() {
   return (

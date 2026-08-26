@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageMetadata } from "@/lib/seo"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRightIcon } from "@phosphor-icons/react/ssr"
@@ -15,10 +16,12 @@ import { keepItFree, promises, site } from "@/lib/site"
 import { WorkPillars } from "@/components/work-pillars"
 import { Commitments } from "@/components/commitments"
 
-export const metadata: Metadata = {
-  title: { absolute: `${site.name} — Community programs. Completely free.` },
+export const metadata: Metadata = pageMetadata({
+  title: `${site.name} — ${site.kicker}`,
   description: site.description,
-}
+  route: "/",
+  absoluteTitle: true,
+})
 
 const destinations = [
   {

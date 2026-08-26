@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageMetadata } from "@/lib/seo"
 import Link from "next/link"
 import { ArrowRightIcon } from "@phosphor-icons/react/ssr"
 import { Container, PageIntro } from "@/components/container"
@@ -13,11 +14,12 @@ import {
 } from "@/components/ui/card"
 import { groups, howWeWork, programs, whatWeBuild } from "@/lib/site"
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Programs",
   description:
     "Lipson Foundation brings cost-free community programs into underserved communities. Fitness, wellness, and mentoring are where the work starts. In Your Corner is the named flagship.",
-}
+  route: "/programs",
+})
 
 export default function ProgramsPage() {
   return (

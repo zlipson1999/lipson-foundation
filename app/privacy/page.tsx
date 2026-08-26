@@ -1,10 +1,14 @@
 import type { Metadata } from "next"
+import { pageMetadata } from "@/lib/seo"
 import { Container, PageIntro } from "@/components/container"
 import { site } from "@/lib/site"
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Privacy",
-}
+  description:
+    "What Lipson Foundation collects from the forms on this site, how it is used, and how to have a record removed.",
+  route: "/privacy",
+})
 
 export default function PrivacyPage() {
   return (

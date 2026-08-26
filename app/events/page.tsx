@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageMetadata } from "@/lib/seo"
 import Link from "next/link"
 import { CalendarBlankIcon } from "@phosphor-icons/react/ssr"
 import { Container, PageIntro } from "@/components/container"
@@ -19,11 +20,12 @@ import {
 } from "@/components/ui/empty"
 import { events } from "@/lib/site"
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Events",
   description:
     "Public events from Lipson Foundation. Career Exploration Night will be listed here when a host and dates exist.",
-}
+  route: "/events",
+})
 
 export default function EventsPage() {
   return (

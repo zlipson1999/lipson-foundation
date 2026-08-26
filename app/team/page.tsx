@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageMetadata } from "@/lib/seo"
 import Link from "next/link"
 import { UsersThreeIcon } from "@phosphor-icons/react/ssr"
 import { Container, PageIntro } from "@/components/container"
@@ -13,11 +14,12 @@ import {
 } from "@/components/ui/empty"
 import { site, staff } from "@/lib/site"
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "The team",
   description:
     "Board and staff of Lipson Foundation Inc. Zachary Lipson, Founder and President; Joshua Weinfeld, CFO; Julia Vance, Secretary.",
-}
+  route: "/team",
+})
 
 export default function TeamPage() {
   return (

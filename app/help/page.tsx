@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageMetadata } from "@/lib/seo"
 import Link from "next/link"
 import { Container, PageIntro } from "@/components/container"
 import { HelpForm } from "@/components/help-form"
@@ -11,11 +12,12 @@ import {
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { helpPaths } from "@/lib/site"
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "How to help",
   description:
     "Host a session, refer a young person, lead a career night, or talk with us about supporting In Your Corner.",
-}
+  route: "/help",
+})
 
 export default function HelpPage() {
   return (

@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageMetadata } from "@/lib/seo"
 import Image from "next/image"
 import Link from "next/link"
 import { asset } from "@/lib/assets"
@@ -13,11 +14,12 @@ import {
 } from "@/components/ui/card"
 import { groups, sessionShape, site, veteranOffer, youthOffer } from "@/lib/site"
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "In Your Corner",
   description:
     "In Your Corner is a free boxing and mentorship program of Lipson Foundation Inc. for youth ages 12–17 and veterans in South Florida.",
-}
+  route: "/in-your-corner",
+})
 
 export default function InYourCornerPage() {
   return (
