@@ -5,8 +5,12 @@ Public prototype for **Lipson Foundation Inc.** (EIN 39-4624045), a South Florid
 This codebase follows the 22 August 2026 public-copy rules in the foundation kit:
 
 - May say: legal name, EIN, South Florida / Palm Beach County, contact block
-- Must not say: 501(c)(3), public charity, tax-deductible, FDACS registration
+- Must not make any claim about tax status, charitable classification, or state
+  registration — those are unconfirmed binder targets, and the kit lists the
+  exact phrasings that are off limits
 - No donate processor, no official tagline, no host name, no session days, no start date, no invented numbers
+- Mission framing is **all** cost-free community programs; fitness, wellness,
+  and mentoring are where the work starts, not the boundary
 - Formal program name is **In Your Corner** (do not use the short mark in body copy)
 - Brand: navy `#1C2433` · gold `#C6A15A` · paper `#F7F1E4`
 - Logos: `public/brand/lipson-tag.png` (official navy dog-tag with gold phoenix) · `public/brand/iyc-tag.png` (In Your Corner mark)

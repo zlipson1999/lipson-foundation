@@ -30,8 +30,9 @@ export default function DonatePage() {
       <Alert className="mb-12 border-gold bg-secondary">
         <AlertTitle>Planning asks — not a payment page</AlertTitle>
         <AlertDescription>
-          We will follow up from {site.email}. Do not send a card number. We
-          will not claim a gift is tax-deductible on this site.
+          We will follow up from {site.email}. Do not send a card number.
+          This page takes no payments and makes no claims about how a gift is
+          treated.
         </AlertDescription>
       </Alert>
 

@@ -12,9 +12,10 @@ export function SiteFooter() {
           <div className="flex max-w-sm flex-col gap-4">
             <Logo inverse />
             <p className="text-sm leading-relaxed text-primary-foreground/75">
-              {site.legalName} brings cost-free fitness, wellness, and mentoring
-              programs into underserved communities. Every program is completely
-              free — no memberships, no fees, ever.
+              {site.legalName} builds cost-free community programs for
+              underserved communities. Fitness, wellness, and mentoring are
+              where the work starts. Every program is completely free — no
+              memberships, no fees, ever.
             </p>
           </div>
           <div className="flex flex-col gap-3">
