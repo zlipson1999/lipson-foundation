@@ -46,7 +46,7 @@ export default function HelpPage() {
       <Alert className="mb-12">
         <AlertTitle>Planning asks — not a checkout</AlertTitle>
         <AlertDescription>
-          $100 covers dinner for a session. $150 sponsors a full session. $500
+          $100 covers dinner for a session. $250 sponsors a full session. $500
           sponsors one young person for a season. Use the{" "}
           <Link href="/donate" className="underline underline-offset-4">
             Donate

@@ -237,7 +237,7 @@ export const formPages = [
 
 export const donateAsks = [
   { value: "dinner", title: "$100", body: "Covers dinner for a session" },
-  { value: "session", title: "$150", body: "Sponsors a full session" },
+  { value: "session", title: "$250", body: "Sponsors a full session" },
   { value: "season", title: "$500", body: "Sponsors one young person for a season" },
   { value: "other", title: "Another amount", body: "We will talk first" },
 ] as const
@@ -274,7 +274,7 @@ export const helpPaths = [
   },
   {
     title: "Supporters",
-    body: "Planning asks: $150 sponsors a full session. $500 sponsors one young person for a season. $100 covers dinner. Use the Donate page to start that conversation. There is no checkout on this site.",
+    body: "Planning asks: $250 sponsors a full session. $500 sponsors one young person for a season. $100 covers dinner. Use the Donate page to start that conversation. There is no checkout on this site.",
   },
 ] as const
 
