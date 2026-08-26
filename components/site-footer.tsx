@@ -63,7 +63,7 @@ export function SiteFooter() {
         <Separator className="bg-primary-foreground/15" />
         <div className="flex flex-col gap-2 text-xs text-primary-foreground/60 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {new Date().getFullYear()} {site.legalName}. All rights reserved.
+            © {new Date().getFullYear()} {site.legalName} All rights reserved.
           </p>
           <p>Community programs. Completely free.</p>
         </div>

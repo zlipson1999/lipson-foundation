@@ -26,7 +26,7 @@ export default function TeamPage() {
     <Container className="pb-20">
       <PageIntro kicker="The team" title="Board and staff.">
         <p>
-          Named officers of {site.legalName}. Day-to-day contact is Zachary
+          Named officers of {site.legalName} Day-to-day contact is Zachary
           Lipson, Founder and President.
         </p>
       </PageIntro>
