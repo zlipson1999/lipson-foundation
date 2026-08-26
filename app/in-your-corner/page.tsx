@@ -25,9 +25,9 @@ export default function InYourCornerPage() {
       <div className="flex items-start gap-4">
         <Image
           src={asset("/brand/iyc-tag.png")}
-          alt="In Your Corner"
-          width={96}
-          height={123}
+          alt=""
+          width={341}
+          height={420}
           className="mt-14 h-24 w-auto"
           unoptimized
         />

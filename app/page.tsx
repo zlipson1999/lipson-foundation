@@ -101,9 +101,9 @@ export default function HomePage() {
           </div>
           <Image
             src={asset("/brand/lipson-tag.png")}
-            alt="Lipson Foundation"
-            width={200}
-            height={356}
+            alt=""
+            width={360}
+            height={640}
             className="relative z-10 mx-auto h-56 w-auto sm:h-64 lg:mx-0 lg:h-72"
             unoptimized
             priority
@@ -201,9 +201,9 @@ export default function HomePage() {
         <Container className="grid gap-8 py-16 sm:py-20 lg:grid-cols-[auto_minmax(0,1fr)] lg:items-center">
           <Image
             src={asset("/brand/iyc-tag.png")}
-            alt="In Your Corner dog-tag mark"
-            width={160}
-            height={205}
+            alt=""
+            width={341}
+            height={420}
             className="h-40 w-auto justify-self-center lg:justify-self-start"
             unoptimized
           />

@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Fraunces, JetBrains_Mono, Source_Sans_3 } from "next/font/google"
+import { Fraunces, Source_Sans_3 } from "next/font/google"
 import "./globals.css"
 import { cn } from "@/lib/utils"
 import { SiteHeader } from "@/components/site-header"
@@ -15,11 +15,6 @@ const fraunces = Fraunces({
 const sourceSans = Source_Sans_3({
   subsets: ["latin"],
   variable: "--font-source-sans",
-})
-
-const jetbrains = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains",
 })
 
 export const metadata: Metadata = {
@@ -45,8 +40,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={cn(
         "h-full antialiased",
         fraunces.variable,
-        sourceSans.variable,
-        jetbrains.variable
+        sourceSans.variable
       )}
     >
       <body className="flex min-h-full flex-col font-sans">
