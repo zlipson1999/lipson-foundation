@@ -11,12 +11,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { groups, programs } from "@/lib/site"
+import { groups, howWeWork, programs, whatWeBuild } from "@/lib/site"
 
 export const metadata: Metadata = {
   title: "Programs",
   description:
-    "What Lipson Foundation offers. In Your Corner is the flagship: free boxing and mentorship for youth and veterans.",
+    "Lipson Foundation brings cost-free fitness, wellness, and mentoring programs into underserved communities. In Your Corner is the named flagship.",
 }
 
 export default function ProgramsPage() {
@@ -24,15 +24,42 @@ export default function ProgramsPage() {
     <Container className="pb-20">
       <PageIntro
         kicker="Programs"
-        title="What Lipson Foundation offers."
+        title="We bring programs to the community. Completely free."
       >
         <p>
-          These are the programs we run. All of them are completely free to the
-          people they serve. The named flagship is In Your Corner. The Ring,
-          the Corner, and the Crew are how that program is built — not separate
-          launches.
+          Lipson Foundation exists to put fitness, wellness, and mentoring
+          programs in underserved communities — different neighborhoods,
+          different rooms, different needs. Every program is free to the people
+          it serves. In Your Corner is the named flagship. More will be listed
+          here as they launch.
         </p>
       </PageIntro>
+
+      <section className="mb-14 grid gap-4 md:grid-cols-3">
+        {whatWeBuild.map((item) => (
+          <div key={item.title} className="border-l-2 border-gold pl-4">
+            <p className="font-heading text-lg">{item.title}</p>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              {item.body}
+            </p>
+          </div>
+        ))}
+      </section>
+
+      <section className="mb-14 grid gap-4 md:grid-cols-3">
+        {howWeWork.map((item) => (
+          <Card key={item.title}>
+            <CardHeader>
+              <CardTitle className="text-xl">{item.title}</CardTitle>
+              <CardDescription className="text-sm leading-relaxed">
+                {item.body}
+              </CardDescription>
+            </CardHeader>
+          </Card>
+        ))}
+      </section>
+
+      <h2 className="mb-6 text-3xl">Named programs</h2>
 
       <div className="grid gap-6">
         {programs.map((program) => (

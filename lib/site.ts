@@ -9,7 +9,7 @@ export const site = {
   phoneHref: "tel:+18456421874",
   domain: "lipsonfoundation.org",
   description:
-    "Lipson Foundation Inc. is a South Florida nonprofit building cost-free community programs in fitness, wellness, and mentoring for underserved communities. Flagship program: In Your Corner.",
+    "Lipson Foundation Inc. is a South Florida nonprofit that brings cost-free fitness, wellness, and mentoring programs into underserved communities. Flagship program: In Your Corner.",
 } as const
 
 export const navItems = [
@@ -46,30 +46,45 @@ export const staff: { name: string; role: string; note: string }[] = []
 export const whoWeServe = [
   {
     title: "Underserved communities",
-    body: "Palm Beach County and surrounding counties. Cost is the barrier that quietly decides who gets a shot. We remove it.",
+    body: "Palm Beach County and surrounding counties — neighborhoods that do not have cost-free fitness, wellness, or mentoring on the block. Not one zip code. Not one age group.",
   },
   {
-    title: "Young people and veterans",
-    body: "Youth who need structure, skills, and an adult in their corner — and military veterans looking for purpose, camaraderie, and a way to keep serving.",
+    title: "Whoever a fee would leave out",
+    body: "Young people, families, veterans, and adults who cannot buy a membership. If cost is the reason someone stays home, that is who the work is for.",
   },
   {
-    title: "Inclusive by design",
-    body: "Adults with developmental disabilities work in paid Crew roles. Inclusion is built into how the work runs, not added later as a volunteer list.",
+    title: "Where people already gather",
+    body: "Halls, posts, schools, and community rooms. We bring the program to the neighborhood. We do not ask someone to cross the county for a gym they cannot afford.",
+  },
+] as const
+
+export const howWeWork = [
+  {
+    title: "We bring programs to communities",
+    body: "Lipson Foundation does not own a gym. We pack a program — coaching, equipment, and the people who run it — into a space a neighborhood already trusts.",
+  },
+  {
+    title: "Different communities, different programs",
+    body: "Fitness, wellness, and mentoring take different shapes depending on who is in the room. One named program is not the whole foundation.",
+  },
+  {
+    title: "Every program is completely free",
+    body: "No memberships, no dues, no equipment to buy, no fundraiser to sell. Cost is not how we decide who belongs.",
   },
 ] as const
 
 export const whatWeBuild = [
   {
     title: "Fitness",
-    body: "Training that is actually reachable. No membership, no dues, no equipment to buy.",
+    body: "Movement, training, and sport-based programs brought into underserved communities. Reachable means we show up there — not a membership for a building across town.",
   },
   {
     title: "Wellness",
-    body: "A meal after the work. Belonging in a room that does not ask what you can afford.",
+    body: "Belonging, health, and care that is not sold as a package. Meals when a program needs them. A room that does not ask what you can afford, in more than one kind of community.",
   },
   {
     title: "Mentoring",
-    body: "Adults who show up. Relationships first. Mentorship when both people are ready — not on day one.",
+    body: "Caring adults in the places people already are. Mentorship runs through our work. How it is structured depends on the program and the community — not a single template.",
   },
 ] as const
 
@@ -109,7 +124,7 @@ export const programMenu = [
   {
     href: "/programs",
     name: "All programs",
-    body: "What Lipson Foundation offers. In Your Corner is the flagship.",
+    body: "All programs we bring to communities. In Your Corner is the named flagship.",
   },
   {
     href: "/in-your-corner",
@@ -260,12 +275,17 @@ export const faqs = [
   {
     question: "What is Lipson Foundation?",
     answer:
-      "Lipson Foundation Inc. is a South Florida nonprofit (EIN 39-4624045) building cost-free community programs in fitness, wellness, and mentoring. Every program we run is completely free — no memberships, no fees, ever.",
+      "Lipson Foundation Inc. is a South Florida nonprofit (EIN 39-4624045) that brings cost-free community programs in fitness, wellness, and mentoring into underserved communities. We do not own a gym. We go to halls, posts, schools, and rooms a neighborhood already trusts. Every program is completely free — no memberships, no fees, ever.",
+  },
+  {
+    question: "Do you only run a boxing program?",
+    answer:
+      "No. In Your Corner is the named flagship — free boxing and mentorship for youth and veterans. The foundation exists to bring fitness, wellness, and mentoring programs to different underserved communities. More named programs will be listed as they launch. We will not invent a catalog.",
   },
   {
     question: "Who do you serve?",
     answer:
-      "Underserved communities in Palm Beach County and surrounding counties. The flagship program, In Your Corner, is built for youth ages 12–17 and military veterans of any era, with paid Crew roles for adults with developmental disabilities.",
+      "Underserved communities in Palm Beach County and surrounding counties — whoever a fee would leave out. In Your Corner is built for youth ages 12–17 and military veterans of any era, with paid Crew roles for adults with developmental disabilities. That is one program, not the limit of who the foundation is for.",
   },
   {
     question: "Is In Your Corner a boxing gym?",

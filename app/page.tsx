@@ -11,6 +11,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { site } from "@/lib/site"
+import { WorkPillars } from "@/components/work-pillars"
 
 export const metadata: Metadata = {
   title: { absolute: `${site.name} — Community programs. Completely free.` },
@@ -31,7 +32,7 @@ const destinations = [
   {
     href: "/programs",
     title: "Programs",
-    body: "What we offer. In Your Corner is the flagship.",
+    body: "Cost-free programs we bring to underserved communities.",
   },
   {
     href: "/events",
@@ -63,8 +64,9 @@ export default function HomePage() {
               Lipson Foundation builds cost-free programs for underserved communities.
             </h1>
             <p className="max-w-2xl text-lg leading-relaxed text-primary-foreground/80">
-              A South Florida nonprofit. Fitness, wellness, and mentoring —
-              completely free. No memberships, no fees, ever.
+              A South Florida nonprofit. We bring cost-free fitness, wellness,
+              and mentoring programs into underserved communities — not one
+              gym, not one neighborhood.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Button
@@ -107,9 +109,10 @@ export default function HomePage() {
             </p>
             <h2 className="text-3xl sm:text-4xl">Start here.</h2>
             <p className="text-base leading-relaxed text-muted-foreground">
-              {site.legalName} serves {site.location} and surrounding counties.
-              Read who we are, meet the team, then see the programs. Events,
-              news, donate, and forms live in this same menu.
+              {site.legalName} brings cost-free fitness, wellness, and mentoring
+              programs into underserved communities across {site.location} and
+              surrounding counties. Read who we are, meet the team, then see
+              the programs we bring to the room.
             </p>
           </div>
           <aside className="flex flex-col gap-3 border border-border bg-card p-6">
@@ -124,6 +127,12 @@ export default function HomePage() {
       </section>
 
       <section className="border-y bg-secondary">
+        <Container className="py-16 sm:py-20">
+          <WorkPillars heading="We bring programs to underserved communities." />
+        </Container>
+      </section>
+
+      <section>
         <Container className="flex flex-col gap-8 py-16 sm:py-20">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {destinations.map((item) => (
@@ -154,13 +163,14 @@ export default function HomePage() {
           />
           <div className="flex flex-col gap-4">
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
-              Flagship program
+              Flagship program — one of the ways this work shows up
             </p>
             <h2 className="text-3xl sm:text-4xl">In Your Corner</h2>
             <p className="max-w-2xl text-base leading-relaxed text-muted-foreground">
               Free boxing and mentorship for youth ages 12–17 and veterans.
-              Boxing builds the relationships. Mentorship deepens them — later,
-              not on day one. Formal name: In Your Corner.
+              That is the named flagship. It is not the whole foundation.
+              Other fitness, wellness, and mentoring programs will be listed as
+              they launch — we will not invent a catalog.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Button size="lg" nativeButton={false} render={<Link href="/in-your-corner" />}>

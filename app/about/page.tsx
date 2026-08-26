@@ -14,12 +14,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { faqs, site, whatWeBuild, whoWeServe } from "@/lib/site"
+import { faqs, site, whoWeServe } from "@/lib/site"
+import { WorkPillars } from "@/components/work-pillars"
 
 export const metadata: Metadata = {
   title: "About us",
   description:
-    "Lipson Foundation Inc. is a South Florida nonprofit (EIN 39-4624045) building cost-free community programs for underserved communities.",
+    "Lipson Foundation Inc. is a South Florida nonprofit (EIN 39-4624045) that brings cost-free fitness, wellness, and mentoring programs into underserved communities.",
 }
 
 export default function AboutPage() {
@@ -45,14 +46,16 @@ export default function AboutPage() {
             could, and a place that did not ask what he could afford.
           </p>
           <p>
-            Cost is the barrier that quietly decides which kids get a shot. We
-            remove it entirely. Every Lipson Foundation program is completely
-            free to the people it serves — no memberships, no fees, ever.
+            Cost is the barrier that quietly decides who gets a shot. We remove
+            it entirely. Every Lipson Foundation program is completely free to
+            the people it serves — no memberships, no fees, ever.
           </p>
           <p>
             The work lives in Palm Beach County and surrounding counties. We do
-            not own a gym. We bring programs into rooms the community already
-            trusts.
+            not own a gym. We bring fitness, wellness, and mentoring programs
+            into rooms the community already trusts — halls, posts, schools,
+            and neighborhood spaces. Different communities get different
+            programs. That is the point.
           </p>
         </div>
         <aside className="flex flex-col gap-4 border border-border bg-card p-6">
@@ -92,8 +95,8 @@ export default function AboutPage() {
       >
         <h2 className="text-3xl">Who we serve</h2>
         <p className="max-w-2xl text-base leading-relaxed text-muted-foreground">
-          Underserved communities in South Florida. People who would be priced
-          out of fitness, wellness, and mentoring if we charged a fee.
+          Underserved communities in South Florida. Whoever a membership fee,
+          a gym commute, or a program cost would leave out.
         </p>
         <div className="grid gap-4 md:grid-cols-3">
           {whoWeServe.map((item) => (
@@ -107,16 +110,10 @@ export default function AboutPage() {
             </Card>
           ))}
         </div>
-        <div className="grid gap-4 md:grid-cols-3">
-          {whatWeBuild.map((item) => (
-            <div key={item.title} className="border-l-2 border-gold pl-4">
-              <p className="font-heading text-lg">{item.title}</p>
-              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                {item.body}
-              </p>
-            </div>
-          ))}
-        </div>
+      </section>
+
+      <section className="mt-16">
+        <WorkPillars heading="Fitness, wellness, and mentoring — brought to the community." />
       </section>
 
       <section className="mt-16 flex flex-col gap-6">
