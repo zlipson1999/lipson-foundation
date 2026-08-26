@@ -46,7 +46,7 @@ export function HelpForm() {
 
   if (sent) {
     return (
-      <Alert>
+      <Alert className="border-gold bg-secondary">
         <AlertTitle>Glad you wrote.</AlertTitle>
         <AlertDescription>
           We will follow up to match what you can offer with what the program

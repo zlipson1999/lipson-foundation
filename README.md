@@ -17,10 +17,10 @@ Copy lives in `lib/site.ts` and the page files. It is taken from the public-safe
 
 | Path | Role |
 | --- | --- |
-| `/` | Foundation home |
-| `/programs` | Program picker — In Your Corner plus The Ring, The Corner, The Crew, Career Night |
+| `/` | Foundation first — who we are, who we serve, our team, then programs |
+| `/about` | About us — origin, underserved communities we serve, board, FAQ |
+| `/programs` | What we offer — In Your Corner plus The Ring, The Corner, The Crew, Career Night |
 | `/in-your-corner` | Flagship program |
-| `/about` | About us — founder, board, FAQ |
 | `/help` | Host, refer, career night, meals, planning asks |
 | `/contact` | Zachary Lipson — 845-642-1874 · zlipson@lipsonfoundation.org |
 | `/privacy` | How inquiries are treated |

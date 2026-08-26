@@ -19,12 +19,13 @@ export function MobileNav() {
   return (
     <Sheet>
       <SheetTrigger
+        nativeButton={false}
         render={
-          <Button variant="secondary" size="icon" className="md:hidden" />
+          <Button type="button" variant="secondary" size="lg" className="md:hidden" />
         }
       >
-        <ListIcon />
-        <span className="sr-only">Open menu</span>
+        <ListIcon data-icon="inline-start" />
+        Menu
       </SheetTrigger>
       <SheetContent side="right" className="w-[min(100%,20rem)]">
         <SheetHeader>

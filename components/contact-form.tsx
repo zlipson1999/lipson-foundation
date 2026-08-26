@@ -45,7 +45,7 @@ export function ContactForm() {
 
   if (sent) {
     return (
-      <Alert>
+      <Alert className="border-gold bg-secondary">
         <AlertTitle>We have your note.</AlertTitle>
         <AlertDescription>
           Thank you for writing. Someone from Lipson Foundation will reply to

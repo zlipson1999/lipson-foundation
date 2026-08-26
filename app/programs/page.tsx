@@ -16,18 +16,21 @@ import { groups, programs } from "@/lib/site"
 export const metadata: Metadata = {
   title: "Programs",
   description:
-    "Pick a Lipson Foundation program. In Your Corner is the flagship: free boxing and mentorship for youth and veterans.",
+    "What Lipson Foundation offers. In Your Corner is the flagship: free boxing and mentorship for youth and veterans.",
 }
 
 export default function ProgramsPage() {
   return (
     <Container className="pb-20">
-      <PageIntro kicker="Programs" title="Pick where you want to stand.">
+      <PageIntro
+        kicker="Programs"
+        title="What Lipson Foundation offers."
+      >
         <p>
-          Lipson Foundation builds cost-free community programs in fitness,
-          wellness, and mentoring. The named flagship is In Your Corner. The
-          Ring, the Corner, and the Crew are how that program is built — not
-          separate launches.
+          These are the programs we run. All of them are completely free to the
+          people they serve. The named flagship is In Your Corner. The Ring,
+          the Corner, and the Crew are how that program is built — not separate
+          launches.
         </p>
       </PageIntro>
 

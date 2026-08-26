@@ -9,20 +9,62 @@ export const site = {
   phoneHref: "tel:+18456421874",
   domain: "lipsonfoundation.org",
   description:
-    "Lipson Foundation Inc. is a South Florida nonprofit building cost-free community programs in fitness, wellness, and mentoring. Flagship program: In Your Corner, free boxing and mentorship for youth and veterans.",
+    "Lipson Foundation Inc. is a South Florida nonprofit building cost-free community programs in fitness, wellness, and mentoring for underserved communities. Flagship program: In Your Corner.",
 } as const
 
 export const navItems = [
-  { href: "/programs", label: "Programs" },
   { href: "/about", label: "About us" },
+  { href: "/programs", label: "Programs" },
   { href: "/help", label: "How to help" },
   { href: "/contact", label: "Contact" },
 ] as const
 
 export const board = [
-  { name: "Zachary Lipson", role: "President" },
-  { name: "Joshua Weinfeld", role: "CFO" },
-  { name: "Julia Vance", role: "Secretary" },
+  {
+    name: "Zachary Lipson",
+    role: "Founder and President",
+    note: "Lives with hereditary spastic paraplegia. What changed his life was not a cure. It was access — to training, to people who believed he could, to a place that did not ask what he could afford.",
+  },
+  {
+    name: "Joshua Weinfeld",
+    role: "CFO",
+    note: "",
+  },
+  {
+    name: "Julia Vance",
+    role: "Secretary",
+    note: "",
+  },
+] as const
+
+export const whoWeServe = [
+  {
+    title: "Underserved communities",
+    body: "Palm Beach County and surrounding counties. Cost is the barrier that quietly decides who gets a shot. We remove it.",
+  },
+  {
+    title: "Young people and veterans",
+    body: "Youth who need structure, skills, and an adult in their corner — and military veterans looking for purpose, camaraderie, and a way to keep serving.",
+  },
+  {
+    title: "Inclusive by design",
+    body: "Adults with developmental disabilities work in paid Crew roles. Inclusion is built into how the work runs, not added later as a volunteer list.",
+  },
+] as const
+
+export const whatWeBuild = [
+  {
+    title: "Fitness",
+    body: "Training that is actually reachable. No membership, no dues, no equipment to buy.",
+  },
+  {
+    title: "Wellness",
+    body: "A meal after the work. Belonging in a room that does not ask what you can afford.",
+  },
+  {
+    title: "Mentoring",
+    body: "Adults who show up. Relationships first. Mentorship when both people are ready — not on day one.",
+  },
 ] as const
 
 export const groups = [
@@ -61,7 +103,7 @@ export const programMenu = [
   {
     href: "/programs",
     name: "All programs",
-    body: "Pick a program. In Your Corner is the flagship.",
+    body: "What Lipson Foundation offers. In Your Corner is the flagship.",
   },
   {
     href: "/in-your-corner",
@@ -134,14 +176,19 @@ export const sessionShape = [
 
 export const faqs = [
   {
+    question: "What is Lipson Foundation?",
+    answer:
+      "Lipson Foundation Inc. is a South Florida nonprofit (EIN 39-4624045) building cost-free community programs in fitness, wellness, and mentoring. Every program we run is completely free — no memberships, no fees, ever.",
+  },
+  {
+    question: "Who do you serve?",
+    answer:
+      "Underserved communities in Palm Beach County and surrounding counties. The flagship program, In Your Corner, is built for youth ages 12–17 and military veterans of any era, with paid Crew roles for adults with developmental disabilities.",
+  },
+  {
     question: "Is In Your Corner a boxing gym?",
     answer:
       "No. Lipson Foundation does not own a gym. In Your Corner brings equipment, coaching, insurance, and meals into a host veterans hall once a host exists. Training is the hook. Mentorship is the point — later, not on day one.",
-  },
-  {
-    question: "Who can take part?",
-    answer:
-      "Youth ages 12–17 from Palm Beach County, referred by families, schools, community centers, and juvenile diversion programs, or who walk in. Military veterans of any era, any branch. Adults with developmental disabilities in paid Crew roles.",
   },
   {
     question: "When do sessions start?",

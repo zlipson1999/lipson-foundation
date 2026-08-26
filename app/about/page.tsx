@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Container, PageIntro } from "@/components/container"
+import { BoardList } from "@/components/board-list"
 import { Button } from "@/components/ui/button"
 import {
   Accordion,
@@ -8,22 +9,31 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { board, faqs, site } from "@/lib/site"
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import { faqs, site, whatWeBuild, whoWeServe } from "@/lib/site"
 
 export const metadata: Metadata = {
   title: "About us",
   description:
-    "Lipson Foundation Inc. is a South Florida nonprofit (EIN 39-4624045) building cost-free community programs.",
+    "Lipson Foundation Inc. is a South Florida nonprofit (EIN 39-4624045) building cost-free community programs for underserved communities.",
 }
 
 export default function AboutPage() {
   return (
     <Container className="pb-20">
-      <PageIntro kicker="About us" title="A South Florida nonprofit with a simple rule: free.">
+      <PageIntro
+        kicker="About us"
+        title="Lipson Foundation is a South Florida nonprofit with a simple rule: free."
+      >
         <p>
           {site.legalName} (EIN {site.ein}) builds cost-free community programs
-          in fitness, wellness, and mentoring. Service area: {site.location}{" "}
-          and surrounding counties.
+          in fitness, wellness, and mentoring for underserved communities.
+          Service area: {site.location} and surrounding counties.
         </p>
       </PageIntro>
 
@@ -36,13 +46,14 @@ export default function AboutPage() {
             could, and a place that did not ask what he could afford.
           </p>
           <p>
-            The flagship program is In Your Corner: free boxing and mentorship
-            for youth 12–17 and veterans. The Foundation does not own a gym. It
-            brings equipment, coaching, insurance, and meals into a host hall.
+            Cost is the barrier that quietly decides which kids get a shot. We
+            remove it entirely. Every Lipson Foundation program is completely
+            free to the people it serves — no memberships, no fees, ever.
           </p>
           <p>
-            Every Lipson Foundation program is completely free to the people it
-            serves.
+            The work lives in Palm Beach County and surrounding counties. We do
+            not own a gym. We bring programs into rooms the community already
+            trusts.
           </p>
         </div>
         <aside className="flex flex-col gap-4 border border-border bg-card p-6">
@@ -76,24 +87,51 @@ export default function AboutPage() {
         </aside>
       </div>
 
-      <section className="mt-16 flex flex-col gap-6">
-        <h2 className="text-3xl">Board</h2>
-        <ul className="grid gap-4 sm:grid-cols-3">
-          {board.map((person) => (
-            <li key={person.name} className="border border-border bg-card p-5">
-              <p className="font-heading text-lg">{person.name}</p>
-              <p className="text-sm text-muted-foreground">{person.role}</p>
-            </li>
-          ))}
-        </ul>
-        <p className="text-sm text-muted-foreground">
-          Zachary Lipson is Founder and President.
+      <section
+        id="who-we-serve"
+        className="mt-16 flex scroll-mt-28 flex-col gap-6"
+      >
+        <h2 className="text-3xl">Who we serve</h2>
+        <p className="max-w-2xl text-base leading-relaxed text-muted-foreground">
+          Underserved communities in South Florida. People who would be priced
+          out of fitness, wellness, and mentoring if we charged a fee.
         </p>
+        <div className="grid gap-4 md:grid-cols-3">
+          {whoWeServe.map((item) => (
+            <Card key={item.title}>
+              <CardHeader>
+                <CardTitle className="text-xl">{item.title}</CardTitle>
+                <CardDescription className="text-sm leading-relaxed">
+                  {item.body}
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {whatWeBuild.map((item) => (
+            <div key={item.title} className="border-l-2 border-gold pl-4">
+              <p className="font-heading text-lg">{item.title}</p>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                {item.body}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="team" className="mt-16 flex scroll-mt-28 flex-col gap-6">
+        <h2 className="text-3xl">Our team</h2>
+        <p className="max-w-2xl text-base leading-relaxed text-muted-foreground">
+          Named board of {site.legalName}. Zachary Lipson is Founder and
+          President.
+        </p>
+        <BoardList />
       </section>
 
       <section className="mt-16 flex flex-col gap-6">
         <h2 className="text-3xl">Questions we hear</h2>
-        <Accordion>
+        <Accordion defaultValue={["What is Lipson Foundation?"]}>
           {faqs.map((faq) => (
             <AccordionItem key={faq.question} value={faq.question}>
               <AccordionTrigger className="text-sm sm:text-base">
@@ -109,7 +147,7 @@ export default function AboutPage() {
 
       <div className="mt-12 flex flex-col gap-3 sm:flex-row">
         <Button size="lg" nativeButton={false} render={<Link href="/programs" />}>
-          Programs
+          Our programs
         </Button>
         <Button
           size="lg"

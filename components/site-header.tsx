@@ -23,13 +23,13 @@ export function SiteHeader() {
             <Logo inverse />
           </Link>
           <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
-            <ProgramsNav />
             <Link
               href="/about"
               className="px-2.5 py-1.5 text-sm text-primary-foreground/80 transition-colors hover:text-gold"
             >
               About us
             </Link>
+            <ProgramsNav />
             <Link
               href="/help"
               className="px-2.5 py-1.5 text-sm text-primary-foreground/80 transition-colors hover:text-gold"
