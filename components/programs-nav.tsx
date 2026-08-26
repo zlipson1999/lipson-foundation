@@ -15,17 +15,12 @@ export function ProgramsNav() {
   return (
     <NavigationMenu className="hidden lg:flex">
       <NavigationMenuList>
-        <NavigationMenuItem className="flex items-center">
-          <Link
-            href="/programs"
-            className="px-2 py-1.5 text-[13px] text-primary-foreground/80 transition-colors hover:text-gold"
+        <NavigationMenuItem>
+          <NavigationMenuTrigger
+            className="h-9 bg-transparent px-2 py-1.5 text-[13px] font-normal text-primary-foreground/80 hover:bg-primary-foreground/10 hover:text-gold focus:bg-primary-foreground/10 data-open:bg-primary-foreground/10 data-popup-open:bg-primary-foreground/10"
           >
             Programs
-          </Link>
-          <NavigationMenuTrigger
-            className="h-9 bg-transparent px-1.5 text-primary-foreground/80 hover:bg-primary-foreground/10 hover:text-gold focus:bg-primary-foreground/10 data-open:bg-primary-foreground/10 data-popup-open:bg-primary-foreground/10"
-            aria-label="Open programs menu"
-          />
+          </NavigationMenuTrigger>
           <NavigationMenuContent className="w-[min(22rem,calc(100vw-2rem))] p-2">
             {programMenu.map((item) => (
               <NavigationMenuLink
