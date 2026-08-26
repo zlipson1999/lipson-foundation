@@ -1,13 +1,7 @@
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { howWeWork, whatWeBuild } from "@/lib/site"
+import { whatWeBuild } from "@/lib/site"
 
 export function WorkPillars({
-  heading = "What we build",
+  heading = "All cost-free community programs.",
 }: {
   heading?: string
 }) {
@@ -19,25 +13,13 @@ export function WorkPillars({
         </p>
         <h2 className="text-3xl sm:text-4xl">{heading}</h2>
         <p className="text-base leading-relaxed text-muted-foreground">
-          Lipson Foundation brings cost-free programs into underserved
-          communities — different neighborhoods, different rooms, different
-          needs. Fitness, wellness, and mentoring are the work. A boxing
-          program is one way that work shows up. It is not the only way.
+          The mission is bigger than any category. Lipson Foundation builds
+          cost-free community programs — whatever an underserved community
+          needs that cost has kept out of reach. Fitness, wellness, and
+          mentoring are where the work starts. They are not where it ends.
         </p>
       </div>
-      <div className="grid gap-4 md:grid-cols-3">
-        {howWeWork.map((item) => (
-          <Card key={item.title}>
-            <CardHeader>
-              <CardTitle className="text-xl">{item.title}</CardTitle>
-              <CardDescription className="text-sm leading-relaxed">
-                {item.body}
-              </CardDescription>
-            </CardHeader>
-          </Card>
-        ))}
-      </div>
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {whatWeBuild.map((item) => (
           <div key={item.title} className="border-l-2 border-gold pl-4">
             <p className="font-heading text-lg">{item.title}</p>

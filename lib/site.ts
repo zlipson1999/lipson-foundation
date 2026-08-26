@@ -9,8 +9,49 @@ export const site = {
   phoneHref: "tel:+18456421874",
   domain: "lipsonfoundation.org",
   description:
-    "Lipson Foundation Inc. is a South Florida nonprofit that brings cost-free fitness, wellness, and mentoring programs into underserved communities. Flagship program: In Your Corner.",
+    "Lipson Foundation Inc. is a South Florida nonprofit that builds cost-free community programs for underserved communities. Every program is completely free — no memberships, no fees, ever. Flagship program: In Your Corner.",
 } as const
+
+export const keepItFree =
+  "We don't charge the people we serve. Not a membership fee, not a dollar, not ever. That only works because people like you decide it should. Keep it free."
+
+export const commitments = [
+  {
+    title: "Access",
+    body: "Every program we run is completely free — no memberships, no fees, no fine print. Cost will never be the reason someone is left out.",
+  },
+  {
+    title: "Dignity",
+    body: "We meet people where they are. Whatever your ability, background, or circumstances, you belong here — and our programs are built to prove it, including on our own team, where we proudly employ adults with developmental disabilities.",
+  },
+  {
+    title: "Community",
+    body: "Instead of walls, we use local assets — veteran halls, schools, and shared spaces. A network where neighbors consistently support and uplift one another.",
+  },
+  {
+    title: "Service",
+    body: "Everyone has something to give. Our programs turn participants into mentors, neighbors into role models, and service into a way of life.",
+  },
+] as const
+
+export const promises = [
+  {
+    title: "$0",
+    body: "What any participant pays, in any program, ever",
+  },
+  {
+    title: "100% free",
+    body: "Equipment, coaching, meals — everything a program needs, included",
+  },
+  {
+    title: "Community-first",
+    body: "Programs run in rooms neighborhoods already trust",
+  },
+  {
+    title: "No limits by category",
+    body: "If a community needs it and cost is the barrier, it is our kind of program",
+  },
+] as const
 
 export const navItems = [
   { href: "/", label: "Home" },
@@ -46,45 +87,49 @@ export const staff: { name: string; role: string; note: string }[] = []
 export const whoWeServe = [
   {
     title: "Underserved communities",
-    body: "Palm Beach County and surrounding counties — neighborhoods that do not have cost-free fitness, wellness, or mentoring on the block. Not one zip code. Not one age group.",
+    body: "Palm Beach County and surrounding counties — neighborhoods where the programs other places take for granted are not on the block, or cost too much to touch. Not one zip code. Not one age group.",
   },
   {
     title: "Whoever a fee would leave out",
-    body: "Young people, families, veterans, and adults who cannot buy a membership. If cost is the reason someone stays home, that is who the work is for.",
+    body: "Young people, families, veterans, seniors, and adults with disabilities. If cost is the reason someone stays home, that is exactly who the work is for.",
   },
   {
     title: "Where people already gather",
-    body: "Halls, posts, schools, and community rooms. We bring the program to the neighborhood. We do not ask someone to cross the county for a gym they cannot afford.",
+    body: "Halls, posts, schools, and community rooms. We bring the program to the neighborhood. We do not ask anyone to cross the county for a building they cannot afford.",
   },
 ] as const
 
 export const howWeWork = [
   {
     title: "We bring programs to communities",
-    body: "Lipson Foundation does not own a gym. We pack a program — coaching, equipment, and the people who run it — into a space a neighborhood already trusts.",
+    body: "Lipson Foundation does not own a facility. We pack a program — the coaching, the equipment, the meal, the people who run it — into a space the neighborhood already trusts.",
   },
   {
     title: "Different communities, different programs",
-    body: "Fitness, wellness, and mentoring take different shapes depending on who is in the room. One named program is not the whole foundation.",
+    body: "A youth program and a veterans program and a seniors program do not look alike, and they should not. Each program is shaped around the people in the room — not the other way around.",
   },
   {
     title: "Every program is completely free",
-    body: "No memberships, no dues, no equipment to buy, no fundraiser to sell. Cost is not how we decide who belongs.",
+    body: "No memberships, no dues, no equipment to buy, no fundraiser to sell. Cost is never how we decide who belongs.",
   },
 ] as const
 
 export const whatWeBuild = [
   {
     title: "Fitness",
-    body: "Movement, training, and sport-based programs brought into underserved communities. Reachable means we show up there — not a membership for a building across town.",
+    body: "Movement, training, and sport brought to the neighborhood — no membership, no equipment to buy, nothing to qualify for.",
   },
   {
     title: "Wellness",
-    body: "Belonging, health, and care that is not sold as a package. Meals when a program needs them. A room that does not ask what you can afford, in more than one kind of community.",
+    body: "Health, meals, and belonging. A room that does not ask what you can afford before it lets you in.",
   },
   {
     title: "Mentoring",
-    body: "Caring adults in the places people already are. Mentorship runs through our work. How it is structured depends on the program and the community — not a single template.",
+    body: "Caring adults in the places people already are. Careers, life skills, and someone who shows up.",
+  },
+  {
+    title: "And whatever comes next",
+    body: "The mandate is cost-free community programs — all of them. When a community needs something that is not on this list, the list grows.",
   },
 ] as const
 
@@ -239,8 +284,8 @@ export const youthOffer = [
     body: "60 minutes of boxing and conditioning, then dinner together. That meal is where conversation happens.",
   },
   {
-    title: "Equipment provided",
-    body: "Gloves, wraps, coaching, water, and dinner. Families do not buy a kit to walk in.",
+    title: "Everything provided",
+    body: "Gloves, wraps, coaching, water, dinner, and transportation assistance. Families do not buy a kit to walk in.",
   },
   {
     title: "Mentorship that is real",
@@ -275,12 +320,12 @@ export const faqs = [
   {
     question: "What is Lipson Foundation?",
     answer:
-      "Lipson Foundation Inc. is a South Florida nonprofit (EIN 39-4624045) that brings cost-free community programs in fitness, wellness, and mentoring into underserved communities. We do not own a gym. We go to halls, posts, schools, and rooms a neighborhood already trusts. Every program is completely free — no memberships, no fees, ever.",
+      "Lipson Foundation Inc. is a South Florida nonprofit (EIN 39-4624045) that builds cost-free community programs for underserved communities. We do not own a facility. We bring programs into halls, posts, schools, and rooms a neighborhood already trusts. Every program is completely free — no memberships, no fees, ever.",
   },
   {
-    question: "Do you only run a boxing program?",
+    question: "Do you only run fitness programs?",
     answer:
-      "No. In Your Corner is the named flagship — free boxing and mentorship for youth and veterans. The foundation exists to bring fitness, wellness, and mentoring programs to different underserved communities. More named programs will be listed as they launch. We will not invent a catalog.",
+      "No. The mandate is cost-free community programs, full stop. Fitness, wellness, and mentoring are where the work starts, because that is what the flagship needed first. When a community needs something different, that becomes a program too. More named programs will be listed as they launch — we will not invent a catalog.",
   },
   {
     question: "Who do you serve?",

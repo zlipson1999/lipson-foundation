@@ -16,11 +16,12 @@ import {
 } from "@/components/ui/card"
 import { faqs, site, whoWeServe } from "@/lib/site"
 import { WorkPillars } from "@/components/work-pillars"
+import { Commitments } from "@/components/commitments"
 
 export const metadata: Metadata = {
   title: "About us",
   description:
-    "Lipson Foundation Inc. is a South Florida nonprofit (EIN 39-4624045) that brings cost-free fitness, wellness, and mentoring programs into underserved communities.",
+    "Lipson Foundation Inc. is a South Florida nonprofit (EIN 39-4624045) that builds cost-free community programs for underserved communities.",
 }
 
 export default function AboutPage() {
@@ -32,7 +33,7 @@ export default function AboutPage() {
       >
         <p>
           {site.legalName} (EIN {site.ein}) builds cost-free community programs
-          in fitness, wellness, and mentoring for underserved communities.
+          for underserved communities — all kinds of programs, one rule.
           Service area: {site.location} and surrounding counties.
         </p>
       </PageIntro>
@@ -40,10 +41,11 @@ export default function AboutPage() {
       <div className="grid gap-12 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
         <div className="flex flex-col gap-6 text-base leading-relaxed text-muted-foreground">
           <p>
-            Founded by Zachary Lipson, whose own journey with hereditary
-            spastic paraplegia taught him that access changes lives. What
-            changed his was not a cure. It was training, people who believed he
-            could, and a place that did not ask what he could afford.
+            The Lipson Foundation was born from our founder&apos;s own fight.
+            Growing up with hereditary spastic paraplegia and no role models,
+            Zachary Lipson learned that what changes lives isn&apos;t a cure.
+            It&apos;s access — training, people who believed he could, and a
+            place that did not ask what he could afford.
           </p>
           <p>
             Cost is the barrier that quietly decides who gets a shot. We remove
@@ -52,10 +54,11 @@ export default function AboutPage() {
           </p>
           <p>
             The work lives in Palm Beach County and surrounding counties. We do
-            not own a gym. We bring fitness, wellness, and mentoring programs
-            into rooms the community already trusts — halls, posts, schools,
-            and neighborhood spaces. Different communities get different
-            programs. That is the point.
+            not own a facility. We bring community programs into rooms the
+            community already trusts — halls, posts, schools, and neighborhood
+            spaces. Fitness, wellness, and mentoring are where the work starts.
+            The mandate is any cost-free program a community needs. Different
+            communities get different programs. That is the point.
           </p>
         </div>
         <aside className="flex flex-col gap-4 border border-border bg-card p-6">
@@ -113,7 +116,11 @@ export default function AboutPage() {
       </section>
 
       <section className="mt-16">
-        <WorkPillars heading="Fitness, wellness, and mentoring — brought to the community." />
+        <Commitments />
+      </section>
+
+      <section className="mt-16">
+        <WorkPillars heading="All cost-free community programs. One rule: free." />
       </section>
 
       <section className="mt-16 flex flex-col gap-6">

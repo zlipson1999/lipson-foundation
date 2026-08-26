@@ -187,6 +187,10 @@ export default function InYourCornerPage() {
         </p>
       </section>
 
+      <p className="mt-16 max-w-3xl font-heading text-2xl leading-snug">
+        This is what it means to have someone in your corner.
+      </p>
+
       <div className="mt-12 flex flex-col gap-3 sm:flex-row">
         <Button size="lg" nativeButton={false} render={<Link href="/help" />}>
           Host, refer, or support

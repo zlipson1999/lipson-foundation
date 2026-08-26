@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { donateAsks, site } from "@/lib/site"
+import { donateAsks, keepItFree, site } from "@/lib/site"
 
 export const metadata: Metadata = {
   title: "Donate",
@@ -19,11 +19,11 @@ export const metadata: Metadata = {
 export default function DonatePage() {
   return (
     <Container className="pb-20">
-      <PageIntro kicker="Donate" title="Sponsor a dinner, a session, or a season.">
-        <p>
-          Programs stay free to the people they serve. If you want to underwrite
-          that, start here. There is no checkout and no card field on this
-          website.
+      <PageIntro kicker="Donate" title="Keep it free.">
+        <p>{keepItFree}</p>
+        <p className="mt-3">
+          If you want to underwrite a dinner, a session, or a season, start
+          here. There is no checkout and no card field on this website.
         </p>
       </PageIntro>
 
