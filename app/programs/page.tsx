@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import { pageMetadata } from "@/lib/seo"
 import Link from "next/link"
 import { ArrowRightIcon } from "@phosphor-icons/react/ssr"
@@ -12,6 +13,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { asset } from "@/lib/assets"
 import { groups, howWeWork, programs, whatWeBuild } from "@/lib/site"
 
 export const metadata: Metadata = pageMetadata({
@@ -67,13 +69,28 @@ export default function ProgramsPage() {
       <div className="grid gap-6">
         {programs.map((program) => (
           <Card key={program.slug} className="border-l-4 border-l-gold">
-            <CardHeader>
-              <Badge variant="secondary">{program.status}</Badge>
-              <CardTitle className="text-3xl">{program.name}</CardTitle>
-              <CardDescription className="max-w-2xl text-base leading-relaxed">
-                {program.summary}
-              </CardDescription>
-            </CardHeader>
+            {/* CardHeader is a grid, so the mark sits beside it rather than inside. */}
+            <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-8">
+              <CardHeader className="flex-1">
+                <Badge variant="secondary" className="self-start">
+                  {program.status}
+                </Badge>
+                <CardTitle className="text-3xl">{program.name}</CardTitle>
+                <CardDescription className="max-w-2xl text-base leading-relaxed">
+                  {program.summary}
+                </CardDescription>
+              </CardHeader>
+              {program.mark ? (
+                <Image
+                  src={asset(program.mark)}
+                  alt=""
+                  width={612}
+                  height={640}
+                  className="h-28 w-auto shrink-0 self-center px-4 sm:h-36 sm:self-auto sm:pl-0"
+                  unoptimized
+                />
+              ) : null}
+            </div>
             <CardFooter>
               <Button
                 size="lg"

@@ -179,6 +179,7 @@ export const programs = [
     name: "In Your Corner",
     href: "/in-your-corner",
     status: "Flagship",
+    mark: "/brand/iyc-tag.png",
     summary:
       "A free boxing and mentorship program that brings youth ages 12–17 and veterans together to train. Boxing builds the relationships. Mentorship deepens them — later, not on day one.",
   },
