@@ -12,7 +12,7 @@ import {
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet"
-import { navItems } from "@/lib/site"
+import { navItems, programMenu } from "@/lib/site"
 import { Logo } from "@/components/logo"
 
 export function MobileNav() {
@@ -20,11 +20,7 @@ export function MobileNav() {
     <Sheet>
       <SheetTrigger
         render={
-          <Button
-            variant="secondary"
-            size="icon"
-            className="md:hidden"
-          />
+          <Button variant="secondary" size="icon" className="md:hidden" />
         }
       >
         <ListIcon />
@@ -53,6 +49,25 @@ export function MobileNav() {
               {item.label}
             </SheetClose>
           ))}
+          <p className="mt-3 px-1 text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
+            Programs
+          </p>
+          {programMenu
+            .filter((item) => item.href !== "/programs")
+            .map((item) => (
+              <SheetClose
+                key={item.href}
+                render={
+                  <Link
+                    href={item.href}
+                    className="px-1 py-2 text-sm text-muted-foreground hover:text-primary"
+                  />
+                }
+                nativeButton={false}
+              >
+                {item.name}
+              </SheetClose>
+            ))}
         </nav>
         <div className="mt-auto p-4">
           <Button

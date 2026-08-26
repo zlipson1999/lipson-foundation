@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import { Container, PageIntro } from "@/components/container"
-import { GloveTag } from "@/components/marks"
 import { Button } from "@/components/ui/button"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import {
@@ -22,7 +22,14 @@ export default function InYourCornerPage() {
   return (
     <Container className="pb-20">
       <div className="flex items-start gap-4">
-        <GloveTag className="mt-14 size-12 text-primary" />
+        <Image
+          src="/brand/glove-tag.svg"
+          alt=""
+          width={56}
+          height={70}
+          className="mt-14 h-16 w-auto"
+          unoptimized
+        />
         <PageIntro
           kicker="A program of Lipson Foundation Inc."
           title="In Your Corner"
@@ -56,7 +63,11 @@ export default function InYourCornerPage() {
 
       <div className="mt-12 grid gap-4 sm:grid-cols-2">
         {sessionShape.map((item) => (
-          <Card key={item.title}>
+          <Card
+            key={item.title}
+            id={item.title === "Monthly" ? "career-night" : undefined}
+            className={item.title === "Monthly" ? "scroll-mt-28" : undefined}
+          >
             <CardHeader>
               <CardTitle className="text-lg">{item.title}</CardTitle>
               <CardDescription className="text-sm leading-relaxed">
@@ -85,7 +96,7 @@ export default function InYourCornerPage() {
 
       <section className="mt-16 grid gap-4 md:grid-cols-3">
         {groups.map((group) => (
-          <Card key={group.name}>
+          <Card key={group.name} id={group.slug} className="scroll-mt-28">
             <CardHeader>
               <CardTitle className="text-lg">{group.name}</CardTitle>
               <CardDescription className="text-sm leading-relaxed">

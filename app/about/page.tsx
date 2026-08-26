@@ -11,7 +11,7 @@ import {
 import { board, faqs, site } from "@/lib/site"
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About us",
   description:
     "Lipson Foundation Inc. is a South Florida nonprofit (EIN 39-4624045) building cost-free community programs.",
 }
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <Container className="pb-20">
-      <PageIntro kicker="About" title="A South Florida nonprofit with a simple rule: free.">
+      <PageIntro kicker="About us" title="A South Florida nonprofit with a simple rule: free.">
         <p>
           {site.legalName} (EIN {site.ein}) builds cost-free community programs
           in fitness, wellness, and mentoring. Service area: {site.location}{" "}
@@ -108,8 +108,8 @@ export default function AboutPage() {
       </section>
 
       <div className="mt-12 flex flex-col gap-3 sm:flex-row">
-        <Button size="lg" nativeButton={false} render={<Link href="/in-your-corner" />}>
-          In Your Corner
+        <Button size="lg" nativeButton={false} render={<Link href="/programs" />}>
+          Programs
         </Button>
         <Button
           size="lg"

@@ -9,6 +9,7 @@ This codebase follows the 22 August 2026 public-copy rules in the foundation kit
 - No donate processor, no official tagline, no host name, no session days, no start date, no invented numbers
 - Formal program name is **In Your Corner** (do not use the short mark in body copy)
 - Brand: navy `#1C2433` · gold `#C6A15A` · paper `#F7F1E4`
+- Logo: `public/brand/phoenix-dog-tag.svg` (foundation header mark) · `public/brand/glove-tag.svg` (In Your Corner)
 
 Copy lives in `lib/site.ts` and the page files. It is taken from the public-safe fact sheet and program description.
 
@@ -17,8 +18,9 @@ Copy lives in `lib/site.ts` and the page files. It is taken from the public-safe
 | Path | Role |
 | --- | --- |
 | `/` | Foundation home |
+| `/programs` | Program picker — In Your Corner plus The Ring, The Corner, The Crew, Career Night |
 | `/in-your-corner` | Flagship program |
-| `/about` | Who we are, board, FAQ |
+| `/about` | About us — founder, board, FAQ |
 | `/help` | Host, refer, career night, meals, planning asks |
 | `/contact` | Zachary Lipson — 845-642-1874 · zlipson@lipsonfoundation.org |
 | `/privacy` | How inquiries are treated |

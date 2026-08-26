@@ -13,8 +13,8 @@ export const site = {
 } as const
 
 export const navItems = [
-  { href: "/in-your-corner", label: "In Your Corner" },
-  { href: "/about", label: "About" },
+  { href: "/programs", label: "Programs" },
+  { href: "/about", label: "About us" },
   { href: "/help", label: "How to help" },
   { href: "/contact", label: "Contact" },
 ] as const
@@ -27,16 +27,66 @@ export const board = [
 
 export const groups = [
   {
+    slug: "the-ring",
+    name: "The Ring",
+    href: "/in-your-corner#the-ring",
+    body: "Youth and veterans train side by side.",
+  },
+  {
+    slug: "the-corner",
+    name: "The Corner",
+    href: "/in-your-corner#the-corner",
+    body: "Veterans who choose to mentor, after the relationship is real.",
+  },
+  {
+    slug: "the-crew",
+    name: "The Crew",
+    href: "/in-your-corner#the-crew",
+    body: "Adults with developmental disabilities in paid support roles. Not a volunteer list.",
+  },
+] as const
+
+export const programs = [
+  {
+    slug: "in-your-corner",
+    name: "In Your Corner",
+    href: "/in-your-corner",
+    status: "Flagship",
+    summary:
+      "A free boxing and mentorship program that brings youth ages 12–17 and veterans together to train. Boxing builds the relationships. Mentorship deepens them — later, not on day one.",
+  },
+] as const
+
+export const programMenu = [
+  {
+    href: "/programs",
+    name: "All programs",
+    body: "Pick a program. In Your Corner is the flagship.",
+  },
+  {
+    href: "/in-your-corner",
+    name: "In Your Corner",
+    body: "Free boxing and mentorship for youth and veterans.",
+  },
+  {
+    href: "/in-your-corner#the-ring",
     name: "The Ring",
     body: "Youth and veterans train side by side.",
   },
   {
+    href: "/in-your-corner#the-corner",
     name: "The Corner",
-    body: "Veterans who choose to mentor, after the relationship is real.",
+    body: "Mentorship after the relationship is real.",
   },
   {
+    href: "/in-your-corner#the-crew",
     name: "The Crew",
-    body: "Adults with developmental disabilities in paid support roles. Not a volunteer list.",
+    body: "Paid inclusive-employment roles.",
+  },
+  {
+    href: "/in-your-corner#career-night",
+    name: "Career Exploration Night",
+    body: "Monthly: 60 minutes of training, then 30 minutes with a working professional.",
   },
 ] as const
 

@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import { ArrowRightIcon } from "@phosphor-icons/react/ssr"
 import { Container } from "@/components/container"
-import { PhoenixTag } from "@/components/marks"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -20,9 +20,17 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <section className="border-b bg-primary text-primary-foreground">
-        <Container className="flex flex-col gap-8 py-16 sm:py-24">
-          <PhoenixTag className="size-14 text-gold" />
+      <section className="relative overflow-hidden border-b bg-primary text-primary-foreground">
+        <Image
+          src="/brand/phoenix-dog-tag.svg"
+          alt=""
+          width={200}
+          height={248}
+          className="pointer-events-none absolute -right-8 top-8 h-[28rem] w-auto opacity-10 sm:right-8"
+          unoptimized
+        />
+        <Container className="relative grid gap-10 py-16 sm:py-24 lg:grid-cols-[minmax(0,1.3fr)_auto] lg:items-center">
+          <div className="flex flex-col gap-8">
           <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
             {site.legalName} · EIN {site.ein}
           </p>
@@ -48,11 +56,21 @@ export default function HomePage() {
               size="lg"
               variant="outline"
               nativeButton={false}
-              render={<Link href="/help" />}
+              render={<Link href="/programs" />}
             >
-              How to help
+              All programs
             </Button>
           </div>
+          </div>
+          <Image
+            src="/brand/phoenix-dog-tag.svg"
+            alt="Lipson Foundation phoenix dog-tag"
+            width={200}
+            height={248}
+            className="relative z-10 hidden h-48 w-auto lg:block"
+            unoptimized
+            priority
+          />
         </Container>
       </section>
 
@@ -108,7 +126,8 @@ export default function HomePage() {
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             {groups.map((group) => (
-              <Card key={group.name}>
+              <Link key={group.name} href={group.href} className="block">
+              <Card className="h-full transition-colors hover:bg-card">
                 <CardHeader>
                   <CardTitle className="text-xl">{group.name}</CardTitle>
                   <CardDescription className="text-sm leading-relaxed">
@@ -116,6 +135,7 @@ export default function HomePage() {
                   </CardDescription>
                 </CardHeader>
               </Card>
+              </Link>
             ))}
           </div>
         </Container>
