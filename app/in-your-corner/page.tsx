@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
+import { asset } from "@/lib/assets"
 import { Container, PageIntro } from "@/components/container"
 import { Button } from "@/components/ui/button"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
@@ -23,7 +24,7 @@ export default function InYourCornerPage() {
     <Container className="pb-20">
       <div className="flex items-start gap-4">
         <Image
-          src="/brand/iyc-tag.png"
+          src={asset("/brand/iyc-tag.png")}
           alt="In Your Corner"
           width={96}
           height={123}

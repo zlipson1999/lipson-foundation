@@ -17,7 +17,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Textarea } from "@/components/ui/textarea"
 import { Spinner } from "@/components/ui/spinner"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-import { submitContact } from "@/lib/actions"
+import { submitForm } from "@/lib/submit"
 
 const topics = [
   { value: "general", label: "General question" },
@@ -33,7 +33,7 @@ export function ContactForm() {
 
   async function onSubmit(formData: FormData) {
     setPending(true)
-    const result = await submitContact(formData)
+    const result = await submitForm("contact", formData)
     setPending(false)
     if (!result.ok) {
       toast.error(result.error)

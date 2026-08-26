@@ -18,7 +18,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Spinner } from "@/components/ui/spinner"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { donateAsks } from "@/lib/site"
-import { submitDonate } from "@/lib/actions"
+import { submitForm } from "@/lib/submit"
 
 export function DonateForm() {
   const [pending, setPending] = useState(false)
@@ -26,7 +26,7 @@ export function DonateForm() {
 
   async function onSubmit(formData: FormData) {
     setPending(true)
-    const result = await submitDonate(formData)
+    const result = await submitForm("donate", formData)
     setPending(false)
     if (!result.ok) {
       toast.error(result.error)

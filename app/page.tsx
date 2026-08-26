@@ -10,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { asset } from "@/lib/assets"
 import { keepItFree, promises, site } from "@/lib/site"
 import { WorkPillars } from "@/components/work-pillars"
 import { Commitments } from "@/components/commitments"
@@ -99,7 +100,7 @@ export default function HomePage() {
             </div>
           </div>
           <Image
-            src="/brand/lipson-tag.png"
+            src={asset("/brand/lipson-tag.png")}
             alt="Lipson Foundation"
             width={200}
             height={356}
@@ -199,7 +200,7 @@ export default function HomePage() {
       <section>
         <Container className="grid gap-8 py-16 sm:py-20 lg:grid-cols-[auto_minmax(0,1fr)] lg:items-center">
           <Image
-            src="/brand/iyc-tag.png"
+            src={asset("/brand/iyc-tag.png")}
             alt="In Your Corner dog-tag mark"
             width={160}
             height={205}

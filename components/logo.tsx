@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils"
+import { asset } from "@/lib/assets"
 import Image from "next/image"
 
 export function Logo({
@@ -14,7 +15,7 @@ export function Logo({
   return (
     <span className={cn("inline-flex items-center", className)}>
       <Image
-        src="/brand/lipson-tag.png"
+        src={asset("/brand/lipson-tag.png")}
         alt="Lipson Foundation"
         width={width}
         height={height}

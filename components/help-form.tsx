@@ -17,7 +17,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Textarea } from "@/components/ui/textarea"
 import { Spinner } from "@/components/ui/spinner"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-import { submitHelp } from "@/lib/actions"
+import { submitForm } from "@/lib/submit"
 
 const roles = [
   { value: "host", label: "Host sessions at a veterans post" },
@@ -34,7 +34,7 @@ export function HelpForm() {
 
   async function onSubmit(formData: FormData) {
     setPending(true)
-    const result = await submitHelp(formData)
+    const result = await submitForm("help", formData)
     setPending(false)
     if (!result.ok) {
       toast.error(result.error)
