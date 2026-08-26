@@ -11,7 +11,7 @@ export function Logo({
   size?: "default" | "lg"
 }) {
   const height = size === "lg" ? 72 : 56
-  const width = Math.round(height * (685 / 1219))
+  const width = Math.round(height * (360 / 640))
   return (
     <span className={cn("inline-flex items-center", className)}>
       <Image

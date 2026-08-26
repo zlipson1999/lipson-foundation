@@ -16,35 +16,44 @@ import { Input } from "@/components/ui/input"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Textarea } from "@/components/ui/textarea"
 import { Spinner } from "@/components/ui/spinner"
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { donateAsks } from "@/lib/site"
 import { submitForm } from "@/lib/submit"
+import {
+  FormConfirmation,
+  FormError,
+} from "@/components/form-confirmation"
 
 export function DonateForm() {
   const [pending, setPending] = useState(false)
-  const [sent, setSent] = useState(false)
+  const [sent, setSent] = useState<"server" | "email" | null>(null)
+  const [error, setError] = useState<string | null>(null)
 
   async function onSubmit(formData: FormData) {
     setPending(true)
+    setError(null)
     const result = await submitForm("donate", formData)
     setPending(false)
     if (!result.ok) {
+      setError(result.error)
       toast.error(result.error)
       return
     }
-    setSent(true)
-    toast.success("We received your note.")
+    setSent(result.via)
+    if (result.via === "server") toast.success("We received your note.")
   }
 
   if (sent) {
-    return (
-      <Alert className="border-gold bg-secondary">
-        <AlertTitle>Thank you. We have your note.</AlertTitle>
-        <AlertDescription>
-          There is no checkout on this site. Someone from Lipson Foundation
-          will follow up about next steps. Do not send a card number here.
-        </AlertDescription>
-      </Alert>
+    return sent === "email" ? (
+      <FormConfirmation title="Your email draft is open.">
+        Nothing has been sent yet, and there is no checkout on this site.
+        Send the draft that just opened and someone from Lipson Foundation
+        will follow up about next steps. Do not send a card number.
+      </FormConfirmation>
+    ) : (
+      <FormConfirmation title="Thank you. We have your note.">
+        There is no checkout on this site. Someone from Lipson Foundation
+        will follow up about next steps. Do not send a card number here.
+      </FormConfirmation>
     )
   }
 
@@ -93,6 +102,7 @@ export function DonateForm() {
           </FieldDescription>
         </Field>
       </FieldGroup>
+      {error ? <FormError message={error} /> : null}
       <Button type="submit" size="lg" disabled={pending}>
         {pending ? <Spinner data-icon="inline-start" /> : <HeartIcon data-icon="inline-start" />}
         Send this

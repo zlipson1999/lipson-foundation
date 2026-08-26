@@ -9,11 +9,17 @@ const distDir = process.env.NEXT_DIST_DIR
 const nextConfig: NextConfig = staticExport
   ? {
       output: "export",
+      // GitHub Pages serves directories, not extensionless files. Without
+      // this, `/about` resolves but `/about/` 404s. Exporting `about/index.html`
+      // makes both work: Pages redirects `/about` to `/about/` itself.
+      trailingSlash: true,
       ...(distDir ? { distDir } : {}),
       ...(basePath ? { basePath, assetPrefix: basePath } : {}),
       images: { unoptimized: true },
     }
   : {
+      // Kept in step with the export build so canonical URLs match in both modes.
+      trailingSlash: true,
       ...(distDir ? { distDir } : {}),
       async redirects() {
         return [

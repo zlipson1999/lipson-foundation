@@ -13,7 +13,7 @@ import { programMenu } from "@/lib/site"
 
 export function ProgramsNav() {
   return (
-    <NavigationMenu className="hidden lg:flex">
+    <NavigationMenu className="hidden lg:flex" aria-label="Programs">
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger

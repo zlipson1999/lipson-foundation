@@ -1,12 +1,15 @@
 import type { Metadata } from "next"
+import { pageMetadata } from "@/lib/seo"
 import { Container, PageIntro } from "@/components/container"
 import { ContactForm } from "@/components/contact-form"
 import { site } from "@/lib/site"
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Contact",
-  description: "Write to Zachary Lipson at Lipson Foundation Inc.",
-}
+  description:
+    "Write or call Zachary Lipson, Founder and President of Lipson Foundation Inc., about hosting, referrals, training, or support.",
+  route: "/contact",
+})
 
 export default function ContactPage() {
   return (

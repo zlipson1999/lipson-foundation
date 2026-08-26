@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageMetadata } from "@/lib/seo"
 import Link from "next/link"
 import { ArrowRightIcon } from "@phosphor-icons/react/ssr"
 import { Container, PageIntro } from "@/components/container"
@@ -13,11 +14,12 @@ import {
 } from "@/components/ui/card"
 import { groups, howWeWork, programs, whatWeBuild } from "@/lib/site"
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Programs",
   description:
-    "Lipson Foundation brings cost-free fitness, wellness, and mentoring programs into underserved communities. In Your Corner is the named flagship.",
-}
+    "Lipson Foundation brings cost-free community programs into underserved communities. Fitness, wellness, and mentoring are where the work starts. In Your Corner is the named flagship.",
+  route: "/programs",
+})
 
 export default function ProgramsPage() {
   return (
@@ -27,10 +29,11 @@ export default function ProgramsPage() {
         title="We bring programs to the community. Completely free."
       >
         <p>
-          Lipson Foundation exists to put fitness, wellness, and mentoring
-          programs in underserved communities — different neighborhoods,
-          different rooms, different needs. Every program is free to the people
-          it serves. In Your Corner is the named flagship. More will be listed
+          Lipson Foundation exists to put cost-free community programs in
+          underserved communities — different neighborhoods, different rooms,
+          different needs. Fitness, wellness, and mentoring are where the work
+          starts, not where it ends. Every program is free to the people it
+          serves. In Your Corner is the named flagship. More will be listed
           here as they launch.
         </p>
       </PageIntro>

@@ -12,12 +12,13 @@ export function SiteFooter() {
           <div className="flex max-w-sm flex-col gap-4">
             <Logo inverse />
             <p className="text-sm leading-relaxed text-primary-foreground/75">
-              {site.legalName} brings cost-free fitness, wellness, and mentoring
-              programs into underserved communities. Every program is completely
-              free — no memberships, no fees, ever.
+              {site.legalName} builds cost-free community programs for
+              underserved communities. Fitness, wellness, and mentoring are
+              where the work starts. Every program is completely free — no
+              memberships, no fees, ever.
             </p>
           </div>
-          <div className="flex flex-col gap-3">
+          <nav className="flex flex-col gap-3" aria-label="Footer">
             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-gold">
               Explore
             </p>
@@ -33,7 +34,7 @@ export function SiteFooter() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
           <div className="flex flex-col gap-3">
             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-gold">
               Contact
@@ -62,7 +63,7 @@ export function SiteFooter() {
         <Separator className="bg-primary-foreground/15" />
         <div className="flex flex-col gap-2 text-xs text-primary-foreground/60 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {new Date().getFullYear()} {site.legalName}. All rights reserved.
+            © {new Date().getFullYear()} {site.legalName} All rights reserved.
           </p>
           <p>Community programs. Completely free.</p>
         </div>

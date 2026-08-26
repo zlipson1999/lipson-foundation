@@ -1,11 +1,13 @@
 import type { Metadata } from "next"
-import { Fraunces, JetBrains_Mono, Source_Sans_3 } from "next/font/google"
+import { Fraunces, Source_Sans_3 } from "next/font/google"
 import "./globals.css"
 import { cn } from "@/lib/utils"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Toaster } from "@/components/ui/sonner"
 import { site } from "@/lib/site"
+import { ogImage } from "@/lib/seo"
+import { absoluteUrl, siteBaseUrl } from "@/lib/urls"
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -17,24 +19,29 @@ const sourceSans = Source_Sans_3({
   variable: "--font-source-sans",
 })
 
-const jetbrains = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains",
-})
-
 export const metadata: Metadata = {
   title: {
-    default: `${site.name} — Community programs. Completely free.`,
+    default: `${site.name} — ${site.kicker}`,
     template: `%s — ${site.name}`,
   },
   description: site.description,
-  metadataBase: new URL("https://lipsonfoundation.org"),
+  // The canonical origin is where the site is actually published.
+  // lipsonfoundation.org is owned but parked, so it must not be used here.
+  metadataBase: new URL(siteBaseUrl),
   openGraph: {
     title: site.name,
     description: site.description,
+    url: absoluteUrl("/"),
     locale: "en_US",
     type: "website",
     siteName: site.name,
+    images: [ogImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.name,
+    description: site.description,
+    images: [ogImage.url],
   },
 }
 
@@ -45,8 +52,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={cn(
         "h-full antialiased",
         fraunces.variable,
-        sourceSans.variable,
-        jetbrains.variable
+        sourceSans.variable
       )}
     >
       <body className="flex min-h-full flex-col font-sans">

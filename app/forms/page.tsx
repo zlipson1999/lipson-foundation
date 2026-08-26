@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageMetadata } from "@/lib/seo"
 import Link from "next/link"
 import { ArrowRightIcon } from "@phosphor-icons/react/ssr"
 import { Container, PageIntro } from "@/components/container"
@@ -12,11 +13,12 @@ import {
 } from "@/components/ui/card"
 import { formPages } from "@/lib/site"
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Forms",
   description:
     "Contact, get involved, and donate inquiry forms for Lipson Foundation Inc.",
-}
+  route: "/forms",
+})
 
 export default function FormsPage() {
   return (

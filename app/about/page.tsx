@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageMetadata } from "@/lib/seo"
 import Link from "next/link"
 import { Container, PageIntro } from "@/components/container"
 import { Button } from "@/components/ui/button"
@@ -18,11 +19,12 @@ import { faqs, site, whoWeServe } from "@/lib/site"
 import { WorkPillars } from "@/components/work-pillars"
 import { Commitments } from "@/components/commitments"
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "About us",
   description:
     "Lipson Foundation Inc. is a South Florida nonprofit (EIN 39-4624045) that builds cost-free community programs for underserved communities.",
-}
+  route: "/about",
+})
 
 export default function AboutPage() {
   return (

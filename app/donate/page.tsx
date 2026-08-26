@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageMetadata } from "@/lib/seo"
 import { Container, PageIntro } from "@/components/container"
 import { DonateForm } from "@/components/donate-form"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
@@ -10,11 +11,12 @@ import {
 } from "@/components/ui/card"
 import { donateAsks, keepItFree, site } from "@/lib/site"
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Donate",
   description:
     "Sponsor a Lipson Foundation session, meal, or season. There is no payment processor on this site.",
-}
+  route: "/donate",
+})
 
 export default function DonatePage() {
   return (
@@ -30,8 +32,9 @@ export default function DonatePage() {
       <Alert className="mb-12 border-gold bg-secondary">
         <AlertTitle>Planning asks — not a payment page</AlertTitle>
         <AlertDescription>
-          We will follow up from {site.email}. Do not send a card number. We
-          will not claim a gift is tax-deductible on this site.
+          We will follow up from {site.email}. Do not send a card number.
+          This page takes no payments and makes no claims about how a gift is
+          treated.
         </AlertDescription>
       </Alert>
 

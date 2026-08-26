@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageMetadata } from "@/lib/seo"
 import Link from "next/link"
 import { NewspaperIcon } from "@phosphor-icons/react/ssr"
 import { Container, PageIntro } from "@/components/container"
@@ -19,10 +20,11 @@ import {
 } from "@/components/ui/empty"
 import { newsItems } from "@/lib/site"
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "News",
   description: "News and updates from Lipson Foundation Inc.",
-}
+  route: "/news",
+})
 
 export default function NewsPage() {
   return (
@@ -58,7 +60,7 @@ export default function NewsPage() {
             <li key={item.title}>
               <Card>
                 <CardHeader>
-                  <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-gold">
+                  <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-gold-ink">
                     {item.date}
                   </p>
                   <CardTitle className="text-2xl">{item.title}</CardTitle>

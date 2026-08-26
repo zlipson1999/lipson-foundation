@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageMetadata } from "@/lib/seo"
 import Link from "next/link"
 import { UsersThreeIcon } from "@phosphor-icons/react/ssr"
 import { Container, PageIntro } from "@/components/container"
@@ -13,18 +14,19 @@ import {
 } from "@/components/ui/empty"
 import { site, staff } from "@/lib/site"
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "The team",
   description:
     "Board and staff of Lipson Foundation Inc. Zachary Lipson, Founder and President; Joshua Weinfeld, CFO; Julia Vance, Secretary.",
-}
+  route: "/team",
+})
 
 export default function TeamPage() {
   return (
     <Container className="pb-20">
       <PageIntro kicker="The team" title="Board and staff.">
         <p>
-          Named officers of {site.legalName}. Day-to-day contact is Zachary
+          Named officers of {site.legalName} Day-to-day contact is Zachary
           Lipson, Founder and President.
         </p>
       </PageIntro>
@@ -54,7 +56,7 @@ export default function TeamPage() {
             {staff.map((person) => (
               <li key={person.name} className="border border-border bg-card p-5">
                 <p className="font-heading text-lg">{person.name}</p>
-                <p className="text-sm text-gold">{person.role}</p>
+                <p className="text-sm text-gold-ink">{person.role}</p>
                 {person.note ? (
                   <p className="mt-2 text-sm text-muted-foreground">{person.note}</p>
                 ) : null}

@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageMetadata } from "@/lib/seo"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRightIcon } from "@phosphor-icons/react/ssr"
@@ -15,10 +16,12 @@ import { keepItFree, promises, site } from "@/lib/site"
 import { WorkPillars } from "@/components/work-pillars"
 import { Commitments } from "@/components/commitments"
 
-export const metadata: Metadata = {
-  title: { absolute: `${site.name} — Community programs. Completely free.` },
+export const metadata: Metadata = pageMetadata({
+  title: `${site.name} — ${site.kicker}`,
   description: site.description,
-}
+  route: "/",
+  absoluteTitle: true,
+})
 
 const destinations = [
   {
@@ -101,9 +104,9 @@ export default function HomePage() {
           </div>
           <Image
             src={asset("/brand/lipson-tag.png")}
-            alt="Lipson Foundation"
-            width={200}
-            height={356}
+            alt=""
+            width={360}
+            height={640}
             className="relative z-10 mx-auto h-56 w-auto sm:h-64 lg:mx-0 lg:h-72"
             unoptimized
             priority
@@ -201,14 +204,14 @@ export default function HomePage() {
         <Container className="grid gap-8 py-16 sm:py-20 lg:grid-cols-[auto_minmax(0,1fr)] lg:items-center">
           <Image
             src={asset("/brand/iyc-tag.png")}
-            alt="In Your Corner dog-tag mark"
-            width={160}
-            height={205}
+            alt=""
+            width={341}
+            height={420}
             className="h-40 w-auto justify-self-center lg:justify-self-start"
             unoptimized
           />
           <div className="flex flex-col gap-4">
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
+            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold-ink">
               Flagship program — the first of many
             </p>
             <h2 className="text-3xl sm:text-4xl">In Your Corner</h2>
