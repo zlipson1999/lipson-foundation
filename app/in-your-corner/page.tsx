@@ -24,13 +24,14 @@ export const metadata: Metadata = pageMetadata({
 export default function InYourCornerPage() {
   return (
     <Container className="pb-20">
-      <div className="flex items-start gap-4">
+      <div className="flex flex-col items-start gap-2 lg:flex-row lg:items-center lg:gap-14">
         <Image
           src={asset("/brand/iyc-tag.png")}
           alt=""
-          width={341}
-          height={420}
-          className="mt-14 h-24 w-auto"
+          width={612}
+          height={640}
+          className="mt-12 h-44 w-auto shrink-0 sm:h-52 lg:order-last lg:mt-0 lg:h-64"
+          preload
           unoptimized
         />
         <PageIntro

@@ -201,15 +201,7 @@ export default function HomePage() {
       </section>
 
       <section>
-        <Container className="grid gap-8 py-16 sm:py-20 lg:grid-cols-[auto_minmax(0,1fr)] lg:items-center">
-          <Image
-            src={asset("/brand/iyc-tag.png")}
-            alt=""
-            width={341}
-            height={420}
-            className="h-40 w-auto justify-self-center lg:justify-self-start"
-            unoptimized
-          />
+        <Container className="flex flex-col gap-8 py-16 sm:py-20">
           <div className="flex flex-col gap-4">
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold-ink">
               Flagship program — the first of many
