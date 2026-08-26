@@ -20,7 +20,11 @@ export function MobileNav() {
     <Sheet>
       <SheetTrigger
         render={
-          <Button variant="outline" size="icon" className="md:hidden" />
+          <Button
+            variant="secondary"
+            size="icon"
+            className="md:hidden"
+          />
         }
       >
         <ListIcon />
@@ -55,9 +59,9 @@ export function MobileNav() {
             className="w-full"
             size="lg"
             nativeButton={false}
-            render={<Link href="/give" />}
+            render={<Link href="/contact" />}
           >
-            Give
+            Write to us
           </Button>
         </div>
       </SheetContent>

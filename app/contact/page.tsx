@@ -5,16 +5,16 @@ import { site } from "@/lib/site"
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Write to Lipson Foundation in West Palm Beach.",
+  description: "Write to Zachary Lipson at Lipson Foundation Inc.",
 }
 
 export default function ContactPage() {
   return (
     <Container className="pb-20">
-      <PageIntro kicker="Contact" title="We read every note.">
+      <PageIntro kicker="Contact" title="Zachary Lipson, Founder and President.">
         <p>
-          Whether you want to give, partner, ask a question, or tell us we have
-          something wrong — start here.
+          Host a hall, refer a young person, come train, or ask a question.
+          Every note is read.
         </p>
       </PageIntro>
 
@@ -24,17 +24,21 @@ export default function ContactPage() {
           <div className="flex flex-col gap-2 border border-border bg-card p-6">
             <h2 className="text-lg">Reach us</h2>
             <p className="text-sm text-muted-foreground">{site.location}</p>
+            <a href={site.phoneHref} className="text-sm hover:text-primary">
+              {site.phone}
+            </a>
             <a
               href={`mailto:${site.email}`}
               className="text-sm hover:text-primary"
             >
               {site.email}
             </a>
+            <p className="text-sm text-muted-foreground">EIN {site.ein}</p>
           </div>
           <p className="text-sm leading-relaxed text-muted-foreground">
-            We are a small team. If you do not hear back within two business
-            days, write again — messages sometimes hide, and we would rather you
-            nudge us than assume we are not listening.
+            If you do not hear back within two business days, write or call
+            again. We would rather you nudge us than assume we are not
+            listening.
           </p>
         </aside>
       </div>

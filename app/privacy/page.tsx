@@ -11,25 +11,22 @@ export default function PrivacyPage() {
     <Container className="pb-20">
       <PageIntro kicker="Privacy" title="How we treat what you share.">
         <p>
-          Lipson Foundation collects only what we need to answer you, complete a
-          gift, or place a volunteer.
+          Lipson Foundation collects only what we need to answer you, place a
+          volunteer, or talk about hosting and meals.
         </p>
       </PageIntro>
       <div className="flex max-w-2xl flex-col gap-6 text-base leading-relaxed text-muted-foreground">
         <p>
-          Forms on this site record your name, email, and the message or gift
-          details you submit. We use that information to follow up. We do not
-          sell it, and we do not run advertising networks on these pages.
+          Forms on this site record your name, email, and the message you
+          submit. We use that information to follow up. We do not sell it, and
+          we do not run advertising networks on these pages.
         </p>
         <p>
-          Gift intents are not charges. We will not ask you to type a full card
-          number into this website until a dedicated, secure processor is in
-          place.
+          There is no payment processor here. We will not ask you to type a
+          card number into this website.
         </p>
         <p>
-          If you want a record removed, write to {site.email} and we will
-          delete what we can under the law and our need to keep donation
-          receipts.
+          If you want a record removed, write to {site.email}.
         </p>
       </div>
     </Container>

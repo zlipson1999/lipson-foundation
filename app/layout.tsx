@@ -24,7 +24,7 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: `${site.name} — ${site.tagline.replace(/\.$/, "")}`,
+    default: `${site.name} — Community programs. Completely free.`,
     template: `%s — ${site.name}`,
   },
   description: site.description,

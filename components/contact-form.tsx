@@ -21,9 +21,10 @@ import { submitContact } from "@/lib/actions"
 
 const topics = [
   { value: "general", label: "General question" },
-  { value: "gift", label: "A gift or donation" },
-  { value: "partnership", label: "Partnership or grant" },
-  { value: "press", label: "Press or speaking" },
+  { value: "host", label: "Host a veterans post" },
+  { value: "veteran", label: "Train or mentor" },
+  { value: "school", label: "Refer a young person" },
+  { value: "support", label: "Support or meals" },
 ]
 
 export function ContactForm() {

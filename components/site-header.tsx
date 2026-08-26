@@ -7,17 +7,17 @@ import { navItems } from "@/lib/site"
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-primary-foreground/10 bg-primary text-primary-foreground">
       <Container className="flex h-16 items-center justify-between gap-4">
         <Link href="/" className="shrink-0" aria-label="Lipson Foundation home">
-          <Logo />
+          <Logo inverse />
         </Link>
         <nav className="hidden items-center gap-6 md:flex" aria-label="Primary">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="text-sm text-primary-foreground/75 transition-colors hover:text-gold"
             >
               {item.label}
             </Link>
@@ -26,11 +26,12 @@ export function SiteHeader() {
         <div className="flex items-center gap-2">
           <Button
             size="lg"
+            variant="secondary"
             className="hidden sm:inline-flex"
             nativeButton={false}
-            render={<Link href="/give" />}
+            render={<Link href="/contact" />}
           >
-            Give
+            Write to us
           </Button>
           <MobileNav />
         </div>

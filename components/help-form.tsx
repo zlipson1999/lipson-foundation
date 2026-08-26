@@ -17,38 +17,40 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Textarea } from "@/components/ui/textarea"
 import { Spinner } from "@/components/ui/spinner"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-import { submitInvolved } from "@/lib/actions"
+import { submitHelp } from "@/lib/actions"
 
 const roles = [
-  { value: "volunteer", label: "Volunteer my time" },
-  { value: "mentor", label: "Mentor a young adult" },
-  { value: "partner", label: "Partner as an organization" },
-  { value: "inkind", label: "Give goods or professional skills" },
+  { value: "host", label: "Host sessions at a veterans post" },
+  { value: "veteran", label: "Train or mentor as a veteran" },
+  { value: "school", label: "Refer a young person" },
+  { value: "career", label: "Lead a Career Exploration Night" },
+  { value: "meal", label: "Help with meals" },
+  { value: "support", label: "Talk about sponsoring a session" },
 ]
 
-export function InvolvedForm() {
+export function HelpForm() {
   const [pending, setPending] = useState(false)
   const [sent, setSent] = useState(false)
 
   async function onSubmit(formData: FormData) {
     setPending(true)
-    const result = await submitInvolved(formData)
+    const result = await submitHelp(formData)
     setPending(false)
     if (!result.ok) {
       toast.error(result.error)
       return
     }
     setSent(true)
-    toast.success("We received your offer to help.")
+    toast.success("We received your note.")
   }
 
   if (sent) {
     return (
       <Alert>
-        <AlertTitle>Glad you are here.</AlertTitle>
+        <AlertTitle>Glad you wrote.</AlertTitle>
         <AlertDescription>
-          We will follow up to match your offer with what the community needs
-          right now. Thank you for rolling up your sleeves with us.
+          We will follow up to match what you can offer with what the program
+          actually needs. Thank you.
         </AlertDescription>
       </Alert>
     )
@@ -72,12 +74,12 @@ export function InvolvedForm() {
           />
         </Field>
         <Field>
-          <FieldLabel htmlFor="organization">Organization (optional)</FieldLabel>
+          <FieldLabel htmlFor="organization">Post, school, or organization (optional)</FieldLabel>
           <Input id="organization" name="organization" autoComplete="organization" />
         </Field>
         <FieldSet>
           <FieldLegend variant="label">How would you like to help?</FieldLegend>
-          <RadioGroup name="role" defaultValue="volunteer" className="gap-2">
+          <RadioGroup name="role" defaultValue="host" className="gap-2">
             {roles.map((role) => (
               <Field key={role.value} orientation="horizontal">
                 <RadioGroupItem value={role.value} id={`role-${role.value}`} />
@@ -95,7 +97,7 @@ export function InvolvedForm() {
             name="message"
             rows={6}
             required
-            placeholder="Skills, availability, who you serve, or what you can offer."
+            placeholder="Space you can offer, a young person you want to refer, a trade you can talk about, or a meal you can cover."
           />
           <FieldDescription>
             A few sentences is enough. We will take it from there.
@@ -108,7 +110,7 @@ export function InvolvedForm() {
         ) : (
           <HandshakeIcon data-icon="inline-start" />
         )}
-        Offer to help
+        Send this
       </Button>
     </form>
   )
