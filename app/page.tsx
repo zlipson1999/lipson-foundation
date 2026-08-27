@@ -12,9 +12,8 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { asset } from "@/lib/assets"
-import { keepItFree, promises, site } from "@/lib/site"
+import { commitments, site } from "@/lib/site"
 import { WorkPillars } from "@/components/work-pillars"
-import { Commitments } from "@/components/commitments"
 import { HeroTexture } from "@/components/hero-texture"
 
 export const metadata: Metadata = pageMetadata({
@@ -78,20 +77,14 @@ export default function HomePage() {
             unoptimized
           />
           <Container className="hero-copy relative grid items-center gap-x-10 gap-y-6 pb-14 pt-8 lg:py-12 xl:py-6 xl:grid-cols-[minmax(0,1fr)_auto]">
-            <div className="flex flex-col gap-7">
+            <div className="flex flex-col items-center gap-7 text-center">
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
               {site.legalName} · EIN {site.ein}
             </p>
-            <h1 className="max-w-none text-4xl leading-[1.08] sm:text-5xl lg:text-[2.25rem] xl:text-[2.125rem] 2xl:text-[2.5rem]">
-              Cost-free community programs for underserved communities across
-              South Florida.
+            <h1 className="max-w-none text-4xl leading-[1.05] text-balance sm:text-5xl lg:text-[3.75rem] xl:text-[3.5rem] 2xl:text-[4.5rem]">
+              Cost-free community programs
             </h1>
-            <p className="max-w-xl text-lg leading-relaxed text-primary-foreground/80">
-              We don&apos;t charge the people we serve. Not a membership fee,
-              not a dollar, not ever. Fitness, wellness, and mentoring are where
-              the work starts — not where it ends.
-            </p>
-            <div className="flex flex-col gap-3 sm:flex-row">
+            <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
               <Button
                 size="lg"
                 className="h-11 bg-gold px-4 text-primary hover:bg-gold/90"
@@ -134,16 +127,18 @@ export default function HomePage() {
             </div>
           </Container>
         </div>
+        {/* The four commitments, as in the design: a label column, then Access,
+            Dignity, Community and Service divided by hairlines. */}
         <div className="relative border-t border-gold/25 bg-primary">
-          <Container className="grid gap-px sm:grid-cols-2 lg:grid-cols-4">
-            {promises.map((item) => (
+          <Container className="grid gap-y-10 py-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-y-0">
+            {commitments.map((item) => (
               <div
                 key={item.title}
-                className="flex flex-col gap-1 border-b border-primary-foreground/10 px-2 py-6 sm:border-b-0"
+                className="flex flex-col items-center gap-2 text-center lg:border-l lg:border-primary-foreground/15 lg:px-8 lg:first:border-l-0"
               >
                 <p className="font-heading text-2xl text-gold">{item.title}</p>
-                <p className="text-xs leading-relaxed text-primary-foreground/70">
-                  {item.body}
+                <p className="max-w-[24ch] text-sm leading-relaxed text-primary-foreground/70">
+                  {item.short}
                 </p>
               </div>
             ))}
@@ -185,11 +180,6 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="border-y bg-secondary">
-        <Container className="py-16 sm:py-20">
-          <Commitments />
-        </Container>
-      </section>
 
       <section>
         <Container className="py-16 sm:py-20">
@@ -262,9 +252,6 @@ export default function HomePage() {
           <h2 className="max-w-2xl text-3xl sm:text-4xl">
             Help keep every program free.
           </h2>
-          <p className="max-w-2xl text-base leading-relaxed text-primary-foreground/80">
-            {keepItFree}
-          </p>
           <p className="max-w-2xl text-base leading-relaxed text-primary-foreground/80">
             Host a space, refer someone, lend a skill, or sponsor a session.
             Every note goes to a person, not a queue.

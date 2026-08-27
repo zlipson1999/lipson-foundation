@@ -16,7 +16,11 @@ export function ProgramsNav() {
     <NavigationMenu className="hidden lg:flex" aria-label="Programs">
       <NavigationMenuList>
         <NavigationMenuItem>
+          {/* The label is a link, not a button: clicking it goes to the
+              programs page, hovering opens the list to pick from directly. */}
           <NavigationMenuTrigger
+            nativeButton={false}
+            render={<Link href="/programs" />}
             className="h-9 bg-transparent px-2 py-1.5 text-[13px] font-normal text-primary-foreground/80 hover:bg-primary-foreground/10 hover:text-gold focus:bg-primary-foreground/10 data-open:bg-primary-foreground/10 data-popup-open:bg-primary-foreground/10"
           >
             Programs
