@@ -64,7 +64,7 @@ export default function HomePage() {
             to the right from lg up, where the copy column's left padding is
             calculated to line up with the centred container everywhere else on
             the page. */}
-        <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,41%)] xl:grid-cols-[minmax(0,1fr)_minmax(0,35%)]">
+        <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,46%)] xl:grid-cols-[minmax(0,1fr)_minmax(0,41%)]">
           {/* The panel is square art, so it keeps its own aspect on small
               screens and fills the column height from lg up. */}
           <div className="relative order-first aspect-square overflow-hidden lg:order-last lg:self-end">
@@ -77,11 +77,17 @@ export default function HomePage() {
               priority
               unoptimized
             />
-            {/* The art's left edge lands mid-teal against the hero navy, which
-                reads as a seam. This carries one into the other. */}
+            {/* The art's edges land mid-teal against the hero navy, which reads
+                as a seam - on the left, and along the top where the square
+                sits lower than the copy beside it. These carry one into the
+                other. */}
             <div
               aria-hidden
               className="absolute inset-y-0 left-0 hidden w-28 bg-gradient-to-r from-primary to-transparent lg:block"
+            />
+            <div
+              aria-hidden
+              className="absolute inset-x-0 top-0 hidden h-20 bg-gradient-to-b from-primary to-transparent lg:block"
             />
           </div>
 
@@ -89,13 +95,17 @@ export default function HomePage() {
             <p className="text-[13px] font-medium uppercase tracking-[0.2em] text-gold sm:text-sm">
               {site.legalName} · EIN {site.ein}
             </p>
-            <h1 className="text-4xl leading-[1.08] text-balance sm:text-5xl lg:text-[2.75rem] xl:text-[3.6rem] 2xl:text-[4rem]">
+            <h1 className="text-4xl leading-[1.08] text-balance sm:text-5xl lg:text-[2.75rem] xl:text-[3.4rem] 2xl:text-[3.75rem]">
               Cost-free community programs for underserved communities across
               South Florida.
             </h1>
-            <p className="max-w-[46ch] text-lg leading-relaxed text-primary-foreground/75">
-              {heroBlurb}
-            </p>
+            <div className="flex max-w-[46ch] flex-col gap-4 text-lg leading-relaxed text-primary-foreground/75">
+              <p>{heroBlurb}</p>
+              <p>
+                {site.location} and surrounding counties. We bring programs
+                into rooms the community already trusts.
+              </p>
+            </div>
             <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
               <Button
                 size="lg"
