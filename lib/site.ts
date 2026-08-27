@@ -215,7 +215,7 @@ export const formPages = [
   {
     href: "/donate",
     title: "Donate",
-    body: "Sponsor a dinner, a session, or a season. No payment is taken on this site. We follow up.",
+    body: "Cover gloves, a session, a season, or the foundation itself. Every program stays cost-free.",
   },
 ] as const
 
@@ -238,11 +238,21 @@ export const givebutter = {
 
 export const isGiving = Boolean(givebutter.account && givebutter.widget)
 
+/**
+ * The giving ladder. Kept in step with the suggested amounts on the Givebutter
+ * form so the two never contradict each other. A set of boxing gloves runs
+ * $30-$40, which is what the two lower tiers are built on.
+ */
 export const donateAsks = [
-  { value: "dinner", title: "$100", body: "Covers dinner for a session" },
-  { value: "session", title: "$250", body: "Sponsors a full session" },
-  { value: "season", title: "$500", body: "Sponsors one young person for a season" },
-  { value: "other", title: "Another amount", body: "We will talk first" },
+  { value: "gloves", title: "$50", body: "A set of boxing gloves for a young person" },
+  { value: "session", title: "$250", body: "A full session — training, gear, and the meal after" },
+  { value: "season", title: "$500", body: "One young person's whole season" },
+  {
+    value: "foundation",
+    title: "$1,000",
+    body: "The foundation itself — programs, paid roles on The Crew, and what we build next",
+  },
+  { value: "other", title: "Another amount", body: "Wherever the need is greatest" },
 ] as const
 
 export const events: {
@@ -277,7 +287,7 @@ export const helpPaths = [
   },
   {
     title: "Supporters",
-    body: "Planning asks: $250 sponsors a full session. $500 sponsors one young person for a season. $100 covers dinner. Use the Donate page to start that conversation. There is no checkout on this site.",
+    body: "Planning asks: $50 covers a set of boxing gloves. $250 sponsors a full session. $500 sponsors one young person for a season. $1,000 goes to the foundation itself. Use the Donate page to give or to start that conversation.",
   },
 ] as const
 

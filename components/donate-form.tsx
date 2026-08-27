@@ -257,7 +257,7 @@ export function DonateForm() {
           id="message"
           name="message"
           rows={4}
-          placeholder="A session you want to sponsor, a meal you can cover, or a question before you give."
+          placeholder="A session you want to sponsor, gear you can cover, or a question before you give."
         />
         <FieldDescription>
           No card details are collected on this site. We will be in touch from{" "}

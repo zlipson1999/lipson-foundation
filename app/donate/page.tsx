@@ -15,8 +15,8 @@ import { donateAsks, isGiving, keepItFree, site } from "@/lib/site"
 export const metadata: Metadata = pageMetadata({
   title: "Donate",
   description: isGiving
-    ? "Give to Lipson Foundation, or sponsor a session, meal, or season. Every program stays cost-free to the people it serves."
-    : "Sponsor a Lipson Foundation session, meal, or season. There is no payment processor on this site.",
+    ? "Give to Lipson Foundation. Cover gloves, a session, a whole season, or the foundation itself \u2014 every program stays cost-free to the people it serves."
+    : "Cover gloves, a session, a whole season, or the foundation itself. There is no payment processor on this site.",
   route: "/donate",
 })
 
@@ -27,12 +27,12 @@ export default function DonatePage() {
         <p>{keepItFree}</p>
         <p className="mt-3">
           {isGiving
-            ? "If you want to underwrite a dinner, a session, or a season, give below."
-            : "If you want to underwrite a dinner, a session, or a season, start here. There is no checkout and no card field on this website."}
+            ? "Cover gloves for a young person, a session, a whole season, or the foundation itself. Every gift keeps a program cost-free."
+            : "Cover gloves for a young person, a session, a whole season, or the foundation itself. There is no checkout and no card field on this website."}
         </p>
       </PageIntro>
 
-      <div className="mb-12 grid gap-4 sm:grid-cols-3">
+      <div className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {donateAsks
           .filter((ask) => ask.value !== "other")
           .map((ask) => (
@@ -54,8 +54,9 @@ export default function DonatePage() {
           </div>
           <div className="flex flex-col gap-6">
             <p className="text-sm leading-relaxed text-muted-foreground">
-              These amounts are planning figures for a session, a meal, or a
-              season for one young person. Any amount goes to the same place.
+              These are planning figures, not a menu. A gift can back one
+              young person or the foundation as a whole — every program it
+              runs, and the paid roles behind them.
             </p>
             <div className="flex flex-col gap-4 border-t pt-6">
               <h2 className="text-xl">Rather talk first?</h2>
@@ -80,9 +81,9 @@ export default function DonatePage() {
               </AlertDescription>
             </Alert>
             <p className="text-sm leading-relaxed text-muted-foreground">
-              These amounts are planning figures for a session, a meal, or a
-              season for one young person. If you have a different number in
-              mind, choose “another amount” and tell us.
+              These are planning figures, not a menu. A gift can back one
+              young person or the foundation as a whole. If you have a
+              different number in mind, choose “another amount” and tell us.
             </p>
           </div>
         </div>

@@ -41,7 +41,9 @@ These are absolute. Do not soften, reinterpret, or "improve" them.
 - **Mentorship is never day-one.** Matches form after weeks of shared training and meals, only when both people are ready. Never imply mentors are assigned at signup.
 - Mission framing: the foundation builds **all** cost-free community programs for underserved communities. Fitness/wellness/mentoring is where the work starts, not the limit. Do not narrow the mission to "a boxing charity."
 - **Four commitments:** Access, Dignity, Community, Service. Keep them as a set of four.
-- Donate pitch is **"keep it free"** — an inquiry form only, no checkout. Planning asks (planning language only, not prices): **$100** covers dinner for a session · **$150** sponsors a full session · **$500** sponsors one young person for a season.
+- Donate pitch is **"keep it cost-free"** — Givebutter hosts the giving form (card entry happens in their iframe; no card field or processor lives in this repo). Planning asks, kept in step with the Givebutter suggested amounts: **$50** a set of boxing gloves for a young person · **$250** a full session (training, gear, and the meal after) · **$500** one young person's whole season · **$1,000** the foundation itself — programs, paid roles on The Crew, and what it builds next. Keep at least one ask foundation-wide: donors give to Lipson Foundation, not only to In Your Corner. Never attach a dollar figure to a Crew wage — no wage is published.
+- **Owner-supplied fact (27 Aug 2026, Zachary Lipson):** a set of boxing gloves runs **$30–$40**. The two lower asks are built on it. Not from the 22 Aug kit.
+- Say **cost-free**, never bare "free", in public copy. "Alcohol-free" is the one exception.
 
 **Brand rules:**
 - Colors: navy `#03162F` · gold `#C6A15A` · paper `#F7F1E4`. **No crimson** anywhere.
