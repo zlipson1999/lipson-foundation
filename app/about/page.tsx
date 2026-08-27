@@ -79,10 +79,6 @@ export default function AboutPage() {
             <div>
               <dt className="text-muted-foreground">Contact</dt>
               <dd>
-                <a href={site.phoneHref} className="hover:text-primary">
-                  {site.phone}
-                </a>
-                <br />
                 <a href={`mailto:${site.email}`} className="hover:text-primary">
                   {site.email}
                 </a>

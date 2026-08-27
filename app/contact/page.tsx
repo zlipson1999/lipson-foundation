@@ -27,9 +27,6 @@ export default function ContactPage() {
           <div className="flex flex-col gap-2 border border-border bg-card p-6">
             <h2 className="text-lg">Reach us</h2>
             <p className="text-sm text-muted-foreground">{site.location}</p>
-            <a href={site.phoneHref} className="text-sm hover:text-primary">
-              {site.phone}
-            </a>
             <a
               href={`mailto:${site.email}`}
               className="text-sm hover:text-primary"
