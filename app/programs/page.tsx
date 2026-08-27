@@ -28,13 +28,13 @@ export default function ProgramsPage() {
     <Container className="pb-20">
       <PageIntro
         kicker="Programs"
-        title="We bring programs to the community. Completely free."
+        title="We bring programs to the community. Completely cost-free."
       >
         <p>
           Lipson Foundation exists to put cost-free community programs in
           underserved communities — different neighborhoods, different rooms,
           different needs. Fitness, wellness, and mentoring are where the work
-          starts, not where it ends. Every program is free to the people it
+          starts, not where it ends. Every program is cost-free to the people it
           serves. In Your Corner is the named flagship. More will be listed
           here as they launch.
         </p>

@@ -21,7 +21,7 @@ export const metadata: Metadata = pageMetadata({
 export default function DonatePage() {
   return (
     <Container className="pb-20">
-      <PageIntro kicker="Donate" title="Keep it free.">
+      <PageIntro kicker="Donate" title="Keep it cost-free.">
         <p>{keepItFree}</p>
         <p className="mt-3">
           If you want to underwrite a dinner, a session, or a season, start

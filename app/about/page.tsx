@@ -29,7 +29,7 @@ export default function AboutPage() {
     <Container className="pb-20">
       <PageIntro
         kicker="About us"
-        title="Lipson Foundation is a South Florida nonprofit with a simple rule: free."
+        title="Lipson Foundation is a South Florida nonprofit with a simple rule: cost-free."
       >
         <p>
           {site.legalName} (EIN {site.ein}) builds cost-free community programs
@@ -49,7 +49,7 @@ export default function AboutPage() {
           </p>
           <p>
             Cost is the barrier that quietly decides who gets a shot. We remove
-            it entirely. Every Lipson Foundation program is completely free to
+            it entirely. Every Lipson Foundation program is completely cost-free to
             the people it serves — no memberships, no fees, ever.
           </p>
           <p>

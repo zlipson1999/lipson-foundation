@@ -14,7 +14,7 @@ export function SiteFooter() {
             <p className="text-sm leading-relaxed text-primary-foreground/75">
               {site.legalName} builds cost-free community programs for
               underserved communities. Fitness, wellness, and mentoring are
-              where the work starts. Every program is completely free — no
+              where the work starts. Every program is completely cost-free — no
               memberships, no fees, ever.
             </p>
           </div>
@@ -65,7 +65,7 @@ export function SiteFooter() {
           <p>
             © {new Date().getFullYear()} {site.legalName} All rights reserved.
           </p>
-          <p>Community programs. Completely free.</p>
+          <p>{site.kicker}</p>
         </div>
       </Container>
     </footer>

@@ -102,7 +102,7 @@ export default function HomePage() {
                 nativeButton={false}
                 render={<Link href="/donate" />}
               >
-                Donate — keep it free
+                Donate — keep it cost-free
                 <HeartIcon data-icon="inline-end" />
               </Button>
               <Button
@@ -248,7 +248,7 @@ export default function HomePage() {
       <section className="border-t bg-primary text-primary-foreground">
         <Container className="flex flex-col gap-6 py-16 sm:py-20">
           <h2 className="max-w-2xl text-3xl sm:text-4xl">
-            Help keep every program free.
+            Help keep every program cost-free.
           </h2>
           <p className="max-w-2xl text-base leading-relaxed text-primary-foreground/80">
             Host a space, refer someone, lend a skill, or sponsor a session.
