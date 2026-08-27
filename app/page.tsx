@@ -110,7 +110,7 @@ export default function HomePage() {
         <div className="border-t border-gold/25">
           <Container className="flex flex-col gap-5 py-8 sm:py-10">
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
-              Our commitment
+              UR COMMITMENT
             </p>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
               {commitments.map((item) => (
