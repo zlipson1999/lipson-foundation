@@ -40,16 +40,16 @@ export const promises = [
     body: "Any person. Any program.",
   },
   {
-    title: "Nothing to buy",
-    body: "Walk in. Gloves, wraps, meals, and transport are already in the room.",
+    title: "Brought to the room",
+    body: "We bring programs into posts, schools, and shared halls — rooms neighborhoods already trust.",
   },
   {
-    title: "Not a gym membership",
-    body: "Programs run in rooms neighborhoods already trust — veteran posts, schools, shared halls.",
+    title: "Not one category",
+    body: "Community programs of every kind. Fitness, wellness, and mentoring are where the work starts.",
   },
   {
-    title: "Not only boxing",
-    body: "The mandate is cost-free community programs. Fitness, wellness, and mentoring are where the work starts.",
+    title: "No membership",
+    body: "Participants are not charged a membership.",
   },
 ] as const
 
