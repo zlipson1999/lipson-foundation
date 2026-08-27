@@ -63,15 +63,12 @@ export default function HomePage() {
         <Container className="relative grid gap-10 py-16 sm:py-24 lg:grid-cols-[minmax(0,1.25fr)_auto] lg:items-center">
           <div className="flex flex-col gap-8">
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
-              {site.legalName} · EIN {site.ein} · {site.location}
+              {site.legalName} · EIN {site.ein}
             </p>
             <h1 className="max-w-3xl text-4xl leading-[1.1] sm:text-6xl">
-              Lipson Foundation builds cost-free community programs of every
-              kind.
+              Cost-free community programs for underserved communities across
+              South Florida.
             </h1>
-            <p className="max-w-2xl text-lg leading-relaxed text-primary-foreground/80">
-              A South Florida nonprofit serving underserved communities.
-            </p>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Button
                 size="lg"
