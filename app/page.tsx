@@ -220,7 +220,7 @@ export default function HomePage() {
                   alt=""
                   width={612}
                   height={640}
-                  className="h-28 w-auto shrink-0 self-start sm:h-32 lg:h-36"
+                  className="h-28 w-auto shrink-0 self-center sm:h-32 sm:self-start lg:h-36"
                   unoptimized
                 />
                 <div className="flex flex-col items-start gap-3">
