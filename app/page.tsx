@@ -163,7 +163,7 @@ export default function HomePage() {
           list grows from lib/site.ts as programs launch, and no placeholder
           stands in for one that has not. */}
       <section>
-        <Container className="flex flex-col gap-8 py-16 sm:py-20">
+        <Container className="flex flex-col gap-8 py-12 sm:py-20">
           <div className="flex flex-col gap-3">
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold-ink">
               What we run
@@ -185,7 +185,7 @@ export default function HomePage() {
                   alt=""
                   width={612}
                   height={640}
-                  className="h-24 w-auto shrink-0 sm:h-28"
+                  className="h-28 w-auto shrink-0 self-start sm:h-32 lg:h-36"
                   unoptimized
                 />
                 <div className="flex flex-col items-start gap-3">
@@ -210,13 +210,13 @@ export default function HomePage() {
 
 
       <section>
-        <Container className="py-16 sm:py-20">
+        <Container className="py-12 sm:py-20">
           <WorkPillars heading="All cost-free community programs." />
         </Container>
       </section>
 
       <section className="border-y bg-secondary">
-        <Container className="flex flex-col gap-8 py-16 sm:py-20">
+        <Container className="flex flex-col gap-8 py-12 sm:py-20">
           <div className="flex max-w-2xl flex-col gap-3">
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
               Explore
@@ -241,7 +241,7 @@ export default function HomePage() {
       </section>
 
       <section className="border-t bg-primary text-primary-foreground">
-        <Container className="flex flex-col gap-6 py-16 sm:py-20">
+        <Container className="flex flex-col gap-6 py-12 sm:py-20">
           <h2 className="max-w-2xl text-3xl sm:text-4xl">
             Help keep every program cost-free.
           </h2>
