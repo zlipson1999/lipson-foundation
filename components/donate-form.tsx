@@ -47,8 +47,7 @@ export function DonateForm() {
     return sent === "email" ? (
       <FormConfirmation title="Your email draft is open.">
         Nothing has been sent yet. Send the draft that just opened and someone
-        from Lipson Foundation will be in touch to complete your gift. Never
-        put a card number in an email.
+        from Lipson Foundation will be in touch to complete your gift.
       </FormConfirmation>
     ) : (
       <FormConfirmation title="Thank you. We have your details.">
@@ -60,43 +59,48 @@ export function DonateForm() {
 
   return (
     <form action={onSubmit} className="flex flex-col gap-8">
-      <FieldSet>
-        <FieldLegend>Donation information</FieldLegend>
-        <FieldGroup>
-          <FieldSet>
-            <FieldLegend variant="label">Amount</FieldLegend>
-            <RadioGroup
-              name="ask"
-              value={ask}
-              onValueChange={(value) => setAsk(String(value))}
-              className="gap-2"
-            >
-              {donateAsks.map((item) => (
-                <Field key={item.value} orientation="horizontal">
-                  <RadioGroupItem value={item.value} id={`ask-${item.value}`} />
-                  <FieldLabel
-                    htmlFor={`ask-${item.value}`}
-                    className="font-normal"
-                  >
-                    {item.title}
-                  </FieldLabel>
-                </Field>
-              ))}
-            </RadioGroup>
-          </FieldSet>
-
-          {ask === "other" ? (
-            <Field>
-              <FieldLabel htmlFor="amount">Amount you have in mind</FieldLabel>
-              <Input
-                id="amount"
-                name="amount"
-                inputMode="decimal"
-                placeholder="$"
+      {/* The amounts lead the page as buttons. Native radios do the work -
+          one choice, arrow-key navigable, submitted with the form - with the
+          input visually hidden and its label styled as the button. */}
+      <fieldset className="flex flex-col gap-4">
+        <legend className="sr-only">Amount</legend>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-5">
+          {donateAsks.map((item) => (
+            <div key={item.value}>
+              <input
+                type="radio"
+                id={`ask-${item.value}`}
+                name="ask"
+                value={item.value}
+                checked={ask === item.value}
+                onChange={() => setAsk(item.value)}
+                className="peer sr-only"
               />
-            </Field>
-          ) : null}
+              <label
+                htmlFor={`ask-${item.value}`}
+                className="flex h-16 cursor-pointer items-center justify-center rounded-[0.375rem] border border-border bg-card font-heading text-xl transition-colors hover:border-gold peer-checked:border-gold peer-checked:bg-gold peer-checked:text-primary peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-gold-ink"
+              >
+                {item.title}
+              </label>
+            </div>
+          ))}
+        </div>
 
+        {ask === "other" ? (
+          <Field>
+            <FieldLabel htmlFor="amount">Amount you have in mind</FieldLabel>
+            <Input
+              id="amount"
+              name="amount"
+              inputMode="decimal"
+              placeholder="$"
+            />
+          </Field>
+        ) : null}
+      </fieldset>
+
+      <FieldSet>
+        <FieldGroup>
           <FieldSet>
             <FieldLegend variant="label">Type of donation</FieldLegend>
             <RadioGroup name="frequency" defaultValue="one-time" className="gap-2">
@@ -259,8 +263,7 @@ export function DonateForm() {
           placeholder="Anything you would like us to know, or a question before you give."
         />
         <FieldDescription>
-          No card details are collected on this site. We will be in touch from{" "}
-          {site.email} to complete your gift.
+          We will be in touch from {site.email} to complete your gift.
         </FieldDescription>
       </Field>
 

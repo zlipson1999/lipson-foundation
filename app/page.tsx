@@ -52,7 +52,7 @@ const destinations = [
   {
     href: "/donate",
     title: "Donate",
-    body: "Sponsor a dinner, a session, or a season. No checkout on this site.",
+    body: "Every gift keeps a program cost-free to the people it serves.",
   },
 ] as const
 
