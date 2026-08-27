@@ -73,11 +73,8 @@ export default function HomePage() {
               The type steps down rather than any item dropping out: measured
               at 1024, the four items need 886px of the 960 available. */}
           <Container className="flex items-center justify-between gap-4 py-3.5 text-[11px] font-medium tracking-[0.1em] whitespace-nowrap text-primary-foreground/60 uppercase xl:gap-6 xl:text-[12px] xl:tracking-[0.16em]">
-            <span className="flex items-center gap-3 xl:gap-5">
-              <span className="text-gold">EIN {site.ein}</span>
-              <span aria-hidden className="text-gold/40">/</span>
-              <span>{site.location}</span>
-            </span>
+            <span className="text-gold">EIN {site.ein}</span>
+            <span>{site.location}</span>
             <span className="flex items-center gap-3 xl:gap-5">
               <a href={site.phoneHref} className="hover:text-gold">
                 {site.phone}
