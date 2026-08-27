@@ -26,8 +26,8 @@ export default function PrivacyPage() {
           we do not run advertising networks on these pages.
         </p>
         <p>
-          There is no payment processor here. We will not ask you to type a
-          card number into this website.
+          Payments are handled by our giving provider, not by this site. We
+          never see or store your card details.
         </p>
         <p>
           If you want a record removed, write to {site.email}.

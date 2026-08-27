@@ -26,7 +26,7 @@ export default function FormsPage() {
       <PageIntro kicker="Forms" title="Write to us. We read every note.">
         <p>
           Use the form that matches what you need. Submissions stay with Lipson
-          Foundation. We do not sell them, and we do not take card numbers.
+          Foundation. We do not sell them.
         </p>
       </PageIntro>
 

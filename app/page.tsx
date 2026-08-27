@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { pageMetadata } from "@/lib/seo"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRightIcon, HeartIcon } from "@phosphor-icons/react/ssr"
+import { ArrowRightIcon } from "@phosphor-icons/react/ssr"
 import { Container } from "@/components/container"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -52,7 +52,7 @@ const destinations = [
   {
     href: "/donate",
     title: "Donate",
-    body: "Sponsor a dinner, a session, or a season. No checkout on this site.",
+    body: "Every gift keeps a program cost-free to the people it serves.",
   },
 ] as const
 
@@ -104,7 +104,6 @@ export default function HomePage() {
                 render={<Link href="/donate" />}
               >
                 Donate
-                <HeartIcon data-icon="inline-end" />
               </Button>
               <Button
                 size="lg"
@@ -162,7 +161,7 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl">Our programs</h2>
             <p className="max-w-2xl text-base leading-relaxed text-muted-foreground">
               Every one is cost-free to the people it serves. New programs are
-              listed as they launch — we will not invent a catalog.
+              listed as they launch.
             </p>
           </div>
           <ul className="flex flex-col gap-6">

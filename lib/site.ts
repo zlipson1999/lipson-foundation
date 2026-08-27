@@ -226,7 +226,7 @@ export const formPages = [
   {
     href: "/donate",
     title: "Donate",
-    body: "Sponsor a dinner, a session, or a season. No payment is taken on this site. We follow up.",
+    body: "Give what you can. Every gift keeps a program cost-free.",
   },
 ] as const
 
@@ -249,11 +249,17 @@ export const givebutter = {
 
 export const isGiving = Boolean(givebutter.account && givebutter.widget)
 
+/**
+ * Amounts only. Each one used to carry a line saying what it covered, which
+ * priced things the foundation has no budget for yet; the amounts stand on
+ * their own as something to pick.
+ */
 export const donateAsks = [
-  { value: "dinner", title: "$100", body: "Covers dinner for a session" },
-  { value: "session", title: "$250", body: "Sponsors a full session" },
-  { value: "season", title: "$500", body: "Sponsors one young person for a season" },
-  { value: "other", title: "Another amount", body: "We will talk first" },
+  { value: "50", title: "$50" },
+  { value: "100", title: "$100" },
+  { value: "250", title: "$250" },
+  { value: "500", title: "$500" },
+  { value: "other", title: "Other" },
 ] as const
 
 export const events: {
@@ -288,7 +294,7 @@ export const helpPaths = [
   },
   {
     title: "Supporters",
-    body: "Planning asks: $250 sponsors a full session. $500 sponsors one young person for a season. $100 covers dinner. Use the Donate page to start that conversation. There is no checkout on this site.",
+    body: "Every gift keeps a program cost-free to the people it serves. Use the Donate page to give, or to start that conversation.",
   },
 ] as const
 
@@ -358,7 +364,7 @@ export const faqs = [
   {
     question: "Do you only run fitness programs?",
     answer:
-      "No. The mandate is cost-free community programs, full stop. Fitness, wellness, and mentoring are where the work starts, because that is what the flagship needed first. When a community needs something different, that becomes a program too. More named programs will be listed as they launch — we will not invent a catalog.",
+      "No. The mandate is cost-free community programs, full stop. Fitness, wellness, and mentoring are where the work starts, because that is what the flagship needed first. When a community needs something different, that becomes a program too. More named programs will be listed as they launch.",
   },
   {
     question: "Who do you serve?",
@@ -378,7 +384,7 @@ export const faqs = [
   {
     question: "Can I donate online?",
     answer:
-      "There is a Donate page, but no payment processor. If you want to sponsor a session, a meal, or a season for a young person, use that form and we will follow up.",
+      "Yes — use the Donate page. If you would rather talk first, or give in kind, the same page has a form and we will follow up.",
   },
   {
     question: "How do I reach you?",

@@ -44,15 +44,14 @@ export default function HelpPage() {
       </div>
 
       <Alert className="mb-12">
-        <AlertTitle>Planning asks — not a checkout</AlertTitle>
+        <AlertTitle>Giving</AlertTitle>
         <AlertDescription>
-          $100 covers dinner for a session. $250 sponsors a full session. $500
-          sponsors one young person for a season. Use the{" "}
+          Every gift keeps a program cost-free to the people it serves. Use
+          the{" "}
           <Link href="/donate" className="underline underline-offset-4">
             Donate
           </Link>{" "}
-          page to start that conversation. There is no payment processor on this
-          site.
+          page to give, or to start that conversation.
         </AlertDescription>
       </Alert>
 
