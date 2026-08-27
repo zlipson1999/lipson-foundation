@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { pageMetadata } from "@/lib/seo"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRightIcon, HeartIcon } from "@phosphor-icons/react/ssr"
+import { ArrowRightIcon } from "@phosphor-icons/react/ssr"
 import { Container } from "@/components/container"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -104,7 +104,6 @@ export default function HomePage() {
                 render={<Link href="/donate" />}
               >
                 Donate
-                <HeartIcon data-icon="inline-end" />
               </Button>
               <Button
                 size="lg"

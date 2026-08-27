@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { toast } from "sonner"
-import { HeartIcon } from "@phosphor-icons/react"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import {
@@ -267,11 +266,7 @@ export function DonateForm() {
 
       {error ? <FormError message={error} /> : null}
       <Button type="submit" size="lg" disabled={pending}>
-        {pending ? (
-          <Spinner data-icon="inline-start" />
-        ) : (
-          <HeartIcon data-icon="inline-start" />
-        )}
+        {pending ? <Spinner data-icon="inline-start" /> : null}
         Send this
       </Button>
     </form>
