@@ -219,6 +219,25 @@ export const formPages = [
   },
 ] as const
 
+/**
+ * Givebutter hosts the giving form. The widget renders card entry inside an
+ * iframe served from their domain, so no card number ever reaches this site's
+ * code and the site stays out of PCI scope.
+ *
+ * Both values are public identifiers - they appear in the page source either
+ * way. Find them in Givebutter under the campaign, Share, then Embed: the
+ * script tag carries `acct=` and the element carries the widget id.
+ *
+ * While these are empty the donate page falls back to the inquiry form, so
+ * nothing about giving is claimed before it actually works.
+ */
+export const givebutter = {
+  account: "",
+  widget: "",
+} as const
+
+export const isGiving = Boolean(givebutter.account && givebutter.widget)
+
 export const donateAsks = [
   { value: "dinner", title: "$100", body: "Covers dinner for a session" },
   { value: "session", title: "$250", body: "Sponsors a full session" },
