@@ -16,7 +16,6 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { faqs, site, whoWeServe } from "@/lib/site"
-import { WorkPillars } from "@/components/work-pillars"
 
 export const metadata: Metadata = pageMetadata({
   title: "About us",
@@ -114,10 +113,6 @@ export default function AboutPage() {
             </Card>
           ))}
         </div>
-      </section>
-
-      <section className="mt-16">
-        <WorkPillars heading="All cost-free community programs. One rule: free." />
       </section>
 
       <section className="mt-16 flex flex-col gap-6">
