@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { pageMetadata } from "@/lib/seo"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRightIcon } from "@phosphor-icons/react/ssr"
+import { ArrowRightIcon, HeartIcon } from "@phosphor-icons/react/ssr"
 import { Container } from "@/components/container"
 import { Button } from "@/components/ui/button"
 import {
@@ -15,6 +15,7 @@ import { asset } from "@/lib/assets"
 import { keepItFree, promises, site } from "@/lib/site"
 import { WorkPillars } from "@/components/work-pillars"
 import { Commitments } from "@/components/commitments"
+import { HeroTexture } from "@/components/hero-texture"
 
 export const metadata: Metadata = pageMetadata({
   title: `${site.name} — ${site.kicker}`,
@@ -66,6 +67,7 @@ export default function HomePage() {
             The copy's left padding steps down as the centred container's own
             margins grow, keeping the text clear of him at every width. */}
         <div className="relative">
+          <HeroTexture />
           <Image
             src={asset("/brand/founder.webp")}
             alt="Zachary Lipson, Founder and President"
@@ -97,7 +99,7 @@ export default function HomePage() {
                 render={<Link href="/donate" />}
               >
                 Donate — keep it free
-                <ArrowRightIcon data-icon="inline-end" />
+                <HeartIcon data-icon="inline-end" />
               </Button>
               <Button
                 size="lg"

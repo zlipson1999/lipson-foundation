@@ -3,6 +3,7 @@ import { Container } from "@/components/container"
 import { Logo } from "@/components/logo"
 import { MobileNav } from "@/components/mobile-nav"
 import { ProgramsNav } from "@/components/programs-nav"
+import { HeartIcon } from "@phosphor-icons/react/ssr"
 import { Button } from "@/components/ui/button"
 import { navItems, site } from "@/lib/site"
 
@@ -22,8 +23,15 @@ export function SiteHeader() {
       </div>
       <div className="border-b border-primary-foreground/10">
         <Container className="flex h-[4.75rem] items-center justify-between gap-3">
-          <Link href="/" className="shrink-0" aria-label="Lipson Foundation home">
-            <Logo inverse />
+          <Link
+            href="/"
+            className="flex shrink-0 items-center gap-3"
+            aria-label={`${site.legalName} — home`}
+          >
+            <Logo inverse size="sm" />
+            <span className="hidden font-heading text-lg tracking-tight sm:inline">
+              {site.legalName}
+            </span>
           </Link>
           <nav className="hidden items-center lg:flex" aria-label="Primary">
             {navItems.map((item) => {
@@ -48,6 +56,7 @@ export function SiteHeader() {
               render={<Link href="/donate" />}
             >
               Donate
+              <HeartIcon data-icon="inline-end" />
             </Button>
             <MobileNav />
           </div>

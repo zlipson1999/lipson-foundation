@@ -8,9 +8,9 @@ export function Logo({
 }: {
   className?: string
   inverse?: boolean
-  size?: "default" | "lg"
+  size?: "sm" | "default" | "lg"
 }) {
-  const height = size === "lg" ? 72 : 56
+  const height = size === "lg" ? 72 : size === "sm" ? 44 : 56
   const width = Math.round(height * (360 / 640))
   return (
     <span className={cn("inline-flex items-center", className)}>
@@ -19,7 +19,10 @@ export function Logo({
         alt="Lipson Foundation"
         width={width}
         height={height}
-        className={cn("w-auto", size === "lg" ? "h-[4.5rem]" : "h-14")}
+        className={cn(
+          "w-auto",
+          size === "lg" ? "h-[4.5rem]" : size === "sm" ? "h-11" : "h-14"
+        )}
         unoptimized
         priority
       />
