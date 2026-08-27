@@ -12,7 +12,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { asset } from "@/lib/assets"
-import { keepItFree, promises, site } from "@/lib/site"
+import { promises, site } from "@/lib/site"
 import { WorkPillars } from "@/components/work-pillars"
 import { Commitments } from "@/components/commitments"
 
@@ -27,7 +27,7 @@ const destinations = [
   {
     href: "/about",
     title: "About us",
-    body: "Who Lipson Foundation is, who we serve, and why every program is free.",
+    body: "Who Lipson Foundation is, who we serve, and why the work exists.",
   },
   {
     href: "/team",
@@ -37,7 +37,7 @@ const destinations = [
   {
     href: "/programs",
     title: "Programs",
-    body: "Every cost-free program we bring to communities, starting with the flagship.",
+    body: "The programs we bring to communities, starting with the flagship.",
   },
   {
     href: "/events",
@@ -66,13 +66,9 @@ export default function HomePage() {
               {site.legalName} · EIN {site.ein}
             </p>
             <h1 className="max-w-3xl text-4xl leading-[1.1] sm:text-6xl">
-              Advancing community well-being through free, inclusive programs.
+              Cost-free community programs for underserved communities across
+              South Florida.
             </h1>
-            <p className="max-w-2xl text-lg leading-relaxed text-primary-foreground/80">
-              Lipson Foundation is a South Florida nonprofit building cost-free
-              community programs of every kind. We don&apos;t charge the people
-              we serve. Not a membership fee, not a dollar, not ever.
-            </p>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Button
                 size="lg"
@@ -80,7 +76,7 @@ export default function HomePage() {
                 nativeButton={false}
                 render={<Link href="/donate" />}
               >
-                Donate — keep it free
+                Donate
                 <ArrowRightIcon data-icon="inline-end" />
               </Button>
               <Button
@@ -141,8 +137,7 @@ export default function HomePage() {
             <p className="text-base leading-relaxed text-muted-foreground">
               {site.legalName} serves underserved communities across{" "}
               {site.location} and surrounding counties. The work is not one
-              category and not one program — it is every community program that
-              a fee, a membership, or an equipment list has kept out of reach.
+              category and not one program.
             </p>
             <p className="text-base leading-relaxed text-muted-foreground">
               Read who we are, meet the team, then see the programs we bring to
@@ -156,9 +151,6 @@ export default function HomePage() {
             <p className="text-sm">{site.legalName}</p>
             <p className="text-sm text-muted-foreground">EIN {site.ein}</p>
             <p className="text-sm text-muted-foreground">{site.location}</p>
-            <p className="text-sm text-muted-foreground">
-              Every program is completely free to the people it serves.
-            </p>
           </aside>
         </Container>
       </section>
@@ -201,26 +193,17 @@ export default function HomePage() {
       </section>
 
       <section>
-        <Container className="grid gap-8 py-16 sm:py-20 lg:grid-cols-[auto_minmax(0,1fr)] lg:items-center">
-          <Image
-            src={asset("/brand/iyc-tag.png")}
-            alt=""
-            width={341}
-            height={420}
-            className="h-40 w-auto justify-self-center lg:justify-self-start"
-            unoptimized
-          />
+        <Container className="flex flex-col gap-8 py-16 sm:py-20">
           <div className="flex flex-col gap-4">
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold-ink">
               Flagship program — the first of many
             </p>
             <h2 className="text-3xl sm:text-4xl">In Your Corner</h2>
             <p className="max-w-2xl text-base leading-relaxed text-muted-foreground">
-              Free boxing and mentorship for youth ages 12–17 and veterans.
-              It is the named flagship and the proof of the model: bring
-              everything a program needs into a room the community trusts, and
-              charge no one. New programs will be listed as they launch — we
-              will not invent a catalog.
+              Boxing and mentorship for youth ages 12–17 and veterans. It is
+              the named flagship and the proof of the model: bring everything a
+              program needs into a room the community trusts. New programs
+              will be listed as they launch — we will not invent a catalog.
             </p>
             <p className="max-w-2xl text-base leading-relaxed">
               This is what it means to have someone in your corner.
@@ -248,9 +231,6 @@ export default function HomePage() {
           <h2 className="max-w-2xl text-3xl sm:text-4xl">
             Help keep every program free.
           </h2>
-          <p className="max-w-2xl text-base leading-relaxed text-primary-foreground/80">
-            {keepItFree}
-          </p>
           <p className="max-w-2xl text-base leading-relaxed text-primary-foreground/80">
             Host a space, refer someone, lend a skill, or sponsor a session.
             Every note goes to a person, not a queue.
