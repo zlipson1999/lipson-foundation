@@ -36,20 +36,20 @@ export const commitments = [
 
 export const promises = [
   {
-    title: "$0 to participate",
-    body: "Any person. Any program.",
+    title: "Lines: 0",
+    body: "What any participant pays to join, in any program, ever",
   },
   {
-    title: "Brought to the room",
-    body: "We bring programs into posts, schools, and shared halls — rooms neighborhoods already trust.",
+    title: "Whole-person",
+    body: "From your first step to your next chapter, we’re with you the whole way",
   },
   {
-    title: "Not one category",
-    body: "Community programs of every kind. Fitness, wellness, and mentoring are where the work starts.",
+    title: "Community-first",
+    body: "A team with one mission: showing up for the community that needs it",
   },
   {
-    title: "No membership",
-    body: "Participants are not charged a membership.",
+    title: "Everyone belongs",
+    body: "No gatekeeping, no judgment, just a place that’s genuinely yours",
   },
 ] as const
 
