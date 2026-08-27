@@ -58,8 +58,8 @@ const destinations = [
 
 export default function HomePage() {
   return (
-    <>
-      <section className="border-b bg-primary text-primary-foreground">
+    <div className="flex flex-col">
+      <section className="order-1 bg-primary text-primary-foreground">
         {/* Intro. One grid: the artwork panel leads on small screens and moves
             to the right from lg up, where the copy column's left padding is
             calculated to line up with the centred container everywhere else on
@@ -164,6 +164,14 @@ export default function HomePage() {
           </div>
         </div>
 
+      </section>
+
+      {/* Its own section so the order can differ by breakpoint: the four sit
+          under the hero on desktop, and after the programs on phones, where
+          the hero already fills the screen and the concrete thing should come
+          before the abstract one. Same navy and the same bottom border the
+          hero used to carry, so desktop is unchanged. */}
+      <section className="order-3 border-b bg-primary text-primary-foreground lg:order-2">
         {/* Access, Dignity, Community and Service directly under the intro.
             This is now the only place the four appear; /about links here
             rather than repeating them. */}
@@ -189,7 +197,7 @@ export default function HomePage() {
       {/* The programs, straight after the commitments. One entry today; the
           list grows from lib/site.ts as programs launch, and no placeholder
           stands in for one that has not. */}
-      <section>
+      <section className="order-2 lg:order-3">
         <Container className="flex flex-col gap-8 py-12 sm:py-20">
           <div className="flex flex-col gap-3">
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold-ink">
@@ -236,13 +244,13 @@ export default function HomePage() {
       </section>
 
 
-      <section>
+      <section className="order-4">
         <Container className="py-12 sm:py-20">
           <WorkPillars heading="All cost-free community programs." />
         </Container>
       </section>
 
-      <section className="border-y bg-secondary">
+      <section className="order-5 border-y bg-secondary">
         <Container className="flex flex-col gap-8 py-12 sm:py-20">
           <div className="flex max-w-2xl flex-col gap-3">
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
@@ -267,7 +275,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="border-t bg-primary text-primary-foreground">
+      <section className="order-6 border-t bg-primary text-primary-foreground">
         <Container className="flex flex-col gap-6 py-12 sm:py-20">
           <h2 className="max-w-2xl text-3xl sm:text-4xl">
             Help keep every program cost-free.
@@ -305,6 +313,6 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
-    </>
+    </div>
   )
 }
