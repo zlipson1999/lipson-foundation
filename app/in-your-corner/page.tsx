@@ -24,26 +24,28 @@ export const metadata: Metadata = pageMetadata({
 export default function InYourCornerPage() {
   return (
     <Container className="pb-20">
-      <div className="flex flex-col items-start gap-2 lg:flex-row lg:items-center lg:gap-14">
+      <div className="flex flex-col items-center gap-2 xl:flex-row xl:items-center xl:gap-12">
         <Image
           src={asset("/brand/iyc-tag.png")}
           alt=""
           width={612}
           height={640}
-          className="mt-12 h-44 w-auto shrink-0 sm:h-52 lg:order-last lg:mt-0 lg:h-64"
-          priority
+          className="mt-10 h-auto w-full max-w-[18rem] shrink-0 object-contain sm:max-w-[22rem] md:max-w-[26rem] xl:order-last xl:mt-0 xl:w-[20rem] xl:max-w-[20rem]"
+          preload
           unoptimized
         />
-        <PageIntro
-          kicker="A program of Lipson Foundation Inc."
-          title="In Your Corner"
-        >
-          <p>
-            Free boxing and mentorship that brings youth ages 12 to 17 and
-            military veterans together to train. There is no cost to any
-            participant, ever.
-          </p>
-        </PageIntro>
+        <div className="min-w-0 w-full flex-1">
+          <PageIntro
+            kicker="A program of Lipson Foundation Inc."
+            title="In Your Corner"
+          >
+            <p>
+              Free boxing and mentorship that brings youth ages 12 to 17 and
+              military veterans together to train. There is no cost to any
+              participant, ever.
+            </p>
+          </PageIntro>
+        </div>
       </div>
 
       <div className="flex max-w-3xl flex-col gap-6 text-base leading-relaxed text-muted-foreground">
@@ -127,17 +129,20 @@ export default function InYourCornerPage() {
         </ul>
       </section>
 
-      <section className="mt-16 grid gap-4 md:grid-cols-3">
-        {groups.map((group) => (
-          <Card key={group.name} id={group.slug} className="scroll-mt-28">
-            <CardHeader>
-              <CardTitle className="text-lg">{group.name}</CardTitle>
-              <CardDescription className="text-sm leading-relaxed">
-                {group.body}
-              </CardDescription>
-            </CardHeader>
-          </Card>
-        ))}
+      <section className="mt-16 flex flex-col gap-6">
+        <h2 className="text-3xl">Inside this program</h2>
+        <div className="grid gap-4 md:grid-cols-3">
+          {groups.map((group) => (
+            <Card key={group.name} id={group.slug} className="scroll-mt-28">
+              <CardHeader>
+                <CardTitle className="text-lg">{group.name}</CardTitle>
+                <CardDescription className="text-sm leading-relaxed">
+                  {group.body}
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
       </section>
 
       <section className="mt-16 flex max-w-3xl flex-col gap-4">

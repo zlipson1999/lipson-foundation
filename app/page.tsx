@@ -26,7 +26,7 @@ const destinations = [
   {
     href: "/about",
     title: "About us",
-    body: "Who Lipson Foundation is, who we serve, and why every program is free.",
+    body: "Who Lipson Foundation is, who we serve, and why the work exists.",
   },
   {
     href: "/team",
@@ -36,7 +36,7 @@ const destinations = [
   {
     href: "/programs",
     title: "Programs",
-    body: "Every cost-free program we bring to communities, starting with the flagship.",
+    body: "The programs we bring to communities, starting with the flagship.",
   },
   {
     href: "/events",
@@ -154,8 +154,7 @@ export default function HomePage() {
             <p className="text-base leading-relaxed text-muted-foreground">
               {site.legalName} serves underserved communities across{" "}
               {site.location} and surrounding counties. The work is not one
-              category and not one program — it is every community program that
-              a fee, a membership, or an equipment list has kept out of reach.
+              category and not one program.
             </p>
             <p className="text-base leading-relaxed text-muted-foreground">
               Read who we are, meet the team, then see the programs we bring to
@@ -169,9 +168,6 @@ export default function HomePage() {
             <p className="text-sm">{site.legalName}</p>
             <p className="text-sm text-muted-foreground">EIN {site.ein}</p>
             <p className="text-sm text-muted-foreground">{site.location}</p>
-            <p className="text-sm text-muted-foreground">
-              Every program is completely free to the people it serves.
-            </p>
           </aside>
         </Container>
       </section>
@@ -216,11 +212,10 @@ export default function HomePage() {
             </p>
             <h2 className="text-3xl sm:text-4xl">In Your Corner</h2>
             <p className="max-w-2xl text-base leading-relaxed text-muted-foreground">
-              Free boxing and mentorship for youth ages 12–17 and veterans.
-              It is the named flagship and the proof of the model: bring
-              everything a program needs into a room the community trusts, and
-              charge no one. New programs will be listed as they launch — we
-              will not invent a catalog.
+              Boxing and mentorship for youth ages 12–17 and veterans. It is
+              the named flagship and the proof of the model: bring everything a
+              program needs into a room the community trusts. New programs
+              will be listed as they launch — we will not invent a catalog.
             </p>
             <p className="max-w-2xl text-base leading-relaxed">
               This is what it means to have someone in your corner.

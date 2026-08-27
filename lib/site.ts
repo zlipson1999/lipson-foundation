@@ -50,25 +50,6 @@ export const commitments = [
   },
 ] as const
 
-export const promises = [
-  {
-    title: "$0",
-    body: "What any participant pays, in any program, ever",
-  },
-  {
-    title: "100% free",
-    body: "Equipment, coaching, meals — everything a program needs, included",
-  },
-  {
-    title: "Community-first",
-    body: "Programs run in rooms neighborhoods already trust",
-  },
-  {
-    title: "No limits by category",
-    body: "If a community needs it and cost is the barrier, it is our kind of program",
-  },
-] as const
-
 /**
  * Every public route, for the sitemap. Keep in step with the files in app/.
  * /work, /give, /involved and /updates are redirects only and are not listed.
@@ -168,6 +149,7 @@ export const whatWeBuild = [
   },
 ] as const
 
+/** Groups inside In Your Corner — not named programs. Shown on /in-your-corner. */
 export const groups = [
   {
     slug: "the-ring",
@@ -197,7 +179,7 @@ export const programs = [
     status: "Flagship",
     mark: "/brand/iyc-tag.png",
     summary:
-      "A free boxing and mentorship program that brings youth ages 12–17 and veterans together to train. Boxing builds the relationships. Mentorship deepens them — later, not on day one.",
+      "A free boxing and mentorship program that brings youth ages 12–17 and veterans together to train. Boxing builds the relationships. Mentorship deepens them — later, not on day one. The Ring, The Corner, and The Crew live inside it.",
   },
 ] as const
 

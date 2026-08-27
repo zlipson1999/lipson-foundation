@@ -13,9 +13,7 @@ export function WorkPillars({
         </p>
         <h2 className="text-3xl sm:text-4xl">{heading}</h2>
         <p className="text-base leading-relaxed text-muted-foreground">
-          The mission is bigger than any category. Lipson Foundation builds
-          cost-free community programs — whatever an underserved community
-          needs that cost has kept out of reach. Fitness, wellness, and
+          The mission is bigger than any category. Fitness, wellness, and
           mentoring are where the work starts. They are not where it ends.
         </p>
       </div>
