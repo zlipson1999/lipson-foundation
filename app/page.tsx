@@ -13,7 +13,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { asset } from "@/lib/assets"
-import { commitments, heroBlurb, programs, site } from "@/lib/site"
+import { commitments, heroBlurb, locationLines, programs, site } from "@/lib/site"
 import { WorkPillars } from "@/components/work-pillars"
 
 export const metadata: Metadata = pageMetadata({
@@ -86,6 +86,13 @@ export default function HomePage() {
             </span>
           </Container>
         </div>
+        {/* Phones get the same facts as the desktop strip, split around the
+            art: where we work above it, who we are and how to reach us below.
+            The service area needs two lines at this width. */}
+        <p className="border-b border-primary-foreground/10 px-4 py-3 text-center text-[11px] font-medium tracking-[0.1em] text-primary-foreground/60 uppercase lg:hidden">
+          {locationLines[0]}
+          <span className="block">{locationLines[1]}</span>
+        </p>
         <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,46%)] xl:grid-cols-[minmax(0,1fr)_minmax(0,41%)]">
           {/* The panel is square art, so it keeps its own aspect on small
               screens and fills the column height from lg up. */}
@@ -113,10 +120,20 @@ export default function HomePage() {
             />
           </div>
 
+          <div className="flex flex-col items-center gap-1 border-b border-primary-foreground/10 px-4 py-3 text-center text-[11px] font-medium tracking-[0.1em] whitespace-nowrap text-primary-foreground/60 uppercase lg:hidden">
+            <span className="text-gold">EIN {site.ein}</span>
+            <span>
+              <a href={site.phoneHref} className="hover:text-gold">
+                {site.phone}
+              </a>
+              <span aria-hidden className="px-2 text-gold/40">/</span>
+              <a href={`mailto:${site.email}`} className="hover:text-gold">
+                {site.email}
+              </a>
+            </span>
+          </div>
+
           <div className="flex flex-col items-start gap-6 px-4 pb-14 pt-10 sm:px-6 lg:justify-center lg:py-8 lg:pl-[calc(max(0px,(100vw-72rem)/2)+2rem)] lg:pr-10">
-            <p className="text-[13px] font-medium uppercase tracking-[0.2em] text-gold sm:text-sm lg:hidden">
-              {site.legalName} · EIN {site.ein}
-            </p>
             <h1 className="text-4xl leading-[1.08] text-balance sm:text-5xl lg:text-[2.75rem] xl:text-[3.4rem] 2xl:text-[3.75rem]">
               Cost-free community programs for underserved communities across
               South Florida.
