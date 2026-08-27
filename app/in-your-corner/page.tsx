@@ -129,17 +129,20 @@ export default function InYourCornerPage() {
         </ul>
       </section>
 
-      <section className="mt-16 grid gap-4 md:grid-cols-3">
-        {groups.map((group) => (
-          <Card key={group.name} id={group.slug} className="scroll-mt-28">
-            <CardHeader>
-              <CardTitle className="text-lg">{group.name}</CardTitle>
-              <CardDescription className="text-sm leading-relaxed">
-                {group.body}
-              </CardDescription>
-            </CardHeader>
-          </Card>
-        ))}
+      <section className="mt-16 flex flex-col gap-6">
+        <h2 className="text-3xl">Inside this program</h2>
+        <div className="grid gap-4 md:grid-cols-3">
+          {groups.map((group) => (
+            <Card key={group.name} id={group.slug} className="scroll-mt-28">
+              <CardHeader>
+                <CardTitle className="text-lg">{group.name}</CardTitle>
+                <CardDescription className="text-sm leading-relaxed">
+                  {group.body}
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
       </section>
 
       <section className="mt-16 flex max-w-3xl flex-col gap-4">

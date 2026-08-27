@@ -133,6 +133,7 @@ export const whatWeBuild = [
   },
 ] as const
 
+/** Groups inside In Your Corner — not named programs. Shown on /in-your-corner. */
 export const groups = [
   {
     slug: "the-ring",
@@ -161,10 +162,11 @@ export const programs = [
     href: "/in-your-corner",
     status: "Flagship",
     summary:
-      "A free boxing and mentorship program that brings youth ages 12–17 and veterans together to train. Boxing builds the relationships. Mentorship deepens them — later, not on day one.",
+      "A free boxing and mentorship program that brings youth ages 12–17 and veterans together to train. Boxing builds the relationships. Mentorship deepens them — later, not on day one. The Ring, The Corner, and The Crew live inside it.",
   },
 ] as const
 
+/** Named programs only. Groups inside In Your Corner are not listed here. */
 export const programMenu = [
   {
     href: "/programs",
@@ -175,26 +177,6 @@ export const programMenu = [
     href: "/in-your-corner",
     name: "In Your Corner",
     body: "Free boxing and mentorship for youth and veterans.",
-  },
-  {
-    href: "/in-your-corner#the-ring",
-    name: "The Ring",
-    body: "Youth and veterans train side by side.",
-  },
-  {
-    href: "/in-your-corner#the-corner",
-    name: "The Corner",
-    body: "Mentorship after the relationship is real.",
-  },
-  {
-    href: "/in-your-corner#the-crew",
-    name: "The Crew",
-    body: "Paid inclusive-employment roles.",
-  },
-  {
-    href: "/in-your-corner#career-night",
-    name: "Career Exploration Night",
-    body: "Monthly: 60 minutes of training, then 30 minutes with a working professional.",
   },
 ] as const
 

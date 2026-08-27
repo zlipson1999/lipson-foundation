@@ -12,7 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { groups, howWeWork, programs, whatWeBuild } from "@/lib/site"
+import { howWeWork, programs, whatWeBuild } from "@/lib/site"
 
 export const metadata: Metadata = pageMetadata({
   title: "Programs",
@@ -87,36 +87,6 @@ export default function ProgramsPage() {
           </Card>
         ))}
       </div>
-
-      <section className="mt-14 flex flex-col gap-6">
-        <h2 className="text-3xl">Inside In Your Corner</h2>
-        <div className="grid gap-4 md:grid-cols-3">
-          {groups.map((group) => (
-            <Link key={group.slug} href={group.href} className="block">
-              <Card className="h-full transition-colors hover:bg-secondary">
-                <CardHeader>
-                  <CardTitle className="text-xl">{group.name}</CardTitle>
-                  <CardDescription className="text-sm leading-relaxed">
-                    {group.body}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </Link>
-          ))}
-        </div>
-        <Link href="/in-your-corner#career-night" className="block">
-          <Card className="transition-colors hover:bg-secondary">
-            <CardHeader>
-              <CardTitle className="text-xl">Career Exploration Night</CardTitle>
-              <CardDescription className="text-sm leading-relaxed">
-                Monthly: 60 minutes of training, then 30 minutes with a working
-                professional — a trade, a first responder, a business owner, a
-                veteran who used the GI Bill.
-              </CardDescription>
-            </CardHeader>
-          </Card>
-        </Link>
-      </section>
     </Container>
   )
 }
