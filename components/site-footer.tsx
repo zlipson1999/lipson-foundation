@@ -13,8 +13,8 @@ export function SiteFooter() {
             <Logo inverse />
             <p className="text-sm leading-relaxed text-primary-foreground/75">
               {site.legalName} builds cost-free community programs for
-              underserved communities. Fitness, wellness, and mentoring are
-              where the work starts. Every program is completely cost-free — no
+              underserved communities across {site.location}. Whatever a
+              neighborhood needs and cost has kept out of reach — no
               memberships, no fees, ever.
             </p>
           </div>
