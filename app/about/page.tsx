@@ -15,7 +15,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { faqs, site, whoWeServe } from "@/lib/site"
+import { faqs, mission, site, vision, whoWeServe } from "@/lib/site"
 
 export const metadata: Metadata = pageMetadata({
   title: "About us",
@@ -91,6 +91,33 @@ export default function AboutPage() {
           </dl>
         </aside>
       </div>
+
+      {/* Moved off the home page so the mission is stated where someone has
+          come to read about the foundation, not where they have come to act. */}
+      <section className="mt-16 flex flex-col gap-10">
+        {/* The two statements share a format on purpose: same gold rule, same
+            heading type, so they read as a pair rather than as body copy. The
+            labels carry the heading level, since the statements are the
+            content rather than a headline above them. */}
+        <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-3 border-l-2 border-gold pl-6">
+            <h2 className="font-sans text-[11px] font-medium tracking-[0.22em] text-gold-ink uppercase">
+              Mission
+            </h2>
+            <p className="max-w-2xl font-heading text-2xl leading-snug tracking-tight sm:text-3xl">
+              {mission}
+            </p>
+          </div>
+          <div className="flex flex-col gap-3 border-l-2 border-gold pl-6">
+            <h2 className="font-sans text-[11px] font-medium tracking-[0.22em] text-gold-ink uppercase">
+              Vision
+            </h2>
+            <p className="max-w-2xl font-heading text-2xl leading-snug tracking-tight sm:text-3xl">
+              {vision}
+            </p>
+          </div>
+        </div>
+      </section>
 
       <section
         id="who-we-serve"

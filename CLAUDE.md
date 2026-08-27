@@ -35,6 +35,8 @@ These are absolute. Do not soften, reinterpret, or "improve" them.
 - Impact numbers, launch data, participant counts, or statistics (there is no launch data)
 - Additional named programs beyond In Your Corner, or staff names (staff list is intentionally empty)
 
+- **Mission and vision (owner-supplied, 27 Aug 2026, Zachary Lipson — not from the 22 Aug kit).** Mission: "The Lipson Foundation removes cost as a barrier to growth, offering cost-free programs that support health, personal growth, and professional development for underserved communities." Vision: "A community where cost is never the reason someone stops growing." Both live on `/about` and are stored in `lib/site.ts`. His wording said "free"; it is written **cost-free** to match the rule below.
+
 **Naming and framing rules:**
 - Formal program name in all body copy: **In Your Corner**. The short mark **UR** / **IN UR CORNER** is mark-only (tags/merch imagery) and must never appear in body copy, headings, metadata, or alt text as a program name.
 - **The Crew** = **PAID** inclusive-employment roles for adults with developmental disabilities. Never describe Crew members as volunteers, and never mix the name with any "Corner Crew" volunteer concept.
