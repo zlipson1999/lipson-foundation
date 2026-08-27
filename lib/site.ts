@@ -40,6 +40,15 @@ export const mission =
 export const vision =
   "A community where cost is never the reason someone stops growing."
 
+/**
+ * Tax status. The IRS determination letter is in hand and the foundation is
+ * listed in IRS Publication 78, confirmed by Zachary Lipson on 27 August 2026.
+ * Until that confirmation this claim was off limits; it is on the strength of
+ * the letter, not of anyone's expectation of one.
+ */
+export const taxNotice =
+  "Lipson Foundation Inc. is a 501(c)(3) nonprofit organization. EIN 39-4624045. Contributions are tax-deductible to the extent allowed by law."
+
 export const keepItFree =
   "We don't charge the people we serve. Not a membership fee, not a dollar, not ever. That only works because people like you decide it should. Keep it cost-free."
 
