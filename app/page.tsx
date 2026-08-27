@@ -12,9 +12,8 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { asset } from "@/lib/assets"
-import { promises, site } from "@/lib/site"
+import { commitments, site } from "@/lib/site"
 import { WorkPillars } from "@/components/work-pillars"
-import { Commitments } from "@/components/commitments"
 
 export const metadata: Metadata = pageMetadata({
   title: `${site.name} — ${site.kicker}`,
@@ -109,18 +108,22 @@ export default function HomePage() {
           />
         </Container>
         <div className="border-t border-gold/25">
-          <Container className="grid gap-px sm:grid-cols-2 lg:grid-cols-4">
-            {promises.map((item) => (
-              <div
-                key={item.title}
-                className="flex flex-col gap-1 border-b border-primary-foreground/10 px-2 py-6 sm:border-b-0"
-              >
-                <p className="font-heading text-2xl text-gold">{item.title}</p>
-                <p className="text-xs leading-relaxed text-primary-foreground/70">
-                  {item.body}
-                </p>
-              </div>
-            ))}
+          <Container className="flex flex-col gap-5 py-8 sm:py-10">
+            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
+              Our commitment
+            </p>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+              {commitments.map((item) => (
+                <div key={item.title} className="flex flex-col gap-2">
+                  <p className="font-heading text-xl text-gold lg:text-2xl">
+                    {item.title}
+                  </p>
+                  <p className="text-xs leading-relaxed text-primary-foreground/75 sm:text-[13px]">
+                    {item.body}
+                  </p>
+                </div>
+              ))}
+            </div>
           </Container>
         </div>
       </section>
@@ -152,12 +155,6 @@ export default function HomePage() {
             <p className="text-sm text-muted-foreground">EIN {site.ein}</p>
             <p className="text-sm text-muted-foreground">{site.location}</p>
           </aside>
-        </Container>
-      </section>
-
-      <section className="border-y bg-secondary">
-        <Container className="py-16 sm:py-20">
-          <Commitments />
         </Container>
       </section>
 
