@@ -32,8 +32,8 @@ jobs:
         env:
           NEXT_STATIC_EXPORT: "1"
           NEXT_PUBLIC_STATIC_EXPORT: "1"
-          NEXT_BASE_PATH: /lipson-foundation
-          NEXT_PUBLIC_BASE_PATH: /lipson-foundation
+          # No base path: the site is served from the root of its own domain.
+          NEXT_PUBLIC_SITE_ORIGIN: https://lipsonfoundation.org
       - run: touch out/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -7,7 +7,7 @@ You are working on the public website prototype for **Lipson Foundation Inc.** Y
 - **Org:** Lipson Foundation Inc., a South Florida nonprofit (EIN 39-4624045) building **cost-free community programs for underserved communities**. Fitness, wellness, and mentoring are where the work starts — **not the boundary** of the mission. Every program is completely free to participants, always.
 - **Founder:** Zachary Lipson, Founder and President, who lives with hereditary spastic paraplegia. Board: Zachary Lipson (President), Joshua Weinfeld (CFO), Julia Vance (Secretary).
 - **Flagship program:** **In Your Corner** — free non-contact boxing + mentorship for youth ages 12–17 and military veterans of any era. 2×/week sessions of 60 minutes training + 30 minutes dinner together; monthly Career Exploration Night. No sparring, no head contact. No host hall is signed; no session days or start date exist.
-- **Contact:** Zachary Lipson · 845-642-1874 · zlipson@lipsonfoundation.org · lipsonfoundation.org (domain is owned but **parked** — a GoDaddy park page, not this site).
+- **Contact:** Zachary Lipson · 845-642-1874 · zlipson@lipsonfoundation.org · **lipsonfoundation.org serves this site** (GitHub Pages custom domain, DNS at GoDaddy).
 - **Stack:** Next.js 16 (App Router), TypeScript, Tailwind CSS v4, shadcn/ui (base-lyra / Base UI). Dev server already runs at http://127.0.0.1:43147 — **do not restart it, do not start another one**.
 - **Git:** commit directly to `main`, push with `git push -u origin main`. No PRs, no feature branches. **Every push to GitHub `main` triggers a live redeploy** to GitHub Pages, so only push verified work.
 - **Copy provenance:** all site copy derives from the 22 August 2026 public-copy kit (fact sheet + program description). That kit is the ONLY source of truth for facts. If a fact is not in the kit, it does not go on the site.
@@ -76,10 +76,10 @@ Plus `app/not-found.tsx` (404) and `app/layout.tsx` (fonts, header/footer, root 
 - `next/image` with `unoptimized: true` does **not** apply `basePath` to `src`. All `/public` asset paths must go through the `asset()` helper in `lib/assets.ts`, which prefixes `NEXT_PUBLIC_BASE_PATH`. Never hardcode `/brand/...` paths directly in `src` attributes.
 
 **Deployment:**
-- GitHub repo: `zlipson1999/lipson-foundation`. GitHub Pages deploy via `.github/workflows/deploy.yml`: static export with `NEXT_STATIC_EXPORT=1`, `NEXT_PUBLIC_STATIC_EXPORT=1`, basePath `/lipson-foundation`.
-- Live at **https://zlipson1999.github.io/lipson-foundation/**. Every push to `main` redeploys.
-- Known caveat: `trailingSlash` is not set, so `/about` works but `/about/` 404s on Pages. If you address this, verify BOTH build modes still pass and internal links still resolve.
-- lipsonfoundation.org DNS stays pointed at the park page. Do not add CNAME files or custom-domain config.
+- GitHub repo: `zlipson1999/lipson-foundation`. GitHub Pages deploy via `.github/workflows/deploy.yml`: static export with `NEXT_STATIC_EXPORT=1`, `NEXT_PUBLIC_STATIC_EXPORT=1`, `NEXT_PUBLIC_SITE_ORIGIN=https://lipsonfoundation.org`. **No base path** — the site is served from the root of its own domain.
+- Live at **https://lipsonfoundation.org**. The github.io URL redirects there. Every push to `main` redeploys.
+- `trailingSlash: true` is set, so both `/about` and `/about/` resolve.
+- DNS lives at GoDaddy: four `A` records on `@` to GitHub's Pages IPs, `www` CNAME to `zlipson1999.github.io`. `public/CNAME` carries the domain into every build — do not delete it. **Microsoft 365 email runs on this domain**: never touch the `MX`, `TXT` (SPF/DMARC), `autodiscover`, `lyncdiscover`, `msoid`, `sip` or `_sip*` SRV records.
 
 ## 4. Audit checklist
 
@@ -102,7 +102,7 @@ Run each of these. Record findings before fixing.
 **C. SEO / metadata:**
 - Per-page `metadata` exports: unique title + description on every route, derived only from kit-safe copy.
 - `metadataBase` set correctly (respect basePath in static export); OpenGraph title/description/image (use existing brand assets, no new claims in descriptions).
-- **`app/sitemap.ts` and `app/robots.ts` are missing today — implement both.** They must work under static export with basePath `/lipson-foundation` (Next requires them to be compatible with `output: "export"`; sitemap URLs must include the base path and the github.io origin).
+- **`app/sitemap.ts` and `app/robots.ts` are missing today — implement both.** They must work under static export (Next requires them to be compatible with `output: "export"`; sitemap URLs use `siteOrigin`).
 - Sensible `<html lang>`, canonical handling, 404 page metadata.
 
 **D. Builds and behavior:**

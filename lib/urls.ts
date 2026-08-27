@@ -1,12 +1,12 @@
 // Absolute URLs for metadata (canonical, OpenGraph, sitemap).
 //
-// lipsonfoundation.org is owned but parked at a registrar page, so it must
-// not be used as the canonical origin — it does not serve this site. The
-// site is published from GitHub Pages, under the repository base path.
+// lipsonfoundation.org now serves the site: GitHub Pages holds it as a custom
+// domain, so it is the canonical origin. basePath stays supported for a build
+// published under a repository path instead, but is empty in the deployment.
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
 export const siteOrigin =
-  process.env.NEXT_PUBLIC_SITE_ORIGIN ?? "https://zlipson1999.github.io"
+  process.env.NEXT_PUBLIC_SITE_ORIGIN ?? "https://lipsonfoundation.org"
 
 export const siteBaseUrl = `${siteOrigin}${basePath}`
 
