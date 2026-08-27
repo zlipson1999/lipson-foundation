@@ -60,25 +60,23 @@ export default function HomePage() {
   return (
     <>
       <section className="relative overflow-hidden border-b bg-primary text-primary-foreground">
-        {/* Wrapper confines the photo to the hero band. Without it the photo
-            runs on behind the promises strip and collides with that copy. */}
+        {/* Hero band. The founder is pinned flush to the viewport's left edge
+            and runs off the bottom of the band, so the band is its own
+            positioning context - otherwise he spills into the promises strip.
+            The copy's left padding steps down as the centred container's own
+            margins grow, keeping the text clear of him at every width. */}
         <div className="relative">
-        {/* Full-bleed on the right at lg, stacked above the copy on smaller
-            screens. The mask melts the photo's own background into the navy
-            so it does not read as a pasted-in rectangle. */}
-        <div className="relative h-72 w-full sm:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:h-auto lg:w-[48%]">
           <Image
-            src={asset("/brand/founder-hero.jpg")}
+            src={asset("/brand/founder.webp")}
             alt="Zachary Lipson, Founder and President"
-            fill
-            sizes="(min-width: 1024px) 48vw, 100vw"
-            className="object-cover object-top [mask-image:linear-gradient(to_bottom,black_62%,transparent)] [-webkit-mask-image:linear-gradient(to_bottom,black_62%,transparent)] lg:object-center lg:[mask-image:linear-gradient(to_right,transparent,black_44%)] lg:[-webkit-mask-image:linear-gradient(to_right,transparent,black_44%)]"
+            width={803}
+            height={900}
+            className="mx-auto h-56 w-auto sm:h-72 lg:absolute lg:bottom-0 lg:left-0 lg:mx-0 lg:h-[26rem]"
             priority
             unoptimized
           />
-        </div>
-        <Container className="relative grid gap-10 pb-16 pt-6 sm:pb-24 lg:py-24">
-          <div className="flex max-w-2xl flex-col gap-8">
+          <Container className="relative grid items-center gap-x-10 gap-y-6 pb-14 pt-8 lg:py-20 lg:pl-[25rem] xl:grid-cols-[minmax(0,1fr)_15rem] xl:pl-[21rem] 2xl:pl-[13rem]">
+            <div className="flex flex-col gap-7">
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
               {site.legalName} · EIN {site.ein}
             </p>
@@ -118,9 +116,20 @@ export default function HomePage() {
               >
                 Programs
               </Button>
+              </div>
             </div>
-          </div>
-        </Container>
+            <div className="hidden xl:flex xl:items-center xl:justify-end">
+              <Image
+                src={asset("/brand/lipson-tag.png")}
+                alt=""
+                width={360}
+                height={640}
+                className="h-[19rem] w-auto"
+                priority
+                unoptimized
+              />
+            </div>
+          </Container>
         </div>
         <div className="relative border-t border-gold/25 bg-primary">
           <Container className="grid gap-px sm:grid-cols-2 lg:grid-cols-4">
