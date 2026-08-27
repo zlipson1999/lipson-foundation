@@ -77,15 +77,21 @@ export default function HomePage() {
               priority
               unoptimized
             />
-            {/* The art's left edge lands mid-teal against the hero navy, which
-                reads as a seam. This carries one into the other. */}
+            {/* The art's edges land mid-teal against the hero navy, which reads
+                as a seam - on the left, and along the top where the square
+                sits lower than the copy beside it. These carry one into the
+                other. */}
             <div
               aria-hidden
               className="absolute inset-y-0 left-0 hidden w-28 bg-gradient-to-r from-primary to-transparent lg:block"
             />
+            <div
+              aria-hidden
+              className="absolute inset-x-0 top-0 hidden h-20 bg-gradient-to-b from-primary to-transparent lg:block"
+            />
           </div>
 
-          <div className="flex flex-col items-start gap-6 px-4 pb-14 pt-10 sm:px-6 lg:justify-center lg:py-10 lg:pl-[calc(max(0px,(100vw-72rem)/2)+2rem)] lg:pr-10">
+          <div className="flex flex-col items-start gap-6 px-4 pb-14 pt-10 sm:px-6 lg:justify-center lg:py-8 lg:pl-[calc(max(0px,(100vw-72rem)/2)+2rem)] lg:pr-10">
             <p className="text-[13px] font-medium uppercase tracking-[0.2em] text-gold sm:text-sm">
               {site.legalName} · EIN {site.ein}
             </p>
@@ -93,9 +99,13 @@ export default function HomePage() {
               Cost-free community programs for underserved communities across
               South Florida.
             </h1>
-            <p className="max-w-[46ch] text-lg leading-relaxed text-primary-foreground/75">
-              {heroBlurb}
-            </p>
+            <div className="flex max-w-[46ch] flex-col gap-4 text-lg leading-relaxed text-primary-foreground/75">
+              <p>{heroBlurb}</p>
+              <p>
+                {site.location} and surrounding counties. We bring programs
+                into rooms the community already trusts.
+              </p>
+            </div>
             <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
               <Button
                 size="lg"
@@ -153,7 +163,7 @@ export default function HomePage() {
           list grows from lib/site.ts as programs launch, and no placeholder
           stands in for one that has not. */}
       <section>
-        <Container className="flex flex-col gap-8 py-16 sm:py-20">
+        <Container className="flex flex-col gap-8 py-12 sm:py-20">
           <div className="flex flex-col gap-3">
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold-ink">
               What we run
@@ -175,7 +185,7 @@ export default function HomePage() {
                   alt=""
                   width={612}
                   height={640}
-                  className="h-24 w-auto shrink-0 sm:h-28"
+                  className="h-28 w-auto shrink-0 self-start sm:h-32 lg:h-36"
                   unoptimized
                 />
                 <div className="flex flex-col items-start gap-3">
@@ -200,13 +210,13 @@ export default function HomePage() {
 
 
       <section>
-        <Container className="py-16 sm:py-20">
+        <Container className="py-12 sm:py-20">
           <WorkPillars heading="All cost-free community programs." />
         </Container>
       </section>
 
       <section className="border-y bg-secondary">
-        <Container className="flex flex-col gap-8 py-16 sm:py-20">
+        <Container className="flex flex-col gap-8 py-12 sm:py-20">
           <div className="flex max-w-2xl flex-col gap-3">
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
               Explore
@@ -231,7 +241,7 @@ export default function HomePage() {
       </section>
 
       <section className="border-t bg-primary text-primary-foreground">
-        <Container className="flex flex-col gap-6 py-16 sm:py-20">
+        <Container className="flex flex-col gap-6 py-12 sm:py-20">
           <h2 className="max-w-2xl text-3xl sm:text-4xl">
             Help keep every program cost-free.
           </h2>
