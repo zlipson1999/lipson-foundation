@@ -13,7 +13,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { asset } from "@/lib/assets"
-import { commitments, heroBlurb, programs, site } from "@/lib/site"
+import { commitments, heroBlurb, locationLines, programs, site } from "@/lib/site"
 import { WorkPillars } from "@/components/work-pillars"
 
 export const metadata: Metadata = pageMetadata({
@@ -69,13 +69,13 @@ export default function HomePage() {
             ways to reach us. Desktop only - on a phone it would wrap into
             three lines and push the hero down. */}
         <div className="hidden border-b border-primary-foreground/10 lg:block">
-          <Container className="flex items-center justify-between gap-6 py-3.5 text-[12px] font-medium uppercase tracking-[0.18em] text-primary-foreground/60">
-            <span className="flex items-center gap-5">
-              <span className="text-gold">EIN {site.ein}</span>
-              <span aria-hidden className="text-gold/40">/</span>
-              <span>{site.location}</span>
-            </span>
-            <span className="flex items-center gap-5">
+          {/* Everything stays on one line at every width the strip renders at.
+              The type steps down rather than any item dropping out: measured
+              at 1024, the four items need 886px of the 960 available. */}
+          <Container className="flex items-center justify-between gap-4 py-3.5 text-[11px] font-medium tracking-[0.1em] whitespace-nowrap text-primary-foreground/60 uppercase xl:gap-6 xl:text-[12px] xl:tracking-[0.16em]">
+            <span className="text-gold">EIN {site.ein}</span>
+            <span>{site.location}</span>
+            <span className="flex items-center gap-3 xl:gap-5">
               <a href={site.phoneHref} className="hover:text-gold">
                 {site.phone}
               </a>
@@ -86,6 +86,13 @@ export default function HomePage() {
             </span>
           </Container>
         </div>
+        {/* Phones get the same facts as the desktop strip, split around the
+            art: where we work above it, who we are and how to reach us below.
+            The service area needs two lines at this width. */}
+        <p className="border-b border-primary-foreground/10 px-4 py-3 text-center text-[11px] font-medium tracking-[0.1em] text-primary-foreground/60 uppercase lg:hidden">
+          {locationLines[0]}
+          <span className="block">{locationLines[1]}</span>
+        </p>
         <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,46%)] xl:grid-cols-[minmax(0,1fr)_minmax(0,41%)]">
           {/* The panel is square art, so it keeps its own aspect on small
               screens and fills the column height from lg up. */}
@@ -113,10 +120,20 @@ export default function HomePage() {
             />
           </div>
 
+          <div className="flex flex-col items-center gap-1 border-b border-primary-foreground/10 px-4 py-3 text-center text-[11px] font-medium tracking-[0.1em] whitespace-nowrap text-primary-foreground/60 uppercase lg:hidden">
+            <span className="text-gold">EIN {site.ein}</span>
+            <span>
+              <a href={site.phoneHref} className="hover:text-gold">
+                {site.phone}
+              </a>
+              <span aria-hidden className="px-2 text-gold/40">/</span>
+              <a href={`mailto:${site.email}`} className="hover:text-gold">
+                {site.email}
+              </a>
+            </span>
+          </div>
+
           <div className="flex flex-col items-start gap-6 px-4 pb-14 pt-10 sm:px-6 lg:justify-center lg:py-8 lg:pl-[calc(max(0px,(100vw-72rem)/2)+2rem)] lg:pr-10">
-            <p className="text-[13px] font-medium uppercase tracking-[0.2em] text-gold sm:text-sm lg:hidden">
-              {site.legalName} · EIN {site.ein}
-            </p>
             <h1 className="text-4xl leading-[1.08] text-balance sm:text-5xl lg:text-[2.75rem] xl:text-[3.4rem] 2xl:text-[3.75rem]">
               Cost-free community programs for underserved communities across
               South Florida.
@@ -124,8 +141,8 @@ export default function HomePage() {
             <div className="flex max-w-[46ch] flex-col gap-4 text-lg leading-relaxed text-primary-foreground/75">
               <p>{heroBlurb}</p>
               <p>
-                {site.location} and surrounding counties. We bring programs
-                into rooms the community already trusts.
+                {site.location}. We bring programs into rooms the community
+                already trusts.
               </p>
             </div>
             <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
