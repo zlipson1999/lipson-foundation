@@ -13,9 +13,9 @@ export function SiteFooter() {
             <Logo inverse />
             <p className="text-sm leading-relaxed text-primary-foreground/75">
               {site.legalName} builds cost-free community programs for
-              underserved communities across {site.location}. Whatever a
-              neighborhood needs and cost has kept out of reach — no
-              memberships, no fees, ever.
+              underserved communities across South Florida, Palm Beach County
+              and surrounding counties. Whatever a neighborhood needs and cost
+              has kept out of reach. No memberships, no fees, ever.
             </p>
           </div>
           <nav className="flex flex-col gap-3" aria-label="Footer">
