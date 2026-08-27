@@ -23,10 +23,16 @@ These are absolute. Do not soften, reinterpret, or "improve" them.
 - lipsonfoundation.org is owned (parked)
 - Board names/roles as listed in §1
 
+**501(c)(3) — CONFIRMED 27 Aug 2026 by Zachary Lipson.** The IRS determination
+letter is in hand and the foundation is listed in IRS Publication 78. The site
+may therefore say **501(c)(3)** and **tax-deductible to the extent allowed by
+law**, alongside the EIN. The wording lives in `taxNotice` in `lib/site.ts` and
+appears in the footer and on `/donate`. This reverses the earlier prohibition;
+it rests on the letter, not on an expectation of one.
+
 **MUST NOT say — anywhere, ever, in any phrasing:**
-- 501(c)(3), "public charity," "tax-deductible," "IRS-determined" / determination letter in hand
-- FDACS registered / "registered with the state," DR-5 / DR-14
-- These are unconfirmed binder targets. Saying them would be a false public claim.
+- FDACS registered / "registered with the state," DR-5 / DR-14 — still unconfirmed. Florida's charitable solicitation registration is a separate filing from the IRS determination, and nothing here confirms it.
+- "Public charity" as a phrase — the determination letter's classification has not been read here, so do not characterise it beyond 501(c)(3).
 
 - **No phone number is published** (27 Aug 2026). The founder's cell is not going on a public site and no work number exists yet; email is the only contact. Do not re-add one until a work number is supplied.
 

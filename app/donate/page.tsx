@@ -3,7 +3,7 @@ import { pageMetadata } from "@/lib/seo"
 import { Container, PageIntro } from "@/components/container"
 import { DonateForm } from "@/components/donate-form"
 import { GivebutterEmbed } from "@/components/givebutter-embed"
-import { isGiving, keepItFree, site } from "@/lib/site"
+import { isGiving, keepItFree, site, taxNotice } from "@/lib/site"
 
 export const metadata: Metadata = pageMetadata({
   title: "Donate",
@@ -32,15 +32,21 @@ export default function DonatePage() {
               To give in kind, or to ask something before you give, send a note
               instead and we will follow up from {site.email}.
             </p>
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              {taxNotice}
+            </p>
           </div>
         </div>
       ) : (
         <div className="flex max-w-3xl flex-col gap-10">
           <DonateForm />
-          <p className="border-t pt-8 text-sm leading-relaxed text-muted-foreground">
-            These are starting points, not a menu. If you have a different
-            number in mind, choose “Other” and tell us.
-          </p>
+          <div className="flex flex-col gap-4 border-t pt-8 text-sm leading-relaxed text-muted-foreground">
+            <p>
+              These are starting points, not a menu. If you have a different
+              number in mind, choose “Other” and tell us.
+            </p>
+            <p>{taxNotice}</p>
+          </div>
         </div>
       )}
     </Container>
