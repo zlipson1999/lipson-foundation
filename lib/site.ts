@@ -3,8 +3,8 @@
  * lines and the rest of the site sets it on one. Composed rather than split
  * at the point of use, so there is still one source for the wording.
  */
-const locationPrimary = "South Florida — Palm Beach County"
-const locationSecondary = "& surrounding counties"
+const locationPrimary = "South Florida"
+const locationSecondary = "Palm Beach County & surrounding counties"
 
 export const locationLines = [locationPrimary, locationSecondary] as const
 
@@ -12,7 +12,7 @@ export const site = {
   name: "Lipson Foundation",
   legalName: "Lipson Foundation Inc.",
   kicker: "Community programs. Cost-free.",
-  location: `${locationPrimary} ${locationSecondary}`,
+  location: `${locationPrimary} — ${locationSecondary}`,
   ein: "39-4624045",
   email: "zlipson@lipsonfoundation.org",
   phone: "845-642-1874",
