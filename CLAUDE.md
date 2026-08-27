@@ -44,7 +44,7 @@ These are absolute. Do not soften, reinterpret, or "improve" them.
 - Donate pitch is **"keep it free"** — an inquiry form only, no checkout. Planning asks (planning language only, not prices): **$100** covers dinner for a session · **$150** sponsors a full session · **$500** sponsors one young person for a season.
 
 **Brand rules:**
-- Colors: navy `#1C2433` · gold `#C6A15A` · paper `#F7F1E4`. **No crimson** anywhere.
+- Colors: navy `#03162F` · gold `#C6A15A` · paper `#F7F1E4`. **No crimson** anywhere.
 - Official foundation logo: `public/brand/lipson-tag.png` (navy dog-tag with gold phoenix). In Your Corner mark: `public/brand/iyc-tag.png`.
 - Fonts: **Fraunces** for headings, **Source Sans 3** for body.
 
