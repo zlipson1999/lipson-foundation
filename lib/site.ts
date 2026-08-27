@@ -36,7 +36,7 @@ export const commitments = [
 
 export const promises = [
   {
-    title: "Lines: 0",
+    title: "Cost-Free",
     body: "What any participant pays to join, in any program, ever",
   },
   {
