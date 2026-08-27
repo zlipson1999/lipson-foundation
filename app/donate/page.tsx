@@ -29,15 +29,6 @@ export default function DonatePage() {
         </p>
       </PageIntro>
 
-      <Alert className="mb-12 border-gold bg-secondary">
-        <AlertTitle>Planning asks — not a payment page</AlertTitle>
-        <AlertDescription>
-          We will follow up from {site.email}. Do not send a card number.
-          This page takes no payments and makes no claims about how a gift is
-          treated.
-        </AlertDescription>
-      </Alert>
-
       <div className="mb-12 grid gap-4 sm:grid-cols-3">
         {donateAsks
           .filter((ask) => ask.value !== "other")
@@ -53,13 +44,23 @@ export default function DonatePage() {
           ))}
       </div>
 
-      <div className="grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+      <div className="grid gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
         <DonateForm />
-        <p className="text-sm leading-relaxed text-muted-foreground">
-          These amounts are planning figures for a session, a meal, or a season
-          for one young person. If you have a different number in mind, choose
-          “another amount” and tell us.
-        </p>
+        <div className="flex flex-col gap-6">
+          <Alert className="border-gold bg-secondary">
+            <AlertTitle>No card details on this site</AlertTitle>
+            <AlertDescription>
+              This form takes your gift details, not your payment. We will
+              follow up from {site.email} to complete it. Do not send a card
+              number by email, and never put one in this form.
+            </AlertDescription>
+          </Alert>
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            These amounts are planning figures for a session, a meal, or a
+            season for one young person. If you have a different number in
+            mind, choose “another amount” and tell us.
+          </p>
+        </div>
       </div>
     </Container>
   )

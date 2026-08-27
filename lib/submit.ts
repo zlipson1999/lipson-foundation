@@ -52,23 +52,66 @@ function collect(kind: FormKind, formData: FormData): Record<string, string> {
     }
   }
   return {
-    name: read(formData, "name"),
+    firstName: read(formData, "firstName"),
+    lastName: read(formData, "lastName"),
     email: read(formData, "email"),
     ask: read(formData, "ask") || "other",
+    amount: read(formData, "amount"),
+    frequency: read(formData, "frequency") || "one-time",
+    dedication: read(formData, "dedication"),
+    organization: read(formData, "organization"),
+    address: read(formData, "address"),
+    address2: read(formData, "address2"),
+    city: read(formData, "city"),
+    state: read(formData, "state"),
+    postalCode: read(formData, "postalCode"),
+    cellPhone: read(formData, "cellPhone"),
+    workPhone: read(formData, "workPhone"),
     message: read(formData, "message"),
   }
 }
 
+/**
+ * The donate form asks for a mailing address the way the giving form does, and
+ * its note is optional, so it does not share the name/email/message trio the
+ * other two require.
+ */
+const requiredFields: Record<FormKind, string[]> = {
+  contact: ["name", "email", "message"],
+  help: ["name", "email", "message"],
+  donate: [
+    "firstName",
+    "lastName",
+    "email",
+    "address",
+    "city",
+    "state",
+    "postalCode",
+  ],
+}
+
+const fieldLabels: Record<string, string> = {
+  firstName: "your first name",
+  lastName: "your last name",
+  postalCode: "your ZIP code",
+  address: "your address",
+  city: "your city",
+  state: "your state",
+}
+
 function validate(kind: FormKind, fields: Record<string, string>): string | null {
-  for (const key of ["name", "email", "message"]) {
+  for (const key of requiredFields[kind]) {
     if (!fields[key]) {
-      return `Please fill in ${key.replace(/([A-Z])/g, " $1").toLowerCase()}.`
+      const label =
+        fieldLabels[key] ?? key.replace(/([A-Z])/g, " $1").toLowerCase()
+      return `Please fill in ${label}.`
     }
   }
   if (!emailPattern.test(fields.email)) {
     return "Please enter a valid email address."
   }
-  if (fields.message.length < 12) {
+  // The donate form's note is optional, so a short one is not an error.
+  if (kind !== "donate" && fields.message.length < 12) {
     return shortMessageErrors[kind]
   }
   return null

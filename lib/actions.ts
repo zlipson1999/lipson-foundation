@@ -85,24 +85,40 @@ export async function submitHelp(formData: FormData): Promise<ActionResult> {
   return persist("involved", fields)
 }
 
+// The donate form collects a mailing address the way the giving form does, and
+// its note is optional - so unlike the other two, it does not require one.
 export async function submitDonate(formData: FormData): Promise<ActionResult> {
   const fields = {
-    name: read(formData, "name"),
+    firstName: read(formData, "firstName"),
+    lastName: read(formData, "lastName"),
     email: read(formData, "email"),
     ask: read(formData, "ask") || "other",
+    amount: read(formData, "amount"),
+    frequency: read(formData, "frequency") || "one-time",
+    dedication: read(formData, "dedication"),
+    organization: read(formData, "organization"),
+    address: read(formData, "address"),
+    address2: read(formData, "address2"),
+    city: read(formData, "city"),
+    state: read(formData, "state"),
+    postalCode: read(formData, "postalCode"),
+    cellPhone: read(formData, "cellPhone"),
+    workPhone: read(formData, "workPhone"),
     message: read(formData, "message"),
   }
 
-  const missing = requireFields(fields, ["name", "email", "message"])
+  const missing = requireFields(fields, [
+    "firstName",
+    "lastName",
+    "email",
+    "address",
+    "city",
+    "state",
+    "postalCode",
+  ])
   if (missing) return { ok: false, error: missing }
   if (!emailPattern.test(fields.email)) {
     return { ok: false, error: "Please enter a valid email address." }
-  }
-  if (fields.message.length < 12) {
-    return {
-      ok: false,
-      error: "Please share a little more so we know how to follow up.",
-    }
   }
 
   return persist("give", fields)
