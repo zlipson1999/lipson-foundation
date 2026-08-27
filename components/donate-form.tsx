@@ -78,7 +78,7 @@ export function DonateForm() {
                     htmlFor={`ask-${item.value}`}
                     className="font-normal"
                   >
-                    {item.title} — {item.body}
+                    {item.title}
                   </FieldLabel>
                 </Field>
               ))}
@@ -256,7 +256,7 @@ export function DonateForm() {
           id="message"
           name="message"
           rows={4}
-          placeholder="A session you want to sponsor, a meal you can cover, or a question before you give."
+          placeholder="Anything you would like us to know, or a question before you give."
         />
         <FieldDescription>
           No card details are collected on this site. We will be in touch from{" "}

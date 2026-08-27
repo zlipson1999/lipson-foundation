@@ -4,19 +4,14 @@ import { Container, PageIntro } from "@/components/container"
 import { DonateForm } from "@/components/donate-form"
 import { GivebutterEmbed } from "@/components/givebutter-embed"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import { Card, CardHeader, CardTitle } from "@/components/ui/card"
 import { donateAsks, isGiving, keepItFree, site } from "@/lib/site"
 
 export const metadata: Metadata = pageMetadata({
   title: "Donate",
   description: isGiving
-    ? "Give to Lipson Foundation, or sponsor a session, meal, or season. Every program stays cost-free to the people it serves."
-    : "Sponsor a Lipson Foundation session, meal, or season. There is no payment processor on this site.",
+    ? "Give to Lipson Foundation. Every program stays cost-free to the people it serves."
+    : "Support Lipson Foundation. There is no payment processor on this site.",
   route: "/donate",
 })
 
@@ -27,8 +22,8 @@ export default function DonatePage() {
         <p>{keepItFree}</p>
         <p className="mt-3">
           {isGiving
-            ? "If you want to underwrite a dinner, a session, or a season, give below."
-            : "If you want to underwrite a dinner, a session, or a season, start here. There is no checkout and no card field on this website."}
+            ? "Give what you can. Every gift keeps a program cost-free to the people it serves."
+            : "Give what you can. There is no checkout and no card field on this website."}
         </p>
       </PageIntro>
 
@@ -38,10 +33,7 @@ export default function DonatePage() {
           .map((ask) => (
             <Card key={ask.value}>
               <CardHeader>
-                <CardTitle className="text-lg">{ask.title}</CardTitle>
-                <CardDescription className="text-sm leading-relaxed">
-                  {ask.body}
-                </CardDescription>
+                <CardTitle className="text-2xl">{ask.title}</CardTitle>
               </CardHeader>
             </Card>
           ))}
@@ -54,14 +46,14 @@ export default function DonatePage() {
           </div>
           <div className="flex flex-col gap-6">
             <p className="text-sm leading-relaxed text-muted-foreground">
-              These amounts are planning figures for a session, a meal, or a
-              season for one young person. Any amount goes to the same place.
+              These are starting points, not a menu. Any amount goes to the
+              same place.
             </p>
             <div className="flex flex-col gap-4 border-t pt-6">
               <h2 className="text-xl">Rather talk first?</h2>
               <p className="text-sm leading-relaxed text-muted-foreground">
-                To underwrite a season, give in kind, or ask something before
-                you give, send a note instead and we will follow up from{" "}
+                To give in kind, or to ask something before you give, send a
+                note instead and we will follow up from{" "}
                 {site.email}.
               </p>
             </div>
@@ -80,9 +72,8 @@ export default function DonatePage() {
               </AlertDescription>
             </Alert>
             <p className="text-sm leading-relaxed text-muted-foreground">
-              These amounts are planning figures for a session, a meal, or a
-              season for one young person. If you have a different number in
-              mind, choose “another amount” and tell us.
+              These are starting points, not a menu. If you have a different
+              number in mind, choose “another amount” and tell us.
             </p>
           </div>
         </div>

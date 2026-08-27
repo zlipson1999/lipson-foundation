@@ -249,11 +249,16 @@ export const givebutter = {
 
 export const isGiving = Boolean(givebutter.account && givebutter.widget)
 
+/**
+ * Amounts only. Each one used to carry a line saying what it covered, which
+ * priced things the foundation has no budget for yet; the amounts stand on
+ * their own as something to pick.
+ */
 export const donateAsks = [
-  { value: "dinner", title: "$100", body: "Covers dinner for a session" },
-  { value: "session", title: "$250", body: "Sponsors a full session" },
-  { value: "season", title: "$500", body: "Sponsors one young person for a season" },
-  { value: "other", title: "Another amount", body: "We will talk first" },
+  { value: "100", title: "$100" },
+  { value: "250", title: "$250" },
+  { value: "500", title: "$500" },
+  { value: "other", title: "Another amount" },
 ] as const
 
 export const events: {
@@ -358,7 +363,7 @@ export const faqs = [
   {
     question: "Do you only run fitness programs?",
     answer:
-      "No. The mandate is cost-free community programs, full stop. Fitness, wellness, and mentoring are where the work starts, because that is what the flagship needed first. When a community needs something different, that becomes a program too. More named programs will be listed as they launch — we will not invent a catalog.",
+      "No. The mandate is cost-free community programs, full stop. Fitness, wellness, and mentoring are where the work starts, because that is what the flagship needed first. When a community needs something different, that becomes a program too. More named programs will be listed as they launch.",
   },
   {
     question: "Who do you serve?",

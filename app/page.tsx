@@ -161,7 +161,7 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl">Our programs</h2>
             <p className="max-w-2xl text-base leading-relaxed text-muted-foreground">
               Every one is cost-free to the people it serves. New programs are
-              listed as they launch — we will not invent a catalog.
+              listed as they launch.
             </p>
           </div>
           <ul className="flex flex-col gap-6">
