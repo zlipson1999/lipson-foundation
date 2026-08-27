@@ -69,11 +69,15 @@ export default function HomePage() {
             ways to reach us. Desktop only - on a phone it would wrap into
             three lines and push the hero down. */}
         <div className="hidden border-b border-primary-foreground/10 lg:block">
-          <Container className="flex items-center justify-between gap-6 py-3.5 text-[12px] font-medium uppercase tracking-[0.18em] text-primary-foreground/60">
+          <Container className="flex items-center justify-between gap-6 py-3.5 text-[12px] font-medium tracking-[0.14em] whitespace-nowrap text-primary-foreground/60 uppercase xl:tracking-[0.18em]">
             <span className="flex items-center gap-5">
               <span className="text-gold">EIN {site.ein}</span>
-              <span aria-hidden className="text-gold/40">/</span>
-              <span>{site.location}</span>
+              {/* The service area is long enough to wrap the strip at lg, so
+                  it waits for the width that can hold it. */}
+              <span aria-hidden className="hidden text-gold/40 xl:inline">
+                /
+              </span>
+              <span className="hidden xl:inline">{site.location}</span>
             </span>
             <span className="flex items-center gap-5">
               <a href={site.phoneHref} className="hover:text-gold">
@@ -124,8 +128,8 @@ export default function HomePage() {
             <div className="flex max-w-[46ch] flex-col gap-4 text-lg leading-relaxed text-primary-foreground/75">
               <p>{heroBlurb}</p>
               <p>
-                {site.location} and surrounding counties. We bring programs
-                into rooms the community already trusts.
+                {site.location}. We bring programs into rooms the community
+                already trusts.
               </p>
             </div>
             <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">

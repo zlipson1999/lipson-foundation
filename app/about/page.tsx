@@ -34,7 +34,7 @@ export default function AboutPage() {
         <p>
           {site.legalName} (EIN {site.ein}) builds cost-free community programs
           for underserved communities — all kinds of programs, one rule.
-          Service area: {site.location} and surrounding counties.
+          Service area: {site.location}.
         </p>
       </PageIntro>
 
