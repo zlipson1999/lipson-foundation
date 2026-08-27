@@ -34,25 +34,6 @@ export const commitments = [
   },
 ] as const
 
-export const promises = [
-  {
-    title: "Lines: 0",
-    body: "What any participant pays to join, in any program, ever",
-  },
-  {
-    title: "Whole-person",
-    body: "From your first step to your next chapter, we’re with you the whole way",
-  },
-  {
-    title: "Community-first",
-    body: "A team with one mission: showing up for the community that needs it",
-  },
-  {
-    title: "Everyone belongs",
-    body: "No gatekeeping, no judgment, just a place that’s genuinely yours",
-  },
-] as const
-
 /**
  * Every public route, for the sitemap. Keep in step with the files in app/.
  * /work, /give, /involved and /updates are redirects only and are not listed.
