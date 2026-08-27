@@ -12,7 +12,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { asset } from "@/lib/assets"
-import { commitments, site } from "@/lib/site"
+import { commitments, heroBlurb, site } from "@/lib/site"
 import { WorkPillars } from "@/components/work-pillars"
 import { HeroTexture } from "@/components/hero-texture"
 
@@ -59,36 +59,48 @@ const destinations = [
 export default function HomePage() {
   return (
     <>
-      <section className="relative overflow-hidden border-b bg-primary text-primary-foreground">
-        {/* Hero band. From lg up the founder is pinned flush to the viewport's
-            left edge and runs off the bottom of the band, so the band is its
-            own positioning context - otherwise he spills into the commitments
-            row. The copy's left padding steps down as the centred container's
-            own margins grow, keeping the text clear of him at every width. */}
-        <div className="relative">
-          <HeroTexture />
-          {/* Below lg the band is the dog tag over the copy: the founder is
-              dropped rather than stacked, so the mark carries the small
-              screens on its own. He returns pinned to the left edge at lg,
-              where the stacked tag gives way to the one beside the copy. */}
-          <Image
-            src={asset("/brand/lipson-tag.png")}
-            alt=""
-            width={360}
-            height={640}
-            className="relative mx-auto h-56 w-auto pt-10 sm:h-64 lg:hidden"
-            priority
-            unoptimized
-          />
-          <Container className="hero-copy relative grid items-center gap-x-10 gap-y-6 pb-14 pt-7 lg:grid-cols-[minmax(0,1fr)_auto] lg:py-12 xl:py-6">
-            <div className="flex flex-col items-center gap-7 text-center">
+      <section className="border-b bg-primary text-primary-foreground">
+        {/* Intro. One grid: the artwork panel leads on small screens and moves
+            to the right from lg up, where the copy column's left padding is
+            calculated to line up with the centred container everywhere else on
+            the page. */}
+        <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,44%)]">
+          <div className="relative order-first overflow-hidden lg:order-last">
+            <HeroTexture />
+            <div className="relative flex h-full items-end justify-center gap-3 px-4 pt-10 sm:gap-6 lg:gap-4 lg:px-8 lg:pt-14">
+              <Image
+                src={asset("/brand/founder.webp")}
+                alt="Zachary Lipson, Founder and President"
+                width={803}
+                height={900}
+                className="h-56 w-auto sm:h-72 lg:h-[24rem] xl:h-[27rem]"
+                priority
+                unoptimized
+              />
+              <Image
+                src={asset("/brand/lipson-tag.png")}
+                alt=""
+                width={360}
+                height={640}
+                className="mb-6 h-44 w-auto self-center sm:h-56 lg:mb-10 lg:h-[20rem] xl:h-[23rem]"
+                priority
+                unoptimized
+              />
+            </div>
+          </div>
+
+          <div className="flex flex-col items-start gap-6 px-4 pb-14 pt-10 sm:px-6 lg:justify-center lg:py-20 lg:pl-[calc(max(0px,(100vw-72rem)/2)+2rem)] lg:pr-10">
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
               {site.legalName} · EIN {site.ein}
             </p>
-            <h1 className="max-w-none text-4xl leading-[1.05] text-balance sm:text-5xl lg:text-[2.75rem] xl:text-[3.5rem] 2xl:text-[4.5rem]">
-              Cost-free community programs
+            <h1 className="text-4xl leading-[1.08] text-balance sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem]">
+              Cost-free community programs for underserved communities across
+              South Florida.
             </h1>
-            <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
+            <p className="max-w-[46ch] text-lg leading-relaxed text-primary-foreground/75">
+              {heroBlurb}
+            </p>
+            <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
               <Button
                 size="lg"
                 className="h-11 bg-gold px-4 text-primary hover:bg-gold/90"
@@ -116,41 +128,17 @@ export default function HomePage() {
               >
                 Programs
               </Button>
-              </div>
             </div>
-            <div className="hidden lg:flex lg:items-center lg:justify-end">
-              <Image
-                src={asset("/brand/lipson-tag.png")}
-                alt=""
-                width={360}
-                height={640}
-                className="h-[17rem] w-auto xl:h-[25rem] 2xl:h-[26rem]"
-                priority
-                unoptimized
-              />
-            </div>
-          </Container>
-          <Image
-            src={asset("/brand/founder.webp")}
-            alt="Zachary Lipson, Founder and President"
-            width={803}
-            height={900}
-            className="hidden lg:absolute lg:bottom-0 lg:left-0 lg:block lg:h-[21rem] lg:w-auto xl:h-[27.5rem]"
-            priority
-            unoptimized
-          />
+          </div>
         </div>
-        {/* The four commitments, as in the design: a label column, then Access,
-            Dignity, Community and Service divided by hairlines. */}
-        <div className="relative border-t border-gold/25 bg-primary">
-          <Container className="grid gap-y-10 py-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-y-0">
+
+        {/* Access, Dignity, Community and Service directly under the intro. */}
+        <div className="border-t border-gold/25">
+          <Container className="grid gap-8 py-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
             {commitments.map((item) => (
-              <div
-                key={item.title}
-                className="flex flex-col items-center gap-2 text-center lg:border-l lg:border-primary-foreground/15 lg:px-8 lg:first:border-l-0"
-              >
+              <div key={item.title} className="flex flex-col gap-2">
                 <p className="font-heading text-2xl text-gold">{item.title}</p>
-                <p className="max-w-[24ch] text-sm leading-relaxed text-primary-foreground/70">
+                <p className="max-w-[30ch] text-sm leading-relaxed text-primary-foreground/70">
                   {item.short}
                 </p>
               </div>

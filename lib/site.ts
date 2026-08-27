@@ -12,6 +12,14 @@ export const site = {
     "Lipson Foundation Inc. is a South Florida nonprofit that builds cost-free community programs for underserved communities. Every program is completely free — no memberships, no fees, ever. Flagship program: In Your Corner.",
 } as const
 
+/**
+ * The intro paragraph. Both sentences are existing site copy - the first from
+ * the keep-it-free line, the second from the work section - so the intro stays
+ * about the foundation as a whole rather than about any one program.
+ */
+export const heroBlurb =
+  "We don't charge the people we serve. Not a membership fee, not a dollar, not ever. Fitness, wellness, and mentoring are where the work starts — not where it ends."
+
 export const keepItFree =
   "We don't charge the people we serve. Not a membership fee, not a dollar, not ever. That only works because people like you decide it should. Keep it free."
 

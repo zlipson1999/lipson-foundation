@@ -125,27 +125,6 @@
   --sidebar-ring: #c6a15a;
 }
 
-/* Unlayered on purpose: the container carries Tailwind's own lg:px-8, which
-   sits in the utilities layer and would outrank this if it were layered.
-   The founder is pinned to the viewport's left edge in the hero, so the copy
-   has to clear him; the centred container's margins grow with the viewport,
-   so this shrinks by exactly that much and the gap beside him stays constant
-   instead of ballooning on wide screens. */
-@media (min-width: 1024px) {
-  .hero-copy {
-    /* The padding replaces the container's own gutter rather than adding to
-       it, so subtract only the centring margin, not the gutter as well. */
-    padding-left: calc(max(2rem, 340px - max(0px, (100vw - 72rem) / 2)));
-  }
-}
-
-/* The founder steps up a size at xl, so the copy steps further clear of him. */
-@media (min-width: 1280px) {
-  .hero-copy {
-    padding-left: calc(max(2rem, 424px - max(0px, (100vw - 72rem) / 2)));
-  }
-}
-
 @layer base {
   * {
     @apply border-border outline-current;
