@@ -14,7 +14,6 @@ import {
 import { asset } from "@/lib/assets"
 import { commitments, heroBlurb, site } from "@/lib/site"
 import { WorkPillars } from "@/components/work-pillars"
-import { HeroTexture } from "@/components/hero-texture"
 
 export const metadata: Metadata = pageMetadata({
   title: `${site.name} — ${site.kicker}`,
@@ -64,36 +63,32 @@ export default function HomePage() {
             to the right from lg up, where the copy column's left padding is
             calculated to line up with the centred container everywhere else on
             the page. */}
-        <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,44%)]">
-          <div className="relative order-first overflow-hidden lg:order-last">
-            <HeroTexture />
-            <div className="relative flex h-full items-end justify-center gap-3 px-4 pt-10 sm:gap-6 lg:gap-4 lg:px-8 lg:pt-14">
-              <Image
-                src={asset("/brand/founder.webp")}
-                alt="Zachary Lipson, Founder and President"
-                width={803}
-                height={900}
-                className="h-56 w-auto sm:h-72 lg:h-[24rem] xl:h-[27rem]"
-                priority
-                unoptimized
-              />
-              <Image
-                src={asset("/brand/lipson-tag.png")}
-                alt=""
-                width={360}
-                height={640}
-                className="mb-6 h-44 w-auto self-center sm:h-56 lg:mb-10 lg:h-[20rem] xl:h-[23rem]"
-                priority
-                unoptimized
-              />
-            </div>
+        <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,50%)] xl:grid-cols-[minmax(0,1fr)_minmax(0,44%)]">
+          {/* The panel is square art, so it keeps its own aspect on small
+              screens and fills the column height from lg up. */}
+          <div className="relative order-first aspect-square overflow-hidden lg:order-last lg:aspect-auto">
+            <Image
+              src={asset("/brand/hero-panel.webp")}
+              alt="Zachary Lipson, Founder and President, beside the Lipson Foundation dog tag"
+              width={1100}
+              height={1100}
+              className="absolute inset-0 h-full w-full object-cover object-center"
+              priority
+              unoptimized
+            />
+            {/* The art's left edge lands mid-teal against the hero navy, which
+                reads as a seam. This carries one into the other. */}
+            <div
+              aria-hidden
+              className="absolute inset-y-0 left-0 hidden w-28 bg-gradient-to-r from-primary to-transparent lg:block"
+            />
           </div>
 
-          <div className="flex flex-col items-start gap-6 px-4 pb-14 pt-10 sm:px-6 lg:justify-center lg:py-20 lg:pl-[calc(max(0px,(100vw-72rem)/2)+2rem)] lg:pr-10">
+          <div className="flex flex-col items-start gap-6 px-4 pb-14 pt-10 sm:px-6 lg:justify-center lg:py-16 lg:pl-[calc(max(0px,(100vw-72rem)/2)+2rem)] lg:pr-10">
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
               {site.legalName} · EIN {site.ein}
             </p>
-            <h1 className="text-4xl leading-[1.08] text-balance sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem]">
+            <h1 className="text-4xl leading-[1.08] text-balance sm:text-5xl lg:text-[2.6rem] xl:text-[3.5rem] 2xl:text-[3.75rem]">
               Cost-free community programs for underserved communities across
               South Florida.
             </h1>
