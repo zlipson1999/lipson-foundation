@@ -19,6 +19,17 @@ export const site = {
 export const heroBlurb =
   "We don't charge the people we serve. Not a membership fee, not a dollar, not ever."
 
+/**
+ * Mission and vision, supplied by Zachary Lipson on 27 August 2026. Not from
+ * the 22 August copy kit. "Free" is written "cost-free" here to match the rule
+ * the rest of the site follows; nothing else about the wording is changed.
+ */
+export const mission =
+  "The Lipson Foundation removes cost as a barrier to growth, offering cost-free programs that support health, personal growth, and professional development for underserved communities."
+
+export const vision =
+  "A community where cost is never the reason someone stops growing."
+
 export const keepItFree =
   "We don't charge the people we serve. Not a membership fee, not a dollar, not ever. That only works because people like you decide it should. Keep it cost-free."
 
