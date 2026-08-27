@@ -1,7 +1,7 @@
 export const site = {
   name: "Lipson Foundation",
   legalName: "Lipson Foundation Inc.",
-  kicker: "Community programs. Completely cost-free.",
+  kicker: "Community programs. Cost-free.",
   location: "South Florida / Palm Beach County",
   ein: "39-4624045",
   email: "zlipson@lipsonfoundation.org",
