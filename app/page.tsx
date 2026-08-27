@@ -80,12 +80,12 @@ export default function HomePage() {
             priority
             unoptimized
           />
-          <Container className="hero-copy relative grid items-center gap-x-10 gap-y-6 pb-14 pt-7 lg:py-12 xl:py-6 xl:grid-cols-[minmax(0,1fr)_auto]">
+          <Container className="hero-copy relative grid items-center gap-x-10 gap-y-6 pb-14 pt-7 lg:grid-cols-[minmax(0,1fr)_auto] lg:py-12 xl:py-6">
             <div className="flex flex-col items-center gap-7 text-center">
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
               {site.legalName} · EIN {site.ein}
             </p>
-            <h1 className="max-w-none text-4xl leading-[1.05] text-balance sm:text-5xl lg:text-[3.75rem] xl:text-[3.5rem] 2xl:text-[4.5rem]">
+            <h1 className="max-w-none text-4xl leading-[1.05] text-balance sm:text-5xl lg:text-[2.75rem] xl:text-[3.5rem] 2xl:text-[4.5rem]">
               Cost-free community programs
             </h1>
             <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
@@ -118,13 +118,13 @@ export default function HomePage() {
               </Button>
               </div>
             </div>
-            <div className="hidden xl:flex xl:items-center xl:justify-end">
+            <div className="hidden lg:flex lg:items-center lg:justify-end">
               <Image
                 src={asset("/brand/lipson-tag.png")}
                 alt=""
                 width={360}
                 height={640}
-                className="h-[25rem] w-auto 2xl:h-[26rem]"
+                className="h-[17rem] w-auto xl:h-[25rem] 2xl:h-[26rem]"
                 priority
                 unoptimized
               />
@@ -135,7 +135,7 @@ export default function HomePage() {
             alt="Zachary Lipson, Founder and President"
             width={803}
             height={900}
-            className="hidden lg:absolute lg:bottom-0 lg:left-0 lg:block lg:h-[26rem] lg:w-auto xl:h-[27.5rem]"
+            className="hidden lg:absolute lg:bottom-0 lg:left-0 lg:block lg:h-[21rem] lg:w-auto xl:h-[27.5rem]"
             priority
             unoptimized
           />

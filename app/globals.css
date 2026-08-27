@@ -135,6 +135,13 @@
   .hero-copy {
     /* The padding replaces the container's own gutter rather than adding to
        it, so subtract only the centring margin, not the gutter as well. */
+    padding-left: calc(max(2rem, 340px - max(0px, (100vw - 72rem) / 2)));
+  }
+}
+
+/* The founder steps up a size at xl, so the copy steps further clear of him. */
+@media (min-width: 1280px) {
+  .hero-copy {
     padding-left: calc(max(2rem, 424px - max(0px, (100vw - 72rem) / 2)));
   }
 }
