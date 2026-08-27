@@ -64,7 +64,7 @@ export default function HomePage() {
             to the right from lg up, where the copy column's left padding is
             calculated to line up with the centred container everywhere else on
             the page. */}
-        <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,46%)] xl:grid-cols-[minmax(0,1fr)_minmax(0,41%)]">
+        <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,41%)] xl:grid-cols-[minmax(0,1fr)_minmax(0,35%)]">
           {/* The panel is square art, so it keeps its own aspect on small
               screens and fills the column height from lg up. */}
           <div className="relative order-first aspect-square overflow-hidden lg:order-last lg:self-end">
@@ -85,11 +85,11 @@ export default function HomePage() {
             />
           </div>
 
-          <div className="flex flex-col items-start gap-6 px-4 pb-14 pt-10 sm:px-6 lg:justify-center lg:py-10 lg:pl-[calc(max(0px,(100vw-72rem)/2)+2rem)] lg:pr-10">
+          <div className="flex flex-col items-start gap-6 px-4 pb-14 pt-10 sm:px-6 lg:justify-center lg:py-8 lg:pl-[calc(max(0px,(100vw-72rem)/2)+2rem)] lg:pr-10">
             <p className="text-[13px] font-medium uppercase tracking-[0.2em] text-gold sm:text-sm">
               {site.legalName} · EIN {site.ein}
             </p>
-            <h1 className="text-4xl leading-[1.08] text-balance sm:text-5xl lg:text-[2.75rem] xl:text-[3.4rem] 2xl:text-[3.75rem]">
+            <h1 className="text-4xl leading-[1.08] text-balance sm:text-5xl lg:text-[2.75rem] xl:text-[3.6rem] 2xl:text-[4rem]">
               Cost-free community programs for underserved communities across
               South Florida.
             </h1>
