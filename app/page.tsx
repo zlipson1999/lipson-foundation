@@ -73,16 +73,16 @@ export default function HomePage() {
             alt="Zachary Lipson, Founder and President"
             width={803}
             height={900}
-            className="mx-auto h-56 w-auto sm:h-72 lg:absolute lg:bottom-0 lg:left-0 lg:mx-0 lg:h-[26rem]"
+            className="mx-auto h-60 w-auto sm:h-80 lg:absolute lg:bottom-0 lg:left-0 lg:mx-0 lg:h-[26rem] xl:h-[27.5rem]"
             priority
             unoptimized
           />
-          <Container className="relative grid items-center gap-x-10 gap-y-6 pb-14 pt-8 lg:py-20 lg:pl-[25rem] xl:grid-cols-[minmax(0,1fr)_15rem] xl:pl-[21rem] 2xl:pl-[13rem]">
+          <Container className="hero-copy relative grid items-center gap-x-10 gap-y-6 pb-14 pt-8 lg:py-12 xl:py-6 xl:grid-cols-[minmax(0,1fr)_auto]">
             <div className="flex flex-col gap-7">
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
               {site.legalName} · EIN {site.ein}
             </p>
-            <h1 className="max-w-2xl text-4xl leading-[1.08] sm:text-5xl">
+            <h1 className="max-w-none text-4xl leading-[1.08] sm:text-5xl lg:text-[2.25rem] xl:text-[2.125rem] 2xl:text-[2.5rem]">
               Cost-free community programs for underserved communities across
               South Florida.
             </h1>
@@ -94,7 +94,7 @@ export default function HomePage() {
             <div className="flex flex-col gap-3 sm:flex-row">
               <Button
                 size="lg"
-                className="bg-gold text-primary hover:bg-gold/90"
+                className="h-11 bg-gold px-4 text-primary hover:bg-gold/90"
                 nativeButton={false}
                 render={<Link href="/donate" />}
               >
@@ -104,6 +104,7 @@ export default function HomePage() {
               <Button
                 size="lg"
                 variant="secondary"
+                className="h-11 px-4"
                 nativeButton={false}
                 render={<Link href="/about" />}
               >
@@ -112,7 +113,7 @@ export default function HomePage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-gold/40 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+                className="h-11 border-gold/40 bg-transparent px-4 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
                 nativeButton={false}
                 render={<Link href="/programs" />}
               >
@@ -126,7 +127,7 @@ export default function HomePage() {
                 alt=""
                 width={360}
                 height={640}
-                className="h-[19rem] w-auto"
+                className="h-[25rem] w-auto 2xl:h-[26rem]"
                 priority
                 unoptimized
               />
