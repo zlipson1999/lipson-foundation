@@ -1,7 +1,7 @@
 export const site = {
   name: "Lipson Foundation",
   legalName: "Lipson Foundation Inc.",
-  kicker: "Community programs. Completely free.",
+  kicker: "Community programs. Completely cost-free.",
   location: "South Florida / Palm Beach County",
   ein: "39-4624045",
   email: "zlipson@lipsonfoundation.org",
@@ -9,7 +9,7 @@ export const site = {
   phoneHref: "tel:+18456421874",
   domain: "lipsonfoundation.org",
   description:
-    "Lipson Foundation Inc. is a South Florida nonprofit that builds cost-free community programs for underserved communities. Every program is completely free — no memberships, no fees, ever. Flagship program: In Your Corner.",
+    "Lipson Foundation Inc. is a South Florida nonprofit that builds cost-free community programs for underserved communities. Every program is completely cost-free — no memberships, no fees, ever. Flagship program: In Your Corner.",
 } as const
 
 /**
@@ -20,7 +20,7 @@ export const heroBlurb =
   "We don't charge the people we serve. Not a membership fee, not a dollar, not ever."
 
 export const keepItFree =
-  "We don't charge the people we serve. Not a membership fee, not a dollar, not ever. That only works because people like you decide it should. Keep it free."
+  "We don't charge the people we serve. Not a membership fee, not a dollar, not ever. That only works because people like you decide it should. Keep it cost-free."
 
 /**
  * `short` is the founder-supplied wording for the compact row under the hero,
@@ -31,7 +31,7 @@ export const commitments = [
   {
     title: "Access",
     short: "Removing barriers so neighbors can get the support they need.",
-    body: "Every program we run is completely free — no memberships, no fees, no fine print. Cost will never be the reason someone is left out.",
+    body: "Every program we run is completely cost-free — no memberships, no fees, no fine print. Cost will never be the reason someone is left out.",
   },
   {
     title: "Dignity",
@@ -125,23 +125,28 @@ export const howWeWork = [
     body: "A youth program and a veterans program and a seniors program do not look alike, and they should not. Each program is shaped around the people in the room — not the other way around.",
   },
   {
-    title: "Every program is completely free",
+    title: "Every program is completely cost-free",
     body: "No memberships, no dues, no equipment to buy, no fundraiser to sell. Cost is never how we decide who belongs.",
   },
 ] as const
 
+/**
+ * The mandate stated foundation-wide. These are deliberately not program
+ * categories: fitness, wellness and mentoring are where the work starts, and
+ * naming them here would read as the limit of it.
+ */
 export const whatWeBuild = [
   {
-    title: "Fitness",
-    body: "Movement, training, and sport brought to the neighborhood — no membership, no equipment to buy, nothing to qualify for.",
+    title: "Community programming",
+    body: "Whatever a neighborhood needs and cost has kept out of reach. The category is not the point — the community is.",
   },
   {
-    title: "Wellness",
-    body: "Health, meals, and belonging. A room that does not ask what you can afford before it lets you in.",
+    title: "Underserved communities",
+    body: "South Florida and Palm Beach County. Whoever a membership fee, a commute, or a program cost would leave out.",
   },
   {
-    title: "Mentoring",
-    body: "Caring adults in the places people already are. Careers, life skills, and someone who shows up.",
+    title: "Cost-free, always",
+    body: "No memberships, no fees, no fine print. Cost is never the reason someone is left out.",
   },
   {
     title: "And whatever comes next",
@@ -179,7 +184,7 @@ export const programs = [
     status: "Flagship",
     mark: "/brand/iyc-tag.png",
     summary:
-      "A free boxing and mentorship program that brings youth ages 12–17 and veterans together to train. Boxing builds the relationships. Mentorship deepens them — later, not on day one. The Ring, The Corner, and The Crew live inside it.",
+      "A cost-free boxing and mentorship program that brings youth ages 12–17 and veterans together to train. Boxing builds the relationships. Mentorship deepens them — later, not on day one. The Ring, The Corner, and The Crew live inside it.",
   },
 ] as const
 
@@ -192,7 +197,7 @@ export const programMenu = [
   {
     href: "/in-your-corner",
     name: "In Your Corner",
-    body: "Free boxing and mentorship for youth and veterans.",
+    body: "Cost-free boxing and mentorship for youth and veterans.",
   },
 ] as const
 
@@ -267,7 +272,7 @@ export const sessionShape = [
     body: "Career Exploration Night: 60 minutes of training, then 30 minutes with a working professional — a trade, a first responder, a business owner, a veteran who used the GI Bill.",
   },
   {
-    title: "Completely free",
+    title: "Completely cost-free",
     body: "Gloves, wraps, coaching, water, and dinner included. No dues, no fees, no equipment to buy, no fundraiser to sell.",
   },
   {
@@ -318,7 +323,7 @@ export const faqs = [
   {
     question: "What is Lipson Foundation?",
     answer:
-      "Lipson Foundation Inc. is a South Florida nonprofit (EIN 39-4624045) that builds cost-free community programs for underserved communities. We do not own a facility. We bring programs into halls, posts, schools, and rooms a neighborhood already trusts. Every program is completely free — no memberships, no fees, ever.",
+      "Lipson Foundation Inc. is a South Florida nonprofit (EIN 39-4624045) that builds cost-free community programs for underserved communities. We do not own a facility. We bring programs into halls, posts, schools, and rooms a neighborhood already trusts. Every program is completely cost-free — no memberships, no fees, ever.",
   },
   {
     question: "Do you only run fitness programs?",

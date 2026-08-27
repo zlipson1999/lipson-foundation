@@ -17,7 +17,7 @@ import { groups, sessionShape, site, veteranOffer, youthOffer } from "@/lib/site
 export const metadata: Metadata = pageMetadata({
   title: "In Your Corner",
   description:
-    "In Your Corner is a free boxing and mentorship program of Lipson Foundation Inc. for youth ages 12–17 and veterans in South Florida.",
+    "In Your Corner is a cost-free boxing and mentorship program of Lipson Foundation Inc. for youth ages 12–17 and veterans in South Florida.",
   route: "/in-your-corner",
 })
 
@@ -40,7 +40,7 @@ export default function InYourCornerPage() {
             title="In Your Corner"
           >
             <p>
-              Free boxing and mentorship that brings youth ages 12 to 17 and
+              Cost-free boxing and mentorship that brings youth ages 12 to 17 and
               military veterans together to train. There is no cost to any
               participant, ever.
             </p>
