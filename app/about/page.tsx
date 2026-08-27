@@ -17,7 +17,6 @@ import {
 } from "@/components/ui/card"
 import { faqs, site, whoWeServe } from "@/lib/site"
 import { WorkPillars } from "@/components/work-pillars"
-import { Commitments } from "@/components/commitments"
 
 export const metadata: Metadata = pageMetadata({
   title: "About us",
@@ -115,10 +114,6 @@ export default function AboutPage() {
             </Card>
           ))}
         </div>
-      </section>
-
-      <section className="mt-16">
-        <Commitments />
       </section>
 
       <section className="mt-16">

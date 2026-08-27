@@ -66,7 +66,7 @@ export default function HomePage() {
         <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,50%)] xl:grid-cols-[minmax(0,1fr)_minmax(0,44%)]">
           {/* The panel is square art, so it keeps its own aspect on small
               screens and fills the column height from lg up. */}
-          <div className="relative order-first aspect-square overflow-hidden lg:order-last lg:aspect-auto">
+          <div className="relative order-first aspect-square overflow-hidden lg:order-last lg:self-end">
             <Image
               src={asset("/brand/hero-panel.webp")}
               alt="Zachary Lipson, Founder and President, beside the Lipson Foundation dog tag"
@@ -84,11 +84,11 @@ export default function HomePage() {
             />
           </div>
 
-          <div className="flex flex-col items-start gap-6 px-4 pb-14 pt-10 sm:px-6 lg:justify-center lg:py-16 lg:pl-[calc(max(0px,(100vw-72rem)/2)+2rem)] lg:pr-10">
+          <div className="flex flex-col items-start gap-6 px-4 pb-14 pt-10 sm:px-6 lg:justify-center lg:py-12 lg:pl-[calc(max(0px,(100vw-72rem)/2)+2rem)] lg:pr-10">
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
               {site.legalName} · EIN {site.ein}
             </p>
-            <h1 className="text-4xl leading-[1.08] text-balance sm:text-5xl lg:text-[2.6rem] xl:text-[3.5rem] 2xl:text-[3.75rem]">
+            <h1 className="text-4xl leading-[1.08] text-balance sm:text-5xl lg:text-[2.6rem] xl:text-[3.1rem] 2xl:text-[3.5rem]">
               Cost-free community programs for underserved communities across
               South Florida.
             </h1>
@@ -127,9 +127,15 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Access, Dignity, Community and Service directly under the intro. */}
+        {/* Access, Dignity, Community and Service directly under the intro.
+            This is now the only place the four appear; /about links here
+            rather than repeating them. */}
         <div className="border-t border-gold/25">
-          <Container className="grid gap-8 py-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
+          <Container className="flex flex-col gap-6 py-12">
+            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
+              Our commitment
+            </p>
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
             {commitments.map((item) => (
               <div key={item.title} className="flex flex-col gap-2">
                 <p className="font-heading text-2xl text-gold">{item.title}</p>
@@ -138,6 +144,7 @@ export default function HomePage() {
                 </p>
               </div>
             ))}
+            </div>
           </Container>
         </div>
       </section>
