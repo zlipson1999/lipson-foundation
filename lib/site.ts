@@ -15,8 +15,8 @@ export const site = {
   location: `${locationPrimary} — ${locationSecondary}`,
   ein: "39-4624045",
   email: "zlipson@lipsonfoundation.org",
-  phone: "845-642-1874",
-  phoneHref: "tel:+18456421874",
+  // No phone is published: the founder's cell is not going on a public site,
+  // and a work number does not exist yet. Email is the only contact.
   domain: "lipsonfoundation.org",
   description:
     "Lipson Foundation Inc. is a South Florida nonprofit that builds cost-free community programs for underserved communities. Every program is completely cost-free — no memberships, no fees, ever. Flagship program: In Your Corner.",
@@ -399,6 +399,6 @@ export const faqs = [
   {
     question: "How do I reach you?",
     answer:
-      "Zachary Lipson, Founder and President. 845-642-1874. zlipson@lipsonfoundation.org.",
+      "Zachary Lipson, Founder and President. zlipson@lipsonfoundation.org.",
   },
 ] as const

@@ -46,8 +46,7 @@ export default function TeamPage() {
               </EmptyMedia>
               <EmptyTitle className="text-base">Staff will be listed here as roles are filled.</EmptyTitle>
               <EmptyDescription className="text-sm">
-                We will not invent names. Until then, write to {site.email} or
-                call {site.phone}.
+                We will not invent names. Until then, write to {site.email}.
               </EmptyDescription>
             </EmptyHeader>
           </Empty>

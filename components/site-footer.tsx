@@ -43,11 +43,6 @@ export function SiteFooter() {
               <li>{site.location}</li>
               <li>EIN {site.ein}</li>
               <li>
-                <a href={site.phoneHref} className="hover:text-gold">
-                  {site.phone}
-                </a>
-              </li>
-              <li>
                 <a href={`mailto:${site.email}`} className="hover:text-gold">
                   {site.email}
                 </a>

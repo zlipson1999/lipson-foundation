@@ -75,15 +75,9 @@ export default function HomePage() {
           <Container className="flex items-center justify-between gap-4 py-3.5 text-[11px] font-medium tracking-[0.1em] whitespace-nowrap text-primary-foreground/60 uppercase xl:gap-6 xl:text-[12px] xl:tracking-[0.16em]">
             <span className="text-gold">EIN {site.ein}</span>
             <span>{site.location}</span>
-            <span className="flex items-center gap-3 xl:gap-5">
-              <a href={site.phoneHref} className="hover:text-gold">
-                {site.phone}
-              </a>
-              <span aria-hidden className="text-gold/40">/</span>
-              <a href={`mailto:${site.email}`} className="hover:text-gold">
-                {site.email}
-              </a>
-            </span>
+            <a href={`mailto:${site.email}`} className="hover:text-gold">
+              {site.email}
+            </a>
           </Container>
         </div>
         {/* Phones get the same facts as the desktop strip, split around the
@@ -122,15 +116,9 @@ export default function HomePage() {
 
           <div className="flex flex-col items-center gap-1 border-b border-primary-foreground/10 px-4 py-3 text-center text-[11px] font-medium tracking-[0.1em] whitespace-nowrap text-primary-foreground/60 uppercase lg:hidden">
             <span className="text-gold">EIN {site.ein}</span>
-            <span>
-              <a href={site.phoneHref} className="hover:text-gold">
-                {site.phone}
-              </a>
-              <span aria-hidden className="px-2 text-gold/40">/</span>
-              <a href={`mailto:${site.email}`} className="hover:text-gold">
-                {site.email}
-              </a>
-            </span>
+            <a href={`mailto:${site.email}`} className="hover:text-gold">
+              {site.email}
+            </a>
           </div>
 
           <div className="flex flex-col items-start gap-6 px-4 pb-14 pt-10 sm:px-6 lg:justify-center lg:py-8 lg:pl-[calc(max(0px,(100vw-72rem)/2)+2rem)] lg:pr-10">

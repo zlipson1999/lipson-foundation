@@ -7,7 +7,7 @@ You are working on the public website prototype for **Lipson Foundation Inc.** Y
 - **Org:** Lipson Foundation Inc., a South Florida nonprofit (EIN 39-4624045) building **cost-free community programs for underserved communities**. Fitness, wellness, and mentoring are where the work starts — **not the boundary** of the mission. Every program is completely free to participants, always.
 - **Founder:** Zachary Lipson, Founder and President, who lives with hereditary spastic paraplegia. Board: Zachary Lipson (President), Joshua Weinfeld (CFO), Julia Vance (Secretary).
 - **Flagship program:** **In Your Corner** — free non-contact boxing + mentorship for youth ages 12–17 and military veterans of any era. 2×/week sessions of 60 minutes training + 30 minutes dinner together; monthly Career Exploration Night. No sparring, no head contact. No host hall is signed; no session days or start date exist.
-- **Contact:** Zachary Lipson · 845-642-1874 · zlipson@lipsonfoundation.org · **lipsonfoundation.org serves this site** (GitHub Pages custom domain, DNS at GoDaddy).
+- **Contact:** Zachary Lipson · zlipson@lipsonfoundation.org · **lipsonfoundation.org serves this site** (GitHub Pages custom domain, DNS at GoDaddy).
 - **Stack:** Next.js 16 (App Router), TypeScript, Tailwind CSS v4, shadcn/ui (base-lyra / Base UI). Dev server already runs at http://127.0.0.1:43147 — **do not restart it, do not start another one**.
 - **Git:** commit directly to `main`, push with `git push -u origin main`. No PRs, no feature branches. **Every push to GitHub `main` triggers a live redeploy** to GitHub Pages, so only push verified work.
 - **Copy provenance:** all site copy derives from the 22 August 2026 public-copy kit (fact sheet + program description). That kit is the ONLY source of truth for facts. If a fact is not in the kit, it does not go on the site.
@@ -19,7 +19,7 @@ These are absolute. Do not soften, reinterpret, or "improve" them.
 **MAY say (and must stay consistent everywhere):**
 - Legal name **Lipson Foundation Inc.** · EIN **39-4624045**
 - **South Florida / Palm Beach County** (and surrounding counties) as service area
-- **Zachary Lipson, Founder and President** · phone **845-642-1874** · email **zlipson@lipsonfoundation.org**
+- **Zachary Lipson, Founder and President** · email **zlipson@lipsonfoundation.org**
 - lipsonfoundation.org is owned (parked)
 - Board names/roles as listed in §1
 
@@ -27,6 +27,8 @@ These are absolute. Do not soften, reinterpret, or "improve" them.
 - 501(c)(3), "public charity," "tax-deductible," "IRS-determined" / determination letter in hand
 - FDACS registered / "registered with the state," DR-5 / DR-14
 - These are unconfirmed binder targets. Saying them would be a false public claim.
+
+- **No phone number is published** (27 Aug 2026). The founder's cell is not going on a public site and no work number exists yet; email is the only contact. Do not re-add one until a work number is supplied.
 
 **MUST NOT invent:**
 - Host post names, session days, or start dates (no host is signed; no calendar exists)
@@ -88,7 +90,7 @@ Run each of these. Record findings before fixing.
 **A. Content-compliance scan (highest priority):**
 - `rg -i` across `app/ components/ lib/ public/ README.md` for forbidden phrases: `501\(c\)`, `501c`, `tax[- ]deduct`, `public charity`, `FDACS`, `DR-5`, `DR-14`, `IRS`, `determination letter`, `charity registration`, `nonprofit status`, `crimson`.
 - Scan for invented facts: specific weekdays/times attached to sessions, start dates, host post names presented as committed (e.g. "Post 47" as a signed host), impact numbers/statistics, tagline-like slogans presented as official, donation URLs or processor names (Stripe, PayPal, GoFundMe, Donorbox…).
-- Verify EIN `39-4624045`, phone `845-642-1874`, email `zlipson@lipsonfoundation.org`, and the legal name are consistent in every occurrence (grep for partial/typo variants).
+- Verify EIN `39-4624045`, email `zlipson@lipsonfoundation.org`, and the legal name are consistent in every occurrence (grep for partial/typo variants).
 - Confirm "In Your Corner" (not "UR") in all body copy; confirm The Crew is described as paid everywhere; confirm no day-one mentorship implication.
 
 **B. Accessibility:**
