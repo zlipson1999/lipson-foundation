@@ -92,6 +92,26 @@ export default function AboutPage() {
         </aside>
       </div>
 
+      {/* Moved off the home page so the mission is stated where someone has
+          come to read about the foundation, not where they have come to act. */}
+      <section className="mt-16 flex flex-col gap-4">
+        <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
+          The mission
+        </p>
+        <h2 className="max-w-2xl text-3xl sm:text-4xl">
+          If cost is the barrier, the program is our job.
+        </h2>
+        <p className="max-w-2xl text-base leading-relaxed text-muted-foreground">
+          {site.legalName} serves underserved communities across{" "}
+          {site.location} and surrounding counties. The work is not one
+          category and not one program.
+        </p>
+        <p className="max-w-2xl text-base leading-relaxed text-muted-foreground">
+          The mandate is cost-free community programs — all of them. When a
+          community needs something that is not on this list, the list grows.
+        </p>
+      </section>
+
       <section
         id="who-we-serve"
         className="mt-16 flex scroll-mt-28 flex-col gap-6"
