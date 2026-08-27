@@ -115,10 +115,7 @@ export default function HomePage() {
           </div>
 
           <div className="flex flex-col items-center gap-1 border-b border-primary-foreground/10 px-4 py-3 text-center text-[11px] font-medium tracking-[0.1em] whitespace-nowrap text-primary-foreground/60 uppercase lg:hidden">
-            {/* Same weight as the email below it and the location above the
-                art, so the three read as one set rather than one being
-                singled out. The desktop strip keeps its gold EIN. */}
-            <span>EIN {site.ein}</span>
+            <span className="text-gold">EIN {site.ein}</span>
             <a href={`mailto:${site.email}`} className="hover:text-gold">
               {site.email}
             </a>
