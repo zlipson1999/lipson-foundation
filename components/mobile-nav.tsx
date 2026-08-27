@@ -44,7 +44,7 @@ export function MobileNav() {
               render={
                 <Link
                   href={item.href}
-                  className="px-1 py-2.5 text-sm text-foreground hover:text-primary"
+                  className="px-2 py-3 text-sm text-foreground hover:text-primary"
                 />
               }
               nativeButton={false}
@@ -52,29 +52,37 @@ export function MobileNav() {
               {item.label}
             </SheetClose>
           ))}
-          <p className="mt-3 px-1 text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
+          {/* On touch there is no hover, so the heading is itself the link to
+              the programs page and the programs are listed beneath it. */}
+          <SheetClose
+            render={
+              <Link
+                href="/programs"
+                className="mt-3 flex min-h-11 items-center px-2 text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground hover:text-primary"
+              />
+            }
+            nativeButton={false}
+          >
             Programs
-          </p>
-          {programMenu
-            .filter((item) => item.href !== "/programs")
-            .map((item) => (
-              <SheetClose
-                key={item.href}
-                render={
-                  <Link
-                    href={item.href}
-                    className="px-1 py-2 text-sm text-muted-foreground hover:text-primary"
-                  />
-                }
-                nativeButton={false}
-              >
-                {item.name}
-              </SheetClose>
-            ))}
+          </SheetClose>
+          {programMenu.map((item) => (
+            <SheetClose
+              key={item.href}
+              render={
+                <Link
+                  href={item.href}
+                  className="px-2 py-3 text-sm text-muted-foreground hover:text-primary"
+                />
+              }
+              nativeButton={false}
+            >
+              {item.name}
+            </SheetClose>
+          ))}
         </nav>
         <div className="mt-auto flex flex-col gap-2 p-4">
           <Button
-            className="w-full bg-gold text-primary hover:bg-gold/90"
+            className="h-11 w-full bg-gold text-primary hover:bg-gold/90"
             size="lg"
             nativeButton={false}
             render={<Link href="/donate" />}
@@ -82,13 +90,13 @@ export function MobileNav() {
             Donate
           </Button>
           <Button
-            className="w-full"
+            className="h-11 w-full"
             size="lg"
             variant="outline"
             nativeButton={false}
             render={<Link href="/forms" />}
           >
-            Forms
+            Contact us
           </Button>
         </div>
       </SheetContent>

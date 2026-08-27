@@ -12,24 +12,40 @@ export const site = {
     "Lipson Foundation Inc. is a South Florida nonprofit that builds cost-free community programs for underserved communities. Every program is completely free — no memberships, no fees, ever. Flagship program: In Your Corner.",
 } as const
 
+/**
+ * The intro paragraph, taken from the opening of the keep-it-free line, so it
+ * speaks for the foundation as a whole rather than for any one program.
+ */
+export const heroBlurb =
+  "We don't charge the people we serve. Not a membership fee, not a dollar, not ever."
+
 export const keepItFree =
   "We don't charge the people we serve. Not a membership fee, not a dollar, not ever. That only works because people like you decide it should. Keep it free."
 
+/**
+ * `short` is the founder-supplied wording for the compact row under the hero,
+ * taken verbatim from the design. `body` is the longer copy-kit text, which
+ * still runs on /about and further down the home page.
+ */
 export const commitments = [
   {
     title: "Access",
+    short: "Removing barriers so neighbors can get the support they need.",
     body: "Every program we run is completely free — no memberships, no fees, no fine print. Cost will never be the reason someone is left out.",
   },
   {
     title: "Dignity",
+    short: "Serving with respect and meeting people where they are.",
     body: "We meet people where they are. Whatever your ability, background, or circumstances, you belong here — and our programs are built to prove it, including on our own team, where we proudly employ adults with developmental disabilities.",
   },
   {
     title: "Community",
+    short: "Building connections that strengthen South Florida.",
     body: "Instead of walls, we use local assets — veteran halls, schools, and shared spaces. A network where neighbors consistently support and uplift one another.",
   },
   {
     title: "Service",
+    short: "Delivering reliable programs with compassion and integrity.",
     body: "Everyone has something to give. Our programs turn participants into mentors, neighbors into role models, and service into a way of life.",
   },
 ] as const
@@ -61,7 +77,7 @@ export const navItems = [
   { href: "/events", label: "Events" },
   { href: "/news", label: "News" },
   { href: "/donate", label: "Donate" },
-  { href: "/forms", label: "Forms" },
+  { href: "/forms", label: "Contact us" },
 ] as const
 
 export const board = [
@@ -161,18 +177,18 @@ export const programs = [
     name: "In Your Corner",
     href: "/in-your-corner",
     status: "Flagship",
+    mark: "/brand/iyc-tag.png",
     summary:
       "A free boxing and mentorship program that brings youth ages 12–17 and veterans together to train. Boxing builds the relationships. Mentorship deepens them — later, not on day one. The Ring, The Corner, and The Crew live inside it.",
   },
 ] as const
 
-/** Named programs only. Groups inside In Your Corner are not listed here. */
+/**
+ * The nav lists programs only. The Ring, The Corner, The Crew and Career
+ * Exploration Night are parts of In Your Corner rather than programs of their
+ * own, so they live on the In Your Corner page and are not surfaced here.
+ */
 export const programMenu = [
-  {
-    href: "/programs",
-    name: "All programs",
-    body: "All programs we bring to communities. In Your Corner is the named flagship.",
-  },
   {
     href: "/in-your-corner",
     name: "In Your Corner",
