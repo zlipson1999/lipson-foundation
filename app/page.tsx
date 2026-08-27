@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRightIcon, HeartIcon } from "@phosphor-icons/react/ssr"
 import { Container } from "@/components/container"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -12,7 +13,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { asset } from "@/lib/assets"
-import { commitments, heroBlurb, site } from "@/lib/site"
+import { commitments, heroBlurb, programs, site } from "@/lib/site"
 import { WorkPillars } from "@/components/work-pillars"
 
 export const metadata: Metadata = pageMetadata({
@@ -149,33 +150,52 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* The programs, straight after the commitments. One entry today; the
+          list grows from lib/site.ts as programs launch, and no placeholder
+          stands in for one that has not. */}
       <section>
-        <Container className="grid gap-10 py-16 sm:py-20 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
-          <div className="flex flex-col gap-4">
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
-              The mission
+        <Container className="flex flex-col gap-8 py-16 sm:py-20">
+          <div className="flex flex-col gap-3">
+            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold-ink">
+              What we run
             </p>
-            <h2 className="text-3xl sm:text-4xl">
-              If cost is the barrier, the program is our job.
-            </h2>
-            <p className="text-base leading-relaxed text-muted-foreground">
-              {site.legalName} serves underserved communities across{" "}
-              {site.location} and surrounding counties. The work is not one
-              category and not one program.
-            </p>
-            <p className="text-base leading-relaxed text-muted-foreground">
-              Read who we are, meet the team, then see the programs we bring to
-              the room.
+            <h2 className="text-3xl sm:text-4xl">Our programs</h2>
+            <p className="max-w-2xl text-base leading-relaxed text-muted-foreground">
+              Every one is cost-free to the people it serves. New programs are
+              listed as they launch — we will not invent a catalog.
             </p>
           </div>
-          <aside className="flex flex-col gap-3 border border-border bg-card p-6">
-            <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
-              On the record
-            </p>
-            <p className="text-sm">{site.legalName}</p>
-            <p className="text-sm text-muted-foreground">EIN {site.ein}</p>
-            <p className="text-sm text-muted-foreground">{site.location}</p>
-          </aside>
+          <ul className="flex flex-col gap-6">
+            {programs.map((program) => (
+              <li
+                key={program.slug}
+                className="flex flex-col gap-6 border-l-2 border-gold pl-6 sm:flex-row sm:items-start sm:gap-8"
+              >
+                <Image
+                  src={asset(program.mark)}
+                  alt=""
+                  width={612}
+                  height={640}
+                  className="h-24 w-auto shrink-0 sm:h-28"
+                  unoptimized
+                />
+                <div className="flex flex-col items-start gap-3">
+                  <Badge variant="secondary">{program.status}</Badge>
+                  <h3 className="font-heading text-2xl">{program.name}</h3>
+                  <p className="max-w-2xl text-base leading-relaxed text-muted-foreground">
+                    {program.summary}
+                  </p>
+                  <Button
+                    nativeButton={false}
+                    render={<Link href={program.href} />}
+                  >
+                    Read the program
+                    <ArrowRightIcon data-icon="inline-end" />
+                  </Button>
+                </div>
+              </li>
+            ))}
+          </ul>
         </Container>
       </section>
 
@@ -207,40 +227,6 @@ export default function HomePage() {
                 </Card>
               </Link>
             ))}
-          </div>
-        </Container>
-      </section>
-
-      <section>
-        <Container className="flex flex-col gap-8 py-16 sm:py-20">
-          <div className="flex flex-col gap-4">
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold-ink">
-              Flagship program — the first of many
-            </p>
-            <h2 className="text-3xl sm:text-4xl">In Your Corner</h2>
-            <p className="max-w-2xl text-base leading-relaxed text-muted-foreground">
-              Boxing and mentorship for youth ages 12–17 and veterans. It is
-              the named flagship and the proof of the model: bring everything a
-              program needs into a room the community trusts. New programs
-              will be listed as they launch — we will not invent a catalog.
-            </p>
-            <p className="max-w-2xl text-base leading-relaxed">
-              This is what it means to have someone in your corner.
-            </p>
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <Button size="lg" nativeButton={false} render={<Link href="/in-your-corner" />}>
-                Read the program
-                <ArrowRightIcon data-icon="inline-end" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                nativeButton={false}
-                render={<Link href="/forms" />}
-              >
-                Forms
-              </Button>
-            </div>
           </div>
         </Container>
       </section>
