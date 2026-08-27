@@ -64,6 +64,28 @@ export default function HomePage() {
             to the right from lg up, where the copy column's left padding is
             calculated to line up with the centred container everywhere else on
             the page. */}
+        {/* Only what is not already on screen above: the header carries the
+            name and the mark, so this is the EIN, where we work, and the two
+            ways to reach us. Desktop only - on a phone it would wrap into
+            three lines and push the hero down. */}
+        <div className="hidden border-b border-primary-foreground/10 lg:block">
+          <Container className="flex items-center justify-between gap-6 py-3.5 text-[12px] font-medium uppercase tracking-[0.18em] text-primary-foreground/60">
+            <span className="flex items-center gap-5">
+              <span className="text-gold">EIN {site.ein}</span>
+              <span aria-hidden className="text-gold/40">/</span>
+              <span>{site.location}</span>
+            </span>
+            <span className="flex items-center gap-5">
+              <a href={site.phoneHref} className="hover:text-gold">
+                {site.phone}
+              </a>
+              <span aria-hidden className="text-gold/40">/</span>
+              <a href={`mailto:${site.email}`} className="hover:text-gold">
+                {site.email}
+              </a>
+            </span>
+          </Container>
+        </div>
         <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,46%)] xl:grid-cols-[minmax(0,1fr)_minmax(0,41%)]">
           {/* The panel is square art, so it keeps its own aspect on small
               screens and fills the column height from lg up. */}
@@ -92,7 +114,7 @@ export default function HomePage() {
           </div>
 
           <div className="flex flex-col items-start gap-6 px-4 pb-14 pt-10 sm:px-6 lg:justify-center lg:py-8 lg:pl-[calc(max(0px,(100vw-72rem)/2)+2rem)] lg:pr-10">
-            <p className="text-[13px] font-medium uppercase tracking-[0.2em] text-gold sm:text-sm">
+            <p className="text-[13px] font-medium uppercase tracking-[0.2em] text-gold sm:text-sm lg:hidden">
               {site.legalName} · EIN {site.ein}
             </p>
             <h1 className="text-4xl leading-[1.08] text-balance sm:text-5xl lg:text-[2.75rem] xl:text-[3.4rem] 2xl:text-[3.75rem]">

@@ -13,11 +13,8 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 bg-primary text-primary-foreground">
       <div className="hidden border-b border-gold/25 lg:block">
-        <Container className="flex h-8 items-center justify-between gap-4 text-[11px] font-medium uppercase tracking-[0.18em] text-gold">
+        <Container className="flex h-8 items-center text-[11px] font-medium uppercase tracking-[0.18em] text-gold">
           <span>{site.kicker}</span>
-          <a href={site.phoneHref} className="hover:text-primary-foreground">
-            {site.phone}
-          </a>
         </Container>
       </div>
       <div className="border-b border-primary-foreground/10">
