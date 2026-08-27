@@ -3,12 +3,11 @@ import { Container } from "@/components/container"
 import { Logo } from "@/components/logo"
 import { MobileNav } from "@/components/mobile-nav"
 import { ProgramsNav } from "@/components/programs-nav"
-import { HeartIcon } from "@phosphor-icons/react/ssr"
 import { Button } from "@/components/ui/button"
 import { navItems, site } from "@/lib/site"
 
 const linkClass =
-  "px-2 py-1.5 text-[13px] text-primary-foreground/80 transition-colors hover:text-gold whitespace-nowrap"
+  "px-3 py-2 text-[15px] text-primary-foreground/80 transition-colors hover:text-gold whitespace-nowrap"
 
 export function SiteHeader() {
   return (
@@ -51,12 +50,11 @@ export function SiteHeader() {
           <div className="flex items-center gap-2">
             <Button
               size="lg"
-              className="hidden bg-gold text-primary hover:bg-gold/90 lg:inline-flex"
+              className="hidden h-11 bg-gold px-5 text-[15px] text-primary hover:bg-gold/90 lg:inline-flex"
               nativeButton={false}
               render={<Link href="/donate" />}
             >
               Donate
-              <HeartIcon data-icon="inline-end" />
             </Button>
             <MobileNav />
           </div>

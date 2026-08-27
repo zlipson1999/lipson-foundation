@@ -64,7 +64,7 @@ export default function HomePage() {
             to the right from lg up, where the copy column's left padding is
             calculated to line up with the centred container everywhere else on
             the page. */}
-        <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,50%)] xl:grid-cols-[minmax(0,1fr)_minmax(0,44%)]">
+        <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,46%)] xl:grid-cols-[minmax(0,1fr)_minmax(0,41%)]">
           {/* The panel is square art, so it keeps its own aspect on small
               screens and fills the column height from lg up. */}
           <div className="relative order-first aspect-square overflow-hidden lg:order-last lg:self-end">
@@ -85,11 +85,11 @@ export default function HomePage() {
             />
           </div>
 
-          <div className="flex flex-col items-start gap-6 px-4 pb-14 pt-10 sm:px-6 lg:justify-center lg:py-12 lg:pl-[calc(max(0px,(100vw-72rem)/2)+2rem)] lg:pr-10">
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
+          <div className="flex flex-col items-start gap-6 px-4 pb-14 pt-10 sm:px-6 lg:justify-center lg:py-10 lg:pl-[calc(max(0px,(100vw-72rem)/2)+2rem)] lg:pr-10">
+            <p className="text-[13px] font-medium uppercase tracking-[0.2em] text-gold sm:text-sm">
               {site.legalName} · EIN {site.ein}
             </p>
-            <h1 className="text-4xl leading-[1.08] text-balance sm:text-5xl lg:text-[2.6rem] xl:text-[3.1rem] 2xl:text-[3.5rem]">
+            <h1 className="text-4xl leading-[1.08] text-balance sm:text-5xl lg:text-[2.75rem] xl:text-[3.4rem] 2xl:text-[3.75rem]">
               Cost-free community programs for underserved communities across
               South Florida.
             </h1>
@@ -99,17 +99,17 @@ export default function HomePage() {
             <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
               <Button
                 size="lg"
-                className="h-11 bg-gold px-4 text-primary hover:bg-gold/90"
+                className="h-12 bg-gold px-6 text-[15px] text-primary hover:bg-gold/90"
                 nativeButton={false}
                 render={<Link href="/donate" />}
               >
-                Donate — keep it cost-free
+                Donate
                 <HeartIcon data-icon="inline-end" />
               </Button>
               <Button
                 size="lg"
                 variant="secondary"
-                className="h-11 px-4"
+                className="h-12 px-6 text-[15px]"
                 nativeButton={false}
                 render={<Link href="/about" />}
               >
@@ -118,7 +118,7 @@ export default function HomePage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="h-11 border-gold/40 bg-transparent px-4 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+                className="h-12 border-gold/40 bg-transparent px-6 text-[15px] text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
                 nativeButton={false}
                 render={<Link href="/programs" />}
               >
