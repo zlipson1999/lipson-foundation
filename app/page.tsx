@@ -60,23 +60,27 @@ export default function HomePage() {
   return (
     <>
       <section className="relative overflow-hidden border-b bg-primary text-primary-foreground">
-        {/* Hero band. The founder is pinned flush to the viewport's left edge
-            and runs off the bottom of the band, so the band is its own
-            positioning context - otherwise he spills into the promises strip.
-            The copy's left padding steps down as the centred container's own
-            margins grow, keeping the text clear of him at every width. */}
+        {/* Hero band. From lg up the founder is pinned flush to the viewport's
+            left edge and runs off the bottom of the band, so the band is its
+            own positioning context - otherwise he spills into the commitments
+            row. The copy's left padding steps down as the centred container's
+            own margins grow, keeping the text clear of him at every width. */}
         <div className="relative">
           <HeroTexture />
+          {/* Below lg the band is the dog tag over the copy: the founder is
+              dropped rather than stacked, so the mark carries the small
+              screens on its own. He returns pinned to the left edge at lg,
+              where the stacked tag gives way to the one beside the copy. */}
           <Image
-            src={asset("/brand/founder.webp")}
-            alt="Zachary Lipson, Founder and President"
-            width={803}
-            height={900}
-            className="mx-auto h-60 w-auto sm:h-80 lg:absolute lg:bottom-0 lg:left-0 lg:mx-0 lg:h-[26rem] xl:h-[27.5rem]"
+            src={asset("/brand/lipson-tag.png")}
+            alt=""
+            width={360}
+            height={640}
+            className="relative mx-auto h-56 w-auto pt-10 sm:h-64 lg:hidden"
             priority
             unoptimized
           />
-          <Container className="hero-copy relative grid items-center gap-x-10 gap-y-6 pb-14 pt-8 lg:py-12 xl:py-6 xl:grid-cols-[minmax(0,1fr)_auto]">
+          <Container className="hero-copy relative grid items-center gap-x-10 gap-y-6 pb-14 pt-7 lg:py-12 xl:py-6 xl:grid-cols-[minmax(0,1fr)_auto]">
             <div className="flex flex-col items-center gap-7 text-center">
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
               {site.legalName} · EIN {site.ein}
@@ -126,6 +130,15 @@ export default function HomePage() {
               />
             </div>
           </Container>
+          <Image
+            src={asset("/brand/founder.webp")}
+            alt="Zachary Lipson, Founder and President"
+            width={803}
+            height={900}
+            className="hidden lg:absolute lg:bottom-0 lg:left-0 lg:block lg:h-[26rem] lg:w-auto xl:h-[27.5rem]"
+            priority
+            unoptimized
+          />
         </div>
         {/* The four commitments, as in the design: a label column, then Access,
             Dignity, Community and Service divided by hairlines. */}
