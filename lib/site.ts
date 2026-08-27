@@ -13,12 +13,11 @@ export const site = {
 } as const
 
 /**
- * The intro paragraph. Both sentences are existing site copy - the first from
- * the keep-it-free line, the second from the work section - so the intro stays
- * about the foundation as a whole rather than about any one program.
+ * The intro paragraph, taken from the opening of the keep-it-free line, so it
+ * speaks for the foundation as a whole rather than for any one program.
  */
 export const heroBlurb =
-  "We don't charge the people we serve. Not a membership fee, not a dollar, not ever. Fitness, wellness, and mentoring are where the work starts — not where it ends."
+  "We don't charge the people we serve. Not a membership fee, not a dollar, not ever."
 
 export const keepItFree =
   "We don't charge the people we serve. Not a membership fee, not a dollar, not ever. That only works because people like you decide it should. Keep it free."
