@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/card"
 import { asset } from "@/lib/assets"
 import { commitments, heroBlurb, locationLines, programs, site } from "@/lib/site"
-import { WorkPillars } from "@/components/work-pillars"
 
 export const metadata: Metadata = pageMetadata({
   title: `${site.name} — ${site.kicker}`,
@@ -244,13 +243,7 @@ export default function HomePage() {
       </section>
 
 
-      <section className="order-4">
-        <Container className="py-12 sm:py-20">
-          <WorkPillars heading="All cost-free community programs." />
-        </Container>
-      </section>
-
-      <section className="order-5 border-y bg-secondary">
+      <section className="order-4 border-y bg-secondary">
         <Container className="flex flex-col gap-8 py-12 sm:py-20">
           <div className="flex max-w-2xl flex-col gap-3">
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
@@ -275,7 +268,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="order-6 border-t bg-primary text-primary-foreground">
+      <section className="order-5 border-t bg-primary text-primary-foreground">
         <Container className="flex flex-col gap-6 py-12 sm:py-20">
           <h2 className="max-w-2xl text-3xl sm:text-4xl">
             Help keep every program cost-free.
