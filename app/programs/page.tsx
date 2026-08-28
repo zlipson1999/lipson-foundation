@@ -51,7 +51,7 @@ export default function ProgramsPage() {
         ))}
       </section>
 
-      <h2 className="mb-6 text-3xl">Named programs</h2>
+      <h2 className="mb-6 text-3xl">Our programs</h2>
 
       <div className="grid gap-6">
         {programs.map((program) => (
