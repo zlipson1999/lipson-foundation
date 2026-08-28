@@ -27,7 +27,7 @@ const nextConfig: NextConfig = staticExport
           { source: "/give", destination: "/donate", permanent: false },
           { source: "/involved", destination: "/forms", permanent: false },
           { source: "/updates", destination: "/news", permanent: false },
-          // Groups inside In Your Corner — not standalone programs.
+          // Groups inside In Ur Corner — not standalone programs.
           // Hash destinations are kept so a typed URL lands on the right section
           // in dynamic builds. Static export cannot serve these redirects.
           {

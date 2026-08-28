@@ -6,7 +6,7 @@ You are working on the public website prototype for **Lipson Foundation Inc.** Y
 
 - **Org:** Lipson Foundation Inc., a South Florida nonprofit (EIN 39-4624045) building **cost-free community programs for underserved communities**. Fitness, wellness, and mentoring are where the work starts — **not the boundary** of the mission. Every program is completely free to participants, always.
 - **Founder:** Zachary Lipson, Founder and President, who lives with hereditary spastic paraplegia. Board: Zachary Lipson (President), Joshua Weinfeld (CFO), Julia Vance (Secretary).
-- **Flagship program:** **In Your Corner** — free non-contact boxing + mentorship for youth ages 12–17 and military veterans of any era. 2×/week sessions of 60 minutes training + 30 minutes dinner together; monthly Career Exploration Night. No sparring, no head contact. No host hall is signed; no session days or start date exist.
+- **Flagship program:** **In Ur Corner** — free non-contact boxing + mentorship for youth ages 12–17 and military veterans of any era. 2×/week sessions of 60 minutes training + 30 minutes dinner together; monthly Career Exploration Night. No sparring, no head contact. No host hall is signed; no session days or start date exist.
 - **Contact:** Zachary Lipson · zlipson@lipsonfoundation.org · **lipsonfoundation.org serves this site** (GitHub Pages custom domain, DNS at GoDaddy).
 - **Stack:** Next.js 16 (App Router), TypeScript, Tailwind CSS v4, shadcn/ui (base-lyra / Base UI). Dev server already runs at http://127.0.0.1:43147 — **do not restart it, do not start another one**.
 - **Git:** commit directly to `main`, push with `git push -u origin main`. No PRs, no feature branches. **Every push to GitHub `main` triggers a live redeploy** to GitHub Pages, so only push verified work.
@@ -41,12 +41,13 @@ it rests on the letter, not on an expectation of one.
 - An official tagline (none has been chosen)
 - A donate URL, payment processor, or checkout of any kind
 - Impact numbers, launch data, participant counts, or statistics (there is no launch data)
-- Additional named programs beyond In Your Corner, or staff names (staff list is intentionally empty)
+- Additional named programs beyond In Ur Corner, or staff names (staff list is intentionally empty)
 
 - **Mission and vision (owner-supplied, 27 Aug 2026, Zachary Lipson — not from the 22 Aug kit).** Mission: "The Lipson Foundation removes cost as a barrier to growth, offering cost-free programs that support health, personal growth, and professional development for underserved communities." Vision: "A community where cost is never the reason someone stops growing." Both live on `/about` and are stored in `lib/site.ts`. His wording said "free"; it is written **cost-free** to match the rule below.
 
 **Naming and framing rules:**
-- Formal program name in all body copy: **In Your Corner**. The short mark **UR** / **IN UR CORNER** is mark-only (tags/merch imagery) and must never appear in body copy, headings, metadata, or alt text as a program name.
+- **Program name corrected 28 Aug 2026 by Zachary Lipson.** The formal name is **In Ur Corner**, not "In Your Corner". The 22 Aug kit's reading — that "In Your Corner" was the formal name and UR was mark-only — was wrong; the founder confirmed the mark and the name are the same. Use **In Ur Corner** in all body copy, headings, metadata and alt text. This reverses the earlier mark-only rule.
+- The route stays `/in-your-corner`. Renaming it would break every link already shared and the `/work` redirect that points at it. The URL is not the name.
 - **The Crew** = **PAID** inclusive-employment roles for adults with developmental disabilities. Never describe Crew members as volunteers, and never mix the name with any "Corner Crew" volunteer concept.
 - **Mentorship is never day-one.** Matches form after weeks of shared training and meals, only when both people are ready. Never imply mentors are assigned at signup.
 - Mission framing: the foundation builds **all** cost-free community programs for underserved communities. Fitness/wellness/mentoring is where the work starts, not the limit. Do not narrow the mission to "a boxing charity."
@@ -55,7 +56,7 @@ it rests on the letter, not on an expectation of one.
 
 **Brand rules:**
 - Colors: navy `#03162F` · gold `#C6A15A` · paper `#F7F1E4`. **No crimson** anywhere.
-- Official foundation logo: `public/brand/lipson-tag.png` (navy dog-tag with gold phoenix). In Your Corner mark: `public/brand/iyc-tag.png`.
+- Official foundation logo: `public/brand/lipson-tag.png` (navy dog-tag with gold phoenix). In Ur Corner mark: `public/brand/iyc-tag.png`.
 - Fonts: **Fraunces** for headings, **Source Sans 3** for body.
 
 ## 3. Architecture map
@@ -97,11 +98,11 @@ Run each of these. Record findings before fixing.
 - `rg -i` across `app/ components/ lib/ public/ README.md` for forbidden phrases: `501\(c\)`, `501c`, `tax[- ]deduct`, `public charity`, `FDACS`, `DR-5`, `DR-14`, `IRS`, `determination letter`, `charity registration`, `nonprofit status`, `crimson`.
 - Scan for invented facts: specific weekdays/times attached to sessions, start dates, host post names presented as committed (e.g. "Post 47" as a signed host), impact numbers/statistics, tagline-like slogans presented as official, donation URLs or processor names (Stripe, PayPal, GoFundMe, Donorbox…).
 - Verify EIN `39-4624045`, email `zlipson@lipsonfoundation.org`, and the legal name are consistent in every occurrence (grep for partial/typo variants).
-- Confirm "In Your Corner" (not "UR") in all body copy; confirm The Crew is described as paid everywhere; confirm no day-one mentorship implication.
+- Confirm "In Ur Corner" (not "In Your Corner") in all body copy; confirm The Crew is described as paid everywhere; confirm no day-one mentorship implication.
 
 **B. Accessibility:**
 - Landmarks: one `<main>` per page, `<header>`/`<footer>`/`<nav>` with accessible names where duplicated.
-- Every image has meaningful `alt` (or `alt=""` if decorative); logo alt should not say "UR".
+- Every image has meaningful `alt` (or `alt=""` if decorative).
 - Visible focus states on all interactive elements (links, buttons, accordion triggers, mobile nav, dropdown).
 - Color contrast on navy/gold/paper combinations — gold `#C6A15A` on paper `#F7F1E4` likely fails for body text; check every gold-on-light and gold-on-navy text usage against WCAG AA.
 - Every form input has an associated `<label>`; error messages are announced (aria-live or equivalent); required fields marked.

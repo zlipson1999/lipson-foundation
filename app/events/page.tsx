@@ -32,7 +32,7 @@ export default function EventsPage() {
     <Container className="pb-20">
       <PageIntro kicker="Events" title="What is on the calendar.">
         <p>
-          Career Exploration Night is part of In Your Corner once a host hall
+          Career Exploration Night is part of In Ur Corner once a host hall
           and dates are real. We will not print placeholders as facts.
         </p>
       </PageIntro>

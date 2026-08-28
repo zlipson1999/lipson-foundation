@@ -12,8 +12,16 @@ import {
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet"
-import { navItems, programMenu } from "@/lib/site"
+import { navItems, programMenu, teamMenu } from "@/lib/site"
 import { Logo } from "@/components/logo"
+
+const submenus: Record<
+  string,
+  readonly { href: string; name: string }[] | undefined
+> = {
+  "/team": teamMenu,
+  "/programs": programMenu,
+}
 
 export function MobileNav() {
   return (
@@ -39,45 +47,35 @@ export function MobileNav() {
         </SheetHeader>
         <nav className="flex flex-col gap-1 px-4 py-2" aria-label="Site">
           {navItems.map((item) => (
-            <SheetClose
-              key={item.href}
-              render={
-                <Link
-                  href={item.href}
-                  className="px-2 py-3 text-sm text-foreground hover:text-primary"
-                />
-              }
-              nativeButton={false}
-            >
-              {item.label}
-            </SheetClose>
-          ))}
-          {/* On touch there is no hover, so the heading is itself the link to
-              the programs page and the programs are listed beneath it. */}
-          <SheetClose
-            render={
-              <Link
-                href="/programs"
-                className="mt-3 flex min-h-11 items-center px-2 text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground hover:text-primary"
-              />
-            }
-            nativeButton={false}
-          >
-            Programs
-          </SheetClose>
-          {programMenu.map((item) => (
-            <SheetClose
-              key={item.href}
-              render={
-                <Link
-                  href={item.href}
-                  className="px-2 py-3 text-sm text-muted-foreground hover:text-primary"
-                />
-              }
-              nativeButton={false}
-            >
-              {item.name}
-            </SheetClose>
+            <div key={item.href} className="flex flex-col">
+              <SheetClose
+                render={
+                  <Link
+                    href={item.href}
+                    className="px-2 py-3 text-sm text-foreground hover:text-primary"
+                  />
+                }
+                nativeButton={false}
+              >
+                {item.label}
+              </SheetClose>
+              {/* Touch has no hover, so a section's pages are listed under its
+                  link rather than hidden behind one. */}
+              {submenus[item.href]?.map((child) => (
+                <SheetClose
+                  key={child.href}
+                  render={
+                    <Link
+                      href={child.href}
+                      className="border-l border-border py-2.5 pl-4 ml-2 text-sm text-muted-foreground hover:text-primary"
+                    />
+                  }
+                  nativeButton={false}
+                >
+                  {child.name}
+                </SheetClose>
+              ))}
+            </div>
           ))}
         </nav>
         <div className="mt-auto flex flex-col gap-2 p-4">

@@ -19,7 +19,7 @@ export const site = {
   // and a work number does not exist yet. Email is the only contact.
   domain: "lipsonfoundation.org",
   description:
-    "Lipson Foundation Inc. is a South Florida nonprofit that builds cost-free community programs for underserved communities. Every program is completely cost-free — no memberships, no fees, ever. Flagship program: In Your Corner.",
+    "Lipson Foundation Inc. is a South Florida nonprofit that builds cost-free community programs for underserved communities. Every program is completely cost-free — no memberships, no fees, ever. Flagship program: In Ur Corner.",
 } as const
 
 /**
@@ -91,6 +91,8 @@ export const routes = [
   { path: "/programs", priority: 0.8, changeFrequency: "monthly" },
   { path: "/donate", priority: 0.8, changeFrequency: "monthly" },
   { path: "/team", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/team/board", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/team/staff", priority: 0.4, changeFrequency: "monthly" },
   { path: "/help", priority: 0.7, changeFrequency: "monthly" },
   { path: "/forms", priority: 0.7, changeFrequency: "monthly" },
   { path: "/contact", priority: 0.7, changeFrequency: "monthly" },
@@ -184,7 +186,7 @@ export const whatWeBuild = [
   },
 ] as const
 
-/** Groups inside In Your Corner — not named programs. Shown on /in-your-corner. */
+/** Groups inside In Ur Corner — not named programs. Shown on /in-your-corner. */
 export const groups = [
   {
     slug: "the-ring",
@@ -209,7 +211,7 @@ export const groups = [
 export const programs = [
   {
     slug: "in-your-corner",
-    name: "In Your Corner",
+    name: "In Ur Corner",
     href: "/in-your-corner",
     status: "Flagship",
     mark: "/brand/iyc-tag.png",
@@ -220,13 +222,26 @@ export const programs = [
 
 /**
  * The nav lists programs only. The Ring, The Corner, The Crew and Career
- * Exploration Night are parts of In Your Corner rather than programs of their
- * own, so they live on the In Your Corner page and are not surfaced here.
+ * Exploration Night are parts of In Ur Corner rather than programs of their
+ * own, so they live on the In Ur Corner page and are not surfaced here.
  */
+export const teamMenu = [
+  {
+    href: "/team/board",
+    name: "Board of Directors",
+    body: "The named officers of Lipson Foundation Inc.",
+  },
+  {
+    href: "/team/staff",
+    name: "Staff",
+    body: "Listed here as roles are filled.",
+  },
+] as const
+
 export const programMenu = [
   {
     href: "/in-your-corner",
-    name: "In Your Corner",
+    name: "In Ur Corner",
     body: "Cost-free boxing and mentorship for youth and veterans.",
   },
 ] as const
@@ -388,12 +403,12 @@ export const faqs = [
   {
     question: "Who do you serve?",
     answer:
-      "Underserved communities in Palm Beach County and surrounding counties — whoever a fee would leave out. In Your Corner is built for youth ages 12–17 and military veterans of any era, with paid Crew roles for adults with developmental disabilities. That is one program, not the limit of who the foundation is for.",
+      "Underserved communities in Palm Beach County and surrounding counties — whoever a fee would leave out. In Ur Corner is built for youth ages 12–17 and military veterans of any era, with paid Crew roles for adults with developmental disabilities. That is one program, not the limit of who the foundation is for.",
   },
   {
-    question: "Is In Your Corner a boxing gym?",
+    question: "Is In Ur Corner a boxing gym?",
     answer:
-      "No. Lipson Foundation does not own a gym. In Your Corner brings equipment, coaching, insurance, and meals into a host veterans hall once a host exists. Training is the hook. Mentorship is the point — later, not on day one.",
+      "No. Lipson Foundation does not own a gym. In Ur Corner brings equipment, coaching, insurance, and meals into a host veterans hall once a host exists. Training is the hook. Mentorship is the point — later, not on day one.",
   },
   {
     question: "When do sessions start?",

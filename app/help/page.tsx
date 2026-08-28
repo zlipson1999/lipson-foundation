@@ -15,7 +15,7 @@ import { helpPaths } from "@/lib/site"
 export const metadata: Metadata = pageMetadata({
   title: "How to help",
   description:
-    "Host a session, refer a young person, lead a career night, or talk with us about supporting In Your Corner.",
+    "Host a session, refer a young person, lead a career night, or talk with us about supporting In Ur Corner.",
   route: "/help",
 })
 

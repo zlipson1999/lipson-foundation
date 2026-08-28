@@ -15,9 +15,9 @@ import {
 import { groups, sessionShape, site, veteranOffer, youthOffer } from "@/lib/site"
 
 export const metadata: Metadata = pageMetadata({
-  title: "In Your Corner",
+  title: "In Ur Corner",
   description:
-    "In Your Corner is a cost-free boxing and mentorship program of Lipson Foundation Inc. for youth ages 12–17 and veterans in South Florida.",
+    "In Ur Corner is a cost-free boxing and mentorship program of Lipson Foundation Inc. for youth ages 12–17 and veterans in South Florida.",
   route: "/in-your-corner",
 })
 
@@ -37,7 +37,7 @@ export default function InYourCornerPage() {
         <div className="min-w-0 w-full flex-1">
           <PageIntro
             kicker="A program of Lipson Foundation Inc."
-            title="In Your Corner"
+            title="In Ur Corner"
           >
             <p>
               Cost-free boxing and mentorship that brings youth ages 12 to 17 and
@@ -167,7 +167,7 @@ export default function InYourCornerPage() {
       <section className="mt-16 flex max-w-3xl flex-col gap-4">
         <h2 className="text-3xl">Why we partner with veterans posts</h2>
         <p className="text-base leading-relaxed text-muted-foreground">
-          In Your Corner does not own a gym and does not need one. The program
+          In Ur Corner does not own a gym and does not need one. The program
           brings its own equipment, coaches, insurance, and meals into a space
           that is already a pillar of the community — a VFW or American Legion
           hall. The post gets new energy in the building and a visible
