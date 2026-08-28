@@ -14,7 +14,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { asset } from "@/lib/assets"
-import { howWeWork, programs, whatWeBuild } from "@/lib/site"
+import { programs, whatWeBuild } from "@/lib/site"
 
 export const metadata: Metadata = pageMetadata({
   title: "Programs",
@@ -40,7 +40,7 @@ export default function ProgramsPage() {
         </p>
       </PageIntro>
 
-      <section className="mb-14 grid gap-4 md:grid-cols-3">
+      <section className="mb-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {whatWeBuild.map((item) => (
           <div key={item.title} className="border-l-2 border-gold pl-4">
             <p className="font-heading text-lg">{item.title}</p>
@@ -48,19 +48,6 @@ export default function ProgramsPage() {
               {item.body}
             </p>
           </div>
-        ))}
-      </section>
-
-      <section className="mb-14 grid gap-4 md:grid-cols-3">
-        {howWeWork.map((item) => (
-          <Card key={item.title}>
-            <CardHeader>
-              <CardTitle className="text-xl">{item.title}</CardTitle>
-              <CardDescription className="text-sm leading-relaxed">
-                {item.body}
-              </CardDescription>
-            </CardHeader>
-          </Card>
         ))}
       </section>
 
