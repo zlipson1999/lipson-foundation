@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import Link from "next/link"
+import Link from "next/link";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -8,42 +8,54 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu"
+} from "@/components/ui/navigation-menu";
 
 type MenuEntry = {
-  href: string
-  name: string
-  body: string
-}
+  href: string;
+  name: string;
+  body: string;
+};
 
 /**
- * A top-level nav item that is itself a link and opens a list on hover.
- * Shared by Programs and The team so the two behave identically; pass the
- * label, the page the label links to, and the entries to list beneath it.
+ * A top-level nav item that opens a list of pages to pick from.
+ *
+ * With `href` the label is itself a link to that page and the list opens on
+ * hover. Without it the label only opens the list - use that where the
+ * section has no page of its own worth landing on, so the only way through
+ * is to pick an entry.
  */
 export function MenuNav({
   label,
   href,
   items,
 }: {
-  label: string
-  href: string
-  items: readonly MenuEntry[]
+  label: string;
+  href?: string;
+  items: readonly MenuEntry[];
 }) {
+  const triggerClass =
+    "h-auto bg-transparent px-3 py-2 text-[15px] font-normal text-primary-foreground/80 hover:bg-primary-foreground/10 hover:text-gold focus:bg-primary-foreground/10 data-open:bg-primary-foreground/10 data-popup-open:bg-primary-foreground/10";
+
   return (
     <NavigationMenu className="hidden lg:flex" aria-label={label}>
       <NavigationMenuList>
         <NavigationMenuItem>
-          {/* The label is a link, not a button: clicking it goes to the
-              section's own page, hovering opens the list to pick from
-              directly. */}
-          <NavigationMenuTrigger
-            nativeButton={false}
-            render={<Link href={href} />}
-            className="h-auto bg-transparent px-3 py-2 text-[15px] font-normal text-primary-foreground/80 hover:bg-primary-foreground/10 hover:text-gold focus:bg-primary-foreground/10 data-open:bg-primary-foreground/10 data-popup-open:bg-primary-foreground/10"
-          >
-            {label}
-          </NavigationMenuTrigger>
+          {/* With an href the label is a link, so clicking it goes to the
+              section's own page and hovering opens the list. Without one it
+              stays a plain button: the only way on is to pick an entry. */}
+          {href ? (
+            <NavigationMenuTrigger
+              nativeButton={false}
+              render={<Link href={href} />}
+              className={triggerClass}
+            >
+              {label}
+            </NavigationMenuTrigger>
+          ) : (
+            <NavigationMenuTrigger className={triggerClass}>
+              {label}
+            </NavigationMenuTrigger>
+          )}
           <NavigationMenuContent className="w-[min(22rem,calc(100vw-2rem))] p-2">
             {items.map((item) => (
               <NavigationMenuLink
@@ -61,5 +73,5 @@ export function MenuNav({
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
-  )
+  );
 }
