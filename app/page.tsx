@@ -1,27 +1,33 @@
-import type { Metadata } from "next"
-import { pageMetadata } from "@/lib/seo"
-import Image from "next/image"
-import Link from "next/link"
-import { ArrowRightIcon } from "@phosphor-icons/react/ssr"
-import { Container } from "@/components/container"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRightIcon } from "@phosphor-icons/react/ssr";
+import { Container } from "@/components/container";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { asset } from "@/lib/assets"
-import { commitments, heroBlurb, locationLines, programs, site } from "@/lib/site"
-import { WorkPillars } from "@/components/work-pillars"
+} from "@/components/ui/card";
+import { asset } from "@/lib/assets";
+import {
+  commitments,
+  heroBlurb,
+  locationLines,
+  programs,
+  site,
+} from "@/lib/site";
+import { WorkPillars } from "@/components/work-pillars";
 
 export const metadata: Metadata = pageMetadata({
   title: `${site.name} — ${site.kicker}`,
   description: site.description,
   route: "/",
   absoluteTitle: true,
-})
+});
 
 const destinations = [
   {
@@ -54,7 +60,7 @@ const destinations = [
     title: "Donate",
     body: "Every gift keeps a program cost-free to the people it serves.",
   },
-] as const
+] as const;
 
 export default function HomePage() {
   return (
@@ -126,44 +132,43 @@ export default function HomePage() {
               Cost-free community programs for underserved communities across
               South Florida.
             </h1>
-            <div className="flex max-w-[46ch] flex-col gap-4 text-lg leading-relaxed text-primary-foreground/75">
-              <p>{heroBlurb}</p>
-              <p>
-                {site.location}. We bring programs into rooms the community
-                already trusts.
+            {/* Blurb and buttons share a group so the buttons sit closer to the
+                line above them than the headline does to the blurb. */}
+            <div className="flex w-full flex-col gap-4">
+              <p className="max-w-[46ch] text-lg leading-relaxed text-primary-foreground/75">
+                {heroBlurb}
               </p>
-            </div>
-            <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-              <Button
-                size="lg"
-                className="h-12 bg-gold px-6 text-[15px] text-primary hover:bg-gold/90"
-                nativeButton={false}
-                render={<Link href="/donate" />}
-              >
-                Donate
-              </Button>
-              <Button
-                size="lg"
-                variant="secondary"
-                className="h-12 px-6 text-[15px]"
-                nativeButton={false}
-                render={<Link href="/about" />}
-              >
-                About us
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="h-12 border-gold/40 bg-transparent px-6 text-[15px] text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
-                nativeButton={false}
-                render={<Link href="/programs" />}
-              >
-                Programs
-              </Button>
+              <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+                <Button
+                  size="lg"
+                  className="h-12 bg-gold px-6 text-[15px] text-primary hover:bg-gold/90"
+                  nativeButton={false}
+                  render={<Link href="/donate" />}
+                >
+                  Donate
+                </Button>
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  className="h-12 px-6 text-[15px]"
+                  nativeButton={false}
+                  render={<Link href="/about" />}
+                >
+                  About us
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="h-12 border-gold/40 bg-transparent px-6 text-[15px] text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+                  nativeButton={false}
+                  render={<Link href="/programs" />}
+                >
+                  Programs
+                </Button>
+              </div>
             </div>
           </div>
         </div>
-
       </section>
 
       {/* Its own section so the order can differ by breakpoint: the four sit
@@ -181,14 +186,16 @@ export default function HomePage() {
               Our commitment
             </p>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
-            {commitments.map((item) => (
-              <div key={item.title} className="flex flex-col gap-2">
-                <p className="font-heading text-2xl text-gold">{item.title}</p>
-                <p className="max-w-[30ch] text-sm leading-relaxed text-primary-foreground/70">
-                  {item.short}
-                </p>
-              </div>
-            ))}
+              {commitments.map((item) => (
+                <div key={item.title} className="flex flex-col gap-2">
+                  <p className="font-heading text-2xl text-gold">
+                    {item.title}
+                  </p>
+                  <p className="max-w-[30ch] text-sm leading-relaxed text-primary-foreground/70">
+                    {item.short}
+                  </p>
+                </div>
+              ))}
             </div>
           </Container>
         </div>
@@ -242,7 +249,6 @@ export default function HomePage() {
           </ul>
         </Container>
       </section>
-
 
       <section className="order-4">
         <Container className="py-12 sm:py-20">
@@ -314,5 +320,5 @@ export default function HomePage() {
         </Container>
       </section>
     </div>
-  )
+  );
 }
