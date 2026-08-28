@@ -27,16 +27,12 @@ export const metadata: Metadata = pageMetadata({
 export default function AboutPage() {
   return (
     <Container className="pb-20">
+      {/* No standing copy under the title: the legal name, EIN and service
+          area it carried are all in On the record beside the copy below. */}
       <PageIntro
         kicker="About us"
         title="Lipson Foundation is a South Florida nonprofit with a simple rule: cost-free."
-      >
-        <p>
-          {site.legalName} (EIN {site.ein}) builds cost-free community programs
-          for underserved communities — all kinds of programs, one rule.
-          Service area: {site.location}.
-        </p>
-      </PageIntro>
+      />
 
       <div className="grid gap-12 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
         <div className="flex flex-col gap-6 text-base leading-relaxed text-muted-foreground">
