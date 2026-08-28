@@ -18,7 +18,7 @@ export default function BoardPage() {
     <Container className="pb-20">
       <PageIntro kicker="The team" title="Board of Directors.">
         <p>
-          The named officers of {site.legalName}. Day-to-day contact is Zachary
+          The named officers of {site.legalName} Day-to-day contact is Zachary
           Lipson, Founder and President, at {site.email}.
         </p>
       </PageIntro>
