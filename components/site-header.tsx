@@ -1,13 +1,13 @@
-import Link from "next/link";
-import { Container } from "@/components/container";
-import { Logo } from "@/components/logo";
-import { MobileNav } from "@/components/mobile-nav";
-import { MenuNav } from "@/components/menu-nav";
-import { Button } from "@/components/ui/button";
-import { navItems, programMenu, site, teamMenu } from "@/lib/site";
+import Link from "next/link"
+import { Container } from "@/components/container"
+import { Logo } from "@/components/logo"
+import { MobileNav } from "@/components/mobile-nav"
+import { MenuNav } from "@/components/menu-nav"
+import { Button } from "@/components/ui/button"
+import { navItems, programMenu, site, teamMenu } from "@/lib/site"
 
 const linkClass =
-  "px-3 py-2 text-[15px] text-primary-foreground/80 transition-colors hover:text-gold whitespace-nowrap";
+  "px-3 py-2 text-[15px] text-primary-foreground/80 transition-colors hover:text-gold whitespace-nowrap"
 
 export function SiteHeader() {
   return (
@@ -39,27 +39,23 @@ export function SiteHeader() {
                     href={item.href}
                     items={programMenu}
                   />
-                );
+                )
               }
               if (item.href === "/team") {
                 // No href: the label opens the list rather than going to a
                 // page of its own. Board and Staff are the destinations.
                 return (
-                  <MenuNav
-                    key={item.href}
-                    label={item.label}
-                    items={teamMenu}
-                  />
-                );
+                  <MenuNav key={item.href} label={item.label} items={teamMenu} />
+                )
               }
               if (item.href === "/donate") {
-                return null;
+                return null
               }
               return (
                 <Link key={item.href} href={item.href} className={linkClass}>
                   {item.label}
                 </Link>
-              );
+              )
             })}
           </nav>
           <div className="flex items-center gap-2">
@@ -76,5 +72,5 @@ export function SiteHeader() {
         </Container>
       </div>
     </header>
-  );
+  )
 }
