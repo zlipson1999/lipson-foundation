@@ -1,6 +1,6 @@
 # Lipson Foundation
 
-Public prototype for **Lipson Foundation Inc.** (EIN 39-4624045), a South Florida nonprofit building cost-free community programs. Flagship program: **In Your Corner**.
+Public prototype for **Lipson Foundation Inc.** (EIN 39-4624045), a South Florida nonprofit building cost-free community programs. Flagship program: **In Ur Corner**.
 
 This codebase follows the 22 August 2026 public-copy rules in the foundation kit:
 
@@ -12,9 +12,9 @@ This codebase follows the 22 August 2026 public-copy rules in the foundation kit
 - Mission framing is **all** cost-free community programs; fitness, wellness,
   and mentoring are where the work starts, not the boundary
 - Say **cost-free**, not "free", in public copy
-- Formal program name is **In Your Corner** (do not use the short mark in body copy)
+- Formal program name is **In Ur Corner** (corrected 28 Aug 2026; the route stays `/in-your-corner`)
 - Brand: navy `#03162F` · gold `#C6A15A` · paper `#F7F1E4`
-- Logos: `public/brand/lipson-tag.png` (house mark: navy dog-tag in the header) · `public/brand/iyc-tag.png` (In Your Corner graffiti mark on `/in-your-corner` only) · `public/brand/hero-panel.webp` (the home intro artwork). Formal name in copy is **In Your Corner**; UR is art-only. No ®/™.
+- Logos: `public/brand/lipson-tag.png` (house mark: navy dog-tag in the header) · `public/brand/iyc-tag.png` (In Ur Corner graffiti mark on `/in-your-corner` only) · `public/brand/hero-panel.webp` (the home intro artwork). Formal name in copy is **In Ur Corner**. No ®/™.
 
 Copy lives in `lib/site.ts` and the page files. It is taken from the public-safe fact sheet, program description, and the marks you supplied.
 

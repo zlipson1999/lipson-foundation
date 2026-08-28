@@ -30,7 +30,7 @@ export function PhoenixTag({ className }: { className?: string }) {
   )
 }
 
-/** Boxing glove on a tag — In Your Corner mark. */
+/** Boxing glove on a tag — In Ur Corner mark. */
 export function GloveTag({ className }: { className?: string }) {
   return (
     <svg

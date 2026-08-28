@@ -19,7 +19,7 @@ import { programs, whatWeBuild } from "@/lib/site"
 export const metadata: Metadata = pageMetadata({
   title: "Programs",
   description:
-    "Lipson Foundation brings cost-free community programs into underserved communities. Fitness, wellness, and mentoring are where the work starts. In Your Corner is the named flagship.",
+    "Lipson Foundation brings cost-free community programs into underserved communities. Fitness, wellness, and mentoring are where the work starts. In Ur Corner is the named flagship.",
   route: "/programs",
 })
 
@@ -35,7 +35,7 @@ export default function ProgramsPage() {
           underserved communities — different neighborhoods, different rooms,
           different needs. Fitness, wellness, and mentoring are where the work
           starts, not where it ends. Every program is cost-free to the people it
-          serves. In Your Corner is the named flagship. More will be listed
+          serves. In Ur Corner is the named flagship. More will be listed
           here as they launch.
         </p>
       </PageIntro>
