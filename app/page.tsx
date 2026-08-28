@@ -213,17 +213,17 @@ export default function HomePage() {
             {programs.map((program) => (
               <li
                 key={program.slug}
-                className="flex flex-col items-center gap-6 border-t-2 border-gold pt-6 text-center sm:flex-row sm:items-start sm:gap-8 sm:border-t-0 sm:border-l-2 sm:pt-0 sm:pl-6 sm:text-left"
+                className="flex flex-col items-center gap-6 border-t-2 border-gold pt-6 text-center"
               >
                 <Image
                   src={asset(program.mark)}
                   alt=""
                   width={612}
                   height={640}
-                  className="h-28 w-auto shrink-0 self-center sm:h-32 lg:h-36"
+                  className="h-28 w-auto shrink-0 sm:h-32 lg:h-36"
                   unoptimized
                 />
-                <div className="flex flex-col items-center gap-3 sm:items-start">
+                <div className="flex flex-col items-center gap-3">
                   <Badge variant="secondary">{program.status}</Badge>
                   <h3 className="font-heading text-2xl">{program.name}</h3>
                   <p className="max-w-2xl text-base leading-relaxed text-muted-foreground">
