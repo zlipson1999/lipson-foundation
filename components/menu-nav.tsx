@@ -9,24 +9,43 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
-import { programMenu } from "@/lib/site"
 
-export function ProgramsNav() {
+type MenuEntry = {
+  href: string
+  name: string
+  body: string
+}
+
+/**
+ * A top-level nav item that is itself a link and opens a list on hover.
+ * Shared by Programs and The team so the two behave identically; pass the
+ * label, the page the label links to, and the entries to list beneath it.
+ */
+export function MenuNav({
+  label,
+  href,
+  items,
+}: {
+  label: string
+  href: string
+  items: readonly MenuEntry[]
+}) {
   return (
-    <NavigationMenu className="hidden lg:flex" aria-label="Programs">
+    <NavigationMenu className="hidden lg:flex" aria-label={label}>
       <NavigationMenuList>
         <NavigationMenuItem>
           {/* The label is a link, not a button: clicking it goes to the
-              programs page, hovering opens the list to pick from directly. */}
+              section's own page, hovering opens the list to pick from
+              directly. */}
           <NavigationMenuTrigger
             nativeButton={false}
-            render={<Link href="/programs" />}
+            render={<Link href={href} />}
             className="h-auto bg-transparent px-3 py-2 text-[15px] font-normal text-primary-foreground/80 hover:bg-primary-foreground/10 hover:text-gold focus:bg-primary-foreground/10 data-open:bg-primary-foreground/10 data-popup-open:bg-primary-foreground/10"
           >
-            Programs
+            {label}
           </NavigationMenuTrigger>
           <NavigationMenuContent className="w-[min(22rem,calc(100vw-2rem))] p-2">
-            {programMenu.map((item) => (
+            {items.map((item) => (
               <NavigationMenuLink
                 key={item.href}
                 render={<Link href={item.href} />}

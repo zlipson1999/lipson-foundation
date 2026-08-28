@@ -2,9 +2,9 @@ import Link from "next/link"
 import { Container } from "@/components/container"
 import { Logo } from "@/components/logo"
 import { MobileNav } from "@/components/mobile-nav"
-import { ProgramsNav } from "@/components/programs-nav"
+import { MenuNav } from "@/components/menu-nav"
 import { Button } from "@/components/ui/button"
-import { navItems, site } from "@/lib/site"
+import { navItems, programMenu, site, teamMenu } from "@/lib/site"
 
 const linkClass =
   "px-3 py-2 text-[15px] text-primary-foreground/80 transition-colors hover:text-gold whitespace-nowrap"
@@ -32,7 +32,24 @@ export function SiteHeader() {
           <nav className="hidden items-center lg:flex" aria-label="Primary">
             {navItems.map((item) => {
               if (item.href === "/programs") {
-                return <ProgramsNav key={item.href} />
+                return (
+                  <MenuNav
+                    key={item.href}
+                    label={item.label}
+                    href={item.href}
+                    items={programMenu}
+                  />
+                )
+              }
+              if (item.href === "/team") {
+                return (
+                  <MenuNav
+                    key={item.href}
+                    label={item.label}
+                    href={item.href}
+                    items={teamMenu}
+                  />
+                )
               }
               if (item.href === "/donate") {
                 return null

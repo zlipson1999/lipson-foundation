@@ -91,6 +91,8 @@ export const routes = [
   { path: "/programs", priority: 0.8, changeFrequency: "monthly" },
   { path: "/donate", priority: 0.8, changeFrequency: "monthly" },
   { path: "/team", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/team/board", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/team/staff", priority: 0.4, changeFrequency: "monthly" },
   { path: "/help", priority: 0.7, changeFrequency: "monthly" },
   { path: "/forms", priority: 0.7, changeFrequency: "monthly" },
   { path: "/contact", priority: 0.7, changeFrequency: "monthly" },
@@ -223,6 +225,19 @@ export const programs = [
  * Exploration Night are parts of In Your Corner rather than programs of their
  * own, so they live on the In Your Corner page and are not surfaced here.
  */
+export const teamMenu = [
+  {
+    href: "/team/board",
+    name: "Board of Directors",
+    body: "The named officers of Lipson Foundation Inc.",
+  },
+  {
+    href: "/team/staff",
+    name: "Staff",
+    body: "Listed here as roles are filled.",
+  },
+] as const
+
 export const programMenu = [
   {
     href: "/in-your-corner",
