@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Container } from "@/components/container"
 import { Logo } from "@/components/logo"
 import { Separator } from "@/components/ui/separator"
-import { navItems, site, taxNotice } from "@/lib/site"
+import { locationLines, navItems, site, taxNotice } from "@/lib/site"
 
 export function SiteFooter() {
   return (
@@ -43,13 +43,16 @@ export function SiteFooter() {
               Contact
             </p>
             <ul className="flex flex-col gap-2 text-sm text-primary-foreground/80">
-              <li>{site.location}</li>
               <li>EIN {site.ein}</li>
               <li>
                 <a href={`mailto:${site.email}`} className="hover:text-gold">
                   {site.email}
                 </a>
               </li>
+              {/* The service area on its own two lines rather than joined with
+                  a dash, so the county line reads as detail under the region. */}
+              <li>{locationLines[0]}</li>
+              <li>{locationLines[1]}</li>
               <li>
                 <Link href="/privacy" className="hover:text-gold">
                   Privacy
