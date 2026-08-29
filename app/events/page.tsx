@@ -18,6 +18,7 @@ import {
   EmptyMedia,
   EmptyTitle,
 } from "@/components/ui/empty"
+import { RingRopes } from "@/components/marks"
 import { events } from "@/lib/site"
 
 export const metadata: Metadata = pageMetadata({
@@ -38,21 +39,38 @@ export default function EventsPage() {
       </PageIntro>
 
       {events.length === 0 ? (
-        <Empty className="border border-dashed border-border bg-card py-16">
+        <Empty className="relative overflow-hidden border border-gold/40 bg-card py-16">
+          <RingRopes className="absolute inset-x-0 top-0 h-3 text-gold/50" />
           <EmptyHeader>
             <EmptyMedia variant="icon">
               <CalendarBlankIcon />
             </EmptyMedia>
+            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold-ink">
+              Nothing on the calendar — yet
+            </p>
             <EmptyTitle className="text-lg">No events posted yet.</EmptyTitle>
             <EmptyDescription className="text-sm">
               When a session night or Career Exploration Night is scheduled, it
-              will show up here. If you want to host or speak, use the form.
+              will show up here. Ask us to tell you when dates are set, or use
+              the form if you want to host or speak.
             </EmptyDescription>
           </EmptyHeader>
           <EmptyContent>
-            <Button nativeButton={false} render={<Link href="/help" />}>
-              Get involved
-            </Button>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Button
+                nativeButton={false}
+                render={<Link href="/contact?topic=updates" />}
+              >
+                Ask to be notified
+              </Button>
+              <Button
+                variant="outline"
+                nativeButton={false}
+                render={<Link href="/help" />}
+              >
+                Get involved
+              </Button>
+            </div>
           </EmptyContent>
         </Empty>
       ) : (

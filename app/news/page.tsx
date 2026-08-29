@@ -18,6 +18,7 @@ import {
   EmptyMedia,
   EmptyTitle,
 } from "@/components/ui/empty"
+import { RingRopes } from "@/components/marks"
 import { newsItems } from "@/lib/site"
 
 export const metadata: Metadata = pageMetadata({
@@ -37,20 +38,28 @@ export default function NewsPage() {
       </PageIntro>
 
       {newsItems.length === 0 ? (
-        <Empty className="border border-dashed border-border bg-card py-16">
+        <Empty className="relative overflow-hidden border border-gold/40 bg-card py-16">
+          <RingRopes className="absolute inset-x-0 top-0 h-3 text-gold/50" />
           <EmptyHeader>
             <EmptyMedia variant="icon">
               <NewspaperIcon />
             </EmptyMedia>
+            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold-ink">
+              Nothing to report — yet
+            </p>
             <EmptyTitle className="text-lg">No news posted yet.</EmptyTitle>
             <EmptyDescription className="text-sm">
               When there is something to report — a host, a start date, a
-              session that actually ran — it will live here.
+              session that actually ran — it will live here. Ask us to tell
+              you when it does.
             </EmptyDescription>
           </EmptyHeader>
           <EmptyContent>
-            <Button nativeButton={false} render={<Link href="/contact" />}>
-              Write to us
+            <Button
+              nativeButton={false}
+              render={<Link href="/contact?topic=updates" />}
+            >
+              Ask to be notified
             </Button>
           </EmptyContent>
         </Empty>

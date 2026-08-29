@@ -67,6 +67,12 @@ export default function InYourCornerPage() {
         </p>
       </div>
 
+      {/* The line that explains the program's name, bookended: here, where
+          the story starts, and again as the page's closer. */}
+      <p className="mt-10 max-w-3xl border-l-2 border-gold pl-6 font-heading text-2xl leading-snug">
+        This is what it means to have someone in your corner.
+      </p>
+
       <section className="mt-12 grid gap-6 lg:grid-cols-2">
         <div className="border border-border bg-card p-6">
           <h2 className="text-2xl">For youth (ages 12–17)</h2>

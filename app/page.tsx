@@ -13,6 +13,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { asset } from "@/lib/assets"
+import { PhoenixTag, RingRopes } from "@/components/marks"
 import { commitments, heroBlurb, locationLines, programs, site } from "@/lib/site"
 
 export const metadata: Metadata = pageMetadata({
@@ -58,7 +59,7 @@ const destinations = [
 export default function HomePage() {
   return (
     <div className="flex flex-col">
-      <section className="order-1 bg-primary text-primary-foreground">
+      <section className="surface-navy order-1 bg-primary text-primary-foreground [--glow-x:18%] [--glow-y:-8%]">
         {/* Intro. One grid: the artwork panel leads on small screens and moves
             to the right from lg up, where the copy column's left padding is
             calculated to line up with the centred container everywhere else on
@@ -121,7 +122,7 @@ export default function HomePage() {
           </div>
 
           <div className="flex flex-col items-start gap-6 px-4 pb-14 pt-10 sm:px-6 lg:justify-center lg:py-8 lg:pl-[calc(max(0px,(100vw-72rem)/2)+2rem)] lg:pr-10">
-            <h1 className="text-4xl leading-[1.08] text-balance sm:text-5xl lg:text-[2.75rem] xl:text-[3.4rem] 2xl:text-[3.75rem]">
+            <h1 className="font-display text-4xl leading-[1.08] text-balance sm:text-5xl lg:text-[2.75rem] xl:text-[3.4rem] 2xl:text-[3.75rem]">
               Cost-free community programs for underserved communities across
               South Florida.
             </h1>
@@ -170,7 +171,7 @@ export default function HomePage() {
           the hero already fills the screen and the concrete thing should come
           before the abstract one. Same navy and the same bottom border the
           hero used to carry, so desktop is unchanged. */}
-      <section className="order-3 border-b bg-primary text-primary-foreground lg:order-2">
+      <section className="surface-navy order-3 border-b bg-primary text-primary-foreground [--glow-x:85%] [--glow-y:120%] lg:order-2">
         {/* Access, Dignity, Community and Service directly under the intro.
             This is now the only place the four appear; /about links here
             rather than repeating them. */}
@@ -181,7 +182,7 @@ export default function HomePage() {
             </p>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
             {commitments.map((item) => (
-              <div key={item.title} className="flex flex-col gap-2">
+              <div key={item.title} className="reveal flex flex-col gap-2">
                 <p className="font-heading text-2xl text-gold">{item.title}</p>
                 <p className="max-w-[30ch] text-sm leading-relaxed text-primary-foreground/70">
                   {item.short}
@@ -198,6 +199,7 @@ export default function HomePage() {
           stands in for one that has not. */}
       <section className="order-2 lg:order-3">
         <Container className="flex flex-col gap-8 py-12 sm:py-20">
+          <RingRopes className="h-3 text-gold-ink/25" />
           <div className="flex flex-col gap-3">
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold-ink">
               What we run
@@ -229,11 +231,15 @@ export default function HomePage() {
                     {program.summary}
                   </p>
                   <Button
+                    className="group"
                     nativeButton={false}
                     render={<Link href={program.href} />}
                   >
                     Read the program
-                    <ArrowRightIcon data-icon="inline-end" />
+                    <ArrowRightIcon
+                      data-icon="inline-end"
+                      className="transition-transform motion-safe:group-hover:translate-x-0.5"
+                    />
                   </Button>
                 </div>
               </li>
@@ -243,7 +249,43 @@ export default function HomePage() {
       </section>
 
 
-      <section className="order-4 border-y bg-secondary">
+      {/* Why the foundation exists, in the founder's story. Every line is
+          reused from /about and lib/site.ts (board[0].note) — this section
+          re-sequences existing copy, it does not add facts. */}
+      <section className="order-4 border-t">
+        <Container className="flex flex-col gap-6 py-12 sm:py-20">
+          <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold-ink">
+            Why this exists
+          </p>
+          <blockquote className="flex flex-col gap-4 border-l-2 border-gold pl-6">
+            <p className="max-w-3xl font-heading text-2xl leading-snug tracking-tight sm:text-3xl">
+              What changed his life was not a cure. It was access — to
+              training, to people who believed he could, to a place that did
+              not ask what he could afford.
+            </p>
+            <footer className="text-sm text-muted-foreground">
+              Zachary Lipson, Founder and President, lives with hereditary
+              spastic paraplegia.
+            </footer>
+          </blockquote>
+          <div>
+            <Button
+              variant="outline"
+              className="group"
+              nativeButton={false}
+              render={<Link href="/about" />}
+            >
+              Read the story
+              <ArrowRightIcon
+                data-icon="inline-end"
+                className="transition-transform motion-safe:group-hover:translate-x-0.5"
+              />
+            </Button>
+          </div>
+        </Container>
+      </section>
+
+      <section className="order-5 border-y bg-secondary">
         <Container className="flex flex-col gap-8 py-12 sm:py-20">
           <div className="flex max-w-2xl flex-col gap-3">
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
@@ -253,8 +295,13 @@ export default function HomePage() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {destinations.map((item) => (
-              <Link key={item.href} href={item.href} className="block">
-                <Card className="h-full transition-colors hover:bg-card">
+              <Link key={item.href} href={item.href} className="group block">
+                <Card className="reveal h-full transition-colors hover:bg-card">
+                  {/* A gold line draws across the card's top edge on hover. */}
+                  <span
+                    aria-hidden
+                    className="-mt-4 block h-0.5 w-full origin-left scale-x-0 bg-gold transition-transform duration-300 motion-safe:group-hover:scale-x-100"
+                  />
                   <CardHeader>
                     <CardTitle className="text-xl">{item.title}</CardTitle>
                     <CardDescription className="text-sm leading-relaxed">
@@ -268,8 +315,9 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="order-5 border-t bg-primary text-primary-foreground">
-        <Container className="flex flex-col gap-6 py-12 sm:py-20">
+      <section className="surface-navy relative order-6 overflow-hidden border-t bg-primary text-primary-foreground [--glow-x:10%] [--glow-y:-20%]">
+        <PhoenixTag className="pointer-events-none absolute -bottom-24 -right-16 size-[26rem] text-gold/[0.07]" />
+        <Container className="relative z-10 flex flex-col gap-6 py-12 sm:py-20">
           <h2 className="max-w-2xl text-3xl sm:text-4xl">
             Help keep every program cost-free.
           </h2>

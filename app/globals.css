@@ -136,8 +136,14 @@
     outline-offset: 2px;
   }
   html {
-    @apply font-sans scroll-smooth;
+    @apply font-sans;
     scroll-padding-top: 7rem;
+  }
+  /* Animated scrolling only for people who have not asked for less motion. */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      @apply scroll-smooth;
+    }
   }
   body {
     @apply bg-background text-foreground;
@@ -147,5 +153,95 @@
   h3,
   h4 {
     @apply font-heading tracking-tight;
+  }
+}
+
+@layer utilities {
+  /* Fraunces at its display optical size: sharper serifs and tighter
+     apertures than the text cut the body headings use. Pair with
+     font-heading, which the base layer already applies to headings. */
+  .font-display {
+    font-variation-settings: "opsz" 144;
+    letter-spacing: -0.015em;
+  }
+
+  /* A gold underline that draws in from the left on hover and stays put on
+     the current page (aria-current). Sized inside the link's px-3 padding. */
+  .link-underline {
+    background-image: linear-gradient(var(--gold), var(--gold));
+    background-repeat: no-repeat;
+    background-position: 0.75rem calc(100% - 0.4rem);
+    background-size: 0 1.5px;
+  }
+  .link-underline:hover,
+  .link-underline[aria-current="page"] {
+    background-size: calc(100% - 1.5rem) 1.5px;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .link-underline {
+      transition: background-size 250ms ease;
+    }
+  }
+
+  /* Navy sections read as layered material instead of a flat fill: a faint
+     warm glow (position steerable per section via the custom properties)
+     over a film-grain texture. Pure background layers — the base color and
+     the text contrast on it are untouched. */
+  .surface-navy {
+    background-color: #03162f;
+    background-image:
+      radial-gradient(
+        56rem 36rem at var(--glow-x, 82%) var(--glow-y, -12%),
+        rgb(198 161 90 / 0.09),
+        transparent 62%
+      ),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.04'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+/* Below-the-fold grids ease up into place as they scroll into view.
+   Scroll-driven animation runs off the main thread with no JS; browsers
+   without support, users asking for reduced motion, and crawlers all get the
+   fully visible static content. The floor stays at 0.25 so nothing is ever
+   hidden if the animation stalls. */
+@keyframes reveal-in {
+  from {
+    opacity: 0.25;
+    translate: 0 10px;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 50%;
+    }
+  }
+}
+
+/* Print: a clean white sheet. The header, forms, and toasts go; the footer
+   stays because it carries the legal name, EIN, and tax notice — the facts a
+   printed nonprofit page exists to carry. */
+@media print {
+  header,
+  form,
+  [data-sonner-toaster],
+  .print-hidden {
+    display: none !important;
+  }
+  body,
+  section,
+  footer {
+    background: #fff !important;
+    color: #03162f !important;
+  }
+  section *,
+  footer * {
+    color: #03162f !important;
+  }
+  h1,
+  h2 {
+    break-after: avoid;
   }
 }
