@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Fraunces, Source_Sans_3 } from "next/font/google"
 import "./globals.css"
 import { cn } from "@/lib/utils"
@@ -6,12 +6,15 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Toaster } from "@/components/ui/sonner"
 import { site } from "@/lib/site"
-import { ogImage } from "@/lib/seo"
+import { ogImage, orgJsonLd } from "@/lib/seo"
 import { absoluteUrl, siteBaseUrl } from "@/lib/urls"
 
 const fraunces = Fraunces({
   subsets: ["latin"],
   variable: "--font-fraunces",
+  // Fraunces is a variable font with an optical-size axis; loading it lets
+  // .font-display use the sharper display cut for the big headlines.
+  axes: ["opsz"],
 })
 
 const sourceSans = Source_Sans_3({
@@ -45,6 +48,12 @@ export const metadata: Metadata = {
   },
 }
 
+// The header and hero are navy in every theme, so the browser chrome on
+// phones matches it rather than defaulting to white.
+export const viewport: Viewport = {
+  themeColor: "#03162F",
+}
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
@@ -68,6 +77,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </main>
         <SiteFooter />
         <Toaster />
+        {/* Machine-readable card for search engines: kit-safe facts only,
+            all drawn from lib/site.ts. */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(orgJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
       </body>
     </html>
   )

@@ -69,6 +69,13 @@ export default function AboutPage() {
               <dd>{site.ein}</dd>
             </div>
             <div>
+              <dt className="text-muted-foreground">Status</dt>
+              <dd>
+                501(c)(3) nonprofit — contributions are tax-deductible to the
+                extent allowed by law.
+              </dd>
+            </div>
+            <div>
               <dt className="text-muted-foreground">Geography</dt>
               <dd>{site.location}</dd>
             </div>
