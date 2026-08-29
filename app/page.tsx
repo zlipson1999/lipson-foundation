@@ -251,26 +251,21 @@ export default function HomePage() {
       </section>
 
 
-      {/* Why the foundation exists, in the founder's story. Every line is
-          reused from /about and lib/site.ts (board[0].note) — this section
-          re-sequences existing copy, it does not add facts. */}
+      {/* Why the foundation exists — framed around the community it serves,
+          per the owner. Both lines are verbatim reuse from /about. */}
       <section className="order-4 border-t">
         <Container className="flex flex-col gap-6 py-12 sm:py-20">
           <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold-ink">
             Why this exists
           </p>
-          {/* Deliberately NOT a <blockquote>: this is the site's own copy
-              about the founder (verbatim from board[0].note), not something
-              he said — quote markup would fabricate a testimonial. */}
           <div className="flex flex-col gap-4 border-l-2 border-gold pl-6">
             <p className="max-w-3xl font-heading text-2xl leading-snug tracking-tight sm:text-3xl">
-              What changed his life was not a cure. It was access — to
-              training, to people who believed he could, to a place that did
-              not ask what he could afford.
+              Cost is the barrier that quietly decides who gets a shot. We
+              remove it entirely.
             </p>
-            <p className="text-sm text-muted-foreground">
-              Zachary Lipson, Founder and President, lives with hereditary
-              spastic paraplegia.
+            <p className="max-w-2xl text-sm text-muted-foreground">
+              Every Lipson Foundation program is completely cost-free to the
+              people it serves — no memberships, no fees, ever.
             </p>
           </div>
           <div>
@@ -280,7 +275,7 @@ export default function HomePage() {
               nativeButton={false}
               render={<Link href="/about" />}
             >
-              Read the story
+              More about us
               <ArrowRightIcon
                 data-icon="inline-end"
                 className="transition-transform motion-safe:group-hover:translate-x-0.5"
