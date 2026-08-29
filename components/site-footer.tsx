@@ -1,24 +1,8 @@
 import Link from "next/link"
 import { Container } from "@/components/container"
 import { Logo } from "@/components/logo"
-import { NavLink } from "@/components/nav-link"
 import { Separator } from "@/components/ui/separator"
-import { locationLines, navItems, site, taxNotice, teamMenu } from "@/lib/site"
-
-/**
- * The team has no page link of its own anywhere on the site — the header
- * picker chooses Board or Staff — so the footer lists those two directly.
- */
-const footerLinks: { href: string; label: string }[] = []
-for (const item of navItems) {
-  if (item.href === "/team") {
-    for (const entry of teamMenu) {
-      footerLinks.push({ href: entry.href, label: entry.name })
-    }
-  } else {
-    footerLinks.push({ href: item.href, label: item.label })
-  }
-}
+import { locationLines, navItems, site, taxNotice } from "@/lib/site"
 
 export function SiteFooter() {
   return (
@@ -42,15 +26,14 @@ export function SiteFooter() {
               Explore
             </p>
             <ul className="flex flex-col gap-2 text-sm">
-              {footerLinks.map((item) => (
+              {navItems.map((item) => (
                 <li key={item.href}>
-                  <NavLink
+                  <Link
                     href={item.href}
                     className="text-primary-foreground/80 hover:text-gold"
-                    activeClassName="text-gold"
                   >
                     {item.label}
-                  </NavLink>
+                  </Link>
                 </li>
               ))}
             </ul>

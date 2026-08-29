@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/sheet"
 import { navItems, programMenu, teamMenu } from "@/lib/site"
 import { Logo } from "@/components/logo"
-import { NavLink } from "@/components/nav-link"
 
 /**
  * Sections whose pages are listed under them in the sheet. `navigable` mirrors
@@ -56,18 +55,13 @@ export function MobileNav() {
           {navItems.map((item) => (
             <div key={item.href} className="flex flex-col">
               {sections[item.href]?.navigable === false ? (
-                // Not a destination, so it must not dress like one: the same
-                // kicker treatment the footer's column headings use.
-                <p className="px-2 pb-1 pt-4 text-[11px] font-medium uppercase tracking-[0.18em] text-gold-ink">
-                  {item.label}
-                </p>
+                <p className="px-2 py-3 text-sm text-foreground">{item.label}</p>
               ) : (
                 <SheetClose
                   render={
-                    <NavLink
+                    <Link
                       href={item.href}
                       className="px-2 py-3 text-sm text-foreground hover:text-primary"
-                      activeClassName="border-l-2 border-gold pl-3 font-semibold text-primary"
                     />
                   }
                   nativeButton={false}
@@ -81,10 +75,9 @@ export function MobileNav() {
                 <SheetClose
                   key={child.href}
                   render={
-                    <NavLink
+                    <Link
                       href={child.href}
-                      className="border-l border-border py-3 pl-4 ml-2 text-sm text-muted-foreground hover:text-primary"
-                      activeClassName="border-l-2 border-gold font-semibold text-primary"
+                      className="border-l border-border py-2.5 pl-4 ml-2 text-sm text-muted-foreground hover:text-primary"
                     />
                   }
                   nativeButton={false}

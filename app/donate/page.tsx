@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import { pageMetadata } from "@/lib/seo"
 import { Container, PageIntro } from "@/components/container"
-import { CopyEin } from "@/components/copy-ein"
 import { DonateForm } from "@/components/donate-form"
 import { GivebutterEmbed } from "@/components/givebutter-embed"
 import { isGiving, keepItFree, site, taxNotice } from "@/lib/site"
@@ -47,7 +46,6 @@ export default function DonatePage() {
               number in mind, choose “Other” and tell us.
             </p>
             <p>{taxNotice}</p>
-            <CopyEin />
           </div>
         </div>
       )}

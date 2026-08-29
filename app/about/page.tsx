@@ -15,7 +15,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { faqs, mission, site, taxNotice, vision, whoWeServe } from "@/lib/site"
+import { faqs, mission, site, vision, whoWeServe } from "@/lib/site"
 
 export const metadata: Metadata = pageMetadata({
   title: "About us",
@@ -37,14 +37,14 @@ export default function AboutPage() {
       <div className="grid gap-12 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
         <div className="flex flex-col gap-6 text-base leading-relaxed text-muted-foreground">
           <p>
-            The Lipson Foundation was born from our founder&apos;s own struggle.
+            The Lipson Foundation was born from our founder&apos;s own fight.
             Growing up with hereditary spastic paraplegia and no role models,
             Zachary Lipson learned that what changes lives isn&apos;t a cure.
             It&apos;s access — training, people who believed he could, and a
             place that did not ask what he could afford.
           </p>
           <p>
-            Cost is the barrier that quietly decides who gets a chance. We remove
+            Cost is the barrier that quietly decides who gets a shot. We remove
             it entirely. Every Lipson Foundation program is completely cost-free to
             the people it serves — no memberships, no fees, ever.
           </p>
@@ -67,11 +67,6 @@ export default function AboutPage() {
             <div>
               <dt className="text-muted-foreground">EIN</dt>
               <dd>{site.ein}</dd>
-            </div>
-            <div>
-              <dt className="text-muted-foreground">Status</dt>
-              {/* The one approved wording, from its single source. */}
-              <dd>{taxNotice}</dd>
             </div>
             <div>
               <dt className="text-muted-foreground">Geography</dt>
@@ -156,12 +151,8 @@ export default function AboutPage() {
       </section>
 
       <div className="mt-12 flex flex-col gap-3 sm:flex-row">
-        <Button
-          size="lg"
-          nativeButton={false}
-          render={<Link href="/team/board" />}
-        >
-          Board of Directors
+        <Button size="lg" nativeButton={false} render={<Link href="/team" />}>
+          The team
         </Button>
         <Button
           size="lg"

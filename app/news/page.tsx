@@ -18,7 +18,6 @@ import {
   EmptyMedia,
   EmptyTitle,
 } from "@/components/ui/empty"
-import { RingRopes } from "@/components/marks"
 import { newsItems } from "@/lib/site"
 
 export const metadata: Metadata = pageMetadata({
@@ -30,7 +29,7 @@ export const metadata: Metadata = pageMetadata({
 export default function NewsPage() {
   return (
     <Container className="pb-20">
-      <PageIntro kicker="News" title="What there is to report.">
+      <PageIntro kicker="News" title="What we can say in public.">
         <p>
           This page is for foundation updates. There is nothing to post yet. We
           will not invent a feed.
@@ -38,8 +37,7 @@ export default function NewsPage() {
       </PageIntro>
 
       {newsItems.length === 0 ? (
-        <Empty className="relative overflow-hidden border border-gold/40 bg-card py-16">
-          <RingRopes className="absolute inset-x-0 top-0 h-3 text-gold/50" />
+        <Empty className="border border-dashed border-border bg-card py-16">
           <EmptyHeader>
             <EmptyMedia variant="icon">
               <NewspaperIcon />

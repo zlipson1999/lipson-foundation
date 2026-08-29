@@ -16,9 +16,8 @@ import { Input } from "@/components/ui/input"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Textarea } from "@/components/ui/textarea"
 import { Spinner } from "@/components/ui/spinner"
-import { submitForm, type SubmitResult } from "@/lib/submit"
+import { submitForm } from "@/lib/submit"
 import {
-  EmailDraftConfirmation,
   FormConfirmation,
   FormError,
 } from "@/components/form-confirmation"
@@ -34,9 +33,7 @@ const roles = [
 
 export function HelpForm() {
   const [pending, setPending] = useState(false)
-  const [sent, setSent] = useState<Extract<SubmitResult, { ok: true }> | null>(
-    null
-  )
+  const [sent, setSent] = useState<"server" | "email" | null>(null)
   const [error, setError] = useState<string | null>(null)
 
   async function onSubmit(formData: FormData) {
@@ -49,13 +46,17 @@ export function HelpForm() {
       toast.error(result.error)
       return
     }
-    setSent(result)
+    setSent(result.via)
     if (result.via === "server") toast.success("We received your note.")
   }
 
   if (sent) {
-    return sent.via === "email" ? (
-      <EmailDraftConfirmation href={sent.href} body={sent.body} />
+    return sent === "email" ? (
+      <FormConfirmation title="Your email draft is open.">
+        Nothing has been sent yet. Send the draft that just opened and we
+        will follow up to match what you can offer with what the program
+        actually needs.
+      </FormConfirmation>
     ) : (
       <FormConfirmation title="Glad you wrote.">
         We will follow up to match what you can offer with what the program

@@ -18,7 +18,6 @@ import {
   EmptyMedia,
   EmptyTitle,
 } from "@/components/ui/empty"
-import { RingRopes } from "@/components/marks"
 import { events } from "@/lib/site"
 
 export const metadata: Metadata = pageMetadata({
@@ -39,8 +38,7 @@ export default function EventsPage() {
       </PageIntro>
 
       {events.length === 0 ? (
-        <Empty className="relative overflow-hidden border border-gold/40 bg-card py-16">
-          <RingRopes className="absolute inset-x-0 top-0 h-3 text-gold/50" />
+        <Empty className="border border-dashed border-border bg-card py-16">
           <EmptyHeader>
             <EmptyMedia variant="icon">
               <CalendarBlankIcon />

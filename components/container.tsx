@@ -36,7 +36,7 @@ export function PageIntro({
       <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
         {kicker}
       </p>
-      <h1 className="font-display font-heading text-4xl leading-[1.1] tracking-tight sm:text-5xl">
+      <h1 className="font-heading text-4xl leading-[1.1] tracking-tight sm:text-5xl">
         {title}
       </h1>
       {children ? (

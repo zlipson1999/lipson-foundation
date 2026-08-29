@@ -136,14 +136,8 @@
     outline-offset: 2px;
   }
   html {
-    @apply font-sans;
+    @apply font-sans scroll-smooth;
     scroll-padding-top: 7rem;
-  }
-  /* Animated scrolling only for people who have not asked for less motion. */
-  @media (prefers-reduced-motion: no-preference) {
-    html {
-      @apply scroll-smooth;
-    }
   }
   body {
     @apply bg-background text-foreground;
@@ -153,62 +147,5 @@
   h3,
   h4 {
     @apply font-heading tracking-tight;
-  }
-}
-
-@layer utilities {
-  /* Fraunces at its display optical size: sharper serifs and tighter
-     apertures than the text cut the body headings use. Pair with
-     font-heading, which the base layer already applies to headings. */
-  .font-display {
-    font-variation-settings: "opsz" 144;
-    letter-spacing: -0.015em;
-  }
-
-  /* A gold underline that draws in from the left on hover and stays put on
-     the current page (aria-current). Sized inside the link's px-3 padding. */
-  .link-underline {
-    background-image: linear-gradient(var(--gold), var(--gold));
-    background-repeat: no-repeat;
-    background-position: 0.75rem calc(100% - 0.4rem);
-    background-size: 0 1.5px;
-  }
-  .link-underline:hover,
-  .link-underline[aria-current="page"] {
-    background-size: calc(100% - 1.5rem) 1.5px;
-  }
-  @media (prefers-reduced-motion: no-preference) {
-    .link-underline {
-      transition: background-size 250ms ease;
-    }
-  }
-
-}
-
-/* Print: a clean white sheet. The site header (marked print-hidden — a bare
-   `header` selector would also hide PageIntro's <header> and with it every
-   page title), forms, and toasts go; the footer stays because it carries the
-   legal name, EIN, and tax notice — the facts a printed nonprofit page
-   exists to carry. */
-@media print {
-  form,
-  [data-sonner-toaster],
-  .print-hidden {
-    display: none !important;
-  }
-  body,
-  section,
-  footer {
-    background: #fff !important;
-    color: #03162f !important;
-  }
-  section *,
-  footer * {
-    background: transparent !important;
-    color: #03162f !important;
-  }
-  h1,
-  h2 {
-    break-after: avoid;
   }
 }

@@ -90,8 +90,7 @@ export const routes = [
   { path: "/in-your-corner", priority: 0.9, changeFrequency: "monthly" },
   { path: "/programs", priority: 0.8, changeFrequency: "monthly" },
   { path: "/donate", priority: 0.8, changeFrequency: "monthly" },
-  // /team is deliberately absent: the page exists only as a fallback for
-  // typed URLs — nothing links to it, so the sitemap does not advertise it.
+  { path: "/team", priority: 0.7, changeFrequency: "monthly" },
   { path: "/team/board", priority: 0.6, changeFrequency: "monthly" },
   { path: "/team/staff", priority: 0.4, changeFrequency: "monthly" },
   { path: "/help", priority: 0.7, changeFrequency: "monthly" },
@@ -101,25 +100,6 @@ export const routes = [
   { path: "/news", priority: 0.5, changeFrequency: "weekly" },
   { path: "/privacy", priority: 0.3, changeFrequency: "yearly" },
 ] as const
-
-/**
- * Mirrors the redirects in next.config.ts, which only run on dynamic builds.
- * The static export serves the 404 page for these paths instead, so the 404
- * page uses this map to offer the destination itself. Keep the two in step.
- */
-export const legacyRedirects: Record<string, { href: string; label: string }> =
-  {
-    "/work": { href: "/in-your-corner", label: "In Ur Corner" },
-    "/give": { href: "/donate", label: "Donate" },
-    "/involved": { href: "/forms", label: "Contact us" },
-    "/updates": { href: "/news", label: "News" },
-    "/the-ring": { href: "/in-your-corner#the-ring", label: "In Ur Corner" },
-    "/the-corner": {
-      href: "/in-your-corner#the-corner",
-      label: "In Ur Corner",
-    },
-    "/the-crew": { href: "/in-your-corner#the-crew", label: "In Ur Corner" },
-  }
 
 export const navItems = [
   { href: "/", label: "Home" },
@@ -386,7 +366,7 @@ export const youthOffer = [
   },
   {
     title: "Confidence beyond the gym",
-    body: "Show up on time. Control yourself. Work when it is hard. Respect the person training beside you.",
+    body: "Show up on time. Control yourself. Work when it is hard. Respect the person across from you.",
   },
 ] as const
 
@@ -396,7 +376,7 @@ export const veteranOffer = [
     body: "Train alongside fellow veterans as part of a mission-driven community.",
   },
   {
-    title: "A healthy physical routine",
+    title: "A healthy physical outlet",
     body: "Fitness, structure, and less isolation — without anyone having to talk about feelings first.",
   },
   {
@@ -405,7 +385,7 @@ export const veteranOffer = [
   },
   {
     title: "Continue serving",
-    body: "A reason to show up on a weeknight. A lasting difference for the next generation.",
+    body: "A reason to show up on a weeknight. A lasting impact on the next generation.",
   },
 ] as const
 
@@ -428,7 +408,7 @@ export const faqs = [
   {
     question: "Is In Ur Corner a boxing gym?",
     answer:
-      "No. Lipson Foundation does not own a gym. In Ur Corner brings equipment, coaching, insurance, and meals into a host veterans hall once a host exists. Training is the draw. Mentorship is the point — later, not on day one.",
+      "No. Lipson Foundation does not own a gym. In Ur Corner brings equipment, coaching, insurance, and meals into a host veterans hall once a host exists. Training is the hook. Mentorship is the point — later, not on day one.",
   },
   {
     question: "When do sessions start?",

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useSyncExternalStore } from "react"
+import { useState } from "react"
 import { toast } from "sonner"
 import { ArrowRightIcon } from "@phosphor-icons/react"
 import { Button } from "@/components/ui/button"
@@ -16,9 +16,8 @@ import { Input } from "@/components/ui/input"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Textarea } from "@/components/ui/textarea"
 import { Spinner } from "@/components/ui/spinner"
-import { submitForm, type SubmitResult } from "@/lib/submit"
+import { submitForm } from "@/lib/submit"
 import {
-  EmailDraftConfirmation,
   FormConfirmation,
   FormError,
 } from "@/components/form-confirmation"
@@ -33,26 +32,8 @@ const topics = [
 
 export function ContactForm() {
   const [pending, setPending] = useState(false)
-  const [sent, setSent] = useState<Extract<SubmitResult, { ok: true }> | null>(
-    null
-  )
+  const [sent, setSent] = useState<"server" | "email" | null>(null)
   const [error, setError] = useState<string | null>(null)
-  // The empty states on /events and /news link here with ?topic=updates so
-  // the right choice is already made. The query string only exists in the
-  // browser: the server snapshot falls back to the default, and the real
-  // value arrives after hydration. A visitor's own pick always wins.
-  const requestedTopic = useSyncExternalStore(
-    () => () => {},
-    () => {
-      const requested = new URLSearchParams(window.location.search).get("topic")
-      return requested && topics.some((t) => t.value === requested)
-        ? requested
-        : "general"
-    },
-    () => "general"
-  )
-  const [chosenTopic, setChosenTopic] = useState<string | null>(null)
-  const topic = chosenTopic ?? requestedTopic
 
   async function onSubmit(formData: FormData) {
     setPending(true)
@@ -64,13 +45,17 @@ export function ContactForm() {
       toast.error(result.error)
       return
     }
-    setSent(result)
+    setSent(result.via)
     if (result.via === "server") toast.success("Message received. We will be in touch.")
   }
 
   if (sent) {
-    return sent.via === "email" ? (
-      <EmailDraftConfirmation href={sent.href} body={sent.body} />
+    return sent === "email" ? (
+      <FormConfirmation title="Your email draft is open.">
+        Nothing has been sent yet. Send the draft that just opened and
+        someone from Lipson Foundation will reply to you, usually within two
+        business days.
+      </FormConfirmation>
     ) : (
       <FormConfirmation title="We have your note.">
         Thank you for writing. Someone from Lipson Foundation will reply to
@@ -98,12 +83,7 @@ export function ContactForm() {
         </Field>
         <FieldSet>
           <FieldLegend variant="label">What is this about?</FieldLegend>
-          <RadioGroup
-            name="topic"
-            value={topic}
-            onValueChange={(value) => setChosenTopic(String(value))}
-            className="gap-2"
-          >
+          <RadioGroup name="topic" defaultValue="general" className="gap-2">
             {topics.map((topic) => (
               <Field key={topic.value} orientation="horizontal">
                 <RadioGroupItem value={topic.value} id={`topic-${topic.value}`} />

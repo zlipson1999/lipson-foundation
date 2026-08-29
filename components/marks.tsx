@@ -30,38 +30,6 @@ export function PhoenixTag({ className }: { className?: string }) {
   )
 }
 
-/**
- * Three ring ropes running from a corner post — an abstracted boxing-ring
- * corner, used as a branded divider in place of plain rules. Decorative only.
- */
-export function RingRopes({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 400 24"
-      preserveAspectRatio="none"
-      className={cn("h-4 w-full", className)}
-      aria-hidden
-      fill="none"
-    >
-      {/* non-scaling-stroke keeps the ropes crisp device pixels and the post
-          a fixed-width bar: preserveAspectRatio="none" would otherwise
-          squash the strokes into uneven hairlines and stretch the post. */}
-      <path
-        d="M2 1V23"
-        stroke="currentColor"
-        strokeWidth="4"
-        vectorEffect="non-scaling-stroke"
-      />
-      <path
-        d="M4 4H400M4 12H400M4 20H400"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        vectorEffect="non-scaling-stroke"
-      />
-    </svg>
-  )
-}
-
 /** Boxing glove on a tag — In Ur Corner mark. */
 export function GloveTag({ className }: { className?: string }) {
   return (

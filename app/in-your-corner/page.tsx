@@ -55,10 +55,10 @@ export default function InYourCornerPage() {
           mentorships.
         </p>
         <p>
-          Boxing is the draw, not the point. It reaches young people who would
+          Boxing is the hook, not the point. It draws young people who would
           never sign up for a mentoring program, and it teaches what we want to
           teach: show up on time, control yourself, work when it is hard,
-          respect the person training beside you.
+          respect the person across from you.
         </p>
         <p>
           For veterans, the gym is familiar ground. Physical training alongside
@@ -66,12 +66,6 @@ export default function InYourCornerPage() {
           connection happens without anyone having to talk about feelings first.
         </p>
       </div>
-
-      {/* The line that explains the program's name, moved up to where the
-          story starts (it used to sit at the very bottom of the page). */}
-      <p className="mt-10 max-w-3xl border-l-2 border-gold pl-6 font-heading text-2xl leading-snug">
-        This is what it means to have someone in your corner.
-      </p>
 
       <section className="mt-12 grid gap-6 lg:grid-cols-2">
         <div className="border border-border bg-card p-6">
@@ -202,7 +196,11 @@ export default function InYourCornerPage() {
         </p>
       </section>
 
-      <div className="mt-16 flex flex-col gap-3 sm:flex-row">
+      <p className="mt-16 max-w-3xl font-heading text-2xl leading-snug">
+        This is what it means to have someone in your corner.
+      </p>
+
+      <div className="mt-12 flex flex-col gap-3 sm:flex-row">
         <Button size="lg" nativeButton={false} render={<Link href="/help" />}>
           Host, refer, or support
         </Button>
