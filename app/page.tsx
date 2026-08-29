@@ -260,7 +260,7 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col gap-4 border-l-2 border-gold pl-6">
             <p className="max-w-3xl font-heading text-2xl leading-snug tracking-tight sm:text-3xl">
-              Cost is the barrier that quietly decides who gets a shot. We
+              Cost is the barrier that quietly decides who gets a chance. We
               remove it entirely.
             </p>
             <p className="max-w-2xl text-sm text-muted-foreground">

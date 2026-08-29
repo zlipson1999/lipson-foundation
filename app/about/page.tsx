@@ -37,14 +37,14 @@ export default function AboutPage() {
       <div className="grid gap-12 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
         <div className="flex flex-col gap-6 text-base leading-relaxed text-muted-foreground">
           <p>
-            The Lipson Foundation was born from our founder&apos;s own fight.
+            The Lipson Foundation was born from our founder&apos;s own struggle.
             Growing up with hereditary spastic paraplegia and no role models,
             Zachary Lipson learned that what changes lives isn&apos;t a cure.
             It&apos;s access — training, people who believed he could, and a
             place that did not ask what he could afford.
           </p>
           <p>
-            Cost is the barrier that quietly decides who gets a shot. We remove
+            Cost is the barrier that quietly decides who gets a chance. We remove
             it entirely. Every Lipson Foundation program is completely cost-free to
             the people it serves — no memberships, no fees, ever.
           </p>

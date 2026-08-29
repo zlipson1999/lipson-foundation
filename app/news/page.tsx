@@ -30,7 +30,7 @@ export const metadata: Metadata = pageMetadata({
 export default function NewsPage() {
   return (
     <Container className="pb-20">
-      <PageIntro kicker="News" title="What we can say in public.">
+      <PageIntro kicker="News" title="What there is to report.">
         <p>
           This page is for foundation updates. There is nothing to post yet. We
           will not invent a feed.

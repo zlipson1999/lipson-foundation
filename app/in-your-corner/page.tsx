@@ -55,10 +55,10 @@ export default function InYourCornerPage() {
           mentorships.
         </p>
         <p>
-          Boxing is the hook, not the point. It draws young people who would
+          Boxing is the draw, not the point. It reaches young people who would
           never sign up for a mentoring program, and it teaches what we want to
           teach: show up on time, control yourself, work when it is hard,
-          respect the person across from you.
+          respect the person training beside you.
         </p>
         <p>
           For veterans, the gym is familiar ground. Physical training alongside

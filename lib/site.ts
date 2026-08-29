@@ -386,7 +386,7 @@ export const youthOffer = [
   },
   {
     title: "Confidence beyond the gym",
-    body: "Show up on time. Control yourself. Work when it is hard. Respect the person across from you.",
+    body: "Show up on time. Control yourself. Work when it is hard. Respect the person training beside you.",
   },
 ] as const
 
@@ -396,7 +396,7 @@ export const veteranOffer = [
     body: "Train alongside fellow veterans as part of a mission-driven community.",
   },
   {
-    title: "A healthy physical outlet",
+    title: "A healthy physical routine",
     body: "Fitness, structure, and less isolation — without anyone having to talk about feelings first.",
   },
   {
@@ -405,7 +405,7 @@ export const veteranOffer = [
   },
   {
     title: "Continue serving",
-    body: "A reason to show up on a weeknight. A lasting impact on the next generation.",
+    body: "A reason to show up on a weeknight. A lasting difference for the next generation.",
   },
 ] as const
 
@@ -428,7 +428,7 @@ export const faqs = [
   {
     question: "Is In Ur Corner a boxing gym?",
     answer:
-      "No. Lipson Foundation does not own a gym. In Ur Corner brings equipment, coaching, insurance, and meals into a host veterans hall once a host exists. Training is the hook. Mentorship is the point — later, not on day one.",
+      "No. Lipson Foundation does not own a gym. In Ur Corner brings equipment, coaching, insurance, and meals into a host veterans hall once a host exists. Training is the draw. Mentorship is the point — later, not on day one.",
   },
   {
     question: "When do sessions start?",
