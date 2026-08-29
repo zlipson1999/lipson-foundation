@@ -184,7 +184,7 @@ export default function HomePage() {
             </p>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
             {commitments.map((item) => (
-              <div key={item.title} className="reveal flex flex-col gap-2">
+              <div key={item.title} className="flex flex-col gap-2">
                 <p className="font-heading text-2xl text-gold">{item.title}</p>
                 <p className="max-w-[30ch] text-sm leading-relaxed text-primary-foreground/70">
                   {item.short}
@@ -301,7 +301,7 @@ export default function HomePage() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {destinations.map((item) => (
               <Link key={item.href} href={item.href} className="group block">
-                <Card className="reveal h-full transition-colors hover:bg-card">
+                <Card className="h-full transition-colors hover:bg-card">
                   {/* A gold line draws across the card's top edge on hover. */}
                   <span
                     aria-hidden

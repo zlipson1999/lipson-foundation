@@ -185,27 +185,6 @@
 
 }
 
-/* Below-the-fold grids ease up into place as they scroll into view.
-   Scroll-driven animation runs off the main thread with no JS; browsers
-   without support, users asking for reduced motion, and crawlers all get the
-   fully visible static content. The floor stays at 0.25 so nothing is ever
-   hidden if the animation stalls. */
-@keyframes reveal-in {
-  from {
-    opacity: 0.25;
-    translate: 0 10px;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  @supports (animation-timeline: view()) {
-    .reveal {
-      animation: reveal-in linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 50%;
-    }
-  }
-}
-
 /* Print: a clean white sheet. The site header (marked print-hidden — a bare
    `header` selector would also hide PageIntro's <header> and with it every
    page title), forms, and toasts go; the footer stays because it carries the
