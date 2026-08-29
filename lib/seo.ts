@@ -23,7 +23,9 @@ export const orgJsonLd = {
     name: "Zachary Lipson",
     jobTitle: "Founder and President",
   },
-  areaServed: "Palm Beach County, Florida",
+  // The exact service-area wording used everywhere on the site — the
+  // MAY-say list requires it to stay consistent in every occurrence.
+  areaServed: site.location,
 } as const
 
 /**

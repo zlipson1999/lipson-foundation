@@ -29,7 +29,6 @@ const topics = [
   { value: "veteran", label: "Train or mentor" },
   { value: "school", label: "Refer a young person" },
   { value: "support", label: "Support or meals" },
-  { value: "updates", label: "Tell me when dates or news are posted" },
 ]
 
 export function ContactForm() {

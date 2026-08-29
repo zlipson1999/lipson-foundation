@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Container } from "@/components/container"
 import { Logo } from "@/components/logo"
 import { NavLink } from "@/components/nav-link"
-import { PhoenixTag, RingRopes } from "@/components/marks"
+import { Separator } from "@/components/ui/separator"
 import { locationLines, navItems, site, taxNotice, teamMenu } from "@/lib/site"
 
 /**
@@ -22,11 +22,8 @@ for (const item of navItems) {
 
 export function SiteFooter() {
   return (
-    <footer className="surface-navy relative mt-auto overflow-hidden border-t border-primary-foreground/10 bg-primary text-primary-foreground [--glow-x:12%] [--glow-y:110%]">
-      {/* The phoenix at scale, ghosted off the corner. Decorative: it sits
-          well under the text layer and never behind the small print. */}
-      <PhoenixTag className="pointer-events-none absolute -right-14 -top-20 size-[24rem] text-gold/[0.06]" />
-      <Container className="relative z-10 flex flex-col gap-10 py-12 sm:py-16">
+    <footer className="mt-auto border-t border-primary-foreground/10 bg-primary text-primary-foreground">
+      <Container className="flex flex-col gap-10 py-12 sm:py-16">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           <div className="flex max-w-sm flex-col gap-4">
             <Logo inverse />
@@ -81,7 +78,7 @@ export function SiteFooter() {
             </ul>
           </div>
         </div>
-        <RingRopes className="h-3 text-gold/35" />
+        <Separator className="bg-primary-foreground/15" />
         <div className="flex flex-col gap-2 text-xs text-primary-foreground/60 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} {site.legalName} All rights reserved.

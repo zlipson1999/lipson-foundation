@@ -34,7 +34,7 @@ const destinations = [
   {
     href: "/help",
     title: "Get involved",
-    body: "Host a space, refer someone, lend a skill, or sponsor a session.",
+    body: "Host a hall, refer a young person, train as a veteran, lead a career night, or help with meals.",
   },
   {
     href: "/programs",
@@ -259,17 +259,20 @@ export default function HomePage() {
           <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold-ink">
             Why this exists
           </p>
-          <blockquote className="flex flex-col gap-4 border-l-2 border-gold pl-6">
+          {/* Deliberately NOT a <blockquote>: this is the site's own copy
+              about the founder (verbatim from board[0].note), not something
+              he said — quote markup would fabricate a testimonial. */}
+          <div className="flex flex-col gap-4 border-l-2 border-gold pl-6">
             <p className="max-w-3xl font-heading text-2xl leading-snug tracking-tight sm:text-3xl">
               What changed his life was not a cure. It was access — to
               training, to people who believed he could, to a place that did
               not ask what he could afford.
             </p>
-            <footer className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground">
               Zachary Lipson, Founder and President, lives with hereditary
               spastic paraplegia.
-            </footer>
-          </blockquote>
+            </p>
+          </div>
           <div>
             <Button
               variant="outline"
@@ -317,8 +320,8 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* No watermark here: the footer directly below carries the phoenix,
-          and two of them stacked at the seam read as a mistake. */}
+      {/* No watermark here or in the footer — the owner keeps the bottom of
+          the page plain apart from the small footer logo. */}
       <section className="surface-navy order-6 border-t bg-primary text-primary-foreground [--glow-x:10%] [--glow-y:-20%]">
         <Container className="flex flex-col gap-6 py-12 sm:py-20">
           <h2 className="max-w-2xl text-3xl sm:text-4xl">

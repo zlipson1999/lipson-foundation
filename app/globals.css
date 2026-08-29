@@ -220,11 +220,12 @@
   }
 }
 
-/* Print: a clean white sheet. The header, forms, and toasts go; the footer
-   stays because it carries the legal name, EIN, and tax notice — the facts a
-   printed nonprofit page exists to carry. */
+/* Print: a clean white sheet. The site header (marked print-hidden — a bare
+   `header` selector would also hide PageIntro's <header> and with it every
+   page title), forms, and toasts go; the footer stays because it carries the
+   legal name, EIN, and tax notice — the facts a printed nonprofit page
+   exists to carry. */
 @media print {
-  header,
   form,
   [data-sonner-toaster],
   .print-hidden {
@@ -238,6 +239,7 @@
   }
   section *,
   footer * {
+    background: transparent !important;
     color: #03162f !important;
   }
   h1,

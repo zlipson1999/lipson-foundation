@@ -90,7 +90,8 @@ export const routes = [
   { path: "/in-your-corner", priority: 0.9, changeFrequency: "monthly" },
   { path: "/programs", priority: 0.8, changeFrequency: "monthly" },
   { path: "/donate", priority: 0.8, changeFrequency: "monthly" },
-  { path: "/team", priority: 0.7, changeFrequency: "monthly" },
+  // /team is deliberately absent: the page exists only as a fallback for
+  // typed URLs — nothing links to it, so the sitemap does not advertise it.
   { path: "/team/board", priority: 0.6, changeFrequency: "monthly" },
   { path: "/team/staff", priority: 0.4, changeFrequency: "monthly" },
   { path: "/help", priority: 0.7, changeFrequency: "monthly" },

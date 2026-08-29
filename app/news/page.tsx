@@ -44,22 +44,15 @@ export default function NewsPage() {
             <EmptyMedia variant="icon">
               <NewspaperIcon />
             </EmptyMedia>
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold-ink">
-              Nothing to report — yet
-            </p>
             <EmptyTitle className="text-lg">No news posted yet.</EmptyTitle>
             <EmptyDescription className="text-sm">
               When there is something to report — a host, a start date, a
-              session that actually ran — it will live here. Ask us to tell
-              you when it does.
+              session that actually ran — it will live here.
             </EmptyDescription>
           </EmptyHeader>
           <EmptyContent>
-            <Button
-              nativeButton={false}
-              render={<Link href="/contact?topic=updates" />}
-            >
-              Ask to be notified
+            <Button nativeButton={false} render={<Link href="/contact" />}>
+              Write to us
             </Button>
           </EmptyContent>
         </Empty>

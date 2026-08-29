@@ -67,8 +67,8 @@ export default function InYourCornerPage() {
         </p>
       </div>
 
-      {/* The line that explains the program's name, bookended: here, where
-          the story starts, and again as the page's closer. */}
+      {/* The line that explains the program's name, moved up to where the
+          story starts (it used to sit at the very bottom of the page). */}
       <p className="mt-10 max-w-3xl border-l-2 border-gold pl-6 font-heading text-2xl leading-snug">
         This is what it means to have someone in your corner.
       </p>
@@ -202,11 +202,7 @@ export default function InYourCornerPage() {
         </p>
       </section>
 
-      <p className="mt-16 max-w-3xl font-heading text-2xl leading-snug">
-        This is what it means to have someone in your corner.
-      </p>
-
-      <div className="mt-12 flex flex-col gap-3 sm:flex-row">
+      <div className="mt-16 flex flex-col gap-3 sm:flex-row">
         <Button size="lg" nativeButton={false} render={<Link href="/help" />}>
           Host, refer, or support
         </Button>

@@ -15,7 +15,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { faqs, mission, site, vision, whoWeServe } from "@/lib/site"
+import { faqs, mission, site, taxNotice, vision, whoWeServe } from "@/lib/site"
 
 export const metadata: Metadata = pageMetadata({
   title: "About us",
@@ -70,10 +70,8 @@ export default function AboutPage() {
             </div>
             <div>
               <dt className="text-muted-foreground">Status</dt>
-              <dd>
-                501(c)(3) nonprofit — contributions are tax-deductible to the
-                extent allowed by law.
-              </dd>
+              {/* The one approved wording, from its single source. */}
+              <dd>{taxNotice}</dd>
             </div>
             <div>
               <dt className="text-muted-foreground">Geography</dt>

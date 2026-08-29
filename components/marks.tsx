@@ -43,11 +43,20 @@ export function RingRopes({ className }: { className?: string }) {
       aria-hidden
       fill="none"
     >
-      <rect x="0" y="1" width="5" height="22" fill="currentColor" />
+      {/* non-scaling-stroke keeps the ropes crisp device pixels and the post
+          a fixed-width bar: preserveAspectRatio="none" would otherwise
+          squash the strokes into uneven hairlines and stretch the post. */}
       <path
-        d="M5 4H400M5 12H400M5 20H400"
+        d="M2 1V23"
+        stroke="currentColor"
+        strokeWidth="4"
+        vectorEffect="non-scaling-stroke"
+      />
+      <path
+        d="M4 4H400M4 12H400M4 20H400"
         stroke="currentColor"
         strokeWidth="1.5"
+        vectorEffect="non-scaling-stroke"
       />
     </svg>
   )
