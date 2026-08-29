@@ -7,11 +7,15 @@ export type FormKind = "contact" | "help" | "donate"
 
 /**
  * `via` tells the form what actually happened. On the static export nothing
- * is submitted — an email draft is opened — so the confirmation copy must
- * not claim the note was received.
+ * is submitted — the visitor is handed a pre-filled email draft — so the
+ * confirmation copy must not claim the note was received. The email result
+ * carries the draft link and the composed body so the confirmation can offer
+ * both: navigating automatically loses the typed message on devices with no
+ * mail app configured.
  */
 export type SubmitResult =
-  | { ok: true; via: "server" | "email" }
+  | { ok: true; via: "server" }
+  | { ok: true; via: "email"; href: string; body: string }
   | { ok: false; error: string }
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -117,8 +121,12 @@ function validate(kind: FormKind, fields: Record<string, string>): string | null
   return null
 }
 
-// On the static (GitHub Pages) build there is no server, so we open a
-// pre-filled email draft to the foundation instead of persisting the inquiry.
+// On the static (GitHub Pages) build there is no server, so the form hands
+// back a pre-filled email draft instead of persisting the inquiry. It does
+// NOT navigate to the mailto: itself: on a device with no mail app that
+// navigation silently does nothing and the typed message is lost with the
+// unmounted form. The confirmation renders the link for the visitor to tap,
+// with the composed body kept on screen to copy.
 function submitByEmail(kind: FormKind, fields: Record<string, string>): SubmitResult {
   const subject = `[${site.domain}] ${subjects[kind]}`
   const body = Object.entries(fields)
@@ -126,8 +134,7 @@ function submitByEmail(kind: FormKind, fields: Record<string, string>): SubmitRe
     .map(([key, value]) => `${key}: ${value}`)
     .join("\n")
   const href = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-  window.location.href = href
-  return { ok: true, via: "email" }
+  return { ok: true, via: "email", href, body }
 }
 
 export async function submitForm(

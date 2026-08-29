@@ -1,6 +1,8 @@
 "use client"
 
 import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { cn } from "@/lib/utils"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -36,6 +38,17 @@ export function MenuNav({
   href?: string
   items: readonly MenuEntry[]
 }) {
+  // The trigger reads as current when its own page or any listed page is the
+  // one being viewed, matching the gold state of the plain header links.
+  const pathname = (usePathname() ?? "/").replace(/\/+$/, "") || "/"
+  const matches = (target: string) => {
+    const clean = target.split("#")[0].replace(/\/+$/, "") || "/"
+    return pathname === clean || pathname.startsWith(`${clean}/`)
+  }
+  const active =
+    (href ? matches(href) : false) || items.some((item) => matches(item.href))
+  const activeTriggerClass = cn(triggerClass, active && "text-gold")
+
   return (
     <NavigationMenu className="hidden lg:flex" aria-label={label}>
       <NavigationMenuList>
@@ -44,12 +57,12 @@ export function MenuNav({
             <NavigationMenuTrigger
               nativeButton={false}
               render={<Link href={href} />}
-              className={triggerClass}
+              className={activeTriggerClass}
             >
               {label}
             </NavigationMenuTrigger>
           ) : (
-            <NavigationMenuTrigger className={triggerClass}>
+            <NavigationMenuTrigger className={activeTriggerClass}>
               {label}
             </NavigationMenuTrigger>
           )}

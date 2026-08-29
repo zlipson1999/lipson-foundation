@@ -101,6 +101,25 @@ export const routes = [
   { path: "/privacy", priority: 0.3, changeFrequency: "yearly" },
 ] as const
 
+/**
+ * Mirrors the redirects in next.config.ts, which only run on dynamic builds.
+ * The static export serves the 404 page for these paths instead, so the 404
+ * page uses this map to offer the destination itself. Keep the two in step.
+ */
+export const legacyRedirects: Record<string, { href: string; label: string }> =
+  {
+    "/work": { href: "/in-your-corner", label: "In Ur Corner" },
+    "/give": { href: "/donate", label: "Donate" },
+    "/involved": { href: "/forms", label: "Contact us" },
+    "/updates": { href: "/news", label: "News" },
+    "/the-ring": { href: "/in-your-corner#the-ring", label: "In Ur Corner" },
+    "/the-corner": {
+      href: "/in-your-corner#the-corner",
+      label: "In Ur Corner",
+    },
+    "/the-crew": { href: "/in-your-corner#the-crew", label: "In Ur Corner" },
+  }
+
 export const navItems = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About us" },

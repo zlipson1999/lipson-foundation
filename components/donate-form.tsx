@@ -17,16 +17,24 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Textarea } from "@/components/ui/textarea"
 import { Spinner } from "@/components/ui/spinner"
 import { donateAsks, site } from "@/lib/site"
-import { submitForm } from "@/lib/submit"
-import { FormConfirmation, FormError } from "@/components/form-confirmation"
+import { submitForm, type SubmitResult } from "@/lib/submit"
+import {
+  EmailDraftConfirmation,
+  FormConfirmation,
+  FormError,
+} from "@/components/form-confirmation"
 
 export function DonateForm() {
   const [pending, setPending] = useState(false)
-  const [sent, setSent] = useState<"server" | "email" | null>(null)
+  const [sent, setSent] = useState<Extract<SubmitResult, { ok: true }> | null>(
+    null
+  )
   const [error, setError] = useState<string | null>(null)
-  // Both mirror the giving form: the amount box and the dedication note only
-  // appear once they are relevant, rather than sitting empty on the page.
-  const [ask, setAsk] = useState("session")
+  // The default must be a value that exists in donateAsks: an unmatched value
+  // rendered no radio checked, and an untouched form silently submitted
+  // ask="other". The amount box and the dedication note only appear once they
+  // are relevant, rather than sitting empty on the page.
+  const [ask, setAsk] = useState("100")
   const [dedicating, setDedicating] = useState(false)
 
   async function onSubmit(formData: FormData) {
@@ -39,16 +47,13 @@ export function DonateForm() {
       toast.error(result.error)
       return
     }
-    setSent(result.via)
+    setSent(result)
     if (result.via === "server") toast.success("We have your details.")
   }
 
   if (sent) {
-    return sent === "email" ? (
-      <FormConfirmation title="Your email draft is open.">
-        Nothing has been sent yet. Send the draft that just opened and someone
-        from Lipson Foundation will be in touch to complete your gift.
-      </FormConfirmation>
+    return sent.via === "email" ? (
+      <EmailDraftConfirmation href={sent.href} body={sent.body} />
     ) : (
       <FormConfirmation title="Thank you. We have your details.">
         Someone from Lipson Foundation will be in touch from {site.email} to

@@ -3,11 +3,12 @@ import { Container } from "@/components/container"
 import { Logo } from "@/components/logo"
 import { MobileNav } from "@/components/mobile-nav"
 import { MenuNav } from "@/components/menu-nav"
+import { NavLink } from "@/components/nav-link"
 import { Button } from "@/components/ui/button"
 import { navItems, programMenu, site, teamMenu } from "@/lib/site"
 
 const linkClass =
-  "px-3 py-2 text-[15px] text-primary-foreground/80 transition-colors hover:text-gold whitespace-nowrap"
+  "link-underline px-3 py-2 text-[15px] text-primary-foreground/80 transition-colors hover:text-gold whitespace-nowrap"
 
 export function SiteHeader() {
   return (
@@ -52,9 +53,14 @@ export function SiteHeader() {
                 return null
               }
               return (
-                <Link key={item.href} href={item.href} className={linkClass}>
+                <NavLink
+                  key={item.href}
+                  href={item.href}
+                  className={linkClass}
+                  activeClassName="text-gold"
+                >
                   {item.label}
-                </Link>
+                </NavLink>
               )
             })}
           </nav>
