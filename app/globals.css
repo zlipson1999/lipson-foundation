@@ -183,20 +183,6 @@
     }
   }
 
-  /* Navy sections read as layered material instead of a flat fill: a faint
-     warm glow (position steerable per section via the custom properties)
-     over a film-grain texture. Pure background layers — the base color and
-     the text contrast on it are untouched. */
-  .surface-navy {
-    background-color: #03162f;
-    background-image:
-      radial-gradient(
-        56rem 36rem at var(--glow-x, 82%) var(--glow-y, -12%),
-        rgb(198 161 90 / 0.09),
-        transparent 62%
-      ),
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.04'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
 }
 
 /* Below-the-fold grids ease up into place as they scroll into view.

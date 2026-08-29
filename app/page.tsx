@@ -61,7 +61,7 @@ const destinations = [
 export default function HomePage() {
   return (
     <div className="flex flex-col">
-      <section className="surface-navy order-1 bg-primary text-primary-foreground [--glow-x:18%] [--glow-y:-8%]">
+      <section className="order-1 bg-primary text-primary-foreground">
         {/* Intro. One grid: the artwork panel leads on small screens and moves
             to the right from lg up, where the copy column's left padding is
             calculated to line up with the centred container everywhere else on
@@ -173,7 +173,7 @@ export default function HomePage() {
           the hero already fills the screen and the concrete thing should come
           before the abstract one. Same navy and the same bottom border the
           hero used to carry, so desktop is unchanged. */}
-      <section className="surface-navy order-3 border-b bg-primary text-primary-foreground [--glow-x:85%] [--glow-y:120%] lg:order-2">
+      <section className="order-3 border-b bg-primary text-primary-foreground lg:order-2">
         {/* Access, Dignity, Community and Service directly under the intro.
             This is now the only place the four appear; /about links here
             rather than repeating them. */}
@@ -322,7 +322,7 @@ export default function HomePage() {
 
       {/* No watermark here or in the footer — the owner keeps the bottom of
           the page plain apart from the small footer logo. */}
-      <section className="surface-navy order-6 border-t bg-primary text-primary-foreground [--glow-x:10%] [--glow-y:-20%]">
+      <section className="order-6 border-t bg-primary text-primary-foreground">
         <Container className="flex flex-col gap-6 py-12 sm:py-20">
           <h2 className="max-w-2xl text-3xl sm:text-4xl">
             Help keep every program cost-free.
