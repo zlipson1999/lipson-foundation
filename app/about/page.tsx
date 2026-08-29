@@ -158,8 +158,12 @@ export default function AboutPage() {
       </section>
 
       <div className="mt-12 flex flex-col gap-3 sm:flex-row">
-        <Button size="lg" nativeButton={false} render={<Link href="/team" />}>
-          The team
+        <Button
+          size="lg"
+          nativeButton={false}
+          render={<Link href="/team/board" />}
+        >
+          Board of Directors
         </Button>
         <Button
           size="lg"

@@ -29,10 +29,12 @@ const destinations = [
     title: "About us",
     body: "Who Lipson Foundation is, who we serve, and why the work exists.",
   },
+  // No card for /team: the team is reached through the header picker
+  // (Board of Directors or Staff), never a page link of its own.
   {
-    href: "/team",
-    title: "The team",
-    body: "The board, and staff as roles are filled.",
+    href: "/help",
+    title: "Get involved",
+    body: "Host a space, refer someone, lend a skill, or sponsor a session.",
   },
   {
     href: "/programs",

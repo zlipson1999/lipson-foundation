@@ -3,7 +3,22 @@ import { Container } from "@/components/container"
 import { Logo } from "@/components/logo"
 import { NavLink } from "@/components/nav-link"
 import { PhoenixTag, RingRopes } from "@/components/marks"
-import { locationLines, navItems, site, taxNotice } from "@/lib/site"
+import { locationLines, navItems, site, taxNotice, teamMenu } from "@/lib/site"
+
+/**
+ * The team has no page link of its own anywhere on the site — the header
+ * picker chooses Board or Staff — so the footer lists those two directly.
+ */
+const footerLinks: { href: string; label: string }[] = []
+for (const item of navItems) {
+  if (item.href === "/team") {
+    for (const entry of teamMenu) {
+      footerLinks.push({ href: entry.href, label: entry.name })
+    }
+  } else {
+    footerLinks.push({ href: item.href, label: item.label })
+  }
+}
 
 export function SiteFooter() {
   return (
@@ -30,7 +45,7 @@ export function SiteFooter() {
               Explore
             </p>
             <ul className="flex flex-col gap-2 text-sm">
-              {navItems.map((item) => (
+              {footerLinks.map((item) => (
                 <li key={item.href}>
                   <NavLink
                     href={item.href}
