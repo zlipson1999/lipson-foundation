@@ -13,7 +13,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { asset } from "@/lib/assets"
-import { PhoenixTag, RingRopes } from "@/components/marks"
+import { RingRopes } from "@/components/marks"
 import { commitments, heroBlurb, locationLines, programs, site } from "@/lib/site"
 
 export const metadata: Metadata = pageMetadata({
@@ -315,9 +315,10 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="surface-navy relative order-6 overflow-hidden border-t bg-primary text-primary-foreground [--glow-x:10%] [--glow-y:-20%]">
-        <PhoenixTag className="pointer-events-none absolute -bottom-24 -right-16 size-[26rem] text-gold/[0.07]" />
-        <Container className="relative z-10 flex flex-col gap-6 py-12 sm:py-20">
+      {/* No watermark here: the footer directly below carries the phoenix,
+          and two of them stacked at the seam read as a mistake. */}
+      <section className="surface-navy order-6 border-t bg-primary text-primary-foreground [--glow-x:10%] [--glow-y:-20%]">
+        <Container className="flex flex-col gap-6 py-12 sm:py-20">
           <h2 className="max-w-2xl text-3xl sm:text-4xl">
             Help keep every program cost-free.
           </h2>
