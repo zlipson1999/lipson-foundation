@@ -35,7 +35,7 @@ export const heroBlurb =
  * the rest of the site follows; nothing else about the wording is changed.
  */
 export const mission =
-  "The Lipson Foundation removes cost as a barrier to growth, offering cost-free programs that support health, personal growth, and professional development for underserved communities."
+  "The Lipson Foundation removes cost as a barrier, offering cost-free programs that support health, personal growth, and professional development for underserved communities."
 
 export const vision =
   "A community where cost is never the reason someone stops growing."
