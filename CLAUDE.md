@@ -43,7 +43,7 @@ it rests on the letter, not on an expectation of one.
 - Impact numbers, launch data, participant counts, or statistics (there is no launch data)
 - Additional named programs beyond In Ur Corner, or staff names (staff list is intentionally empty)
 
-- **Mission and vision (owner-supplied, 27 Aug 2026, Zachary Lipson — not from the 22 Aug kit).** Mission: "The Lipson Foundation removes cost as a barrier to growth, offering cost-free programs that support health, personal growth, and professional development for underserved communities." Vision: "A community where cost is never the reason someone stops growing." Both live on `/about` and are stored in `lib/site.ts`. His wording said "free"; it is written **cost-free** to match the rule below.
+- **Mission and vision (owner-supplied, 27 Aug 2026, Zachary Lipson — not from the 22 Aug kit; mission wording revised by him 31 Aug 2026, dropping "to growth" after "barrier").** Mission: "The Lipson Foundation removes cost as a barrier, offering cost-free programs that support health, personal growth, and professional development for underserved communities." Vision: "A community where cost is never the reason someone stops growing." Both live on `/about` and are stored in `lib/site.ts`. His wording said "free"; it is written **cost-free** to match the rule below.
 
 **Naming and framing rules:**
 - **Program name corrected 28 Aug 2026 by Zachary Lipson.** The formal name is **In Ur Corner**, not "In Your Corner". The 22 Aug kit's reading — that "In Your Corner" was the formal name and UR was mark-only — was wrong; the founder confirmed the mark and the name are the same. Use **In Ur Corner** in all body copy, headings, metadata and alt text. This reverses the earlier mark-only rule.
