@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/card"
 import { asset } from "@/lib/assets"
 import { commitments, heroBlurb, locationLines, programs, site } from "@/lib/site"
+import { CategoryChips } from "@/components/category-chips"
 
 export const metadata: Metadata = pageMetadata({
   title: `${site.name} — ${site.kicker}`,
@@ -225,6 +226,10 @@ export default function HomePage() {
                 <div className="flex flex-col items-center gap-3 sm:items-start">
                   <Badge variant="secondary">{program.status}</Badge>
                   <h3 className="font-heading text-2xl">{program.name}</h3>
+                  <CategoryChips
+                    categories={program.categories}
+                    className="justify-center sm:justify-start"
+                  />
                   <p className="max-w-2xl text-base leading-relaxed text-muted-foreground">
                     {program.summary}
                   </p>

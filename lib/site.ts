@@ -209,12 +209,29 @@ export const groups = [
   },
 ] as const
 
+/**
+ * Service categories — the kinds of work a program covers, in the mission's
+ * own vocabulary (health, personal growth, professional development) plus
+ * mentoring. Owner-directed system, 8 Sep 2026: every program lists its
+ * categories as small boxes wherever programs are shown. Add or rename
+ * categories HERE only, never ad hoc in a page.
+ */
+export const serviceCategories = {
+  health: "Health & Wellness",
+  mentoring: "Mentoring",
+  professional: "Professional Development",
+  growth: "Personal Growth",
+} as const
+
+export type ServiceCategory = keyof typeof serviceCategories
+
 export const programs = [
   {
     slug: "in-your-corner",
     name: "In Ur Corner",
     href: "/in-your-corner",
     status: "Flagship",
+    categories: ["health", "mentoring", "professional"] as const,
     mark: "/brand/iyc-tag.png",
     summary:
       "A cost-free boxing and mentorship program that brings youth ages 12–17 and veterans together to train. Boxing builds the relationships. Mentorship deepens them — later, not on day one. The Ring, The Corner, and The Crew live inside it.",
@@ -223,7 +240,8 @@ export const programs = [
     slug: "adapthletics",
     name: "Adapthletics",
     href: "/adapthletics",
-    status: "In development",
+    status: "Est. 2022",
+    categories: ["health", "growth"] as const,
     mark: "/brand/adapthletics.png",
     summary:
       "Adaptive fitness for people with disabilities — strength, mobility, and confidence, with the training fitted to the athlete instead of the other way around. In person in South Florida and virtual anywhere. Built and coached by our founder since 2022 as Original Adapthletics; the foundation is making it cost-free for everyone.",
