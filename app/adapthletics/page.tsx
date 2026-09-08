@@ -264,18 +264,6 @@ export default function AdapthleticsPage() {
         <div className="mt-8">
           <EpisodeCarousel />
         </div>
-        <p className="mt-8 text-base leading-relaxed text-primary-foreground/70">
-          Watch the episodes on{" "}
-          <a
-            href="https://www.instagram.com/lipsonfoundation/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-medium text-gold underline underline-offset-4 hover:text-primary-foreground"
-          >
-            @lipsonfoundation
-          </a>
-          .
-        </p>
       </section>
 
       <section className="mt-16 flex max-w-3xl flex-col gap-4">
