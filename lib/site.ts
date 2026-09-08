@@ -235,6 +235,42 @@ export const programs = [
  * Exploration Night are parts of In Ur Corner rather than programs of their
  * own, so they live on the In Ur Corner page and are not surfaced here.
  */
+/**
+ * From the Ground Up — the founder's adaptive-athlete interview series
+ * (owner-supplied 8 Sep 2026, transcribed from his Instagram). Episode
+ * numbers are deliberately omitted: only some were legible, and a wrong
+ * number is worse than none. Platform links pending from the founder.
+ */
+/**
+ * The Adapthletics tagline, verbatim from the founder's program logo
+ * (owner-supplied 8 Sep 2026). Program-level only — the FOUNDATION still
+ * has no official tagline, and this must never be presented as one.
+ */
+export const adapthleticsTagline = "Positive Progress Is Possible"
+
+export const adapthleticsEpisodes = [
+  { guest: "Brendan Aylward", title: "An adaptive fitness pioneer" },
+  { guest: "Zachary Josie", title: "A triathlete with dwarfism" },
+  { guest: "Matt Morton", title: "From grand master to Mr. Olympia — adaptive martial arts and more" },
+  { guest: "Tony Jacobsen", title: "Disable your disability" },
+  { guest: "Ricky Shic", title: "Fitness for you — the Ricky Shic story" },
+] as const
+
+/**
+ * The Adapthletics media wall. Intentionally EMPTY until the founder
+ * supplies original photos/videos (drop files in public/adapthletics/ and
+ * list them here). The wall hides itself while empty — the same honest
+ * empty-state pattern as events and news. Never fill with stock or
+ * placeholder media.
+ */
+export type AdapthleticsMediaItem = {
+  type: "photo" | "video"
+  src: string
+  alt: string
+  caption?: string
+}
+export const adapthleticsMedia: AdapthleticsMediaItem[] = []
+
 export const teamMenu = [
   {
     href: "/team/board",
