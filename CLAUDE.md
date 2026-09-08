@@ -6,6 +6,7 @@ You are working on the public website prototype for **Lipson Foundation Inc.** Y
 
 - **Org:** Lipson Foundation Inc., a South Florida nonprofit (EIN 39-4624045) building **cost-free community programs for underserved communities**. Fitness, wellness, and mentoring are where the work starts — **not the boundary** of the mission. Every program is completely free to participants, always.
 - **Founder:** Zachary Lipson, Founder and President, who lives with hereditary spastic paraplegia. Board: Zachary Lipson (President), Joshua Weinfeld (CFO), Julia Vance (Secretary).
+- **Second named program (owner-supplied 8 Sep 2026): Adapthletics** — the foundation's adaptive fitness program: strength, mobility, and fitness for people with disabilities, training adapted to each athlete. Named and designed by the founder from his lived experience. Status: **in development** — no schedule, venue, coaches, curriculum details, or start date exist; the site must present it that way. The founder's Instagram may later supply showcase material (photos, history); none is verified or on the site yet — do not add any until he supplies it explicitly.
 - **Flagship program:** **In Ur Corner** — free non-contact boxing + mentorship for youth ages 12–17 and military veterans of any era. 2×/week sessions of 60 minutes training + 30 minutes dinner together; monthly Career Exploration Night. No sparring, no head contact. No host hall is signed; no session days or start date exist.
 - **Contact:** Zachary Lipson · zlipson@lipsonfoundation.org · **lipsonfoundation.org serves this site** (GitHub Pages custom domain, DNS at GoDaddy).
 - **Stack:** Next.js 16 (App Router), TypeScript, Tailwind CSS v4, shadcn/ui (base-lyra / Base UI). Dev server already runs at http://127.0.0.1:43147 — **do not restart it, do not start another one**.
@@ -41,7 +42,7 @@ it rests on the letter, not on an expectation of one.
 - An official tagline (none has been chosen)
 - A donate URL, payment processor, or checkout of any kind
 - Impact numbers, launch data, participant counts, or statistics (there is no launch data)
-- Additional named programs beyond In Ur Corner, or staff names (staff list is intentionally empty)
+- Additional named programs beyond In Ur Corner and Adapthletics (owner-supplied 8 Sep 2026), or staff names (staff list is intentionally empty)
 
 - **Mission and vision (owner-supplied, 27 Aug 2026, Zachary Lipson — not from the 22 Aug kit; mission wording revised by him 31 Aug 2026, dropping "to growth" after "barrier").** Mission: "The Lipson Foundation removes cost as a barrier, offering cost-free programs that support health, personal growth, and professional development for underserved communities." Vision: "A community where cost is never the reason someone stops growing." Both live on `/about` and are stored in `lib/site.ts`. His wording said "free"; it is written **cost-free** to match the rule below.
 

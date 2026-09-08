@@ -88,6 +88,7 @@ export const routes = [
   { path: "/", priority: 1, changeFrequency: "monthly" },
   { path: "/about", priority: 0.9, changeFrequency: "monthly" },
   { path: "/in-your-corner", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/adapthletics", priority: 0.8, changeFrequency: "monthly" },
   { path: "/programs", priority: 0.8, changeFrequency: "monthly" },
   { path: "/donate", priority: 0.8, changeFrequency: "monthly" },
   { path: "/team", priority: 0.7, changeFrequency: "monthly" },
@@ -218,6 +219,15 @@ export const programs = [
     summary:
       "A cost-free boxing and mentorship program that brings youth ages 12–17 and veterans together to train. Boxing builds the relationships. Mentorship deepens them — later, not on day one. The Ring, The Corner, and The Crew live inside it.",
   },
+  {
+    slug: "adapthletics",
+    name: "Adapthletics",
+    href: "/adapthletics",
+    status: "In development",
+    mark: "/brand/lipson-tag.png",
+    summary:
+      "Adaptive fitness for people with disabilities — strength, mobility, and confidence, with the training fitted to the athlete instead of the other way around. Named and designed by our founder from his own lived experience. Cost-free, always.",
+  },
 ] as const
 
 /**
@@ -243,6 +253,11 @@ export const programMenu = [
     href: "/in-your-corner",
     name: "In Ur Corner",
     body: "Cost-free boxing and mentorship for youth and veterans.",
+  },
+  {
+    href: "/adapthletics",
+    name: "Adapthletics",
+    body: "Adaptive fitness for people with disabilities — in development.",
   },
 ] as const
 
