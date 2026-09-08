@@ -254,9 +254,10 @@ export const adapthleticsTagline = "Positive Progress Is Possible"
  * /adapthletics stays hidden. The founder authorized the Spotify embed on
  * 8 Sep 2026 ("connecting it to spotify podcast uploads") — a narrow,
  * owner-directed exception to the no-third-party rule, for this one embed
- * on this one page. Set only a VERIFIED id for HIS show.
+ * on this one page. Set only a VERIFIED id for HIS show — this one was
+ * supplied by the founder himself on 8 Sep 2026.
  */
-export const adapthleticsSpotifyShowId: string = ""
+export const adapthleticsSpotifyShowId: string = "3gVYGiXGsnDqB3Hs68OWyx"
 
 export const adapthleticsEpisodes = [
   { guest: "Brendan Aylward", title: "An adaptive fitness pioneer" },
