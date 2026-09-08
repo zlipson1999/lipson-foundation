@@ -16,7 +16,7 @@ import {
 export const metadata: Metadata = pageMetadata({
   title: "Adapthletics",
   description:
-    "Adapthletics is the Lipson Foundation's adaptive fitness program — strength, mobility, and confidence for people with disabilities. Built and coached by founder Zachary Lipson since 2022, now becoming cost-free for everyone.",
+    "Adapthletics is the Lipson Foundation's adaptive fitness program — strength, mobility, and confidence for people with disabilities, in person in South Florida and virtual anywhere. Built by founder Zachary Lipson since 2022, cost-free under the foundation.",
   route: "/adapthletics",
 })
 
@@ -47,9 +47,10 @@ export default function AdapthleticsPage() {
           Adapthletics — jump straight to any part of it. */}
       <nav aria-label="On this page" className="mb-12 flex flex-wrap gap-2">
         {[
+          ...(adapthleticsMedia.length > 0 ? [["#wall", "The wall"]] : []),
+          ["#offer", "What we offer"],
           ["#why", "Why this exists"],
           ["#track-record", "The track record"],
-          ...(adapthleticsMedia.length > 0 ? [["#wall", "The wall"]] : []),
           ["#series", "From the Ground Up"],
         ].map(([href, label]) => (
           <a
@@ -62,7 +63,91 @@ export default function AdapthleticsPage() {
         ))}
       </nav>
 
-      <section id="why" className="flex max-w-3xl scroll-mt-24 flex-col gap-4">
+      {/* Pics and clips lead the page — the media wall renders only once the
+          founder's own photos and videos are in public/adapthletics/ and
+          listed in adapthleticsMedia. Same honest empty-state pattern as
+          events and news: never stock, never placeholders. */}
+      {adapthleticsMedia.length > 0 && (
+        <section id="wall" className="mb-16 flex scroll-mt-24 flex-col gap-6">
+          <div className="max-w-3xl">
+            <h2 className="text-3xl">The wall</h2>
+            <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+              Straight from the training floor — no stock photos, no models,
+              just the work.
+            </p>
+          </div>
+          <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {adapthleticsMedia.map((item, i) => (
+              <li
+                key={item.src}
+                className={`flex flex-col gap-2 border-2 border-gold/60 bg-background p-2 pb-3 shadow-sm transition-transform duration-200 hover:rotate-0 ${
+                  i % 2 === 0 ? "rotate-1" : "-rotate-1"
+                }`}
+              >
+                {item.type === "video" ? (
+                  <video
+                    controls
+                    preload="metadata"
+                    className="aspect-square w-full object-cover"
+                    src={asset(item.src)}
+                  />
+                ) : (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={asset(item.src)}
+                    alt={item.alt}
+                    className="aspect-square w-full object-cover"
+                    loading="lazy"
+                  />
+                )}
+                {item.caption ? (
+                  <p className="px-1 font-heading text-sm text-muted-foreground">
+                    {item.caption}
+                  </p>
+                ) : null}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {/* The information hub: what the program is, and the two ways it runs. */}
+      <section id="offer" className="flex scroll-mt-24 flex-col gap-8">
+        <div className="max-w-3xl">
+          <h2 className="text-3xl">What we offer</h2>
+          <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+            Adaptive fitness training — strength, mobility, and conditioning
+            with the movements, pace, and goals fitted to each athlete&apos;s
+            body. Adapted, never watered down. Every body welcome, at any
+            starting point. And like everything the foundation runs, completely
+            cost-free: no memberships, no fees, no fine print.
+          </p>
+        </div>
+        <div className="grid max-w-4xl gap-6 sm:grid-cols-2">
+          <div className="border-2 border-gold/40 p-6">
+            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold-ink">
+              How we offer it
+            </p>
+            <p className="mt-2 font-heading text-2xl">In person</p>
+            <p className="mt-2 text-base leading-relaxed text-muted-foreground">
+              Hands-on adaptive training in South Florida — Palm Beach County
+              and surrounding counties, in spaces the community already uses.
+            </p>
+          </div>
+          <div className="border-2 border-gold/40 p-6">
+            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold-ink">
+              How we offer it
+            </p>
+            <p className="mt-2 font-heading text-2xl">Virtual</p>
+            <p className="mt-2 text-base leading-relaxed text-muted-foreground">
+              Adaptive coaching online, wherever you are — the same training,
+              fitted to your body and whatever equipment you have.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="why" className="mt-16 flex max-w-3xl scroll-mt-24 flex-col gap-4">
         <h2 className="text-3xl">Why this exists</h2>
         <p className="text-base leading-relaxed text-muted-foreground">
           Adapthletics is named and designed by our founder, Zachary Lipson,
@@ -73,30 +158,6 @@ export default function AdapthleticsPage() {
           where the training bends to the athlete, never the other way around,
           and where cost is never the reason someone stops.
         </p>
-      </section>
-
-      <section className="mt-16 grid max-w-4xl gap-8 sm:grid-cols-3">
-        <div className="border-l-2 border-gold pl-4">
-          <p className="font-heading text-lg">Adapted, not watered down</p>
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-            Real training — strength, mobility, and fitness — with the
-            movements, pace, and goals fitted to each athlete&apos;s body.
-          </p>
-        </div>
-        <div className="border-l-2 border-gold pl-4">
-          <p className="font-heading text-lg">Every body welcome</p>
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-            Built for people with disabilities, at any starting point. Showing
-            up is the only prerequisite.
-          </p>
-        </div>
-        <div className="border-l-2 border-gold pl-4">
-          <p className="font-heading text-lg">Cost-free, always</p>
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-            No memberships, no fees, no fine print. Cost is never the reason
-            someone is left out.
-          </p>
-        </div>
       </section>
 
       <section id="track-record" className="mt-16 flex max-w-3xl scroll-mt-24 flex-col gap-6">
@@ -151,55 +212,19 @@ export default function AdapthleticsPage() {
             </p>
           </li>
         </ul>
+        <p className="text-base leading-relaxed text-muted-foreground">
+          The whole story is on the feed:{" "}
+          <a
+            href="https://www.instagram.com/lipsonfoundation/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-gold-ink underline underline-offset-4 hover:text-primary"
+          >
+            @lipsonfoundation on Instagram
+          </a>
+          .
+        </p>
       </section>
-
-      {/* The media wall renders only once the founder's own photos and clips
-          are in public/adapthletics/ and listed in adapthleticsMedia — the
-          same honest empty-state pattern as events and news. Never stock,
-          never placeholders. */}
-      {adapthleticsMedia.length > 0 && (
-        <section id="wall" className="mt-16 flex scroll-mt-24 flex-col gap-6">
-          <div className="max-w-3xl">
-            <h2 className="text-3xl">The wall</h2>
-            <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-              Straight from the training floor — no stock photos, no models,
-              just the work.
-            </p>
-          </div>
-          <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {adapthleticsMedia.map((item, i) => (
-              <li
-                key={item.src}
-                className={`flex flex-col gap-2 border-2 border-gold/60 bg-background p-2 pb-3 shadow-sm transition-transform duration-200 hover:rotate-0 ${
-                  i % 2 === 0 ? "rotate-1" : "-rotate-1"
-                }`}
-              >
-                {item.type === "video" ? (
-                  <video
-                    controls
-                    preload="metadata"
-                    className="aspect-square w-full object-cover"
-                    src={asset(item.src)}
-                  />
-                ) : (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={asset(item.src)}
-                    alt={item.alt}
-                    className="aspect-square w-full object-cover"
-                    loading="lazy"
-                  />
-                )}
-                {item.caption ? (
-                  <p className="px-1 font-heading text-sm text-muted-foreground">
-                    {item.caption}
-                  </p>
-                ) : null}
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
 
       <section id="series" className="mt-16 scroll-mt-24 bg-primary p-8 text-primary-foreground sm:p-10">
         <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
@@ -238,7 +263,8 @@ export default function AdapthleticsPage() {
           <AlertDescription>
             Adapthletics is in development as a foundation program. There is no
             schedule, venue, or start date yet — those stay blank until they
-            are real. Tell us you&apos;re interested and you will hear first.
+            are real. Tell us you&apos;re interested — in person or virtual —
+            and you will hear first.
           </AlertDescription>
         </Alert>
       </section>

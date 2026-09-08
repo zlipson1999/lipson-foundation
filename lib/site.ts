@@ -226,7 +226,7 @@ export const programs = [
     status: "In development",
     mark: "/brand/lipson-tag.png",
     summary:
-      "Adaptive fitness for people with disabilities — strength, mobility, and confidence, with the training fitted to the athlete instead of the other way around. Built and coached by our founder since 2022 as Original Adapthletics; the foundation is making it cost-free for everyone.",
+      "Adaptive fitness for people with disabilities — strength, mobility, and confidence, with the training fitted to the athlete instead of the other way around. In person in South Florida and virtual anywhere. Built and coached by our founder since 2022 as Original Adapthletics; the foundation is making it cost-free for everyone.",
   },
 ] as const
 
@@ -259,10 +259,11 @@ export const adapthleticsTagline = "Positive Progress Is Possible"
  */
 /**
  * The five From the Ground Up episode ids (open.spotify.com/episode/<id>),
- * supplied by the founder 8 Sep 2026, in the order he pasted them. Which id
- * belongs to which guest is NOT verified from here — the carousel therefore
- * renders Spotify's own episode embeds (cover, title, player straight from
- * Spotify) and never pairs an id with a guest name in our copy.
+ * supplied by the founder 8 Sep 2026 and confirmed by him to be episodes
+ * 1 through 5 in order. Which guest belongs to which episode NUMBER is still
+ * not fully verified from here — the carousel therefore renders Spotify's
+ * own episode embeds (cover, title, player straight from Spotify) and never
+ * pairs an id with a guest name in our copy.
  */
 export const adapthleticsEpisodeIds = [
   "4Pk2UlxZAWrRhnOxhK7GKZ",
@@ -319,7 +320,7 @@ export const programMenu = [
   {
     href: "/adapthletics",
     name: "Adapthletics",
-    body: "Adaptive fitness for people with disabilities — in development.",
+    body: "Adaptive fitness for people with disabilities — in person and virtual.",
   },
 ] as const
 
