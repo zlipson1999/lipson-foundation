@@ -149,26 +149,25 @@ export default function AdapthleticsPage() {
             cost-free: no memberships, no fees, no fine print.
           </p>
         </div>
-        <div className="grid max-w-4xl gap-6 sm:grid-cols-2">
-          <div className="border-2 border-gold/40 p-6">
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold-ink">
-              How we offer it
-            </p>
-            <p className="mt-2 font-heading text-2xl">In person</p>
-            <p className="mt-2 text-base leading-relaxed text-muted-foreground">
-              Hands-on adaptive training in South Florida — Palm Beach County
-              and surrounding counties, in spaces the community already uses.
-            </p>
-          </div>
-          <div className="border-2 border-gold/40 p-6">
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold-ink">
-              How we offer it
-            </p>
-            <p className="mt-2 font-heading text-2xl">Virtual</p>
-            <p className="mt-2 text-base leading-relaxed text-muted-foreground">
-              Adaptive coaching online, wherever you are — the same training,
-              fitted to your body and whatever equipment you have.
-            </p>
+        <div className="max-w-4xl border-2 border-gold/40 p-6">
+          <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold-ink">
+            How we offer it
+          </p>
+          <div className="mt-4 grid gap-6 sm:grid-cols-2">
+            <div>
+              <p className="font-heading text-2xl">In person</p>
+              <p className="mt-2 text-base leading-relaxed text-muted-foreground">
+                Hands-on adaptive training in South Florida — Palm Beach County
+                and surrounding counties, in spaces the community already uses.
+              </p>
+            </div>
+            <div className="border-t border-gold/30 pt-6 sm:border-t-0 sm:border-l sm:pt-0 sm:pl-6">
+              <p className="font-heading text-2xl">Virtual</p>
+              <p className="mt-2 text-base leading-relaxed text-muted-foreground">
+                Adaptive coaching online, wherever you are — the same training,
+                fitted to your body and whatever equipment you have.
+              </p>
+            </div>
           </div>
         </div>
       </section>
