@@ -24,17 +24,17 @@ export default function AdapthleticsPage() {
   return (
     <Container className="pb-20">
       <PageIntro
-        kicker="Adapthletics · A Lipson Foundation program"
-        title={adapthleticsTagline}
+        kicker="Adaptive fitness · A Lipson Foundation program"
+        title="Adapthletics"
       >
-        <p className="font-heading text-xl text-foreground">
-          Fitness that adapts to the athlete.
+        <p className="font-heading text-2xl text-gold-ink">
+          {adapthleticsTagline}
         </p>
         <p>
-          An adaptive fitness program for people with disabilities — strength,
-          mobility, and confidence, with every movement fitted to the body
-          doing it. Completely cost-free, like everything the Lipson Foundation
-          builds.
+          Fitness that adapts to the athlete: strength, mobility, and
+          confidence for people with disabilities, with every movement fitted
+          to the body doing it. Completely cost-free, like everything the
+          Lipson Foundation builds.
         </p>
         <p className="mt-2">
           <span className="inline-block -rotate-2 border-2 border-gold px-3 py-1 font-heading text-sm font-semibold uppercase tracking-[0.18em] text-gold-ink">
