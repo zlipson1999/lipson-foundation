@@ -88,6 +88,7 @@ export const routes = [
   { path: "/", priority: 1, changeFrequency: "monthly" },
   { path: "/about", priority: 0.9, changeFrequency: "monthly" },
   { path: "/in-your-corner", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/adapthletics", priority: 0.8, changeFrequency: "monthly" },
   { path: "/programs", priority: 0.8, changeFrequency: "monthly" },
   { path: "/donate", priority: 0.8, changeFrequency: "monthly" },
   { path: "/team", priority: 0.7, changeFrequency: "monthly" },
@@ -218,6 +219,15 @@ export const programs = [
     summary:
       "A cost-free boxing and mentorship program that brings youth ages 12–17 and veterans together to train. Boxing builds the relationships. Mentorship deepens them — later, not on day one. The Ring, The Corner, and The Crew live inside it.",
   },
+  {
+    slug: "adapthletics",
+    name: "Adapthletics",
+    href: "/adapthletics",
+    status: "In development",
+    mark: "/brand/adapthletics.png",
+    summary:
+      "Adaptive fitness for people with disabilities — strength, mobility, and confidence, with the training fitted to the athlete instead of the other way around. In person in South Florida and virtual anywhere. Built and coached by our founder since 2022 as Original Adapthletics; the foundation is making it cost-free for everyone.",
+  },
 ] as const
 
 /**
@@ -225,6 +235,69 @@ export const programs = [
  * Exploration Night are parts of In Ur Corner rather than programs of their
  * own, so they live on the In Ur Corner page and are not surfaced here.
  */
+/**
+ * From the Ground Up — the founder's adaptive-athlete interview series
+ * (owner-supplied 8 Sep 2026, transcribed from his Instagram). Episode
+ * numbers are deliberately omitted: only some were legible, and a wrong
+ * number is worse than none. Platform links pending from the founder.
+ */
+/**
+ * The Adapthletics tagline, verbatim from the founder's program logo
+ * (owner-supplied 8 Sep 2026). Program-level only — the FOUNDATION still
+ * has no official tagline, and this must never be presented as one.
+ */
+export const adapthleticsTagline = "Positive Progress Is Possible"
+
+/**
+ * Spotify show id for From the Ground Up (the part after
+ * open.spotify.com/show/). Empty string = the live Spotify rail on
+ * /adapthletics stays hidden. The founder authorized the Spotify embed on
+ * 8 Sep 2026 ("connecting it to spotify podcast uploads") — a narrow,
+ * owner-directed exception to the no-third-party rule, for this one embed
+ * on this one page. Set only a VERIFIED id for HIS show — this one was
+ * supplied by the founder himself on 8 Sep 2026.
+ */
+/**
+ * The five From the Ground Up episode ids (open.spotify.com/episode/<id>),
+ * supplied by the founder 8 Sep 2026 and confirmed by him to be episodes
+ * 1 through 5 in order. Which guest belongs to which episode NUMBER is still
+ * not fully verified from here — the carousel therefore renders Spotify's
+ * own episode embeds (cover, title, player straight from Spotify) and never
+ * pairs an id with a guest name in our copy.
+ */
+export const adapthleticsEpisodeIds = [
+  "4Pk2UlxZAWrRhnOxhK7GKZ",
+  "57EW5j05VPX3sXYDl5GdZW",
+  "1gIWn7xH43NBjDkAPkUZCW",
+  "1LMkujc5sNdHNCIjqgNS6e",
+  "6kLj9tIJenbRjkm8IEXkJN",
+] as const
+
+export const adapthleticsSpotifyShowId: string = "3gVYGiXGsnDqB3Hs68OWyx"
+
+export const adapthleticsEpisodes = [
+  { guest: "Brendan Aylward", title: "An adaptive fitness pioneer" },
+  { guest: "Zachary Josie", title: "A triathlete with dwarfism" },
+  { guest: "Matt Morton", title: "From grand master to Mr. Olympia — adaptive martial arts and more" },
+  { guest: "Tony Jacobsen", title: "Disable your disability" },
+  { guest: "Ricky Shic", title: "Fitness for you — the Ricky Shic story" },
+] as const
+
+/**
+ * The Adapthletics media wall. Intentionally EMPTY until the founder
+ * supplies original photos/videos (drop files in public/adapthletics/ and
+ * list them here). The wall hides itself while empty — the same honest
+ * empty-state pattern as events and news. Never fill with stock or
+ * placeholder media.
+ */
+export type AdapthleticsMediaItem = {
+  type: "photo" | "video"
+  src: string
+  alt: string
+  caption?: string
+}
+export const adapthleticsMedia: AdapthleticsMediaItem[] = []
+
 export const teamMenu = [
   {
     href: "/team/board",
@@ -243,6 +316,11 @@ export const programMenu = [
     href: "/in-your-corner",
     name: "In Ur Corner",
     body: "Cost-free boxing and mentorship for youth and veterans.",
+  },
+  {
+    href: "/adapthletics",
+    name: "Adapthletics",
+    body: "Adaptive fitness for people with disabilities — in person and virtual.",
   },
 ] as const
 
