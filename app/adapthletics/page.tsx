@@ -53,7 +53,7 @@ export default function AdapthleticsPage() {
           src={asset("/brand/adapthletics.png")}
           alt="Adapthletics logo — a gold and orange phoenix over the program name and the tagline Positive Progress Is Possible"
           width={800}
-          height={607}
+          height={464}
           className="h-auto w-64 shrink-0 self-center sm:w-80 lg:w-96"
           unoptimized
           priority
