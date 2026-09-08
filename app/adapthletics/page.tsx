@@ -66,7 +66,12 @@ export default function AdapthleticsPage() {
 
       {/* The hub rail: this page is the collection point for everything
           Adapthletics — jump straight to any part of it. */}
-      <nav aria-label="On this page" className="mb-12 flex flex-wrap gap-2">
+      {/* One swipeable line on phones (no wrapping into a wall of boxes),
+          a plain row on larger screens where it all fits anyway. */}
+      <nav
+        aria-label="On this page"
+        className="-mx-4 mb-12 flex gap-1.5 overflow-x-auto px-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:flex-wrap sm:gap-2 sm:overflow-visible sm:px-0"
+      >
         {[
           ...(adapthleticsMedia.length > 0 ? [["#wall", "The wall"]] : []),
           ["#offer", "What we offer"],
@@ -77,7 +82,7 @@ export default function AdapthleticsPage() {
           <a
             key={href}
             href={href}
-            className="border border-gold/50 px-3 py-1.5 text-sm font-medium text-gold-ink transition-colors hover:border-gold hover:bg-gold/10"
+            className="shrink-0 whitespace-nowrap border border-gold/50 px-2.5 py-1.5 text-sm font-medium text-gold-ink transition-colors hover:border-gold hover:bg-gold/10 sm:px-3"
           >
             {label}
           </a>
