@@ -224,7 +224,7 @@ export const programs = [
     name: "Adapthletics",
     href: "/adapthletics",
     status: "In development",
-    mark: "/brand/lipson-tag.png",
+    mark: "/brand/adapthletics.png",
     summary:
       "Adaptive fitness for people with disabilities — strength, mobility, and confidence, with the training fitted to the athlete instead of the other way around. In person in South Florida and virtual anywhere. Built and coached by our founder since 2022 as Original Adapthletics; the foundation is making it cost-free for everyone.",
   },

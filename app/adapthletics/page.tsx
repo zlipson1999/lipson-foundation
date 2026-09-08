@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import { pageMetadata } from "@/lib/seo"
-import { Container, PageIntro } from "@/components/container"
+import { Container } from "@/components/container"
 import { Button } from "@/components/ui/button"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { asset } from "@/lib/assets"
@@ -23,25 +24,41 @@ export const metadata: Metadata = pageMetadata({
 export default function AdapthleticsPage() {
   return (
     <Container className="pb-20">
-      <PageIntro
-        kicker="Adaptive fitness · A Lipson Foundation program"
-        title="Adapthletics"
-      >
-        <p className="font-heading text-2xl text-gold-ink">
-          {adapthleticsTagline}
-        </p>
-        <p>
-          Fitness that adapts to the athlete: strength, mobility, and
-          confidence for people with disabilities, with every movement fitted
-          to the body doing it. Completely cost-free, like everything the
-          Lipson Foundation builds.
-        </p>
-        <p className="mt-2">
-          <span className="inline-block -rotate-2 border-2 border-gold px-3 py-1 font-heading text-sm font-semibold uppercase tracking-[0.18em] text-gold-ink">
-            Original · Est. 2022
-          </span>
-        </p>
-      </PageIntro>
+      <header className="flex flex-col-reverse items-start gap-8 pt-12 pb-10 sm:pt-16 sm:pb-14 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
+        <div className="flex max-w-3xl flex-col gap-4">
+          <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
+            Adaptive fitness · A Lipson Foundation program
+          </p>
+          <h1 className="font-heading text-4xl leading-[1.1] tracking-tight sm:text-5xl">
+            Adapthletics
+          </h1>
+          <div className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            <p className="font-heading text-2xl text-gold-ink">
+              {adapthleticsTagline}
+            </p>
+            <p className="mt-4">
+              Fitness that adapts to the athlete: strength, mobility, and
+              confidence for people with disabilities, with every movement
+              fitted to the body doing it. Completely cost-free, like
+              everything the Lipson Foundation builds.
+            </p>
+            <p className="mt-4">
+              <span className="inline-block -rotate-2 border-2 border-gold px-3 py-1 font-heading text-sm font-semibold uppercase tracking-[0.18em] text-gold-ink">
+                Original · Est. 2022
+              </span>
+            </p>
+          </div>
+        </div>
+        <Image
+          src={asset("/brand/adapthletics.png")}
+          alt="Adapthletics logo — a gold and orange phoenix over the program name and the tagline Positive Progress Is Possible"
+          width={800}
+          height={607}
+          className="h-auto w-64 shrink-0 self-center sm:w-80 lg:w-96"
+          unoptimized
+          priority
+        />
+      </header>
 
       {/* The hub rail: this page is the collection point for everything
           Adapthletics — jump straight to any part of it. */}
