@@ -226,7 +226,7 @@ export const programs = [
     status: "In development",
     mark: "/brand/lipson-tag.png",
     summary:
-      "Adaptive fitness for people with disabilities — strength, mobility, and confidence, with the training fitted to the athlete instead of the other way around. Named and designed by our founder from his own lived experience. Cost-free, always.",
+      "Adaptive fitness for people with disabilities — strength, mobility, and confidence, with the training fitted to the athlete instead of the other way around. Built and coached by our founder since 2022 as Original Adapthletics; the foundation is making it cost-free for everyone.",
   },
 ] as const
 

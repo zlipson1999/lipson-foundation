@@ -65,6 +65,72 @@ export default function AdapthleticsPage() {
         </div>
       </section>
 
+      <section className="mt-16 flex max-w-3xl flex-col gap-6">
+        <h2 className="text-3xl">This one is not starting from zero</h2>
+        <p className="text-base leading-relaxed text-muted-foreground">
+          Adapthletics has existed since 2022 — first as Original Adapthletics,
+          the adaptive training practice Zach built and coached himself. The
+          foundation is bringing it home and removing the last barrier: the
+          cost.
+        </p>
+        <ul className="grid gap-6 sm:grid-cols-2">
+          <li className="border-l-2 border-gold pl-4">
+            <p className="font-heading text-lg">Est. 2022</p>
+            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+              Founded as Original Adapthletics — years of adaptive training
+              before it ever had a website.
+            </p>
+          </li>
+          <li className="border-l-2 border-gold pl-4">
+            <p className="font-heading text-lg">Certified</p>
+            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+              ATA Adaptive &amp; Inclusive Training certification (2022) and
+              the MedFit Adaptive Fitness Specialist specialization.
+            </p>
+          </li>
+          <li className="border-l-2 border-gold pl-4">
+            <p className="font-heading text-lg">In the gym</p>
+            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+              Years coaching athletes with disabilities — wheelchair users
+              included — on real equipment, at real intensity.
+            </p>
+          </li>
+          <li className="border-l-2 border-gold pl-4">
+            <p className="font-heading text-lg">From the Ground Up</p>
+            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+              Zach&apos;s interview series spotlighting adaptive athletes and
+              pioneers, one story at a time.
+            </p>
+          </li>
+          <li className="border-l-2 border-gold pl-4">
+            <p className="font-heading text-lg">An athlete himself</p>
+            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+              Races Spartan obstacle courses while living with hereditary
+              spastic paraplegia.
+            </p>
+          </li>
+          <li className="border-l-2 border-gold pl-4">
+            <p className="font-heading text-lg">In the community</p>
+            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+              Speaker for the Spastic Paraplegia Foundation and a working voice
+              for disability visibility.
+            </p>
+          </li>
+        </ul>
+        <p className="text-base leading-relaxed text-muted-foreground">
+          The whole story is on the feed:{" "}
+          <a
+            href="https://www.instagram.com/lipsonfoundation/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-gold-ink underline underline-offset-4 hover:text-primary"
+          >
+            @lipsonfoundation on Instagram
+          </a>
+          .
+        </p>
+      </section>
+
       <section className="mt-16 flex max-w-3xl flex-col gap-4">
         <Alert>
           <AlertTitle>Being designed now</AlertTitle>
