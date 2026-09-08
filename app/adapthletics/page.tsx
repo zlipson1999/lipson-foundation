@@ -7,6 +7,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { asset } from "@/lib/assets"
 import { EpisodeCarousel } from "@/components/adapthletics-episodes"
 import {
+  adapthleticsEpisodes,
   adapthleticsMedia,
   adapthleticsTagline,
   site,
@@ -210,7 +211,9 @@ export default function AdapthleticsPage() {
         <p className="mt-3 max-w-2xl text-base leading-relaxed text-primary-foreground/70">
           Before Adapthletics was a foundation program, Zach was already
           handing the mic to the people who prove what adaptive athletes can
-          do. Every episode is one athlete, one story, no shortcuts.
+          do. Every episode is one athlete, one story, no shortcuts — guests
+          so far include{" "}
+          {adapthleticsEpisodes.map((ep) => ep.guest).join(", ")}.
         </p>
         <div className="mt-8">
           <EpisodeCarousel />

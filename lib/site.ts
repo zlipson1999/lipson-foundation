@@ -257,6 +257,21 @@ export const adapthleticsTagline = "Positive Progress Is Possible"
  * on this one page. Set only a VERIFIED id for HIS show — this one was
  * supplied by the founder himself on 8 Sep 2026.
  */
+/**
+ * The five From the Ground Up episode ids (open.spotify.com/episode/<id>),
+ * supplied by the founder 8 Sep 2026, in the order he pasted them. Which id
+ * belongs to which guest is NOT verified from here — the carousel therefore
+ * renders Spotify's own episode embeds (cover, title, player straight from
+ * Spotify) and never pairs an id with a guest name in our copy.
+ */
+export const adapthleticsEpisodeIds = [
+  "4Pk2UlxZAWrRhnOxhK7GKZ",
+  "57EW5j05VPX3sXYDl5GdZW",
+  "1gIWn7xH43NBjDkAPkUZCW",
+  "1LMkujc5sNdHNCIjqgNS6e",
+  "6kLj9tIJenbRjkm8IEXkJN",
+] as const
+
 export const adapthleticsSpotifyShowId: string = "3gVYGiXGsnDqB3Hs68OWyx"
 
 export const adapthleticsEpisodes = [

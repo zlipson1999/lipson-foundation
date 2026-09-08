@@ -2,13 +2,16 @@
 
 import { useRef } from "react"
 import { ArrowLeftIcon, ArrowRightIcon } from "@phosphor-icons/react/ssr"
-import { adapthleticsEpisodes, adapthleticsSpotifyShowId } from "@/lib/site"
+import {
+  adapthleticsEpisodeIds,
+  adapthleticsSpotifyShowId,
+} from "@/lib/site"
 
 /**
- * The From the Ground Up rail: a swipeable card per episode guest, and —
- * once adapthleticsSpotifyShowId is set — Spotify's own show embed, which
- * lists every episode and updates itself as new ones are uploaded. The
- * embed is the auto-updating part; the cards are the introduction.
+ * The From the Ground Up rail: a swipeable Spotify mini-player per episode
+ * (cover art, title, and playback all come from Spotify itself, so nothing
+ * here can drift out of date), and below it the show embed, which lists
+ * every episode and updates itself as new ones are uploaded.
  */
 export function EpisodeCarousel() {
   const trackRef = useRef<HTMLUListElement>(null)
@@ -17,7 +20,7 @@ export function EpisodeCarousel() {
     const track = trackRef.current
     if (!track) return
     const slide = track.querySelector("li")
-    const width = slide ? slide.getBoundingClientRect().width + 16 : 320
+    const width = slide ? slide.getBoundingClientRect().width + 16 : 356
     track.scrollBy({ left: direction * width, behavior: "smooth" })
   }
 
@@ -28,18 +31,20 @@ export function EpisodeCarousel() {
         className="-mx-1 flex snap-x snap-mandatory gap-4 overflow-x-auto px-1 pb-2"
         aria-label="From the Ground Up episodes"
       >
-        {adapthleticsEpisodes.map((ep) => (
+        {adapthleticsEpisodeIds.map((id, i) => (
           <li
-            key={ep.guest}
-            className="min-w-[260px] max-w-[300px] shrink-0 snap-start border border-gold/25 bg-primary-foreground/5 p-5 sm:min-w-[300px]"
+            key={id}
+            className="w-[300px] shrink-0 snap-start sm:w-[340px]"
           >
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold/80">
-              Episode guest
-            </p>
-            <p className="mt-2 font-heading text-2xl text-gold">{ep.guest}</p>
-            <p className="mt-2 text-sm leading-relaxed text-primary-foreground/70">
-              {ep.title}
-            </p>
+            <iframe
+              src={`https://open.spotify.com/embed/episode/${id}`}
+              width="100%"
+              height="352"
+              style={{ border: 0, borderRadius: 12 }}
+              allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              title={`From the Ground Up episode ${i + 1} on Spotify`}
+            />
           </li>
         ))}
       </ul>
