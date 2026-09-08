@@ -7,10 +7,12 @@ import { Button } from "@/components/ui/button"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { asset } from "@/lib/assets"
 import { EpisodeCarousel } from "@/components/adapthletics-episodes"
+import { CategoryChips } from "@/components/category-chips"
 import {
   adapthleticsEpisodes,
   adapthleticsMedia,
   adapthleticsTagline,
+  programs,
   site,
 } from "@/lib/site"
 
@@ -22,6 +24,7 @@ export const metadata: Metadata = pageMetadata({
 })
 
 export default function AdapthleticsPage() {
+  const program = programs.find((p) => p.slug === "adapthletics")!
   return (
     <Container className="pb-20">
       <header className="flex flex-col-reverse items-start gap-8 pt-12 pb-10 sm:pt-16 sm:pb-14 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
@@ -48,12 +51,13 @@ export default function AdapthleticsPage() {
               </span>
             </p>
           </div>
+          <CategoryChips categories={program.categories} />
         </div>
         <Image
           src={asset("/brand/adapthletics.png")}
           alt="Adapthletics logo — a gold and orange phoenix over the program name and the tagline Positive Progress Is Possible"
           width={800}
-          height={607}
+          height={464}
           className="h-auto w-64 shrink-0 self-center sm:w-80 lg:w-96"
           unoptimized
           priority
@@ -276,12 +280,11 @@ export default function AdapthleticsPage() {
 
       <section className="mt-16 flex max-w-3xl flex-col gap-4">
         <Alert>
-          <AlertTitle>Being designed now</AlertTitle>
+          <AlertTitle>Get started</AlertTitle>
           <AlertDescription>
-            Adapthletics is in development as a foundation program. There is no
-            schedule, venue, or start date yet — those stay blank until they
-            are real. Tell us you&apos;re interested — in person or virtual —
-            and you will hear first.
+            Email us and we will fit the training to you — virtual coaching is
+            available now. In-person sessions in South Florida are being
+            arranged; days and locations will be announced when they are real.
           </AlertDescription>
         </Alert>
       </section>
