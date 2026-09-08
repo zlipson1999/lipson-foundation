@@ -5,8 +5,8 @@ import { Container, PageIntro } from "@/components/container"
 import { Button } from "@/components/ui/button"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { asset } from "@/lib/assets"
+import { EpisodeCarousel } from "@/components/adapthletics-episodes"
 import {
-  adapthleticsEpisodes,
   adapthleticsMedia,
   adapthleticsTagline,
   site,
@@ -212,19 +212,9 @@ export default function AdapthleticsPage() {
           handing the mic to the people who prove what adaptive athletes can
           do. Every episode is one athlete, one story, no shortcuts.
         </p>
-        <ul className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2">
-          {adapthleticsEpisodes.map((ep) => (
-            <li
-              key={ep.guest}
-              className="border-t border-gold/25 pt-4"
-            >
-              <p className="font-heading text-xl text-gold">{ep.guest}</p>
-              <p className="mt-1 text-sm leading-relaxed text-primary-foreground/70">
-                {ep.title}
-              </p>
-            </li>
-          ))}
-        </ul>
+        <div className="mt-8">
+          <EpisodeCarousel />
+        </div>
         <p className="mt-8 text-base leading-relaxed text-primary-foreground/70">
           Watch the episodes on{" "}
           <a

@@ -248,6 +248,16 @@ export const programs = [
  */
 export const adapthleticsTagline = "Positive Progress Is Possible"
 
+/**
+ * Spotify show id for From the Ground Up (the part after
+ * open.spotify.com/show/). Empty string = the live Spotify rail on
+ * /adapthletics stays hidden. The founder authorized the Spotify embed on
+ * 8 Sep 2026 ("connecting it to spotify podcast uploads") — a narrow,
+ * owner-directed exception to the no-third-party rule, for this one embed
+ * on this one page. Set only a VERIFIED id for HIS show.
+ */
+export const adapthleticsSpotifyShowId: string = ""
+
 export const adapthleticsEpisodes = [
   { guest: "Brendan Aylward", title: "An adaptive fitness pioneer" },
   { guest: "Zachary Josie", title: "A triathlete with dwarfism" },
