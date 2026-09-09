@@ -9,11 +9,8 @@ import {
   FieldDescription,
   FieldGroup,
   FieldLabel,
-  FieldLegend,
-  FieldSet,
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Textarea } from "@/components/ui/textarea"
 import { Spinner } from "@/components/ui/spinner"
 import { submitForm } from "@/lib/submit"
@@ -21,15 +18,6 @@ import {
   FormConfirmation,
   FormError,
 } from "@/components/form-confirmation"
-
-const roles = [
-  { value: "host", label: "Host sessions at a veterans post" },
-  { value: "veteran", label: "Train or mentor as a veteran" },
-  { value: "school", label: "Refer a young person" },
-  { value: "career", label: "Lead a Career Exploration Night" },
-  { value: "meal", label: "Help with meals" },
-  { value: "support", label: "Talk about sponsoring a session" },
-]
 
 export function HelpForm() {
   const [pending, setPending] = useState(false)
@@ -86,19 +74,22 @@ export function HelpForm() {
           <FieldLabel htmlFor="organization">Post, school, or organization (optional)</FieldLabel>
           <Input id="organization" name="organization" autoComplete="organization" />
         </Field>
-        <FieldSet>
-          <FieldLegend variant="label">How would you like to help?</FieldLegend>
-          <RadioGroup name="role" defaultValue="host" className="gap-2">
-            {roles.map((role) => (
-              <Field key={role.value} orientation="horizontal">
-                <RadioGroupItem value={role.value} id={`role-${role.value}`} />
-                <FieldLabel htmlFor={`role-${role.value}`} className="font-normal">
-                  {role.label}
-                </FieldLabel>
-              </Field>
-            ))}
-          </RadioGroup>
-        </FieldSet>
+        {/* Free text on purpose: a fixed list would need re-editing every
+            time a program or way to help is added. Reads like a subject line;
+            lib/submit.ts and lib/actions.ts already pass "role" through as
+            plain text. */}
+        <Field>
+          <FieldLabel htmlFor="role">How would you like to help?</FieldLabel>
+          <Input
+            id="role"
+            name="role"
+            required
+            placeholder="Host a hall, coach, mentor, refer someone, cover meals, sponsor a session…"
+          />
+          <FieldDescription>
+            A few words is plenty — like a subject line.
+          </FieldDescription>
+        </Field>
         <Field>
           <FieldLabel htmlFor="message">Tell us more</FieldLabel>
           <Textarea
