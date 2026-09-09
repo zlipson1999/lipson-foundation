@@ -376,36 +376,44 @@ export type AdapthleticsMediaItem = {
   src: string
   alt: string
   caption?: string
+  /** Cover image shown before the video plays (owner-directed 9 Sep 2026). */
+  poster?: string
 }
 export const adapthleticsMedia: AdapthleticsMediaItem[] = [
-  {
-    type: "video",
-    src: "/adapthletics/zach-story-1.mp4",
-    alt: "Zach on what adaptive training puts into perspective.",
-    caption: "Zach, on what this work puts into perspective.",
-  },
   {
     type: "video",
     src: "/adapthletics/zach-story-2.mp4",
     alt: "Zach on being who he needed when he was younger.",
     caption: "\u201cI\u2019m just trying to be who I needed when I was younger.\u201d",
-  },
-  {
-    type: "video",
-    src: "/adapthletics/adapthletics-gopro.mp4",
-    alt: "An Adapthletics training session on the rower and cable stack.",
-    caption: "An Adapthletics session — rower and cable work.",
+    poster: "/adapthletics/zach-story-2-poster.jpg",
   },
   {
     type: "video",
     src: "/adapthletics/training-session.mp4",
     alt: "One-on-one adaptive training on the turf.",
     caption: "One-on-one on the turf.",
+    poster: "/adapthletics/training-session-poster.jpg",
   },
   {
-    type: "photo",
-    src: "/adapthletics/wall-dumbbell.jpg",
-    alt: "An athlete in a wheelchair presses a dumbbell during a one-on-one session.",
+    type: "video",
+    src: "/adapthletics/wall-montage.mp4",
+    alt: "A training montage: rowing, tire drags, sled pulls, and kettlebell work, all from the wheelchair.",
+    caption: "Rower, tires, sleds, kettlebells \u2014 the work.",
+    poster: "/adapthletics/wall-montage-poster.jpg",
+  },
+  {
+    type: "video",
+    src: "/adapthletics/wall-sled-550.mp4",
+    alt: "An athlete pulls a weighted sled across the turf, up from 537.5 to 550 pounds.",
+    caption: "From 537.5 to 550 \u2014 always getting stronger.",
+    poster: "/adapthletics/wall-sled-550-poster.jpg",
+  },
+  {
+    type: "video",
+    src: "/adapthletics/wall-rower.mp4",
+    alt: "An athlete rows on the adaptive rowing machine from his wheelchair.",
+    caption: "On the rower.",
+    poster: "/adapthletics/wall-rower-poster.jpg",
   },
 ]
 
