@@ -285,10 +285,11 @@ export const adapthleticsTagline = "Positive Progress Is Possible"
  * pairs an id with a guest name in our copy.
  */
 /**
- * Program data points for the results band on /adapthletics. OWNER-SUPPLIED
- * NUMBERS ONLY — the no-invented-statistics rule holds: this array stays
- * EMPTY (band hidden) until the founder supplies each value himself. Value
- * exactly as he gives it; label says what it measures.
+ * Program outcome stats, rendered as the small centered lines under the
+ * hero logo on /adapthletics (owner-directed placement, 9 Sep 2026).
+ * OWNER-SUPPLIED NUMBERS ONLY — the no-invented-statistics rule holds:
+ * values change only on the founder's word. The 4-years / 25+-athletes
+ * facts live in the What-we-offer certified line as prose.
  */
 export type AdapthleticsResult = { value: string; label: string }
 export const adapthleticsResults: AdapthleticsResult[] = [

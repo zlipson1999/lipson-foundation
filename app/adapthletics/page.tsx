@@ -24,43 +24,52 @@ export const metadata: Metadata = pageMetadata({
 export default function AdapthleticsPage() {
   return (
     <Container className="pb-20">
-      <header className="flex flex-col-reverse items-start gap-8 pt-12 pb-10 sm:pt-16 sm:pb-14 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
-        <div className="flex max-w-3xl flex-col items-center gap-4 text-center lg:items-start lg:text-left">
-          {/* Stacked layouts break the kicker into two lines, no separator;
-              the dot returns when it reads as one line beside the logo. */}
-          <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
-            Certified adaptive fitness
-            <span className="hidden lg:inline"> · </span>
-            <span className="block lg:inline">A Lipson Foundation program</span>
-          </p>
-          {/* The mark above spells the program name and tagline, so the text
-              heading is screen-reader-only (owner-directed 9 Sep 2026). */}
-          <h1 className="sr-only">Adapthletics</h1>
-          <div className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            <p>
-              Certified adaptive fitness that works: strength, mobility, and
-              confidence for people with disabilities — wheelchair users,
-              hereditary spastic paraplegia, cerebral palsy, multiple
-              sclerosis, limb loss, stroke recovery, cancer recovery, and more
-              — with every movement customized to the participant. Completely
-              cost-free, like everything the Lipson Foundation builds.
-            </p>
-            <p className="mt-4">
-              <span className="inline-block -rotate-2 border-2 border-gold px-3 py-1 font-heading text-sm font-semibold uppercase tracking-[0.18em] text-gold-ink">
-                Original · Est. 2022
-              </span>
-            </p>
-          </div>
-        </div>
+      {/* One centered column at every size: logo on top, the stats line
+          right under it — one straight row across the page on desktop —
+          then the kicker, intro, and stamp (owner-directed layout). */}
+      <header className="flex flex-col items-center gap-6 pt-12 pb-10 text-center sm:pt-16 sm:pb-14">
         <Image
           src={asset("/brand/adapthletics.png")}
           alt="Adapthletics logo — a gold and orange phoenix over the program name and the tagline Positive Progress Is Possible"
           width={800}
           height={442}
-          className="h-auto w-64 shrink-0 self-center sm:w-80 lg:w-96"
+          className="h-auto w-64 sm:w-80 lg:w-96"
           unoptimized
           priority
         />
+        {/* The logo above spells the program name and tagline, so the text
+            heading is screen-reader-only (owner-directed 9 Sep 2026). */}
+        <h1 className="sr-only">Adapthletics</h1>
+        {/* On phones the kicker stays above the stats (logo → wording → box
+            → intro, per the earlier direction); on desktop the box hugs the
+            logo and the kicker follows. */}
+        <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground lg:order-2">
+          Certified adaptive fitness
+          <span className="hidden lg:inline"> · </span>
+          <span className="block lg:inline">A Lipson Foundation program</span>
+        </p>
+        {adapthleticsResults.length > 0 && (
+          <ul className="grid w-full gap-5 bg-primary p-6 text-left text-primary-foreground sm:grid-cols-2 sm:gap-6 sm:p-8 lg:order-1 lg:grid-cols-5">
+            {adapthleticsResults.map((item) => (
+              <li key={item.label} className="border-l-2 border-gold pl-4">
+                <p className="font-heading text-3xl text-gold">{item.value}</p>
+                <p className="mt-1 text-sm leading-relaxed text-primary-foreground/80">
+                  {item.label}
+                </p>
+              </li>
+            ))}
+          </ul>
+        )}
+        <div className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg lg:order-3">
+          <p>
+            Certified adaptive fitness that works: strength, mobility, and
+            confidence for people with disabilities — wheelchair users,
+            hereditary spastic paraplegia, cerebral palsy, multiple sclerosis,
+            limb loss, stroke recovery, cancer recovery, and more — with every
+            movement customized to the participant. Completely cost-free, like
+            everything the Lipson Foundation builds.
+          </p>
+        </div>
       </header>
 
       {/* Pics and clips lead the page — the media wall renders only once the
@@ -149,29 +158,6 @@ export default function AdapthleticsPage() {
           </div>
         </div>
       </section>
-
-      {/* The results band renders only once the founder supplies real data
-          points in adapthleticsResults — same honest-empty rule as the wall:
-          no invented numbers, ever. */}
-      {adapthleticsResults.length > 0 && (
-        <section id="results" className="mt-16 flex scroll-mt-24 flex-col gap-6">
-          <div className="max-w-3xl">
-            <h2 className="text-3xl">A program that works</h2>
-          </div>
-          <ul className="grid max-w-4xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {adapthleticsResults.map((item) => (
-              <li key={item.label} className="border-l-2 border-gold pl-4">
-                <p className="font-heading text-3xl text-gold-ink">
-                  {item.value}
-                </p>
-                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                  {item.label}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
 
       <section id="series" className="mt-16 scroll-mt-24 bg-primary p-8 text-primary-foreground sm:p-10">
         <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
