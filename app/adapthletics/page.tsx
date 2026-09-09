@@ -32,7 +32,7 @@ export default function AdapthleticsPage() {
       {/* One centered column at every size (owner-directed layout): logo,
           real training photos, the stats line — one straight row across the
           page on desktop — then the kicker and intro. */}
-      <header className="flex flex-col items-center gap-6 pt-12 pb-10 text-center sm:pt-16 sm:pb-14">
+      <header className="flex flex-col items-center gap-6 pt-6 pb-10 text-center sm:pt-8 sm:pb-14">
         {/* The logo spells the program name and tagline, so the text
             heading is screen-reader-only (owner-directed 9 Sep 2026). */}
         <h1 className="sr-only">Adapthletics</h1>
