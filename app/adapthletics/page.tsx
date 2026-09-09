@@ -39,9 +39,11 @@ export default function AdapthleticsPage() {
           <div className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             <p>
               Certified adaptive fitness that works: strength, mobility, and
-              confidence for people with disabilities, with every movement
-              fitted to the body doing it. Completely cost-free, like
-              everything the Lipson Foundation builds.
+              confidence for people with disabilities — wheelchair users,
+              hereditary spastic paraplegia, cerebral palsy, multiple
+              sclerosis, limb loss, stroke recovery, cancer recovery, and more
+              — with every movement fitted to the body doing it. Completely
+              cost-free, like everything the Lipson Foundation builds.
             </p>
             <p className="mt-4">
               <span className="inline-block -rotate-2 border-2 border-gold px-3 py-1 font-heading text-sm font-semibold uppercase tracking-[0.18em] text-gold-ink">
@@ -146,18 +148,6 @@ export default function AdapthleticsPage() {
             </div>
           </div>
         </div>
-      </section>
-
-      <section id="who-we-train" className="mt-16 flex max-w-3xl scroll-mt-24 flex-col gap-4">
-        <h2 className="text-3xl">Who we train</h2>
-        <p className="text-base leading-relaxed text-muted-foreground">
-          Every body, at any starting point. Athletes we coach include
-          wheelchair users and people living with hereditary spastic
-          paraplegia, cerebral palsy, multiple sclerosis, limb loss, stroke
-          recovery, and cancer recovery. If your condition is not on that
-          list, that is not a no — email us and we will fit the training to
-          you.
-        </p>
       </section>
 
       {/* The results band renders only once the founder supplies real data
