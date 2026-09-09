@@ -5,7 +5,6 @@ import Link from "next/link"
 import { ArrowRightIcon } from "@phosphor-icons/react/ssr"
 import { Container, PageIntro } from "@/components/container"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
 import {
   Card,
   CardDescription,
@@ -59,9 +58,6 @@ export default function ProgramsPage() {
             {/* CardHeader is a grid, so the mark sits beside it rather than inside. */}
             <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-8">
               <CardHeader className="flex-1">
-                <Badge variant="secondary" className="self-start">
-                  {program.status}
-                </Badge>
                 <CardTitle className="text-3xl">{program.name}</CardTitle>
                 <CardDescription className="max-w-2xl text-base leading-relaxed">
                   {program.summary}

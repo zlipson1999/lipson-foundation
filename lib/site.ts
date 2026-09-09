@@ -244,7 +244,7 @@ export const programs = [
     categories: ["health", "growth"] as const,
     mark: "/brand/adapthletics.png",
     summary:
-      "Adaptive fitness for people with disabilities — strength, mobility, and confidence, with the training fitted to the athlete instead of the other way around. In person in South Florida and virtual anywhere. Built and coached by our founder since 2022 as Original Adapthletics; the foundation is making it cost-free for everyone.",
+      "Certified adaptive fitness for people with disabilities — strength, mobility, and confidence, with the training fitted to the athlete instead of the other way around. In person in South Florida and virtual anywhere, and completely cost-free.",
   },
 ] as const
 
@@ -272,7 +272,8 @@ export const adapthleticsTagline = "Positive Progress Is Possible"
  * /adapthletics stays hidden. The founder authorized the Spotify embed on
  * 8 Sep 2026 ("connecting it to spotify podcast uploads") — a narrow,
  * owner-directed exception to the no-third-party rule, for this one embed
- * on this one page. Set only a VERIFIED id for HIS show — this one was
+ * on this one page (he confirmed 9 Sep 2026 the podcast stays on
+ * /adapthletics while his personal story moved to /about). Set only a VERIFIED id for HIS show — this one was
  * supplied by the founder himself on 8 Sep 2026.
  */
 /**
@@ -283,6 +284,39 @@ export const adapthleticsTagline = "Positive Progress Is Possible"
  * own episode embeds (cover, title, player straight from Spotify) and never
  * pairs an id with a guest name in our copy.
  */
+/**
+ * Program data points for the results band on /adapthletics. OWNER-SUPPLIED
+ * NUMBERS ONLY — the no-invented-statistics rule holds: this array stays
+ * EMPTY (band hidden) until the founder supplies each value himself. Value
+ * exactly as he gives it; label says what it measures.
+ */
+export type AdapthleticsResult = { value: string; label: string }
+export const adapthleticsResults: AdapthleticsResult[] = [
+  {
+    value: "4 years",
+    label: "of certified adaptive coaching, since 2022.",
+  },
+  {
+    value: "25+",
+    label: "athletes coached across in-person and virtual training.",
+  },
+  {
+    value: "7+",
+    label:
+      "populations trained — wheelchair users, hereditary spastic paraplegia, cerebral palsy, MS, amputees, stroke survivors, and athletes in cancer recovery.",
+  },
+  {
+    value: "100%",
+    label:
+      "of athletes have increased lower-body strength, squat numbers included.",
+  },
+  {
+    value: "100%",
+    label:
+      "of athletes have improved mobility and endurance — longer cardio sessions, greater distances, stronger grip.",
+  },
+]
+
 export const adapthleticsEpisodeIds = [
   "4Pk2UlxZAWrRhnOxhK7GKZ",
   "57EW5j05VPX3sXYDl5GdZW",
@@ -338,7 +372,7 @@ export const programMenu = [
   {
     href: "/adapthletics",
     name: "Adapthletics",
-    body: "Adaptive fitness for people with disabilities — in person and virtual.",
+    body: "Certified adaptive fitness for people with disabilities — in person and virtual.",
   },
 ] as const
 
