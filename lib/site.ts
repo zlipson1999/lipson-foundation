@@ -272,7 +272,8 @@ export const adapthleticsTagline = "Positive Progress Is Possible"
  * /adapthletics stays hidden. The founder authorized the Spotify embed on
  * 8 Sep 2026 ("connecting it to spotify podcast uploads") — a narrow,
  * owner-directed exception to the no-third-party rule, for this one embed
- * on this one page. Set only a VERIFIED id for HIS show — this one was
+ * on this one page (he confirmed 9 Sep 2026 the podcast stays on
+ * /adapthletics while his personal story moved to /about). Set only a VERIFIED id for HIS show — this one was
  * supplied by the founder himself on 8 Sep 2026.
  */
 /**

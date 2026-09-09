@@ -10,7 +10,6 @@ import { EpisodeCarousel } from "@/components/adapthletics-episodes"
 import {
   adapthleticsEpisodes,
   adapthleticsMedia,
-  adapthleticsTagline,
   site,
 } from "@/lib/site"
 
@@ -33,14 +32,11 @@ export default function AdapthleticsPage() {
             <span className="hidden lg:inline"> · </span>
             <span className="block lg:inline">A Lipson Foundation program</span>
           </p>
-          <h1 className="font-heading text-4xl leading-[1.1] tracking-tight sm:text-5xl">
-            Adapthletics
-          </h1>
+          {/* The mark above spells the program name and tagline, so the text
+              heading is screen-reader-only (owner-directed 9 Sep 2026). */}
+          <h1 className="sr-only">Adapthletics</h1>
           <div className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            <p className="font-heading text-2xl text-gold-ink">
-              {adapthleticsTagline}
-            </p>
-            <p className="mt-4">
+            <p>
               Fitness that adapts to the athlete: strength, mobility, and
               confidence for people with disabilities, with every movement
               fitted to the body doing it. Completely cost-free, like
@@ -147,85 +143,6 @@ export default function AdapthleticsPage() {
         </div>
       </section>
 
-      <section id="why" className="mt-16 flex max-w-3xl scroll-mt-24 flex-col gap-4">
-        <h2 className="text-3xl">Why this exists</h2>
-        <p className="text-base leading-relaxed text-muted-foreground">
-          Adapthletics is named and designed by our founder, Zachary Lipson,
-          who lives with hereditary spastic paraplegia. What changed his life
-          was not a cure. It was access — to training, to people who believed
-          he could, to a place that did not ask what he could afford.
-          Adapthletics exists to be that access for someone else: a program
-          where the training bends to the athlete, never the other way around,
-          and where cost is never the reason someone stops.
-        </p>
-      </section>
-
-      <section id="track-record" className="mt-16 flex max-w-3xl scroll-mt-24 flex-col gap-6">
-        <h2 className="text-3xl">This one is not starting from zero</h2>
-        <p className="text-base leading-relaxed text-muted-foreground">
-          Adapthletics has existed since 2022 — first as Original Adapthletics,
-          the adaptive training practice Zach built and coached himself. The
-          foundation is bringing it home and removing the last barrier: the
-          cost.
-        </p>
-        <ul className="grid gap-6 sm:grid-cols-2">
-          <li className="border-l-2 border-gold pl-4">
-            <p className="font-heading text-lg">Est. 2022</p>
-            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-              Founded as Original Adapthletics — years of adaptive training
-              before it ever had a website.
-            </p>
-          </li>
-          <li className="border-l-2 border-gold pl-4">
-            <p className="font-heading text-lg">Certified</p>
-            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-              ATA Adaptive &amp; Inclusive Training certification (2022) and
-              the MedFit Adaptive Fitness Specialist specialization.
-            </p>
-          </li>
-          <li className="border-l-2 border-gold pl-4">
-            <p className="font-heading text-lg">In the gym</p>
-            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-              Years coaching athletes with disabilities — wheelchair users
-              included — on real equipment, at real intensity.
-            </p>
-          </li>
-          <li className="border-l-2 border-gold pl-4">
-            <p className="font-heading text-lg">From the Ground Up</p>
-            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-              Zach&apos;s interview series spotlighting adaptive athletes and
-              pioneers, one story at a time.
-            </p>
-          </li>
-          <li className="border-l-2 border-gold pl-4">
-            <p className="font-heading text-lg">An athlete himself</p>
-            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-              Races Spartan obstacle courses while living with hereditary
-              spastic paraplegia.
-            </p>
-          </li>
-          <li className="border-l-2 border-gold pl-4">
-            <p className="font-heading text-lg">In the community</p>
-            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-              Speaker for the Spastic Paraplegia Foundation and a working voice
-              for disability visibility.
-            </p>
-          </li>
-        </ul>
-        <p className="text-base leading-relaxed text-muted-foreground">
-          The whole story is on the feed:{" "}
-          <a
-            href="https://www.instagram.com/lipsonfoundation/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-medium text-gold-ink underline underline-offset-4 hover:text-primary"
-          >
-            @lipsonfoundation on Instagram
-          </a>
-          .
-        </p>
-      </section>
-
       <section id="series" className="mt-16 scroll-mt-24 bg-primary p-8 text-primary-foreground sm:p-10">
         <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
           The interview series
@@ -243,6 +160,22 @@ export default function AdapthleticsPage() {
         <div className="mt-8">
           <EpisodeCarousel />
         </div>
+      </section>
+
+      {/* The founder's story and track record live on /about (owner-directed
+          9 Sep 2026): this page is the program, plus his series above. */}
+      <section className="mt-16 max-w-3xl">
+        <p className="text-base leading-relaxed text-muted-foreground">
+          The story behind the program — the founder and his track record —
+          is on{" "}
+          <Link
+            href="/about#founder"
+            className="font-medium text-gold-ink underline underline-offset-4 hover:text-primary"
+          >
+            our About page
+          </Link>
+          .
+        </p>
       </section>
 
       <section className="mt-16 flex max-w-3xl flex-col gap-4">
