@@ -42,7 +42,7 @@ export default function AdapthleticsPage() {
               confidence for people with disabilities — wheelchair users,
               hereditary spastic paraplegia, cerebral palsy, multiple
               sclerosis, limb loss, stroke recovery, cancer recovery, and more
-              — with every movement fitted to the body doing it. Completely
+              — with every movement customized to the participant. Completely
               cost-free, like everything the Lipson Foundation builds.
             </p>
             <p className="mt-4">
