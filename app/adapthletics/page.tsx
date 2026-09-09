@@ -6,9 +6,11 @@ import { Container } from "@/components/container"
 import { Button } from "@/components/ui/button"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { asset } from "@/lib/assets"
+import { AdapthleticsSplash } from "@/components/adapthletics-splash"
 import { EpisodeCarousel } from "@/components/adapthletics-episodes"
 import {
   adapthleticsEpisodes,
+  adapthleticsHeroPhotos,
   adapthleticsMedia,
   adapthleticsResults,
   site,
@@ -24,32 +26,66 @@ export const metadata: Metadata = pageMetadata({
 export default function AdapthleticsPage() {
   return (
     <Container className="pb-20">
-      {/* One centered column at every size: logo on top, the stats line
-          right under it — one straight row across the page on desktop —
-          then the kicker, intro, and stamp (owner-directed layout). */}
-      <header className="flex flex-col items-center gap-6 pt-12 pb-10 text-center sm:pt-16 sm:pb-14">
-        <Image
-          src={asset("/brand/adapthletics.png")}
-          alt="Adapthletics logo — a gold and orange phoenix over the program name and the tagline Positive Progress Is Possible"
-          width={800}
-          height={442}
-          className="h-auto w-64 sm:w-80 lg:w-96"
-          unoptimized
-          priority
-        />
-        {/* The logo above spells the program name and tagline, so the text
+      {/* Owner-directed (9 Sep 2026): the GoPro reel pops up in a closable
+          window on page entry — see the component for the rules. */}
+      <AdapthleticsSplash />
+      {/* One centered column at every size (owner-directed layout): logo,
+          real training photos, the stats line — one straight row across the
+          page on desktop — then the kicker and intro. */}
+      <header className="flex flex-col items-center gap-6 pt-6 pb-10 text-center sm:pt-8 sm:pb-14">
+        {/* The logo spells the program name and tagline, so the text
             heading is screen-reader-only (owner-directed 9 Sep 2026). */}
         <h1 className="sr-only">Adapthletics</h1>
-        {/* On phones the kicker stays above the stats (logo → wording → box
-            → intro, per the earlier direction); on desktop the box hugs the
-            logo and the kicker follows. */}
-        <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground lg:order-2">
-          Certified adaptive fitness
-          <span className="hidden lg:inline"> · </span>
-          <span className="block lg:inline">A Lipson Foundation program</span>
-        </p>
+        {/* Owner-directed hero (9 Sep 2026): ONE horizontal line of pictures —
+            the logo sits in the middle column above the landscape frame, which
+            drops to the bottom edge of the two portraits. Each picture is
+            shown WHOLE — no aspect crop, no object-cover. */}
+        <ul className="grid w-full grid-cols-3 items-stretch gap-3 sm:gap-4">
+          <li>
+            <Image
+              src={asset(adapthleticsHeroPhotos[0].src)}
+              alt={adapthleticsHeroPhotos[0].alt}
+              width={adapthleticsHeroPhotos[0].width}
+              height={adapthleticsHeroPhotos[0].height}
+              className="h-auto w-full border-2 border-gold/40"
+              unoptimized
+              priority
+            />
+          </li>
+          <li className="flex flex-col items-center justify-between gap-3">
+            <Image
+              src={asset("/brand/adapthletics.png")}
+              alt="Adapthletics logo — a gold and orange phoenix over the program name and the tagline Positive Progress Is Possible"
+              width={800}
+              height={442}
+              className="h-auto w-full max-w-80 px-1 sm:px-3"
+              unoptimized
+              priority
+            />
+            <Image
+              src={asset(adapthleticsHeroPhotos[1].src)}
+              alt={adapthleticsHeroPhotos[1].alt}
+              width={adapthleticsHeroPhotos[1].width}
+              height={adapthleticsHeroPhotos[1].height}
+              className="h-auto w-full border-2 border-gold/40"
+              unoptimized
+              priority
+            />
+          </li>
+          <li>
+            <Image
+              src={asset(adapthleticsHeroPhotos[2].src)}
+              alt={adapthleticsHeroPhotos[2].alt}
+              width={adapthleticsHeroPhotos[2].width}
+              height={adapthleticsHeroPhotos[2].height}
+              className="h-auto w-full border-2 border-gold/40"
+              unoptimized
+              priority
+            />
+          </li>
+        </ul>
         {adapthleticsResults.length > 0 && (
-          <ul className="grid w-full gap-5 bg-primary p-6 text-left text-primary-foreground sm:grid-cols-2 sm:gap-6 sm:p-8 lg:order-1 lg:grid-cols-5">
+          <ul className="grid w-full gap-5 bg-primary p-6 text-left text-primary-foreground sm:grid-cols-2 sm:gap-6 sm:p-8 lg:grid-cols-5">
             {adapthleticsResults.map((item) => (
               <li key={item.label} className="border-l-2 border-gold pl-4">
                 <p className="font-heading text-3xl text-gold">{item.value}</p>
@@ -60,7 +96,12 @@ export default function AdapthleticsPage() {
             ))}
           </ul>
         )}
-        <div className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg lg:order-3">
+        <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
+          Certified adaptive fitness
+          <span className="hidden lg:inline"> · </span>
+          <span className="block lg:inline">A Lipson Foundation program</span>
+        </p>
+        <div className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
           <p>
             Certified adaptive fitness that works: strength, mobility, and
             confidence for people with disabilities — wheelchair users,
