@@ -21,7 +21,7 @@ import {
 
 export function HelpForm() {
   const [pending, setPending] = useState(false)
-  const [sent, setSent] = useState<"server" | "email" | null>(null)
+  const [sent, setSent] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
   async function onSubmit(formData: FormData) {
@@ -34,18 +34,12 @@ export function HelpForm() {
       toast.error(result.error)
       return
     }
-    setSent(result.via)
-    if (result.via === "server") toast.success("We received your note.")
+    setSent(true)
+    toast.success("We received your note.")
   }
 
   if (sent) {
-    return sent === "email" ? (
-      <FormConfirmation title="Your email draft is open.">
-        Nothing has been sent yet. Send the draft that just opened and we
-        will follow up to match what you can offer with what the program
-        actually needs.
-      </FormConfirmation>
-    ) : (
+    return (
       <FormConfirmation title="Glad you wrote.">
         We will follow up to match what you can offer with what the program
         actually needs. Thank you.
