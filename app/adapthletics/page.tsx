@@ -162,22 +162,6 @@ export default function AdapthleticsPage() {
         </div>
       </section>
 
-      {/* The founder's story and track record live on /about (owner-directed
-          9 Sep 2026): this page is the program, plus his series above. */}
-      <section className="mt-16 max-w-3xl">
-        <p className="text-base leading-relaxed text-muted-foreground">
-          The story behind the program — the founder and his track record —
-          is on{" "}
-          <Link
-            href="/about#founder"
-            className="font-medium text-gold-ink underline underline-offset-4 hover:text-primary"
-          >
-            our About page
-          </Link>
-          .
-        </p>
-      </section>
-
       <section className="mt-16 flex max-w-3xl flex-col gap-4">
         <Alert>
           <AlertTitle>Get started</AlertTitle>
