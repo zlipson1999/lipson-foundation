@@ -4,7 +4,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRightIcon } from "@phosphor-icons/react/ssr"
 import { Container } from "@/components/container"
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -228,7 +227,6 @@ export default function HomePage() {
                   />
                 </div>
                 <div className="flex flex-col items-center gap-3 sm:items-start">
-                  <Badge variant="secondary">{program.status}</Badge>
                   <h3 className="font-heading text-2xl">{program.name}</h3>
                   <CategoryChips
                     categories={program.categories}
