@@ -291,7 +291,31 @@ export const adapthleticsTagline = "Positive Progress Is Possible"
  * exactly as he gives it; label says what it measures.
  */
 export type AdapthleticsResult = { value: string; label: string }
-export const adapthleticsResults: AdapthleticsResult[] = []
+export const adapthleticsResults: AdapthleticsResult[] = [
+  {
+    value: "4 years",
+    label: "of certified adaptive coaching, since 2022.",
+  },
+  {
+    value: "25+",
+    label: "athletes coached across in-person and virtual training.",
+  },
+  {
+    value: "7+",
+    label:
+      "populations trained — wheelchair users, hereditary spastic paraplegia, cerebral palsy, MS, amputees, stroke survivors, and athletes in cancer recovery.",
+  },
+  {
+    value: "100%",
+    label:
+      "of athletes have increased lower-body strength, squat numbers included.",
+  },
+  {
+    value: "100%",
+    label:
+      "of athletes have improved mobility and endurance — longer cardio sessions, greater distances, stronger grip.",
+  },
+]
 
 export const adapthleticsEpisodeIds = [
   "4Pk2UlxZAWrRhnOxhK7GKZ",
