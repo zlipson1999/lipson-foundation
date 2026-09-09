@@ -69,11 +69,6 @@ export default function AdapthleticsPage() {
             movement customized to the participant. Completely cost-free, like
             everything the Lipson Foundation builds.
           </p>
-          <p className="mt-4">
-            <span className="inline-block -rotate-2 border-2 border-gold px-3 py-1 font-heading text-sm font-semibold uppercase tracking-[0.18em] text-gold-ink">
-              Original · Est. 2022
-            </span>
-          </p>
         </div>
       </header>
 
