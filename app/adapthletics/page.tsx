@@ -148,6 +148,18 @@ export default function AdapthleticsPage() {
         </div>
       </section>
 
+      <section id="who-we-train" className="mt-16 flex max-w-3xl scroll-mt-24 flex-col gap-4">
+        <h2 className="text-3xl">Who we train</h2>
+        <p className="text-base leading-relaxed text-muted-foreground">
+          Every body, at any starting point. Athletes we coach include
+          wheelchair users and people living with hereditary spastic
+          paraplegia, cerebral palsy, multiple sclerosis, limb loss, stroke
+          recovery, and cancer recovery. If your condition is not on that
+          list, that is not a no — email us and we will fit the training to
+          you.
+        </p>
+      </section>
+
       {/* The results band renders only once the founder supplies real data
           points in adapthleticsResults — same honest-empty rule as the wall:
           no invented numbers, ever. */}

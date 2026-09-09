@@ -301,17 +301,17 @@ export const adapthleticsResults: AdapthleticsResult[] = [
     label: "athletes coached across in-person and virtual training.",
   },
   {
-    value: "7+",
+    value: "90%+",
     label:
-      "populations trained — wheelchair users, hereditary spastic paraplegia, cerebral palsy, MS, amputees, stroke survivors, and athletes in cancer recovery.",
+      "of athletes improved on at least one functional goal within 12 weeks.",
   },
   {
-    value: "100%",
+    value: "90%+",
     label:
       "of athletes have increased lower-body strength, squat numbers included.",
   },
   {
-    value: "100%",
+    value: "90%+",
     label:
       "of athletes have improved mobility and endurance — longer cardio sessions, greater distances, stronger grip.",
   },
