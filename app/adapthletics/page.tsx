@@ -33,36 +33,56 @@ export default function AdapthleticsPage() {
           real training photos, the stats line — one straight row across the
           page on desktop — then the kicker and intro. */}
       <header className="flex flex-col items-center gap-6 pt-12 pb-10 text-center sm:pt-16 sm:pb-14">
-        <Image
-          src={asset("/brand/adapthletics.png")}
-          alt="Adapthletics logo — a gold and orange phoenix over the program name and the tagline Positive Progress Is Possible"
-          width={800}
-          height={442}
-          className="h-auto w-64 sm:w-80 lg:w-96"
-          unoptimized
-          priority
-        />
-        {/* The logo above spells the program name and tagline, so the text
+        {/* The logo spells the program name and tagline, so the text
             heading is screen-reader-only (owner-directed 9 Sep 2026). */}
         <h1 className="sr-only">Adapthletics</h1>
-        {/* Owner-directed hero order (9 Sep 2026): logo, then real training
-            photos, then the stats box, then the wording. The stills come
-            from the founder's own footage. */}
-        {/* Owner-directed: each picture is shown WHOLE — no aspect crop, no
-            object-cover. Different shapes sit top-aligned side by side. */}
-        <ul className="grid w-full grid-cols-3 items-center gap-3 sm:gap-4">
-          {adapthleticsHeroPhotos.map((photo) => (
-            <li key={photo.src}>
-              <Image
-                src={asset(photo.src)}
-                alt={photo.alt}
-                width={photo.width}
-                height={photo.height}
-                className="h-auto w-full border-2 border-gold/40"
-                unoptimized
-              />
-            </li>
-          ))}
+        {/* Owner-directed hero (9 Sep 2026): ONE horizontal line of pictures —
+            the logo sits in the middle column above the landscape frame, which
+            drops to the bottom edge of the two portraits. Each picture is
+            shown WHOLE — no aspect crop, no object-cover. */}
+        <ul className="grid w-full grid-cols-3 items-stretch gap-3 sm:gap-4">
+          <li>
+            <Image
+              src={asset(adapthleticsHeroPhotos[0].src)}
+              alt={adapthleticsHeroPhotos[0].alt}
+              width={adapthleticsHeroPhotos[0].width}
+              height={adapthleticsHeroPhotos[0].height}
+              className="h-auto w-full border-2 border-gold/40"
+              unoptimized
+              priority
+            />
+          </li>
+          <li className="flex flex-col items-center justify-between gap-3">
+            <Image
+              src={asset("/brand/adapthletics.png")}
+              alt="Adapthletics logo — a gold and orange phoenix over the program name and the tagline Positive Progress Is Possible"
+              width={800}
+              height={442}
+              className="h-auto w-full max-w-80 px-1 sm:px-3"
+              unoptimized
+              priority
+            />
+            <Image
+              src={asset(adapthleticsHeroPhotos[1].src)}
+              alt={adapthleticsHeroPhotos[1].alt}
+              width={adapthleticsHeroPhotos[1].width}
+              height={adapthleticsHeroPhotos[1].height}
+              className="h-auto w-full border-2 border-gold/40"
+              unoptimized
+              priority
+            />
+          </li>
+          <li>
+            <Image
+              src={asset(adapthleticsHeroPhotos[2].src)}
+              alt={adapthleticsHeroPhotos[2].alt}
+              width={adapthleticsHeroPhotos[2].width}
+              height={adapthleticsHeroPhotos[2].height}
+              className="h-auto w-full border-2 border-gold/40"
+              unoptimized
+              priority
+            />
+          </li>
         </ul>
         {adapthleticsResults.length > 0 && (
           <ul className="grid w-full gap-5 bg-primary p-6 text-left text-primary-foreground sm:grid-cols-2 sm:gap-6 sm:p-8 lg:grid-cols-5">
