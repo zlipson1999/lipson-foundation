@@ -129,7 +129,7 @@ function validate(kind: FormKind, fields: Record<string, string>): string | null
  * service is skipped entirely and every submission falls back to the
  * mailto draft, so nothing breaks in the meantime.
  */
-const web3formsAccessKey = ""
+const web3formsAccessKey = "8951630a-175d-4a14-9f5f-acf00f77c273"
 
 async function submitByService(
   kind: FormKind,
