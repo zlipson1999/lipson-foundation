@@ -36,6 +36,22 @@ export default function AdapthleticsPage() {
           {/* The mark above spells the program name and tagline, so the text
               heading is screen-reader-only (owner-directed 9 Sep 2026). */}
           <h1 className="sr-only">Adapthletics</h1>
+          {/* The outcomes, highlighted in a navy box between the kicker and
+              the intro (owner-directed placement and sizing). */}
+          {adapthleticsResults.length > 0 && (
+            <ul className="flex w-full flex-col gap-5 bg-primary p-6 text-left text-primary-foreground sm:flex-row sm:gap-8 sm:p-8">
+              {adapthleticsResults.map((item) => (
+                <li key={item.label} className="flex-1 border-l-2 border-gold pl-4">
+                  <p className="font-heading text-3xl text-gold">
+                    {item.value}
+                  </p>
+                  <p className="mt-1 text-sm leading-relaxed text-primary-foreground/80">
+                    {item.label}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          )}
           <div className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             <p>
               Certified adaptive fitness that works: strength, mobility, and
@@ -52,28 +68,15 @@ export default function AdapthleticsPage() {
             </p>
           </div>
         </div>
-        <div className="flex shrink-0 flex-col items-center gap-4 self-center">
-          <Image
-            src={asset("/brand/adapthletics.png")}
-            alt="Adapthletics logo — a gold and orange phoenix over the program name and the tagline Positive Progress Is Possible"
-            width={800}
-            height={442}
-            className="h-auto w-64 sm:w-80 lg:w-96"
-            unoptimized
-            priority
-          />
-          {/* The outcomes, right under the mark (owner-directed placement):
-              small centered caps, one line per stat. */}
-          {adapthleticsResults.length > 0 && (
-            <ul className="flex flex-col items-center gap-1.5 text-center text-[11px] font-medium uppercase tracking-[0.18em] text-gold-ink">
-              {adapthleticsResults.map((item) => (
-                <li key={item.label}>
-                  {item.value} {item.label}
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
+        <Image
+          src={asset("/brand/adapthletics.png")}
+          alt="Adapthletics logo — a gold and orange phoenix over the program name and the tagline Positive Progress Is Possible"
+          width={800}
+          height={442}
+          className="h-auto w-64 shrink-0 self-center sm:w-80 lg:w-96"
+          unoptimized
+          priority
+        />
       </header>
 
       {/* Pics and clips lead the page — the media wall renders only once the

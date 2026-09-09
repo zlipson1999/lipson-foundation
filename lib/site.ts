@@ -293,9 +293,21 @@ export const adapthleticsTagline = "Positive Progress Is Possible"
  */
 export type AdapthleticsResult = { value: string; label: string }
 export const adapthleticsResults: AdapthleticsResult[] = [
-  { value: "90%+", label: "hit a functional goal within 12 weeks" },
-  { value: "90%+", label: "increased lower-body strength" },
-  { value: "90%+", label: "improved mobility & endurance" },
+  {
+    value: "90%+",
+    label:
+      "of athletes improved on at least one functional goal within 12 weeks.",
+  },
+  {
+    value: "90%+",
+    label:
+      "of athletes have increased lower-body strength, squat numbers included.",
+  },
+  {
+    value: "90%+",
+    label:
+      "of athletes have improved mobility and endurance — longer cardio sessions, greater distances, stronger grip.",
+  },
 ]
 
 export const adapthleticsEpisodeIds = [
