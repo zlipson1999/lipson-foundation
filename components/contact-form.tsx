@@ -21,7 +21,7 @@ import {
 
 export function ContactForm() {
   const [pending, setPending] = useState(false)
-  const [sent, setSent] = useState<"server" | "email" | null>(null)
+  const [sent, setSent] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
   async function onSubmit(formData: FormData) {
@@ -34,18 +34,12 @@ export function ContactForm() {
       toast.error(result.error)
       return
     }
-    setSent(result.via)
-    if (result.via === "server") toast.success("Message received. We will be in touch.")
+    setSent(true)
+    toast.success("Message received. We will be in touch.")
   }
 
   if (sent) {
-    return sent === "email" ? (
-      <FormConfirmation title="Your email draft is open.">
-        Nothing has been sent yet. Send the draft that just opened and
-        someone from Lipson Foundation will reply to you, usually within two
-        business days.
-      </FormConfirmation>
-    ) : (
+    return (
       <FormConfirmation title="We have your note.">
         Thank you for writing. Someone from Lipson Foundation will reply to
         the email you shared, usually within two business days.

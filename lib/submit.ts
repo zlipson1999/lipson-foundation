@@ -6,15 +6,12 @@ import type { ActionResult } from "@/lib/actions"
 export type FormKind = "contact" | "help" | "donate"
 
 /**
- * `via` tells the form what actually happened. "server" means the note was
- * delivered (dev server action, or the live site's form-delivery service);
- * "email" means only a pre-filled draft was opened — the fallback when the
- * delivery service cannot be reached — so that confirmation copy must not
- * claim the note was received.
+ * ok means the note was actually delivered — the dev server action, or the
+ * live site's form-delivery service. There is no mailto fallback (owner-
+ * directed 9 Sep 2026: everything goes through the online form only, never
+ * an email app); when delivery fails the form shows the error instead.
  */
-export type SubmitResult =
-  | { ok: true; via: "server" | "email" }
-  | { ok: false; error: string }
+export type SubmitResult = { ok: true } | { ok: false; error: string }
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -124,18 +121,17 @@ function validate(kind: FormKind, fields: Record<string, string>): string | null
  * to the foundation inbox through Web3Forms — the founder asked for
  * delivered mail, not an opened draft. (First attempt used FormSubmit.co,
  * whose activation page proved unreachable the same day — the service
- * appears defunct.) The access key is created by the founder at
- * web3forms.com for zlipson@lipsonfoundation.org; while it is EMPTY the
- * service is skipped entirely and every submission falls back to the
- * mailto draft, so nothing breaks in the meantime.
+ * appears defunct.) The access key was created by the founder at
+ * web3forms.com for zlipson@lipsonfoundation.org and supplied 9 Sep 2026.
+ * There is deliberately NO mailto fallback — see SubmitResult above.
  */
 const web3formsAccessKey = "8951630a-175d-4a14-9f5f-acf00f77c273"
 
 async function submitByService(
   kind: FormKind,
   fields: Record<string, string>
-): Promise<SubmitResult | null> {
-  if (!web3formsAccessKey) return null
+): Promise<SubmitResult> {
+  const emailUs = `Please try again in a moment, or email us at ${site.email}.`
   try {
     const controller = new AbortController()
     const timer = setTimeout(() => controller.abort(), 8000)
@@ -154,27 +150,16 @@ async function submitByService(
       signal: controller.signal,
     })
     clearTimeout(timer)
-    if (!res.ok) return null
-    const data = (await res.json()) as { success?: boolean }
-    if (!data.success) return null
-    return { ok: true, via: "server" }
+    const data = (await res.json()) as { success?: boolean; message?: string }
+    if (!res.ok || !data.success) {
+      // Surface the service's reason so a failure report is actionable.
+      const detail = data.message || `error ${res.status}`
+      return { ok: false, error: `We could not send your note (${detail}). ${emailUs}` }
+    }
+    return { ok: true }
   } catch {
-    // Service unreachable — the caller falls back to the mailto draft.
-    return null
+    return { ok: false, error: `We could not send your note right now. ${emailUs}` }
   }
-}
-
-// The fallback when the delivery service cannot be reached: open a
-// pre-filled email draft to the foundation instead of losing the note.
-function submitByEmail(kind: FormKind, fields: Record<string, string>): SubmitResult {
-  const subject = `[${site.domain}] ${subjects[kind]}`
-  const body = Object.entries(fields)
-    .filter(([, value]) => value)
-    .map(([key, value]) => `${key}: ${value}`)
-    .join("\n")
-  const href = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-  window.location.href = href
-  return { ok: true, via: "email" }
 }
 
 export async function submitForm(
@@ -185,9 +170,8 @@ export async function submitForm(
     const fields = collect(kind, formData)
     const error = validate(kind, fields)
     if (error) return { ok: false, error }
-    const delivered = await submitByService(kind, fields)
-    if (delivered) return delivered
-    return submitByEmail(kind, fields)
+    // No email-app fallback (owner-directed): success or an on-screen error.
+    return submitByService(kind, fields)
   }
 
   const actions = await import("@/lib/actions")
@@ -198,5 +182,5 @@ export async function submitForm(
         ? await actions.submitHelp(formData)
         : await actions.submitDonate(formData)
 
-  return result.ok ? { ok: true, via: "server" } : result
+  return result.ok ? { ok: true } : result
 }

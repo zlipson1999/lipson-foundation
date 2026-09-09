@@ -22,7 +22,7 @@ import { FormConfirmation, FormError } from "@/components/form-confirmation"
 
 export function DonateForm() {
   const [pending, setPending] = useState(false)
-  const [sent, setSent] = useState<"server" | "email" | null>(null)
+  const [sent, setSent] = useState(false)
   const [error, setError] = useState<string | null>(null)
   // Both mirror the giving form: the amount box and the dedication note only
   // appear once they are relevant, rather than sitting empty on the page.
@@ -39,17 +39,12 @@ export function DonateForm() {
       toast.error(result.error)
       return
     }
-    setSent(result.via)
-    if (result.via === "server") toast.success("We have your details.")
+    setSent(true)
+    toast.success("We have your details.")
   }
 
   if (sent) {
-    return sent === "email" ? (
-      <FormConfirmation title="Your email draft is open.">
-        Nothing has been sent yet. Send the draft that just opened and someone
-        from Lipson Foundation will be in touch to complete your gift.
-      </FormConfirmation>
-    ) : (
+    return (
       <FormConfirmation title="Thank you. We have your details.">
         Someone from Lipson Foundation will be in touch from {site.email} to
         complete your gift.
