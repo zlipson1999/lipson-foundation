@@ -25,7 +25,7 @@ export default function AdapthleticsPage() {
   return (
     <Container className="pb-20">
       <header className="flex flex-col-reverse items-start gap-8 pt-12 pb-10 sm:pt-16 sm:pb-14 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
-        <div className="flex max-w-3xl flex-col gap-4">
+        <div className="flex max-w-3xl flex-col items-center gap-4 text-center lg:items-start lg:text-left">
           <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
             Adaptive fitness · A Lipson Foundation program
           </p>
