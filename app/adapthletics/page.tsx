@@ -7,12 +7,10 @@ import { Button } from "@/components/ui/button"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { asset } from "@/lib/assets"
 import { EpisodeCarousel } from "@/components/adapthletics-episodes"
-import { CategoryChips } from "@/components/category-chips"
 import {
   adapthleticsEpisodes,
   adapthleticsMedia,
   adapthleticsTagline,
-  programs,
   site,
 } from "@/lib/site"
 
@@ -24,7 +22,6 @@ export const metadata: Metadata = pageMetadata({
 })
 
 export default function AdapthleticsPage() {
-  const program = programs.find((p) => p.slug === "adapthletics")!
   return (
     <Container className="pb-20">
       <header className="flex flex-col-reverse items-start gap-8 pt-12 pb-10 sm:pt-16 sm:pb-14 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
@@ -51,7 +48,6 @@ export default function AdapthleticsPage() {
               </span>
             </p>
           </div>
-          <CategoryChips categories={program.categories} />
         </div>
         <Image
           src={asset("/brand/adapthletics.png")}

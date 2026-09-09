@@ -15,7 +15,6 @@ import {
 } from "@/components/ui/card"
 import { asset } from "@/lib/assets"
 import { programs, whatWeBuild } from "@/lib/site"
-import { CategoryChips } from "@/components/category-chips"
 
 export const metadata: Metadata = pageMetadata({
   title: "Programs",
@@ -64,7 +63,6 @@ export default function ProgramsPage() {
                   {program.status}
                 </Badge>
                 <CardTitle className="text-3xl">{program.name}</CardTitle>
-                <CategoryChips categories={program.categories} />
                 <CardDescription className="max-w-2xl text-base leading-relaxed">
                   {program.summary}
                 </CardDescription>
