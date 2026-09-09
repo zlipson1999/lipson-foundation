@@ -12,12 +12,19 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { groups, sessionShape, site, veteranOffer, youthOffer } from "@/lib/site"
+import {
+  groups,
+  sessionShape,
+  site,
+  veteranOffer,
+  youngAdultOffer,
+  youthOffer,
+} from "@/lib/site"
 
 export const metadata: Metadata = pageMetadata({
   title: "In Ur Corner",
   description:
-    "In Ur Corner is a cost-free boxing and mentorship program of Lipson Foundation Inc. for youth ages 12–17 and veterans in South Florida.",
+    "In Ur Corner is a cost-free boxing and mentorship program of Lipson Foundation Inc. for youth ages 12–17, young adults 18–25, and military veterans in South Florida. Boxing and fitness first; mentorship grows from there.",
   route: "/in-your-corner",
 })
 
@@ -40,9 +47,9 @@ export default function InYourCornerPage() {
             title="In Ur Corner"
           >
             <p>
-              Cost-free boxing and mentorship that brings youth ages 12 to 17 and
-              military veterans together to train. There is no cost to any
-              participant, ever.
+              Cost-free boxing and mentorship that brings youth ages 12 to 17,
+              young adults ages 18 to 25, and military veterans together to
+              train. There is no cost to any participant, ever.
             </p>
           </PageIntro>
         </div>
@@ -67,11 +74,43 @@ export default function InYourCornerPage() {
         </p>
       </div>
 
-      <section className="mt-12 grid gap-6 lg:grid-cols-2">
+      <section className="mt-12 max-w-3xl">
+        <Alert>
+          <AlertTitle>Launching with veterans and young adults first</AlertTitle>
+          <AlertDescription>
+            Youth sessions (ages 12–17) open once youth-protection policies,
+            screened coaches, and insurance are fully in place — that is a
+            commitment, not a delay tactic. Families can already write to us to
+            get on the list.
+          </AlertDescription>
+        </Alert>
+      </section>
+
+      <section className="mt-12 grid gap-6 lg:grid-cols-3">
         <div className="border border-border bg-card p-6">
-          <h2 className="text-2xl">For youth (ages 12–17)</h2>
+          <h2 className="text-2xl">
+            For youth (12–17){" "}
+            <span className="text-base text-muted-foreground">
+              · next phase
+            </span>
+          </h2>
           <ul className="mt-4 flex flex-col gap-4">
             {youthOffer.map((item) => (
+              <li key={item.title}>
+                <p className="font-heading text-base">{item.title}</p>
+                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                  {item.body}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="border border-border bg-card p-6">
+          <h2 className="text-2xl">
+            For young adults (18–25)
+          </h2>
+          <ul className="mt-4 flex flex-col gap-4">
+            {youngAdultOffer.map((item) => (
               <li key={item.title}>
                 <p className="font-heading text-base">{item.title}</p>
                 <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
@@ -118,12 +157,17 @@ export default function InYourCornerPage() {
         <p className="text-base leading-relaxed text-muted-foreground">
           We do not assign mentors on day one. Matches grow out of the
           relationships that form over weeks of training and shared meals, and
-          they are made only when both people are ready.
+          they are made only when both people are ready. Mentorship moves
+          upward here: veterans stand in the corner of young adults, and young
+          adults who put in the time can earn their way into a teen’s
+          corner as junior mentors. Nobody ages out — turning 18 just moves
+          you up.
         </p>
         <ul className="flex flex-col gap-3 text-sm leading-relaxed text-muted-foreground">
           <li>Every adult is screened. Background checks for every coach, mentor, and volunteer — no exceptions.</li>
           <li>No unsupervised one-on-one contact. Mentoring happens in the group setting. Two-adult rule.</li>
           <li>Guardians stay informed. Parents know the match and can reach the coordinator.</li>
+          <li>Junior-mentor roles are earned. A young adult steps into a teen’s corner only after sustained participation, screening, and coordinator sign-off.</li>
           <li>Every session is documented. A coordinator reviews match health and conduct.</li>
           <li>Photo consent, if used at all, is separate and optional. It is never a condition of participation.</li>
         </ul>
@@ -149,9 +193,14 @@ export default function InYourCornerPage() {
         <h2 className="text-3xl">Who it serves</h2>
         <ul className="flex flex-col gap-3 text-base leading-relaxed text-muted-foreground">
           <li>
-            Youth ages 12–17 from underserved communities in Palm Beach County
-            — referred by families, schools, community centers, and juvenile
-            diversion programs, or who simply walk in.
+            Youth ages 12–17 — referred by families, schools, community
+            centers, and juvenile diversion programs, or who simply walk in —
+            once youth-protection safeguards are fully in place.
+          </li>
+          <li>
+            Young adults ages 18–25 from underserved communities in Palm Beach
+            County and surrounding counties — training first, with a path to a
+            junior-mentor role.
           </li>
           <li>
             Military veterans of any era, any branch, any service-connected
