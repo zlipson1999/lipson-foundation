@@ -193,7 +193,7 @@ export const groups = [
     slug: "the-ring",
     name: "The Ring",
     href: "/in-your-corner#the-ring",
-    body: "Youth, young adults, and veterans train side by side.",
+    body: "Young adults and veterans train side by side. Youth train in their own separate sessions.",
   },
   {
     slug: "the-corner",
@@ -234,7 +234,7 @@ export const programs = [
     categories: ["health", "mentoring", "professional"] as const,
     mark: "/brand/iyc-tag.png",
     summary:
-      "A cost-free boxing and mentorship program for youth ages 12–17, young adults 18–25, and military veterans. Boxing builds the relationships. Mentorship deepens them — later, not on day one. Youth sessions open once youth-protection safeguards are fully in place. The Ring, The Corner, and The Crew live inside it.",
+      "A cost-free boxing and mentorship program for youth ages 12–17, young adults 18–25, and military veterans — youth in their own sessions, young adults and veterans training together. Boxing builds the relationships. Mentorship deepens them — later, not on day one. Youth sessions open once youth-protection safeguards are fully in place. The Ring, The Corner, and The Crew live inside it.",
   },
   {
     slug: "adapthletics",
@@ -493,7 +493,7 @@ export const youthOffer = [
   },
   {
     title: "Mentorship that is real",
-    body: "Relationships with veterans and community members — after the work is shared, not assigned on day one.",
+    body: "Mentorship from screened young adults who came up the same way — earned, never assigned on day one.",
   },
   {
     title: "Confidence beyond the gym",
@@ -508,11 +508,11 @@ export const youngAdultOffer = [
   },
   {
     title: "A veteran in your corner",
-    body: "Mentorship from people who have been where you are going — after the work is shared, not assigned on day one.",
+    body: "Optional mentorship from people who have been where you are going — after the work is shared, not assigned on day one.",
   },
   {
     title: "Earn the corner",
-    body: "Put in the time and step into the corner of a younger teammate as a junior mentor.",
+    body: "Mentoring is a choice, never a requirement. Choose it, earn it, and come back to mentor the youth sessions as a junior mentor.",
   },
   {
     title: "Everything provided",
@@ -553,7 +553,7 @@ export const faqs = [
   {
     question: "Who do you serve?",
     answer:
-      "Underserved communities in Palm Beach County and surrounding counties — whoever a fee would leave out. In Ur Corner is built for youth ages 12–17, young adults ages 18–25, and military veterans of any era, with paid Crew roles for adults with developmental disabilities; youth sessions open once youth-protection safeguards are fully in place. That is one program, not the limit of who the foundation is for.",
+      "Underserved communities in Palm Beach County and surrounding counties — whoever a fee would leave out. In Ur Corner is built for youth ages 12–17, young adults ages 18–25, and military veterans of any era — youth in their own sessions, young adults and veterans training together — with paid Crew roles for adults with developmental disabilities; youth sessions open once youth-protection safeguards are fully in place. That is one program, not the limit of who the foundation is for.",
   },
   {
     question: "Is In Ur Corner a boxing gym?",
