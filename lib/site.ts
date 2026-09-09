@@ -337,11 +337,33 @@ export const adapthleticsEpisodes = [
 ] as const
 
 /**
- * The Adapthletics media wall. Intentionally EMPTY until the founder
- * supplies original photos/videos (drop files in public/adapthletics/ and
- * list them here). The wall hides itself while empty — the same honest
- * empty-state pattern as events and news. Never fill with stock or
- * placeholder media.
+ * The Adapthletics hero photo strip — real stills pulled from the
+ * founder's own training footage (owner-supplied 9 Sep 2026). Sits right
+ * under the logo, above the stats box, per his layout direction. Never
+ * stock, never placeholders.
+ */
+export const adapthleticsHeroPhotos = [
+  {
+    src: "/adapthletics/hero-rower.jpg",
+    alt: "An athlete rows on an adaptive rowing machine, his wheelchair at his side on the training turf.",
+  },
+  {
+    src: "/adapthletics/hero-bench.jpg",
+    alt: "An athlete in a wheelchair works a barbell on the training turf.",
+  },
+  {
+    src: "/adapthletics/hero-team.jpg",
+    alt: "Zach stands with an athlete between sets in the gym.",
+  },
+] as const
+
+/**
+ * The Adapthletics media wall — original photos and clips supplied by the
+ * founder (9 Sep 2026, from his own footage and published features he
+ * appears in; he approved the two interview clips, including their
+ * YMCA-feature lower-third, for the site). Files live in
+ * public/adapthletics/. Never stock, never placeholders — only media he
+ * supplies.
  */
 export type AdapthleticsMediaItem = {
   type: "photo" | "video"
@@ -349,7 +371,37 @@ export type AdapthleticsMediaItem = {
   alt: string
   caption?: string
 }
-export const adapthleticsMedia: AdapthleticsMediaItem[] = []
+export const adapthleticsMedia: AdapthleticsMediaItem[] = [
+  {
+    type: "video",
+    src: "/adapthletics/zach-story-1.mp4",
+    alt: "Zach on what adaptive training puts into perspective.",
+    caption: "Zach, on what this work puts into perspective.",
+  },
+  {
+    type: "video",
+    src: "/adapthletics/zach-story-2.mp4",
+    alt: "Zach on being who he needed when he was younger.",
+    caption: "\u201cI\u2019m just trying to be who I needed when I was younger.\u201d",
+  },
+  {
+    type: "video",
+    src: "/adapthletics/adapthletics-gopro.mp4",
+    alt: "An Adapthletics training session on the rower and cable stack.",
+    caption: "An Adapthletics session — rower and cable work.",
+  },
+  {
+    type: "video",
+    src: "/adapthletics/training-session.mp4",
+    alt: "One-on-one adaptive training on the turf.",
+    caption: "One-on-one on the turf.",
+  },
+  {
+    type: "photo",
+    src: "/adapthletics/wall-dumbbell.jpg",
+    alt: "An athlete in a wheelchair presses a dumbbell during a one-on-one session.",
+  },
+]
 
 export const teamMenu = [
   {
