@@ -7,12 +7,10 @@ import { Button } from "@/components/ui/button"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { asset } from "@/lib/assets"
 import { EpisodeCarousel } from "@/components/adapthletics-episodes"
-import { CategoryChips } from "@/components/category-chips"
 import {
   adapthleticsEpisodes,
   adapthleticsMedia,
   adapthleticsTagline,
-  programs,
   site,
 } from "@/lib/site"
 
@@ -24,7 +22,6 @@ export const metadata: Metadata = pageMetadata({
 })
 
 export default function AdapthleticsPage() {
-  const program = programs.find((p) => p.slug === "adapthletics")!
   return (
     <Container className="pb-20">
       <header className="flex flex-col-reverse items-start gap-8 pt-12 pb-10 sm:pt-16 sm:pb-14 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
@@ -51,43 +48,17 @@ export default function AdapthleticsPage() {
               </span>
             </p>
           </div>
-          <CategoryChips categories={program.categories} />
         </div>
         <Image
           src={asset("/brand/adapthletics.png")}
           alt="Adapthletics logo — a gold and orange phoenix over the program name and the tagline Positive Progress Is Possible"
           width={800}
-          height={464}
+          height={442}
           className="h-auto w-64 shrink-0 self-center sm:w-80 lg:w-96"
           unoptimized
           priority
         />
       </header>
-
-      {/* The hub rail: this page is the collection point for everything
-          Adapthletics — jump straight to any part of it. */}
-      {/* One swipeable line on phones (no wrapping into a wall of boxes),
-          a plain row on larger screens where it all fits anyway. */}
-      <nav
-        aria-label="On this page"
-        className="-mx-4 mb-12 flex gap-1.5 overflow-x-auto px-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:flex-wrap sm:gap-2 sm:overflow-visible sm:px-0"
-      >
-        {[
-          ...(adapthleticsMedia.length > 0 ? [["#wall", "The wall"]] : []),
-          ["#offer", "What we offer"],
-          ["#why", "Why this exists"],
-          ["#track-record", "The track record"],
-          ["#series", "From the Ground Up"],
-        ].map(([href, label]) => (
-          <a
-            key={href}
-            href={href}
-            className="shrink-0 whitespace-nowrap border border-gold/50 px-2.5 py-1.5 text-sm font-medium text-gold-ink transition-colors hover:border-gold hover:bg-gold/10 sm:px-3"
-          >
-            {label}
-          </a>
-        ))}
-      </nav>
 
       {/* Pics and clips lead the page — the media wall renders only once the
           founder's own photos and videos are in public/adapthletics/ and

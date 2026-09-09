@@ -215,14 +215,18 @@ export default function HomePage() {
                 key={program.slug}
                 className="flex flex-col items-center gap-6 border-t-2 border-gold pt-6 text-center sm:flex-row sm:items-start sm:gap-8 sm:border-t-0 sm:border-l-2 sm:pt-0 sm:pl-6 sm:text-left"
               >
-                <Image
-                  src={asset(program.mark)}
-                  alt=""
-                  width={612}
-                  height={640}
-                  className="h-28 w-auto shrink-0 self-center sm:h-32 lg:h-36"
-                  unoptimized
-                />
+                {/* Fixed-width slot so every card's text column starts on the
+                    same line no matter how wide each program's mark is. */}
+                <div className="flex w-44 shrink-0 items-center justify-center self-center lg:w-52">
+                  <Image
+                    src={asset(program.mark)}
+                    alt=""
+                    width={612}
+                    height={640}
+                    className="max-h-28 w-auto max-w-full sm:max-h-32 lg:max-h-36"
+                    unoptimized
+                  />
+                </div>
                 <div className="flex flex-col items-center gap-3 sm:items-start">
                   <Badge variant="secondary">{program.status}</Badge>
                   <h3 className="font-heading text-2xl">{program.name}</h3>
@@ -237,7 +241,7 @@ export default function HomePage() {
                     nativeButton={false}
                     render={<Link href={program.href} />}
                   >
-                    Read the program
+                    About the program
                     <ArrowRightIcon data-icon="inline-end" />
                   </Button>
                 </div>
