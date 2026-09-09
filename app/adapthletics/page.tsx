@@ -66,7 +66,12 @@ export default function AdapthleticsPage() {
 
       {/* The hub rail: this page is the collection point for everything
           Adapthletics — jump straight to any part of it. */}
-      <nav aria-label="On this page" className="mb-12 flex flex-wrap gap-2">
+      {/* One swipeable line on phones (no wrapping into a wall of boxes),
+          a plain row on larger screens where it all fits anyway. */}
+      <nav
+        aria-label="On this page"
+        className="-mx-4 mb-12 flex gap-1.5 overflow-x-auto px-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:flex-wrap sm:gap-2 sm:overflow-visible sm:px-0"
+      >
         {[
           ...(adapthleticsMedia.length > 0 ? [["#wall", "The wall"]] : []),
           ["#offer", "What we offer"],
@@ -77,7 +82,7 @@ export default function AdapthleticsPage() {
           <a
             key={href}
             href={href}
-            className="border border-gold/50 px-3 py-1.5 text-sm font-medium text-gold-ink transition-colors hover:border-gold hover:bg-gold/10"
+            className="shrink-0 whitespace-nowrap border border-gold/50 px-2.5 py-1.5 text-sm font-medium text-gold-ink transition-colors hover:border-gold hover:bg-gold/10 sm:px-3"
           >
             {label}
           </a>
@@ -144,26 +149,25 @@ export default function AdapthleticsPage() {
             cost-free: no memberships, no fees, no fine print.
           </p>
         </div>
-        <div className="grid max-w-4xl gap-6 sm:grid-cols-2">
-          <div className="border-2 border-gold/40 p-6">
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold-ink">
-              How we offer it
-            </p>
-            <p className="mt-2 font-heading text-2xl">In person</p>
-            <p className="mt-2 text-base leading-relaxed text-muted-foreground">
-              Hands-on adaptive training in South Florida — Palm Beach County
-              and surrounding counties, in spaces the community already uses.
-            </p>
-          </div>
-          <div className="border-2 border-gold/40 p-6">
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold-ink">
-              How we offer it
-            </p>
-            <p className="mt-2 font-heading text-2xl">Virtual</p>
-            <p className="mt-2 text-base leading-relaxed text-muted-foreground">
-              Adaptive coaching online, wherever you are — the same training,
-              fitted to your body and whatever equipment you have.
-            </p>
+        <div className="max-w-4xl border-2 border-gold/40 p-6">
+          <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold-ink">
+            How we offer it
+          </p>
+          <div className="mt-4 grid gap-6 sm:grid-cols-2">
+            <div>
+              <p className="font-heading text-2xl">In person</p>
+              <p className="mt-2 text-base leading-relaxed text-muted-foreground">
+                Hands-on adaptive training in South Florida — Palm Beach County
+                and surrounding counties, in spaces the community already uses.
+              </p>
+            </div>
+            <div className="border-t border-gold/30 pt-6 sm:border-t-0 sm:border-l sm:pt-0 sm:pl-6">
+              <p className="font-heading text-2xl">Virtual</p>
+              <p className="mt-2 text-base leading-relaxed text-muted-foreground">
+                Adaptive coaching online, wherever you are — the same training,
+                fitted to your body and whatever equipment you have.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -264,18 +268,6 @@ export default function AdapthleticsPage() {
         <div className="mt-8">
           <EpisodeCarousel />
         </div>
-        <p className="mt-8 text-base leading-relaxed text-primary-foreground/70">
-          Watch the episodes on{" "}
-          <a
-            href="https://www.instagram.com/lipsonfoundation/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-medium text-gold underline underline-offset-4 hover:text-primary-foreground"
-          >
-            @lipsonfoundation
-          </a>
-          .
-        </p>
       </section>
 
       <section className="mt-16 flex max-w-3xl flex-col gap-4">
