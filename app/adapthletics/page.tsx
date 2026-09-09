@@ -39,9 +39,11 @@ export default function AdapthleticsPage() {
           <div className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             <p>
               Certified adaptive fitness that works: strength, mobility, and
-              confidence for people with disabilities, with every movement
-              fitted to the body doing it. Completely cost-free, like
-              everything the Lipson Foundation builds.
+              confidence for people with disabilities — wheelchair users,
+              hereditary spastic paraplegia, cerebral palsy, multiple
+              sclerosis, limb loss, stroke recovery, cancer recovery, and more
+              — with every movement customized to the participant. Completely
+              cost-free, like everything the Lipson Foundation builds.
             </p>
             <p className="mt-4">
               <span className="inline-block -rotate-2 border-2 border-gold px-3 py-1 font-heading text-sm font-semibold uppercase tracking-[0.18em] text-gold-ink">
