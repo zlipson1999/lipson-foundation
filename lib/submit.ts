@@ -121,37 +121,42 @@ function validate(kind: FormKind, fields: Record<string, string>): string | null
 
 /**
  * Owner-directed (9 Sep 2026): the live static site auto-sends submissions
- * to the foundation inbox through FormSubmit.co's AJAX relay — the founder
- * asked for delivered mail, not an opened draft. The address in the endpoint
- * is already public on every page. FormSubmit sends a one-time activation
- * email on the first-ever submission; after the founder confirms it once,
- * every submission is delivered. The visitor's `email` field becomes the
- * reply-to automatically.
+ * to the foundation inbox through Web3Forms — the founder asked for
+ * delivered mail, not an opened draft. (First attempt used FormSubmit.co,
+ * whose activation page proved unreachable the same day — the service
+ * appears defunct.) The access key is created by the founder at
+ * web3forms.com for zlipson@lipsonfoundation.org; while it is EMPTY the
+ * service is skipped entirely and every submission falls back to the
+ * mailto draft, so nothing breaks in the meantime.
  */
-const formDeliveryEndpoint = `https://formsubmit.co/ajax/${site.email}`
+const web3formsAccessKey = "8951630a-175d-4a14-9f5f-acf00f77c273"
 
 async function submitByService(
   kind: FormKind,
   fields: Record<string, string>
 ): Promise<SubmitResult | null> {
+  if (!web3formsAccessKey) return null
   try {
     const controller = new AbortController()
     const timer = setTimeout(() => controller.abort(), 8000)
-    const res = await fetch(formDeliveryEndpoint, {
+    const res = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
       body: JSON.stringify({
-        _subject: `[${site.domain}] ${subjects[kind]}`,
-        _template: "table",
+        access_key: web3formsAccessKey,
+        subject: `[${site.domain}] ${subjects[kind]}`,
+        from_name: fields.name || `${fields.firstName ?? ""} ${fields.lastName ?? ""}`.trim() || site.name,
         ...fields,
       }),
       signal: controller.signal,
     })
     clearTimeout(timer)
     if (!res.ok) return null
+    const data = (await res.json()) as { success?: boolean }
+    if (!data.success) return null
     return { ok: true, via: "server" }
   } catch {
     // Service unreachable — the caller falls back to the mailto draft.
