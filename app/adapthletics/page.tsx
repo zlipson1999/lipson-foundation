@@ -118,7 +118,10 @@ export default function AdapthleticsPage() {
           listed in adapthleticsMedia. Same honest empty-state pattern as
           events and news: never stock, never placeholders. */}
       {adapthleticsMedia.length > 0 && (
-        <section id="wall" className="mb-16 flex scroll-mt-24 flex-col gap-6">
+        <section
+          id="wall"
+          className="mb-16 flex scroll-mt-24 flex-col items-center gap-6 text-center"
+        >
           <div className="max-w-3xl">
             <h2 className="text-3xl">The wall</h2>
             <p className="mt-3 text-base leading-relaxed text-muted-foreground">
@@ -126,7 +129,8 @@ export default function AdapthleticsPage() {
               just the work.
             </p>
           </div>
-          <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {/* One straight line of cards (owner-directed 9 Sep 2026). */}
+          <ul className="grid w-full grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5 lg:gap-4">
             {adapthleticsMedia.map((item, i) => (
               <li
                 key={item.src}
@@ -140,6 +144,7 @@ export default function AdapthleticsPage() {
                     preload="metadata"
                     className="aspect-square w-full object-cover"
                     src={asset(item.src)}
+                    poster={item.poster ? asset(item.poster) : undefined}
                   />
                 ) : (
                   // eslint-disable-next-line @next/next/no-img-element
@@ -162,7 +167,10 @@ export default function AdapthleticsPage() {
       )}
 
       {/* The information hub: what the program is, and the two ways it runs. */}
-      <section id="offer" className="flex scroll-mt-24 flex-col gap-8">
+      <section
+        id="offer"
+        className="flex scroll-mt-24 flex-col items-center gap-8 text-center"
+      >
         <div className="max-w-3xl">
           <h2 className="text-3xl">What we offer</h2>
           <p className="mt-3 text-base leading-relaxed text-muted-foreground">
@@ -177,7 +185,7 @@ export default function AdapthleticsPage() {
             Training and the MedFit Adaptive Fitness Specialist specialization.
           </p>
         </div>
-        <div className="max-w-4xl border-2 border-gold/40 p-6">
+        <div className="w-full max-w-4xl border-2 border-gold/40 p-6">
           <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold-ink">
             How we offer it
           </p>
