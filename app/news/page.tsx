@@ -29,12 +29,9 @@ export const metadata: Metadata = pageMetadata({
 export default function NewsPage() {
   return (
     <Container className="pb-20">
-      <PageIntro kicker="News" title="What we can say in public.">
-        <p>
-          This page is for foundation updates. There is nothing to post yet. We
-          will not invent a feed.
-        </p>
-      </PageIntro>
+      {/* Just the title (owner-directed): the empty state below already
+          says there is nothing to post yet. */}
+      <PageIntro kicker="Lipson Foundation" title="News" />
 
       {newsItems.length === 0 ? (
         <Empty className="border border-dashed border-border bg-card py-16">

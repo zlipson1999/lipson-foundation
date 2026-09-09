@@ -9,11 +9,8 @@ import {
   FieldDescription,
   FieldGroup,
   FieldLabel,
-  FieldLegend,
-  FieldSet,
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Textarea } from "@/components/ui/textarea"
 import { Spinner } from "@/components/ui/spinner"
 import { submitForm } from "@/lib/submit"
@@ -21,14 +18,6 @@ import {
   FormConfirmation,
   FormError,
 } from "@/components/form-confirmation"
-
-const topics = [
-  { value: "general", label: "General question" },
-  { value: "host", label: "Host a veterans post" },
-  { value: "veteran", label: "Train or mentor" },
-  { value: "school", label: "Refer a young person" },
-  { value: "support", label: "Support or meals" },
-]
 
 export function ContactForm() {
   const [pending, setPending] = useState(false)
@@ -81,19 +70,21 @@ export function ContactForm() {
             required
           />
         </Field>
-        <FieldSet>
-          <FieldLegend variant="label">What is this about?</FieldLegend>
-          <RadioGroup name="topic" defaultValue="general" className="gap-2">
-            {topics.map((topic) => (
-              <Field key={topic.value} orientation="horizontal">
-                <RadioGroupItem value={topic.value} id={`topic-${topic.value}`} />
-                <FieldLabel htmlFor={`topic-${topic.value}`} className="font-normal">
-                  {topic.label}
-                </FieldLabel>
-              </Field>
-            ))}
-          </RadioGroup>
-        </FieldSet>
+        {/* Free text, matching the help form: a fixed list would need
+            re-editing as programs and supports are added. Reads like a
+            subject line; the pipeline passes "topic" through as plain text. */}
+        <Field>
+          <FieldLabel htmlFor="topic">What is this about?</FieldLabel>
+          <Input
+            id="topic"
+            name="topic"
+            required
+            placeholder="A question, hosting a hall, training, mentoring, a referral, support…"
+          />
+          <FieldDescription>
+            A few words is plenty — like a subject line.
+          </FieldDescription>
+        </Field>
         <Field>
           <FieldLabel htmlFor="message">Message</FieldLabel>
           <Textarea
