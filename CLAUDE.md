@@ -75,7 +75,7 @@ Plus `app/not-found.tsx` (404) and `app/layout.tsx` (fonts, header/footer, root 
 
 **Forms pipeline:**
 - `components/contact-form.tsx`, `components/help-form.tsx`, `components/donate-form.tsx` → `lib/submit.ts` (client-side dispatcher + validation) → server actions in `lib/actions.ts` → writes `.data/inquiries.json` (gitignored).
-- On the static export build, `NEXT_PUBLIC_STATIC_EXPORT` makes `lib/submit.ts` skip server actions and open a pre-filled `mailto:` draft to zlipson@lipsonfoundation.org instead. Both paths must keep working.
+- On the static export build, `NEXT_PUBLIC_STATIC_EXPORT` makes `lib/submit.ts` skip server actions and AUTO-SEND the submission to zlipson@lipsonfoundation.org via FormSubmit.co's AJAX relay (owner-directed 9 Sep 2026: "auto send a message right to my email, not open up the email" — a narrow service exception like the Spotify embeds; the address is already public site-wide). The pre-filled `mailto:` draft remains ONLY as the fallback when the relay cannot be reached. FormSubmit sends a ONE-TIME activation email on the first-ever live submission — the founder must click it once; until then submissions are not delivered. All paths must keep working.
 
 **Base UI / shadcn quirks (learned the hard way — preserve these):**
 - `Button` renders links via `render={<Link ... />}` with `nativeButton={false}`. Do not convert to `asChild` or wrap `<Link>` inside `<Button>`.

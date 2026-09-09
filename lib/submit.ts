@@ -6,9 +6,11 @@ import type { ActionResult } from "@/lib/actions"
 export type FormKind = "contact" | "help" | "donate"
 
 /**
- * `via` tells the form what actually happened. On the static export nothing
- * is submitted — an email draft is opened — so the confirmation copy must
- * not claim the note was received.
+ * `via` tells the form what actually happened. "server" means the note was
+ * delivered (dev server action, or the live site's form-delivery service);
+ * "email" means only a pre-filled draft was opened — the fallback when the
+ * delivery service cannot be reached — so that confirmation copy must not
+ * claim the note was received.
  */
 export type SubmitResult =
   | { ok: true; via: "server" | "email" }
@@ -117,8 +119,48 @@ function validate(kind: FormKind, fields: Record<string, string>): string | null
   return null
 }
 
-// On the static (GitHub Pages) build there is no server, so we open a
-// pre-filled email draft to the foundation instead of persisting the inquiry.
+/**
+ * Owner-directed (9 Sep 2026): the live static site auto-sends submissions
+ * to the foundation inbox through FormSubmit.co's AJAX relay — the founder
+ * asked for delivered mail, not an opened draft. The address in the endpoint
+ * is already public on every page. FormSubmit sends a one-time activation
+ * email on the first-ever submission; after the founder confirms it once,
+ * every submission is delivered. The visitor's `email` field becomes the
+ * reply-to automatically.
+ */
+const formDeliveryEndpoint = `https://formsubmit.co/ajax/${site.email}`
+
+async function submitByService(
+  kind: FormKind,
+  fields: Record<string, string>
+): Promise<SubmitResult | null> {
+  try {
+    const controller = new AbortController()
+    const timer = setTimeout(() => controller.abort(), 8000)
+    const res = await fetch(formDeliveryEndpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        _subject: `[${site.domain}] ${subjects[kind]}`,
+        _template: "table",
+        ...fields,
+      }),
+      signal: controller.signal,
+    })
+    clearTimeout(timer)
+    if (!res.ok) return null
+    return { ok: true, via: "server" }
+  } catch {
+    // Service unreachable — the caller falls back to the mailto draft.
+    return null
+  }
+}
+
+// The fallback when the delivery service cannot be reached: open a
+// pre-filled email draft to the foundation instead of losing the note.
 function submitByEmail(kind: FormKind, fields: Record<string, string>): SubmitResult {
   const subject = `[${site.domain}] ${subjects[kind]}`
   const body = Object.entries(fields)
@@ -138,6 +180,8 @@ export async function submitForm(
     const fields = collect(kind, formData)
     const error = validate(kind, fields)
     if (error) return { ok: false, error }
+    const delivered = await submitByService(kind, fields)
+    if (delivered) return delivered
     return submitByEmail(kind, fields)
   }
 
