@@ -344,16 +344,16 @@ export const adapthleticsEpisodes = [
  */
 export const adapthleticsHeroPhotos = [
   {
-    src: "/adapthletics/hero-rower.jpg",
-    alt: "An athlete rows on an adaptive rowing machine, his wheelchair at his side on the training turf.",
+    src: "/adapthletics/hero-cable.jpg",
+    alt: "An athlete trains on the cable machine from his wheelchair, the pool visible behind him.",
   },
   {
-    src: "/adapthletics/hero-bench.jpg",
-    alt: "An athlete in a wheelchair works a barbell on the training turf.",
+    src: "/adapthletics/hero-spot.jpg",
+    alt: "Zach spots an athlete's grip on the barbell during a bench press.",
   },
   {
-    src: "/adapthletics/hero-team.jpg",
-    alt: "Zach stands with an athlete between sets in the gym.",
+    src: "/adapthletics/hero-ropes.jpg",
+    alt: "Zach coaches an athlete working the battle ropes from his wheelchair on the turf.",
   },
 ] as const
 

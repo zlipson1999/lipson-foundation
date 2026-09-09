@@ -6,6 +6,7 @@ import { Container } from "@/components/container"
 import { Button } from "@/components/ui/button"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { asset } from "@/lib/assets"
+import { AdapthleticsSplash } from "@/components/adapthletics-splash"
 import { EpisodeCarousel } from "@/components/adapthletics-episodes"
 import {
   adapthleticsEpisodes,
@@ -25,6 +26,9 @@ export const metadata: Metadata = pageMetadata({
 export default function AdapthleticsPage() {
   return (
     <Container className="pb-20">
+      {/* Owner-directed (9 Sep 2026): the GoPro reel pops up in a closable
+          window on page entry — see the component for the rules. */}
+      <AdapthleticsSplash />
       {/* One centered column at every size (owner-directed layout): logo,
           real training photos, the stats line — one straight row across the
           page on desktop — then the kicker and intro. */}
