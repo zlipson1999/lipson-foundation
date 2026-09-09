@@ -10,13 +10,14 @@ import { EpisodeCarousel } from "@/components/adapthletics-episodes"
 import {
   adapthleticsEpisodes,
   adapthleticsMedia,
+  adapthleticsResults,
   site,
 } from "@/lib/site"
 
 export const metadata: Metadata = pageMetadata({
   title: "Adapthletics",
   description:
-    "Adapthletics is the Lipson Foundation's adaptive fitness program — strength, mobility, and confidence for people with disabilities, in person in South Florida and virtual anywhere. Built by founder Zachary Lipson since 2022, cost-free under the foundation.",
+    "Adapthletics is the Lipson Foundation's certified adaptive fitness program — strength, mobility, and confidence for people with disabilities, in person in South Florida and virtual anywhere. Completely cost-free.",
   route: "/adapthletics",
 })
 
@@ -28,7 +29,7 @@ export default function AdapthleticsPage() {
           {/* Stacked layouts break the kicker into two lines, no separator;
               the dot returns when it reads as one line beside the logo. */}
           <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
-            Adaptive fitness
+            Certified adaptive fitness
             <span className="hidden lg:inline"> · </span>
             <span className="block lg:inline">A Lipson Foundation program</span>
           </p>
@@ -37,7 +38,7 @@ export default function AdapthleticsPage() {
           <h1 className="sr-only">Adapthletics</h1>
           <div className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             <p>
-              Fitness that adapts to the athlete: strength, mobility, and
+              Certified adaptive fitness that works: strength, mobility, and
               confidence for people with disabilities, with every movement
               fitted to the body doing it. Completely cost-free, like
               everything the Lipson Foundation builds.
@@ -119,6 +120,10 @@ export default function AdapthleticsPage() {
             starting point. And like everything the foundation runs, completely
             cost-free: no memberships, no fees, no fine print.
           </p>
+          <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+            The coaching behind it is certified: ATA Adaptive &amp; Inclusive
+            Training and the MedFit Adaptive Fitness Specialist specialization.
+          </p>
         </div>
         <div className="max-w-4xl border-2 border-gold/40 p-6">
           <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold-ink">
@@ -142,6 +147,29 @@ export default function AdapthleticsPage() {
           </div>
         </div>
       </section>
+
+      {/* The results band renders only once the founder supplies real data
+          points in adapthleticsResults — same honest-empty rule as the wall:
+          no invented numbers, ever. */}
+      {adapthleticsResults.length > 0 && (
+        <section id="results" className="mt-16 flex scroll-mt-24 flex-col gap-6">
+          <div className="max-w-3xl">
+            <h2 className="text-3xl">A program that works</h2>
+          </div>
+          <ul className="grid max-w-4xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {adapthleticsResults.map((item) => (
+              <li key={item.label} className="border-l-2 border-gold pl-4">
+                <p className="font-heading text-3xl text-gold-ink">
+                  {item.value}
+                </p>
+                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                  {item.label}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <section id="series" className="mt-16 scroll-mt-24 bg-primary p-8 text-primary-foreground sm:p-10">
         <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
