@@ -509,23 +509,27 @@ export const newsItems: {
 export const helpPaths = [
   {
     title: "Veteran posts",
-    body: "Host sessions. We bring the kit, carry insurance, and leave it clean. Walk-ins only until a counsel-reviewed agreement exists.",
+    body: "Host In Ur Corner sessions. We bring the kit, carry insurance, and leave it clean. Walk-ins only until a counsel-reviewed agreement exists.",
+  },
+  {
+    title: "Gyms and community spaces",
+    body: "Adapthletics trains in spaces the community already uses. If your floor has room for adaptive training, let's talk.",
+  },
+  {
+    title: "Athletes and families",
+    body: "Adapthletics virtual coaching is available now, completely cost-free. Tell us about the athlete and we will fit the training to them.",
   },
   {
     title: "Schools and counselors",
-    body: "Refer a young person who needs a safe place to be.",
+    body: "Refer a young person who needs a safe place to be — In Ur Corner is built for them.",
   },
   {
     title: "Businesses and professionals",
-    body: "Lead a monthly Career Exploration Night.",
+    body: "Lead a monthly Career Exploration Night at In Ur Corner.",
   },
   {
     title: "Veterans",
-    body: "Any era. Come train — and mentor when you are ready.",
-  },
-  {
-    title: "Supporters",
-    body: "Every gift keeps a program cost-free to the people it serves. Use the Donate page to give, or to start that conversation.",
+    body: "Any era. Come train with In Ur Corner — and mentor when you are ready.",
   },
 ] as const
 
