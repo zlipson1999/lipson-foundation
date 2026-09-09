@@ -39,9 +39,9 @@ export default function AdapthleticsPage() {
           {/* The outcomes, highlighted in a navy box between the kicker and
               the intro (owner-directed placement and sizing). */}
           {adapthleticsResults.length > 0 && (
-            <ul className="flex w-full flex-col gap-5 bg-primary p-6 text-left text-primary-foreground sm:flex-row sm:gap-8 sm:p-8">
+            <ul className="grid w-full gap-5 bg-primary p-6 text-left text-primary-foreground sm:grid-cols-2 sm:gap-6 sm:p-8 lg:grid-cols-3">
               {adapthleticsResults.map((item) => (
-                <li key={item.label} className="flex-1 border-l-2 border-gold pl-4">
+                <li key={item.label} className="border-l-2 border-gold pl-4">
                   <p className="font-heading text-3xl text-gold">
                     {item.value}
                   </p>
@@ -139,10 +139,8 @@ export default function AdapthleticsPage() {
             cost-free: no memberships, no fees, no fine print.
           </p>
           <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-            The coaching behind it is certified — ATA Adaptive &amp; Inclusive
-            Training and the MedFit Adaptive Fitness Specialist specialization
-            — with four years of adaptive coaching and 25+ athletes trained,
-            in person and virtual, since 2022.
+            The coaching behind it is certified: ATA Adaptive &amp; Inclusive
+            Training and the MedFit Adaptive Fitness Specialist specialization.
           </p>
         </div>
         <div className="max-w-4xl border-2 border-gold/40 p-6">

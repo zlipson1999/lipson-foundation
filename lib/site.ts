@@ -294,6 +294,14 @@ export const adapthleticsTagline = "Positive Progress Is Possible"
 export type AdapthleticsResult = { value: string; label: string }
 export const adapthleticsResults: AdapthleticsResult[] = [
   {
+    value: "4 years",
+    label: "of certified adaptive coaching, since 2022.",
+  },
+  {
+    value: "25+",
+    label: "athletes coached across in-person and virtual training.",
+  },
+  {
     value: "90%+",
     label:
       "of athletes improved on at least one functional goal within 12 weeks.",
