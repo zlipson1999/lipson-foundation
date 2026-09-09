@@ -48,15 +48,17 @@ export default function AdapthleticsPage() {
         {/* Owner-directed hero order (9 Sep 2026): logo, then real training
             photos, then the stats box, then the wording. The stills come
             from the founder's own footage. */}
-        <ul className="grid w-full grid-cols-3 gap-3 sm:gap-4">
+        {/* Owner-directed: each picture is shown WHOLE — no aspect crop, no
+            object-cover. Different shapes sit top-aligned side by side. */}
+        <ul className="grid w-full grid-cols-3 items-start gap-3 sm:gap-4">
           {adapthleticsHeroPhotos.map((photo) => (
             <li key={photo.src}>
               <Image
                 src={asset(photo.src)}
                 alt={photo.alt}
                 width={1200}
-                height={675}
-                className="aspect-[16/10] w-full border-2 border-gold/40 object-cover"
+                height={750}
+                className="h-auto w-full border-2 border-gold/40"
                 unoptimized
               />
             </li>
