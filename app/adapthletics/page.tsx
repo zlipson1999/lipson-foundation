@@ -50,14 +50,14 @@ export default function AdapthleticsPage() {
             from the founder's own footage. */}
         {/* Owner-directed: each picture is shown WHOLE — no aspect crop, no
             object-cover. Different shapes sit top-aligned side by side. */}
-        <ul className="grid w-full grid-cols-3 items-start gap-3 sm:gap-4">
+        <ul className="grid w-full grid-cols-3 items-center gap-3 sm:gap-4">
           {adapthleticsHeroPhotos.map((photo) => (
             <li key={photo.src}>
               <Image
                 src={asset(photo.src)}
                 alt={photo.alt}
-                width={1200}
-                height={750}
+                width={photo.width}
+                height={photo.height}
                 className="h-auto w-full border-2 border-gold/40"
                 unoptimized
               />

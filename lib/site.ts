@@ -337,23 +337,29 @@ export const adapthleticsEpisodes = [
 ] as const
 
 /**
- * The Adapthletics hero photo strip — real stills pulled from the
- * founder's own training footage (owner-supplied 9 Sep 2026). Sits right
- * under the logo, above the stats box, per his layout direction. Never
- * stock, never placeholders.
+ * The Adapthletics hero photo strip — the founder's three exact pictures
+ * (owner-supplied 9 Sep 2026 via his Drive folder), shown whole in his
+ * chosen order. Sits right under the logo, above the stats box, per his
+ * layout direction. Never stock, never placeholders.
  */
 export const adapthleticsHeroPhotos = [
   {
-    src: "/adapthletics/hero-cable.jpg",
+    src: "/adapthletics/hero-1.jpg",
     alt: "An athlete trains on the cable machine from his wheelchair, the pool visible behind him.",
+    width: 1536,
+    height: 2048,
   },
   {
-    src: "/adapthletics/hero-spot.jpg",
-    alt: "Zach spots an athlete's grip on the barbell during a bench press.",
+    src: "/adapthletics/hero-2.jpg",
+    alt: "Zach spots an athlete's bench press — a captioned frame from a published feature: to have the support of Zach and the training of Zach.",
+    width: 1689,
+    height: 931,
   },
   {
-    src: "/adapthletics/hero-ropes.jpg",
-    alt: "Zach coaches an athlete working the battle ropes from his wheelchair on the turf.",
+    src: "/adapthletics/hero-3.jpg",
+    alt: "Zach coaches an athlete pulling a battle rope from his wheelchair on the turf.",
+    width: 880,
+    height: 1193,
   },
 ] as const
 
