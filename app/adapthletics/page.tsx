@@ -52,15 +52,28 @@ export default function AdapthleticsPage() {
             </p>
           </div>
         </div>
-        <Image
-          src={asset("/brand/adapthletics.png")}
-          alt="Adapthletics logo — a gold and orange phoenix over the program name and the tagline Positive Progress Is Possible"
-          width={800}
-          height={442}
-          className="h-auto w-64 shrink-0 self-center sm:w-80 lg:w-96"
-          unoptimized
-          priority
-        />
+        <div className="flex shrink-0 flex-col items-center gap-4 self-center">
+          <Image
+            src={asset("/brand/adapthletics.png")}
+            alt="Adapthletics logo — a gold and orange phoenix over the program name and the tagline Positive Progress Is Possible"
+            width={800}
+            height={442}
+            className="h-auto w-64 sm:w-80 lg:w-96"
+            unoptimized
+            priority
+          />
+          {/* The outcomes, right under the mark (owner-directed placement):
+              small centered caps, one line per stat. */}
+          {adapthleticsResults.length > 0 && (
+            <ul className="flex flex-col items-center gap-1.5 text-center text-[11px] font-medium uppercase tracking-[0.18em] text-gold-ink">
+              {adapthleticsResults.map((item) => (
+                <li key={item.label}>
+                  {item.value} {item.label}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </header>
 
       {/* Pics and clips lead the page — the media wall renders only once the
@@ -123,8 +136,10 @@ export default function AdapthleticsPage() {
             cost-free: no memberships, no fees, no fine print.
           </p>
           <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-            The coaching behind it is certified: ATA Adaptive &amp; Inclusive
-            Training and the MedFit Adaptive Fitness Specialist specialization.
+            The coaching behind it is certified — ATA Adaptive &amp; Inclusive
+            Training and the MedFit Adaptive Fitness Specialist specialization
+            — with four years of adaptive coaching and 25+ athletes trained,
+            in person and virtual, since 2022.
           </p>
         </div>
         <div className="max-w-4xl border-2 border-gold/40 p-6">
@@ -149,29 +164,6 @@ export default function AdapthleticsPage() {
           </div>
         </div>
       </section>
-
-      {/* The results band renders only once the founder supplies real data
-          points in adapthleticsResults — same honest-empty rule as the wall:
-          no invented numbers, ever. */}
-      {adapthleticsResults.length > 0 && (
-        <section id="results" className="mt-16 flex scroll-mt-24 flex-col gap-6">
-          <div className="max-w-3xl">
-            <h2 className="text-3xl">A program that works</h2>
-          </div>
-          <ul className="grid max-w-4xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {adapthleticsResults.map((item) => (
-              <li key={item.label} className="border-l-2 border-gold pl-4">
-                <p className="font-heading text-3xl text-gold-ink">
-                  {item.value}
-                </p>
-                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                  {item.label}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
 
       <section id="series" className="mt-16 scroll-mt-24 bg-primary p-8 text-primary-foreground sm:p-10">
         <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
