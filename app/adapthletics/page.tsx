@@ -64,31 +64,6 @@ export default function AdapthleticsPage() {
         />
       </header>
 
-      {/* The hub rail: this page is the collection point for everything
-          Adapthletics — jump straight to any part of it. */}
-      {/* One swipeable line on phones (no wrapping into a wall of boxes),
-          a plain row on larger screens where it all fits anyway. */}
-      <nav
-        aria-label="On this page"
-        className="-mx-4 mb-12 flex gap-1.5 overflow-x-auto px-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:flex-wrap sm:gap-2 sm:overflow-visible sm:px-0"
-      >
-        {[
-          ...(adapthleticsMedia.length > 0 ? [["#wall", "The wall"]] : []),
-          ["#offer", "What we offer"],
-          ["#why", "Why this exists"],
-          ["#track-record", "The track record"],
-          ["#series", "From the Ground Up"],
-        ].map(([href, label]) => (
-          <a
-            key={href}
-            href={href}
-            className="shrink-0 whitespace-nowrap border border-gold/50 px-2.5 py-1.5 text-sm font-medium text-gold-ink transition-colors hover:border-gold hover:bg-gold/10 sm:px-3"
-          >
-            {label}
-          </a>
-        ))}
-      </nav>
-
       {/* Pics and clips lead the page — the media wall renders only once the
           founder's own photos and videos are in public/adapthletics/ and
           listed in adapthleticsMedia. Same honest empty-state pattern as
