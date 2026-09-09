@@ -227,7 +227,12 @@ export default function HomePage() {
                   />
                 </div>
                 <div className="flex flex-col items-center gap-3 sm:items-start">
-                  <h3 className="font-heading text-2xl">{program.name}</h3>
+                  {/* On phones the mark itself spells the program name, so the
+                      heading is screen-reader-only there; it returns visually
+                      once the layout goes side-by-side. */}
+                  <h3 className="sr-only font-heading text-2xl sm:not-sr-only">
+                    {program.name}
+                  </h3>
                   <CategoryChips
                     categories={program.categories}
                     className="justify-center sm:justify-start"
