@@ -139,12 +139,13 @@ export default function AdapthleticsPage() {
                 }`}
               >
                 {item.type === "video" ? (
-                  // Wide cards keep the clip's whole 16:9 thumbnail viewable
-                  // (owner-directed); the rest stay square.
+                  // Every card is the same square; wide clips letterbox on
+                  // navy (object-contain) so their whole 16:9 thumbnail stays
+                  // viewable without breaking the line (owner-directed).
                   <video
                     controls
                     preload="metadata"
-                    className={`${item.wide ? "aspect-video" : "aspect-square"} w-full object-cover`}
+                    className={`aspect-square w-full ${item.wide ? "bg-primary object-contain" : "object-cover"}`}
                     src={asset(item.src)}
                     poster={item.poster ? asset(item.poster) : undefined}
                   />
