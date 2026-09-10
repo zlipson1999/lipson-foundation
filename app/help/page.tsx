@@ -22,15 +22,11 @@ export const metadata: Metadata = pageMetadata({
 export default function HelpPage() {
   return (
     <Container className="pb-20">
-      <PageIntro
-        kicker="How to help"
-        title="We need spaces, people, referrals, and meals."
-      >
+      <PageIntro kicker="How to help" title="Get involved.">
         <p>
-          A payment link is not how this starts. If you have a space a program
-          could run in, time to coach or mentor, someone who needs what we
-          build, a trade to talk about, or a kitchen that can feed a session,
-          write to us.
+          A payment link is not how this starts. Our programs are built from
+          what people choose to give: space, time, skills, referrals, and
+          meals. Tell us what you have, and we will find where it fits.
         </p>
       </PageIntro>
 

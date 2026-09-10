@@ -527,24 +527,20 @@ export const newsItems: {
 
 export const helpPaths = [
   {
-    title: "Spaces and halls",
-    body: "Our programs run in spaces the community already uses \u2014 halls, posts, gyms, schools, community rooms. If yours has room, let's talk. We bring the program and leave the space clean.",
+    title: "Spaces",
+    body: "Our programs run in spaces the community already uses. If yours has room, let's talk \u2014 we bring the program and leave the space clean.",
   },
   {
-    title: "Coaches and mentors",
-    body: "Every program runs on people who show up. Come train, coach, or mentor when you are ready.",
+    title: "Time and skills",
+    body: "Coach, mentor, or talk about your trade with the people our programs serve. Come as you are and we will find the fit.",
   },
   {
     title: "Referrals",
     body: "Know someone one of our programs is built for? Tell us about them and we will take it from there.",
   },
   {
-    title: "Businesses and professionals",
-    body: "Talk about your trade, your career, or your path with the people our programs serve.",
-  },
-  {
-    title: "Kitchens and meals",
-    body: "A shared meal is part of the program. If your kitchen can feed a session, that is a real contribution.",
+    title: "Meals",
+    body: "A shared meal is part of how our programs run. Helping to cover or cook one is a real contribution.",
   },
 ] as const
 
