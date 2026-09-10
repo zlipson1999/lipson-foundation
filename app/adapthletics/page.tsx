@@ -130,7 +130,7 @@ export default function AdapthleticsPage() {
             </p>
           </div>
           {/* One straight line of cards (owner-directed 9 Sep 2026). */}
-          <ul className="grid w-full grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5 lg:gap-4">
+          <ul className="grid w-full grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-7 lg:gap-3">
             {adapthleticsMedia.map((item, i) => (
               <li
                 key={item.src}
@@ -139,10 +139,12 @@ export default function AdapthleticsPage() {
                 }`}
               >
                 {item.type === "video" ? (
+                  // Wide cards keep the clip's whole 16:9 thumbnail viewable
+                  // (owner-directed); the rest stay square.
                   <video
                     controls
                     preload="metadata"
-                    className="aspect-square w-full object-cover"
+                    className={`${item.wide ? "aspect-video" : "aspect-square"} w-full object-cover`}
                     src={asset(item.src)}
                     poster={item.poster ? asset(item.poster) : undefined}
                   />

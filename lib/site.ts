@@ -378,6 +378,8 @@ export type AdapthleticsMediaItem = {
   caption?: string
   /** Cover image shown before the video plays (owner-directed 9 Sep 2026). */
   poster?: string
+  /** Wide (16:9) card so the whole thumbnail stays viewable (owner-directed). */
+  wide?: boolean
 }
 export const adapthleticsMedia: AdapthleticsMediaItem[] = [
   {
@@ -386,6 +388,22 @@ export const adapthleticsMedia: AdapthleticsMediaItem[] = [
     alt: "Zach on being who he needed when he was younger.",
     caption: "\u201cI\u2019m just trying to be who I needed when I was younger.\u201d",
     poster: "/adapthletics/zach-story-2-poster.jpg",
+  },
+  {
+    type: "video",
+    src: "/adapthletics/wall-support.mp4",
+    alt: "A published feature: an athlete's recovery through adaptive training with Zach.",
+    caption: "\u201cTo have the support of Zach and the training of Zach\u2026\u201d",
+    poster: "/adapthletics/wall-support-poster.jpg",
+    wide: true,
+  },
+  {
+    type: "video",
+    src: "/adapthletics/wall-awareness.mp4",
+    alt: "The Disability History and Awareness Month feature on adaptive fitness, with Zach coaching.",
+    caption: "Disability History & Awareness Month \u2014 the full feature.",
+    poster: "/adapthletics/wall-awareness-poster.jpg",
+    wide: true,
   },
   {
     type: "video",
