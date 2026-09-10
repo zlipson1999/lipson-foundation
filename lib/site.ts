@@ -378,6 +378,8 @@ export type AdapthleticsMediaItem = {
   caption?: string
   /** Cover image shown before the video plays (owner-directed 9 Sep 2026). */
   poster?: string
+  /** Wide (16:9) card so the whole thumbnail stays viewable (owner-directed). */
+  wide?: boolean
 }
 export const adapthleticsMedia: AdapthleticsMediaItem[] = [
   {
@@ -386,6 +388,22 @@ export const adapthleticsMedia: AdapthleticsMediaItem[] = [
     alt: "Zach on being who he needed when he was younger.",
     caption: "\u201cI\u2019m just trying to be who I needed when I was younger.\u201d",
     poster: "/adapthletics/zach-story-2-poster.jpg",
+  },
+  {
+    type: "video",
+    src: "/adapthletics/wall-support.mp4",
+    alt: "A published feature: an athlete's recovery through adaptive training with Zach.",
+    caption: "\u201cTo have the support of Zach and the training of Zach\u2026\u201d",
+    poster: "/adapthletics/wall-support-poster.jpg",
+    wide: true,
+  },
+  {
+    type: "video",
+    src: "/adapthletics/wall-awareness.mp4",
+    alt: "The Disability History and Awareness Month feature on adaptive fitness, with Zach coaching.",
+    caption: "Disability History & Awareness Month: the full feature.",
+    poster: "/adapthletics/wall-awareness-poster.jpg",
+    wide: true,
   },
   {
     type: "video",
@@ -398,14 +416,14 @@ export const adapthleticsMedia: AdapthleticsMediaItem[] = [
     type: "video",
     src: "/adapthletics/wall-montage.mp4",
     alt: "A training montage: rowing, tire drags, sled pulls, and kettlebell work, all from the wheelchair.",
-    caption: "Rower, tires, sleds, kettlebells \u2014 the work.",
+    caption: "Rower, tires, sleds, kettlebells. The work.",
     poster: "/adapthletics/wall-montage-poster.jpg",
   },
   {
     type: "video",
     src: "/adapthletics/wall-sled-550.mp4",
     alt: "An athlete pulls a weighted sled across the turf, up from 537.5 to 550 pounds.",
-    caption: "From 537.5 to 550 \u2014 always getting stronger.",
+    caption: "From 537.5 to 550. Always getting stronger.",
     poster: "/adapthletics/wall-sled-550-poster.jpg",
   },
   {
@@ -509,23 +527,27 @@ export const newsItems: {
 export const helpPaths = [
   {
     title: "Veteran posts",
-    body: "Host sessions. We bring the kit, carry insurance, and leave it clean. Walk-ins only until a counsel-reviewed agreement exists.",
+    body: "Host In Ur Corner sessions. We bring the kit, carry insurance, and leave it clean. Walk-ins only until a counsel-reviewed agreement exists.",
+  },
+  {
+    title: "Gyms and community spaces",
+    body: "Adapthletics trains in spaces the community already uses. If your floor has room for adaptive training, let's talk.",
+  },
+  {
+    title: "Athletes and families",
+    body: "Adapthletics virtual coaching is available now, completely cost-free. Tell us about the athlete and we will fit the training to them.",
   },
   {
     title: "Schools and counselors",
-    body: "Refer a young person who needs a safe place to be.",
+    body: "Refer a young person who needs a safe place to be — In Ur Corner is built for them.",
   },
   {
     title: "Businesses and professionals",
-    body: "Lead a monthly Career Exploration Night.",
+    body: "Lead a monthly Career Exploration Night at In Ur Corner.",
   },
   {
     title: "Veterans",
-    body: "Any era. Come train — and mentor when you are ready.",
-  },
-  {
-    title: "Supporters",
-    body: "Every gift keeps a program cost-free to the people it serves. Use the Donate page to give, or to start that conversation.",
+    body: "Any era. Come train with In Ur Corner — and mentor when you are ready.",
   },
 ] as const
 
