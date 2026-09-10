@@ -7,7 +7,7 @@ import { site } from "@/lib/site"
 export const metadata: Metadata = pageMetadata({
   title: "Contact",
   description:
-    "Write or call Zachary Lipson, Founder and President of Lipson Foundation Inc., about hosting, referrals, training, or support.",
+    "Write to Zachary Lipson, Founder and President of Lipson Foundation Inc., about spaces, referrals, training, or support.",
   route: "/contact",
 })
 
@@ -16,8 +16,8 @@ export default function ContactPage() {
     <Container className="pb-20">
       <PageIntro kicker="Contact" title="Zachary Lipson, Founder and President.">
         <p>
-          Host a hall, refer a young person, come train, or ask a question.
-          Every note is read.
+          Offer a space, make a referral, come train, or ask a question. Every
+          note is read.
         </p>
       </PageIntro>
 
@@ -36,9 +36,8 @@ export default function ContactPage() {
             <p className="text-sm text-muted-foreground">EIN {site.ein}</p>
           </div>
           <p className="text-sm leading-relaxed text-muted-foreground">
-            If you do not hear back within two business days, write or call
-            again. We would rather you nudge us than assume we are not
-            listening.
+            If you do not hear back within two business days, write again. We
+            would rather you nudge us than assume we are not listening.
           </p>
         </aside>
       </div>

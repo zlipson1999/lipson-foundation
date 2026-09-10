@@ -471,7 +471,7 @@ export const formPages = [
   {
     href: "/help",
     title: "Get involved",
-    body: "Host a hall, refer a young person, train as a veteran, lead a career night, or help with meals.",
+    body: "Offer a space, coach or mentor, refer someone, share your trade, or help with meals.",
   },
   {
     href: "/donate",
@@ -527,28 +527,24 @@ export const newsItems: {
 
 export const helpPaths = [
   {
-    title: "Veteran posts",
-    body: "Host In Ur Corner sessions. We bring the kit, carry insurance, and leave it clean. Walk-ins only until a counsel-reviewed agreement exists.",
+    title: "Spaces and halls",
+    body: "Our programs run in spaces the community already uses \u2014 halls, posts, gyms, schools, community rooms. If yours has room, let's talk. We bring the program and leave the space clean.",
   },
   {
-    title: "Gyms and community spaces",
-    body: "Adapthletics trains in spaces the community already uses. If your floor has room for adaptive training, let's talk.",
+    title: "Coaches and mentors",
+    body: "Every program runs on people who show up. Come train, coach, or mentor when you are ready.",
   },
   {
-    title: "Athletes and families",
-    body: "Adapthletics virtual coaching is available now, completely cost-free. Tell us about the athlete and we will fit the training to them.",
-  },
-  {
-    title: "Schools and counselors",
-    body: "Refer a young person who needs a safe place to be — In Ur Corner is built for them.",
+    title: "Referrals",
+    body: "Know someone one of our programs is built for? Tell us about them and we will take it from there.",
   },
   {
     title: "Businesses and professionals",
-    body: "Lead a monthly Career Exploration Night at In Ur Corner.",
+    body: "Talk about your trade, your career, or your path with the people our programs serve.",
   },
   {
-    title: "Veterans",
-    body: "Any era. Come train with In Ur Corner — and mentor when you are ready.",
+    title: "Kitchens and meals",
+    body: "A shared meal is part of the program. If your kitchen can feed a session, that is a real contribution.",
   },
 ] as const
 

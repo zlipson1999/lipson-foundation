@@ -15,7 +15,7 @@ import { helpPaths } from "@/lib/site"
 export const metadata: Metadata = pageMetadata({
   title: "How to help",
   description:
-    "Host a session, offer a space, refer a young person, connect an athlete, lead a career night, or talk with us about supporting the foundation's cost-free programs.",
+    "Offer a space, coach or mentor, refer someone, share your trade, cover meals, or talk with us about supporting the foundation's cost-free programs.",
   route: "/help",
 })
 
@@ -24,12 +24,12 @@ export default function HelpPage() {
     <Container className="pb-20">
       <PageIntro
         kicker="How to help"
-        title="We need spaces, veterans, athletes, referrals, and meals."
+        title="We need spaces, people, referrals, and meals."
       >
         <p>
-          A payment link is not how this starts. If you have a post or a gym
-          floor, a young person who needs a safe place, an athlete ready to
-          train, a trade to talk about, or a kitchen that can feed a session,
+          A payment link is not how this starts. If you have a space a program
+          could run in, time to coach or mentor, someone who needs what we
+          build, a trade to talk about, or a kitchen that can feed a session,
           write to us.
         </p>
       </PageIntro>
