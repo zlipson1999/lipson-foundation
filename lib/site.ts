@@ -391,11 +391,32 @@ export const adapthleticsMedia: AdapthleticsMediaItem[] = [
   },
   {
     type: "video",
+    src: "/adapthletics/wall-montage.mp4",
+    alt: "A training montage: rowing, tire drags, sled pulls, and kettlebell work, all from the wheelchair.",
+    caption: "Rower, tires, sleds, kettlebells. The work.",
+    poster: "/adapthletics/wall-montage-poster.jpg",
+  },
+  {
+    type: "video",
     src: "/adapthletics/wall-support.mp4",
     alt: "A published feature: an athlete's recovery through adaptive training with Zach.",
     caption: "\u201cTo have the support of Zach and the training of Zach\u2026\u201d",
     poster: "/adapthletics/wall-support-poster.jpg",
     wide: true,
+  },
+  {
+    type: "video",
+    src: "/adapthletics/wall-sled-550.mp4",
+    alt: "An athlete pulls a weighted sled across the turf, up from 537.5 to 550 pounds.",
+    caption: "From 537.5 to 550. Always getting stronger.",
+    poster: "/adapthletics/wall-sled-550-poster.jpg",
+  },
+  {
+    type: "video",
+    src: "/adapthletics/training-session.mp4",
+    alt: "One-on-one adaptive training on the turf.",
+    caption: "One-on-one on the turf.",
+    poster: "/adapthletics/training-session-poster.jpg",
   },
   {
     type: "video",
@@ -407,33 +428,13 @@ export const adapthleticsMedia: AdapthleticsMediaItem[] = [
   },
   {
     type: "video",
-    src: "/adapthletics/training-session.mp4",
-    alt: "One-on-one adaptive training on the turf.",
-    caption: "One-on-one on the turf.",
-    poster: "/adapthletics/training-session-poster.jpg",
-  },
-  {
-    type: "video",
-    src: "/adapthletics/wall-montage.mp4",
-    alt: "A training montage: rowing, tire drags, sled pulls, and kettlebell work, all from the wheelchair.",
-    caption: "Rower, tires, sleds, kettlebells. The work.",
-    poster: "/adapthletics/wall-montage-poster.jpg",
-  },
-  {
-    type: "video",
-    src: "/adapthletics/wall-sled-550.mp4",
-    alt: "An athlete pulls a weighted sled across the turf, up from 537.5 to 550 pounds.",
-    caption: "From 537.5 to 550. Always getting stronger.",
-    poster: "/adapthletics/wall-sled-550-poster.jpg",
-  },
-  {
-    type: "video",
     src: "/adapthletics/wall-rower.mp4",
     alt: "An athlete rows on the adaptive rowing machine from his wheelchair.",
     caption: "On the rower.",
     poster: "/adapthletics/wall-rower-poster.jpg",
   },
 ]
+
 
 export const teamMenu = [
   {
