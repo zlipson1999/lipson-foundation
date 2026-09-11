@@ -1,6 +1,6 @@
 # Lipson Foundation
 
-Public prototype for **Lipson Foundation Inc.** (EIN 39-4624045), a South Florida nonprofit building cost-free community programs. Flagship program: **In Ur Corner**.
+Public prototype for **Lipson Foundation Inc.** (EIN 39-4624045), a South Florida nonprofit building cost-free community programs. Flagship program: **Adapthletics**.
 
 This codebase follows the 22 August 2026 public-copy rules in the foundation kit:
 
@@ -26,7 +26,8 @@ Copy lives in `lib/site.ts` and the page files. It is taken from the public-safe
 | `/about` | About us |
 | `/team` | Board and staff |
 | `/programs` | What we offer |
-| `/in-your-corner` | Flagship program |
+| `/adapthletics` | Flagship program |
+| `/in-your-corner` | Boxing and mentorship program |
 | `/events` | Events — empty until dates are real |
 | `/news` | News — empty until there is something to report |
 | `/donate` | Sponsor a dinner, session, or season (inquiry form, no checkout) |
