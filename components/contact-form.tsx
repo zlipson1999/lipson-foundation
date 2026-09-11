@@ -73,7 +73,7 @@ export function ContactForm() {
             id="topic"
             name="topic"
             required
-            placeholder="A question, hosting a hall, training, mentoring, a referral, support…"
+            placeholder="A question, offering a space, training, mentoring, a referral, support…"
           />
           <FieldDescription>
             A few words is plenty — like a subject line.

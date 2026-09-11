@@ -78,7 +78,7 @@ export function HelpForm() {
             id="role"
             name="role"
             required
-            placeholder="Host a hall, offer a space, coach, mentor, refer someone, connect an athlete, cover meals…"
+            placeholder="Refer someone, offer a space, coach, mentor, give in kind…"
           />
           <FieldDescription>
             A few words is plenty — like a subject line.
@@ -91,7 +91,7 @@ export function HelpForm() {
             name="message"
             rows={6}
             required
-            placeholder="Space you can offer, a young person or an athlete you want to connect, a trade you can talk about, or a meal you can cover."
+            placeholder="Someone you want to refer, space you can offer, a trade you can talk about, or something you can cover in kind."
           />
           <FieldDescription>
             A few sentences is enough. We will take it from there.

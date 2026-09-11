@@ -471,7 +471,7 @@ export const formPages = [
   {
     href: "/help",
     title: "Get involved",
-    body: "Host a hall, refer a young person, train as a veteran, lead a career night, or help with meals.",
+    body: "Refer someone, offer a space, coach or mentor, share your trade, or give in kind.",
   },
   {
     href: "/donate",
@@ -527,28 +527,20 @@ export const newsItems: {
 
 export const helpPaths = [
   {
-    title: "Veteran posts",
-    body: "Host In Ur Corner sessions. We bring the kit, carry insurance, and leave it clean. Walk-ins only until a counsel-reviewed agreement exists.",
+    title: "Referrals",
+    body: "Know someone one of our programs is built for? Tell us about them and we will take it from there.",
   },
   {
-    title: "Gyms and community spaces",
-    body: "Adapthletics trains in spaces the community already uses. If your floor has room for adaptive training, let's talk.",
+    title: "Spaces",
+    body: "Our programs run in spaces the community already uses. If yours has room, let's talk \u2014 we bring the program and leave the space clean.",
   },
   {
-    title: "Athletes and families",
-    body: "Adapthletics virtual coaching is available now, completely cost-free. Tell us about the athlete and we will fit the training to them.",
+    title: "Time and skills",
+    body: "Coach, mentor, or talk about your trade with the people our programs serve. Come as you are and we will find the fit.",
   },
   {
-    title: "Schools and counselors",
-    body: "Refer a young person who needs a safe place to be — In Ur Corner is built for them.",
-  },
-  {
-    title: "Businesses and professionals",
-    body: "Lead a monthly Career Exploration Night at In Ur Corner.",
-  },
-  {
-    title: "Veterans",
-    body: "Any era. Come train with In Ur Corner — and mentor when you are ready.",
+    title: "In-kind",
+    body: "Meals, equipment, supplies, or services. If you can cover something a program needs, that is a real contribution.",
   },
 ] as const
 
