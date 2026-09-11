@@ -471,7 +471,7 @@ export const formPages = [
   {
     href: "/help",
     title: "Get involved",
-    body: "Offer a space, coach or mentor, refer someone, share your trade, or help with meals.",
+    body: "Refer someone, offer a space, coach or mentor, share your trade, or give in kind.",
   },
   {
     href: "/donate",
@@ -527,6 +527,10 @@ export const newsItems: {
 
 export const helpPaths = [
   {
+    title: "Referrals",
+    body: "Know someone one of our programs is built for? Tell us about them and we will take it from there.",
+  },
+  {
     title: "Spaces",
     body: "Our programs run in spaces the community already uses. If yours has room, let's talk \u2014 we bring the program and leave the space clean.",
   },
@@ -535,12 +539,8 @@ export const helpPaths = [
     body: "Coach, mentor, or talk about your trade with the people our programs serve. Come as you are and we will find the fit.",
   },
   {
-    title: "Referrals",
-    body: "Know someone one of our programs is built for? Tell us about them and we will take it from there.",
-  },
-  {
-    title: "Meals",
-    body: "A shared meal is part of how our programs run. Helping to cover or cook one is a real contribution.",
+    title: "In-kind",
+    body: "Meals, equipment, supplies, or services. If you can cover something a program needs, that is a real contribution.",
   },
 ] as const
 
