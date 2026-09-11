@@ -19,7 +19,7 @@ export const site = {
   // and a work number does not exist yet. Email is the only contact.
   domain: "lipsonfoundation.org",
   description:
-    "Lipson Foundation Inc. is a South Florida nonprofit that builds cost-free community programs for underserved communities. Every program is completely cost-free — no memberships, no fees, ever. Flagship program: In Ur Corner.",
+    "Lipson Foundation Inc. is a South Florida nonprofit that builds cost-free community programs for underserved communities. Every program is completely cost-free — no memberships, no fees, ever. Flagship program: Adapthletics.",
 } as const
 
 /**
@@ -87,8 +87,8 @@ export const commitments = [
 export const routes = [
   { path: "/", priority: 1, changeFrequency: "monthly" },
   { path: "/about", priority: 0.9, changeFrequency: "monthly" },
-  { path: "/in-your-corner", priority: 0.9, changeFrequency: "monthly" },
-  { path: "/adapthletics", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/adapthletics", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/in-your-corner", priority: 0.8, changeFrequency: "monthly" },
   { path: "/programs", priority: 0.8, changeFrequency: "monthly" },
   { path: "/donate", priority: 0.8, changeFrequency: "monthly" },
   { path: "/team", priority: 0.7, changeFrequency: "monthly" },
@@ -227,24 +227,24 @@ export type ServiceCategory = keyof typeof serviceCategories
 
 export const programs = [
   {
-    slug: "in-your-corner",
-    name: "In Ur Corner",
-    href: "/in-your-corner",
-    status: "Flagship",
-    categories: ["health", "mentoring", "professional"] as const,
-    mark: "/brand/iyc-tag.png",
-    summary:
-      "A cost-free boxing and mentorship program for youth ages 12–17, young adults 18–25, and military veterans — youth in their own sessions, young adults and veterans training together. Boxing builds the relationships. Mentorship deepens them — later, not on day one. Youth sessions open once youth-protection safeguards are fully in place. The Ring, The Corner, and The Crew live inside it.",
-  },
-  {
     slug: "adapthletics",
     name: "Adapthletics",
     href: "/adapthletics",
-    status: "Est. 2022",
+    status: "Flagship",
     categories: ["health", "growth"] as const,
     mark: "/brand/adapthletics.png",
     summary:
-      "Certified adaptive fitness for people with disabilities — strength, mobility, and confidence, with the training fitted to the athlete instead of the other way around. In person in South Florida and virtual anywhere, and completely cost-free.",
+      "Certified adaptive fitness for people with disabilities \u2014 strength, mobility, and confidence, with the training fitted to the athlete instead of the other way around. In person in South Florida and virtual anywhere, and completely cost-free.",
+  },
+  {
+    slug: "in-your-corner",
+    name: "In Ur Corner",
+    href: "/in-your-corner",
+    status: "Program",
+    categories: ["health", "mentoring", "professional"] as const,
+    mark: "/brand/iyc-tag.png",
+    summary:
+      "A cost-free boxing and mentorship program for youth ages 12\u201317, young adults 18\u201325, and military veterans \u2014 youth in their own sessions, young adults and veterans training together. Boxing builds the relationships. Mentorship deepens them \u2014 later, not on day one. Youth sessions open once youth-protection safeguards are fully in place. The Ring, The Corner, and The Crew live inside it.",
   },
 ] as const
 
@@ -451,14 +451,14 @@ export const teamMenu = [
 
 export const programMenu = [
   {
+    href: "/adapthletics",
+    name: "Adapthletics",
+    body: "Certified adaptive fitness for people with disabilities \u2014 in person and virtual.",
+  },
+  {
     href: "/in-your-corner",
     name: "In Ur Corner",
     body: "Cost-free boxing and mentorship for youth, young adults, and veterans.",
-  },
-  {
-    href: "/adapthletics",
-    name: "Adapthletics",
-    body: "Certified adaptive fitness for people with disabilities — in person and virtual.",
   },
 ] as const
 
