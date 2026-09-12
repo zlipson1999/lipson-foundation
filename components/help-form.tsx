@@ -48,7 +48,7 @@ export function HelpForm() {
   }
 
   return (
-    <form action={onSubmit} className="flex flex-col gap-6">
+    <form action={onSubmit} className="form-panel flex flex-col gap-6">
       <FieldGroup>
         <Field>
           <FieldLabel htmlFor="name">Full name</FieldLabel>

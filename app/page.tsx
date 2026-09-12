@@ -1,19 +1,13 @@
 import type { Metadata } from "next"
-import { pageMetadata } from "@/lib/seo"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRightIcon } from "@phosphor-icons/react/ssr"
-import { Container } from "@/components/container"
+import { ArrowRightIcon, LeafIcon, HeartIcon, SunIcon, UsersThreeIcon } from "@phosphor-icons/react/ssr"
 import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
 import { asset } from "@/lib/assets"
-import { commitments, heroBlurb, locationLines, programs, site } from "@/lib/site"
+import { commitments, heroBlurb, programs, site } from "@/lib/site"
 import { CategoryChips } from "@/components/category-chips"
+import { pageMetadata } from "@/lib/seo"
+import styles from "./home.module.css"
 
 export const metadata: Metadata = pageMetadata({
   title: `${site.name} — ${site.kicker}`,
@@ -55,268 +49,89 @@ const destinations = [
   },
 ] as const
 
+const icons = [SunIcon, HeartIcon, UsersThreeIcon, LeafIcon]
+
+function Action({ href, children, outline = false }: {
+  href: string; children: React.ReactNode; outline?: boolean
+}) {
+  return <Button nativeButton={false} render={<Link href={href} />}
+    className={outline ? styles.outlineButton : styles.goldButton}>{children}</Button>
+}
+
 export default function HomePage() {
   return (
-    <div className="flex flex-col">
-      <section className="order-1 bg-primary text-primary-foreground">
-        {/* Intro. One grid: the artwork panel leads on small screens and moves
-            to the right from lg up, where the copy column's left padding is
-            calculated to line up with the centred container everywhere else on
-            the page. */}
-        {/* Only what is not already on screen above: the header carries the
-            name and the mark, so this is the EIN, where we work, and the two
-            ways to reach us. Desktop only - on a phone it would wrap into
-            three lines and push the hero down. */}
-        <div className="hidden border-b border-primary-foreground/10 lg:block">
-          {/* Everything stays on one line at every width the strip renders at.
-              The type steps down rather than any item dropping out: measured
-              at 1024, the four items need 886px of the 960 available. */}
-          <Container className="flex items-center justify-between gap-4 py-3.5 text-[11px] font-medium tracking-[0.1em] whitespace-nowrap text-primary-foreground/60 uppercase xl:gap-6 xl:text-[12px] xl:tracking-[0.16em]">
-            <span className="text-gold">EIN {site.ein}</span>
-            <span>{site.location}</span>
-            <a href={`mailto:${site.email}`} className="hover:text-gold">
-              {site.email}
-            </a>
-          </Container>
-        </div>
-        {/* Phones get the same facts as the desktop strip, split around the
-            art: where we work above it, who we are and how to reach us below.
-            The service area needs two lines at this width. */}
-        <p className="border-b border-primary-foreground/10 px-4 py-3 text-center text-[11px] font-medium tracking-[0.1em] text-primary-foreground/60 uppercase lg:hidden">
-          {locationLines[0]}
-          <span className="block">{locationLines[1]}</span>
-        </p>
-        <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,46%)] xl:grid-cols-[minmax(0,1fr)_minmax(0,41%)]">
-          {/* The panel is square art, so it keeps its own aspect on small
-              screens and fills the column height from lg up. */}
-          <div className="relative order-first aspect-square overflow-hidden lg:order-last lg:self-end">
-            <Image
-              src={asset("/brand/hero-panel.webp")}
-              alt="Zachary Lipson, Founder and President, beside the Lipson Foundation dog tag"
-              width={1100}
-              height={1100}
-              className="absolute inset-0 h-full w-full object-cover object-center"
-              priority
-              unoptimized
-            />
-            {/* The art's edges land mid-teal against the hero navy, which reads
-                as a seam - on the left, and along the top where the square
-                sits lower than the copy beside it. These carry one into the
-                other. */}
-            <div
-              aria-hidden
-              className="absolute inset-y-0 left-0 hidden w-28 bg-gradient-to-r from-primary to-transparent lg:block"
-            />
-            <div
-              aria-hidden
-              className="absolute inset-x-0 top-0 hidden h-20 bg-gradient-to-b from-primary to-transparent lg:block"
-            />
-          </div>
-
-          <div className="flex flex-col items-center gap-1 border-b border-primary-foreground/10 px-4 py-3 text-center text-[11px] font-medium tracking-[0.1em] whitespace-nowrap text-primary-foreground/60 uppercase lg:hidden">
-            <span className="text-gold">EIN {site.ein}</span>
-            <a href={`mailto:${site.email}`} className="hover:text-gold">
-              {site.email}
-            </a>
-          </div>
-
-          <div className="flex flex-col items-start gap-6 px-4 pb-14 pt-10 sm:px-6 lg:justify-center lg:py-8 lg:pl-[calc(max(0px,(100vw-72rem)/2)+2rem)] lg:pr-10">
-            <h1 className="text-4xl leading-[1.08] text-balance sm:text-5xl lg:text-[2.75rem] xl:text-[3.4rem] 2xl:text-[3.75rem]">
-              Cost-free community programs for underserved communities across
-              South Florida.
-            </h1>
-            {/* Blurb and buttons share a group so the buttons sit closer to
-                the line above them than the headline does to the blurb. */}
-            <div className="flex w-full flex-col gap-4">
-              <p className="max-w-[46ch] text-lg leading-relaxed text-primary-foreground/75">
-                {heroBlurb}
-              </p>
-              <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-                <Button
-                  size="lg"
-                  className="h-12 bg-gold px-6 text-[15px] text-primary hover:bg-gold/90"
-                  nativeButton={false}
-                  render={<Link href="/donate" />}
-                >
-                  Donate
-                </Button>
-                <Button
-                  size="lg"
-                  variant="secondary"
-                  className="h-12 px-6 text-[15px]"
-                  nativeButton={false}
-                  render={<Link href="/about" />}
-                >
-                  About us
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="h-12 border-gold/40 bg-transparent px-6 text-[15px] text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
-                  nativeButton={false}
-                  render={<Link href="/programs" />}
-                >
-                  Programs
-                </Button>
-              </div>
+    <div className={styles.home}>
+      <section className={styles.hero} style={{ backgroundImage: `url("${asset("/brand/palm-backdrop.webp")}")` }}>
+        <div className={styles.heroInner}>
+          <div className={styles.heroCopy}>
+            <p className={styles.eyebrow}>Palm Beach County &amp; beyond <span /></p>
+            <h1>Community<br />programs.<br /><em>Cost-free.</em></h1>
+            <p className={styles.description}>Removing cost as a barrier to health,<br className={styles.desktopBreak} /> personal growth, and opportunity.</p>
+            <div className={styles.actions}>
+              <Action href="/programs">Explore programs <ArrowRightIcon /></Action>
+              <Action href="/help" outline>Get involved</Action>
             </div>
           </div>
-        </div>
-
-      </section>
-
-      {/* Its own section so the order can differ by breakpoint: the four sit
-          under the hero on desktop, and after the programs on phones, where
-          the hero already fills the screen and the concrete thing should come
-          before the abstract one. Same navy and the same bottom border the
-          hero used to carry, so desktop is unchanged. */}
-      <section className="order-3 border-b bg-primary text-primary-foreground lg:order-2">
-        {/* Access, Dignity, Community and Service directly under the intro.
-            This is now the only place the four appear; /about links here
-            rather than repeating them. */}
-        <div className="border-t border-gold/25">
-          <Container className="flex flex-col gap-6 py-12">
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
-              Our commitment
-            </p>
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
-            {commitments.map((item) => (
-              <div key={item.title} className="flex flex-col gap-2">
-                <p className="font-heading text-2xl text-gold">{item.title}</p>
-                <p className="max-w-[30ch] text-sm leading-relaxed text-primary-foreground/70">
-                  {item.short}
-                </p>
-              </div>
-            ))}
-            </div>
-          </Container>
+          <div className={styles.heroArt}>
+            <Image src={asset("/brand/founder.webp")} alt="Zachary Lipson, Founder and President"
+              width={803} height={900} priority unoptimized className={styles.founder} />
+            <p className={styles.statement}>Positive<br />People<br />Stronger<br />Communities<span /></p>
+            <div className={styles.caption}><strong>Zachary Lipson</strong><span>Founder &amp; President</span><i /></div>
+          </div>
         </div>
       </section>
 
-      {/* The programs, straight after the commitments. One entry today; the
-          list grows from lib/site.ts as programs launch, and no placeholder
-          stands in for one that has not. */}
-      <section className="order-2 lg:order-3">
-        <Container className="flex flex-col gap-8 py-12 sm:py-20">
-          <div className="flex flex-col gap-3">
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold-ink">
-              What we run
-            </p>
-            <h2 className="text-3xl sm:text-4xl">Our programs</h2>
-            <p className="max-w-2xl text-base leading-relaxed text-muted-foreground">
-              Every one is cost-free to the people it serves. New programs are
-              listed as they launch.
-            </p>
+      <section className={styles.commitments} aria-label="Our commitments">
+        {commitments.map((item, index) => {
+          const Icon = icons[index]
+          return <div key={item.title} className={styles.commitment}>
+            <div><Icon weight="light" aria-hidden /><h2>{item.title}</h2></div>
+            <p>{item.short}</p>
           </div>
-          <ul className="flex flex-col gap-6">
-            {programs.map((program) => (
-              <li
-                key={program.slug}
-                className="flex flex-col items-center gap-6 border-t-2 border-gold pt-6 text-center sm:flex-row sm:items-start sm:gap-8 sm:border-t-0 sm:border-l-2 sm:pt-0 sm:pl-6 sm:text-left"
-              >
-                {/* Fixed-width slot so every card's text column starts on the
-                    same line no matter how wide each program's mark is. */}
-                <div className="flex w-44 shrink-0 items-center justify-center self-center lg:w-52">
-                  <Image
-                    src={asset(program.mark)}
-                    alt=""
-                    width={612}
-                    height={640}
-                    className="max-h-28 w-auto max-w-full sm:max-h-32 lg:max-h-36"
-                    unoptimized
-                  />
-                </div>
-                <div className="flex flex-col items-center gap-3 sm:items-start">
-                  {/* On phones the mark itself spells the program name, so the
-                      heading is screen-reader-only there; it returns visually
-                      once the layout goes side-by-side. */}
-                  <h3 className="sr-only font-heading text-2xl sm:not-sr-only">
-                    {program.name}
-                  </h3>
-                  <CategoryChips
-                    categories={program.categories}
-                    className="justify-center sm:justify-start"
-                  />
-                  <p className="max-w-2xl text-base leading-relaxed text-muted-foreground">
-                    {program.summary}
-                  </p>
-                  <Button
-                    nativeButton={false}
-                    render={<Link href={program.href} />}
-                  >
-                    About the program
-                    <ArrowRightIcon data-icon="inline-end" />
-                  </Button>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </Container>
+        })}
       </section>
 
-
-      <section className="order-4 border-y bg-secondary">
-        <Container className="flex flex-col gap-8 py-12 sm:py-20">
-          <div className="flex max-w-2xl flex-col gap-3">
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
-              Explore
-            </p>
-            <h2 className="text-3xl sm:text-4xl">Find your way around.</h2>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {destinations.map((item) => (
-              <Link key={item.href} href={item.href} className="block">
-                <Card className="h-full transition-colors hover:bg-card">
-                  <CardHeader>
-                    <CardTitle className="text-xl">{item.title}</CardTitle>
-                    <CardDescription className="text-sm leading-relaxed">
-                      {item.body}
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
-              </Link>
-            ))}
-          </div>
-        </Container>
+      <section className={styles.introduction} aria-label="About the foundation">
+        <h2>Cost-free community programs for underserved communities across South Florida.</h2>
+        <p>{heroBlurb}</p>
+        <div className={styles.facts}><span>EIN {site.ein}</span><span>{site.location}</span><a href={`mailto:${site.email}`}>{site.email}</a></div>
       </section>
 
-      <section className="order-5 border-t bg-primary text-primary-foreground">
-        <Container className="flex flex-col gap-6 py-12 sm:py-20">
-          <h2 className="max-w-2xl text-3xl sm:text-4xl">
-            Help keep every program cost-free.
-          </h2>
-          <p className="max-w-2xl text-base leading-relaxed text-primary-foreground/80">
-            Host a space, refer someone, lend a skill, or sponsor a session.
-            Every note goes to a person, not a queue.
-          </p>
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <Button
-              size="lg"
-              className="bg-gold text-primary hover:bg-gold/90"
-              nativeButton={false}
-              render={<Link href="/donate" />}
-            >
-              Donate
-            </Button>
-            <Button
-              size="lg"
-              variant="secondary"
-              nativeButton={false}
-              render={<Link href="/help" />}
-            >
-              Get involved
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-gold/40 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
-              nativeButton={false}
-              render={<Link href="/contact" />}
-            >
-              Contact
-            </Button>
+      <section className={styles.programs}>
+        <div className={styles.sectionHead}>
+          <div><p className={styles.eyebrow}>Where the work starts <span /></p><h2>Our programs</h2></div>
+          <p>Cost-free to the people we serve.</p>
+        </div>
+        <p className={styles.programIntro}>Every one is cost-free to the people it serves. New programs are listed as they launch.</p>
+        {programs.map((program) => <article key={program.slug} className={styles.programCard} style={{ backgroundImage: `url("${asset("/brand/palm-backdrop.webp")}")` }}>
+          <div className={styles.programLogo}>
+            <Image src={asset(program.mark)} alt={program.name}
+              width={program.slug === "adapthletics" ? 1447 : 612} height={program.slug === "adapthletics" ? 877 : 640} unoptimized />
           </div>
-        </Container>
+          <div className={styles.programContent}>
+            <p className={styles.eyebrow}>{program.status} <span /></p>
+            <h3>{program.name}</h3>
+            <CategoryChips categories={program.categories} className={styles.categories} />
+            <p>{program.summary}</p>
+            <Action href={program.href}>About the program <ArrowRightIcon /></Action>
+          </div>
+        </article>)}
+        <section className={styles.explore} aria-labelledby="explore-heading">
+          <p className={styles.eyebrow}>Explore</p>
+          <h2 id="explore-heading">Find your way around.</h2>
+          <div className={styles.destinationGrid}>{destinations.map(item => <Link key={item.href} href={item.href}><h3>{item.title}</h3><p>{item.body}</p><ArrowRightIcon aria-hidden /></Link>)}</div>
+        </section>
+        <div className={styles.support}>
+          <div>
+          <h2><span />Help keep every program cost-free.</h2>
+          <p>Host a space, refer someone, lend a skill, or sponsor a session. Every note goes to a person, not a queue.</p>
+          </div>
+          <div className={styles.supportActions}>
+          <Action href="/donate">Donate</Action>
+          <Action href="/help">Get involved <ArrowRightIcon /></Action>
+          <Action href="/contact" outline>Contact</Action>
+          </div>
+        </div>
       </section>
     </div>
   )

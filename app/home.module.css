@@ -1,0 +1,100 @@
+.home{background:#f7f1e4;color:#03162f;font-family:var(--font-outfit),sans-serif}
+.hero{background-color:#03162f;background-size:cover;background-position:center;color:#f7f1e4}
+.heroInner{max-width:1280px;margin:auto;display:grid;grid-template-columns:48% 52%;position:relative}
+.heroCopy{padding:52px 0 40px 56px;position:relative;z-index:2}
+.eyebrow{font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;display:flex;align-items:center;gap:20px;color:#d6ab55}
+.eyebrow span{display:inline-block;width:64px;height:1px;background:currentColor}
+.hero h1{font-size:clamp(56px,5.9vw,80px);line-height:.99;letter-spacing:-.035em;font-weight:800;margin:18px 0 0}
+.hero h1 em{font-style:normal;color:#dfb150}
+.description{font-size:21px;line-height:1.35;margin:16px 0 24px;max-width:470px}
+.actions{display:flex;gap:22px;align-items:center}
+.goldButton,.outlineButton{height:48px;padding:0 26px!important;font-size:15px;font-weight:600;border-radius:7px;gap:12px;white-space:nowrap;font-family:var(--font-outfit),sans-serif}
+.goldButton{color:#03162f;background:linear-gradient(110deg,#dfb75e,#cfa24a);border:1px solid #dfb65c}
+.goldButton:hover{background:#ebc575}
+.outlineButton{color:#f7f1e4;background:transparent;border:1px solid #e2b358}
+.outlineButton:hover{background:#ffffff15}
+.heroArt{position:relative;min-width:0;align-self:stretch;overflow:hidden}
+.founder{position:absolute;bottom:-5%;left:0;width:88%;max-width:none;height:103%;object-fit:contain;object-position:bottom left}
+.statement{position:absolute;right:30px;top:14%;color:#e0ae4c;font-family:var(--font-handwriting),cursive;font-size:40px;line-height:.96;transform:rotate(-9deg);font-weight:500}
+.statement span{display:block;width:100%;height:2px;margin-top:10px;background:currentColor;transform:rotate(-7deg)}
+.caption{position:absolute;right:26px;bottom:22px;display:flex;flex-direction:column;font-size:12px;line-height:1.45}
+.caption strong{font-size:15px}.caption i{height:2px;width:26px;background:#d9a746;margin-top:10px}
+.commitments{display:grid;grid-template-columns:repeat(4,1fr);max-width:1170px;margin:auto;padding:22px 0;background:#fbf7ee}
+.commitment{padding:0 28px;text-align:center;border-left:1px solid #c6a15a}
+.commitment:first-child{border-left:0}
+.commitment>div{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:10px}
+.commitment svg{width:34px;height:34px;color:#ac771e}
+.commitment h2{font-size:16px;font-weight:500;letter-spacing:0}
+.commitment p{font-size:16px;line-height:1.3;max-width:210px;margin:auto}
+.programs{max-width:1170px;margin:auto;padding:20px 0 26px}
+.sectionHead{display:flex;justify-content:space-between;align-items:end;margin-bottom:14px}
+.sectionHead .eyebrow{color:#997025;margin-bottom:2px}
+.sectionHead .eyebrow span{width:140px}
+.sectionHead h2{font-size:64px;font-weight:800;line-height:1.07;letter-spacing:-.045em}
+.sectionHead>p{font-size:16px;padding-bottom:16px}
+.programCard{border-radius:14px;background-color:#03162f;background-size:cover;background-position:left bottom;display:grid;grid-template-columns:55% 45%;color:#f7f1e4;align-items:center;padding:18px 36px;overflow:hidden}
+.programLogo{display:flex;align-items:center;justify-content:center;padding:0 40px 0 0}
+.programCard+.programCard{margin-top:18px}
+.introduction{max-width:1170px;margin:auto;padding:28px 24px}
+.introduction h2{font-size:27px;line-height:1.2;font-weight:700;max-width:none;white-space:nowrap}
+.introduction>p{margin-top:12px;font-size:18px}
+.facts{display:flex;flex-wrap:wrap;gap:10px 28px;font-size:14px;margin-top:18px}
+.facts a{text-decoration:underline}
+.programIntro{margin:0 0 18px;font-size:16px}
+.categories{margin:12px 0}
+.categories li{color:#f0cd83;background:#03162fcc}
+.explore{padding:32px 0}
+.explore h2{font-size:34px;font-weight:700;margin:6px 0 20px}
+.destinationGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.destinationGrid>a{border:1px solid #c6a15a;border-radius:12px;padding:22px;background:#fbf7ee}
+.destinationGrid>a:hover{background:#eee4d1}
+.destinationGrid h3{font-size:22px;font-weight:700}
+.destinationGrid p{font-size:16px;line-height:1.5;margin:8px 0 14px}
+.support>div>p{font-size:16px;line-height:1.5;margin-top:12px;max-width:630px}
+.supportActions{display:flex;flex-wrap:wrap;gap:10px;min-width:190px}
+.programLogo img{width:min(100%,540px);height:auto;max-height:285px;object-fit:contain;background:transparent;filter:none}
+.programContent{border-left:1px solid #bf9043;padding:4px 0 4px 42px}
+.programContent .eyebrow{font-size:12px;gap:12px}.programContent .eyebrow span{width:15px}
+.programContent h3{font-size:50px;font-weight:700;line-height:1.12;letter-spacing:-.035em;margin:6px 0}
+.programContent>p:not(.eyebrow){font-size:18px;margin-bottom:16px}
+.programContent .goldButton{height:44px}
+.support{display:flex;justify-content:space-between;align-items:center;gap:24px;background:#03162f;color:#f7f1e4;border-radius:14px;padding:18px 28px;margin-top:12px}
+.support h2{font-size:29px;font-weight:700;line-height:1.2;display:flex;align-items:center;gap:24px}
+.support h2>span{width:34px;height:2px;background:#d7a94e;flex-shrink:0}
+.support .goldButton{height:44px}
+@media(max-width:1200px) and (min-width:761px){
+ .programs{margin:0 40px}.heroCopy{padding-left:40px}.hero h1{font-size:64px}.description{font-size:19px}
+ .statement{font-size:34px;right:18px}.actions{gap:12px}.goldButton,.outlineButton{padding:0 18px!important}
+ .programContent{padding-left:30px}.programContent h3{font-size:40px}.support h2{font-size:25px}
+}
+@media(max-width:760px){
+ .introduction{padding:24px}.introduction h2{font-size:23px;white-space:normal}.facts{flex-direction:column}
+ .destinationGrid{grid-template-columns:1fr}.explore h2{font-size:28px}
+ .support{flex-direction:column;align-items:stretch!important}.supportActions{margin-top:8px}
+ .heroInner{display:flex;flex-direction:column}
+ .heroCopy{padding:26px 26px 0}.hero .eyebrow{font-size:12px;letter-spacing:.14em;gap:12px}.hero .eyebrow span{width:38px}
+ .hero h1{font-size:clamp(40px,10.7vw,72px);line-height:.99;margin-top:10px;letter-spacing:-.035em}
+ .description{font-size:17px;line-height:1.35;margin:12px 0 14px}.desktopBreak{display:none}
+ .actions{gap:12px}.goldButton,.outlineButton{height:44px;font-size:13px;padding:0 15px!important;gap:8px}
+ .heroArt{height:315px;margin-top:4px;width:100%;background-size:cover}
+ .founder{height:103%;width:89%;left:0;bottom:-3%}
+ .statement{font-size:29px;right:15px;top:24px}
+ .caption{right:24px;bottom:18px;font-size:10px}.caption strong{font-size:12px}
+ .commitments{grid-template-columns:repeat(2,minmax(0,1fr));padding:16px 24px;gap:14px 0}
+ .commitment{padding:0 12px}.commitment:nth-child(3){border-left:0}
+ .commitment>div{gap:12px;margin-bottom:7px}.commitment svg{width:28px;height:28px}
+ .commitment h2{font-size:14px}.commitment p{font-size:14px;line-height:1.25}
+ .commitment:nth-child(n+3){border-top:1px solid #c6a15a;padding-top:12px}
+ .programs{padding:14px 16px 20px}.sectionHead{display:block;margin-bottom:12px;padding:0 10px}
+ .sectionHead .eyebrow{font-size:12px;letter-spacing:.14em;gap:14px}.sectionHead .eyebrow span{width:60px}
+ .sectionHead h2{font-size:34px;letter-spacing:-.035em;line-height:1.15}.sectionHead>p{font-size:14px;padding:0;margin-top:3px}
+ .programCard{display:block;padding:14px 24px 20px;border-radius:10px;background-position:right bottom}
+ .programLogo{padding:0}.programLogo img{height:auto;max-height:205px;width:min(100%,320px)}
+ .programContent{border:0;padding:4px 0 0}.programContent .eyebrow{font-size:12px;letter-spacing:.16em}
+ .programContent h3{font-size:25px;line-height:1.1;margin:4px 0}
+ .programContent>p:not(.eyebrow){font-size:15px;margin-bottom:12px}.programContent .goldButton{height:40px}
+ .support{margin-top:10px;padding:14px 14px;gap:12px;border-radius:10px}
+ .support h2{font-size:17px;gap:9px}.support h2>span{width:16px}
+ .support .goldButton{font-size:12px;padding:0 12px!important;height:38px}.support .goldButton svg{display:none}
+}
+@media(prefers-reduced-motion:reduce){.home *{scroll-behavior:auto;transition:none}}

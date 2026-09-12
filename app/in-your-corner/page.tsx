@@ -30,14 +30,14 @@ export const metadata: Metadata = pageMetadata({
 
 export default function InYourCornerPage() {
   return (
-    <Container className="pb-20">
-      <div className="flex flex-col items-center gap-2 xl:flex-row xl:items-center xl:gap-12">
+    <Container className="page-shell pb-20">
+      <div className="program-hero flex flex-col items-center gap-2 xl:flex-row xl:items-center xl:gap-12">
         <Image
           src={asset("/brand/iyc-tag.png")}
           alt=""
           width={612}
           height={640}
-          className="mt-10 h-auto w-full max-w-[18rem] shrink-0 object-contain sm:max-w-[22rem] md:max-w-[26rem] xl:order-last xl:mt-0 xl:w-[20rem] xl:max-w-[20rem]"
+          className="h-auto w-full max-w-[20rem] shrink-0 object-contain drop-shadow-[0_18px_35px_rgba(0,0,0,0.3)] sm:max-w-[25rem] xl:order-last xl:w-[23rem] xl:max-w-[23rem]"
           preload
           unoptimized
         />
@@ -45,6 +45,7 @@ export default function InYourCornerPage() {
           <PageIntro
             kicker="A program of Lipson Foundation Inc."
             title="In Ur Corner"
+            variant="plain"
           >
             <p>
               Cost-free boxing and mentorship for youth ages 12 to 17, young

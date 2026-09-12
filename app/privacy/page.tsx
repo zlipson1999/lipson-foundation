@@ -12,7 +12,7 @@ export const metadata: Metadata = pageMetadata({
 
 export default function PrivacyPage() {
   return (
-    <Container className="pb-20">
+    <Container className="page-shell pb-20">
       <PageIntro kicker="Privacy" title="How we treat what you share.">
         <p>
           Lipson Foundation collects only what we need to answer you, place a

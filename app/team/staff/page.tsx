@@ -15,7 +15,7 @@ export const metadata: Metadata = pageMetadata({
 
 export default function StaffPage() {
   return (
-    <Container className="pb-20">
+    <Container className="page-shell pb-20">
       <PageIntro kicker="The team" title="Staff.">
         <p>
           {site.legalName} lists staff here as roles are filled. Nothing stands

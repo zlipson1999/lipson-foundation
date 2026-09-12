@@ -26,7 +26,7 @@ export const metadata: Metadata = pageMetadata({
 
 export default function AboutPage() {
   return (
-    <Container className="pb-20">
+    <Container className="page-shell pb-20">
       {/* No standing copy under the title: the legal name, EIN and service
           area it carried are all in On the record beside the copy below. */}
       <PageIntro
@@ -57,7 +57,7 @@ export default function AboutPage() {
             communities get different programs. That is the point.
           </p>
         </div>
-        <aside className="flex flex-col gap-4 border border-border bg-card p-6">
+        <aside className="flex flex-col gap-4 rounded-2xl border border-gold/35 bg-card p-6 shadow-[0_18px_50px_rgba(3,22,47,0.07)]">
           <h2 className="text-lg">On the record</h2>
           <dl className="flex flex-col gap-4 text-sm">
             <div>

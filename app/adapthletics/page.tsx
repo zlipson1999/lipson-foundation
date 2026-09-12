@@ -25,14 +25,14 @@ export const metadata: Metadata = pageMetadata({
 
 export default function AdapthleticsPage() {
   return (
-    <Container className="pb-20">
+    <Container className="page-shell pb-20">
       {/* Owner-directed (9 Sep 2026): the GoPro reel pops up in a closable
           window on page entry — see the component for the rules. */}
       <AdapthleticsSplash />
       {/* One centered column at every size (owner-directed layout): logo,
           real training photos, the stats line — one straight row across the
           page on desktop — then the kicker and intro. */}
-      <header className="flex flex-col items-center gap-6 pt-6 pb-10 text-center sm:pt-8 sm:pb-14">
+      <header className="program-detail-hero flex flex-col items-center gap-6 text-center">
         {/* The logo spells the program name and tagline, so the text
             heading is screen-reader-only (owner-directed 9 Sep 2026). */}
         <h1 className="sr-only">Adapthletics</h1>

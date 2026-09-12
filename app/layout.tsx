@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Fraunces, Source_Sans_3 } from "next/font/google"
+import localFont from "next/font/local"
 import "./globals.css"
 import { cn } from "@/lib/utils"
 import { SiteHeader } from "@/components/site-header"
@@ -18,6 +19,13 @@ const sourceSans = Source_Sans_3({
   subsets: ["latin"],
   variable: "--font-source-sans",
 })
+
+const outfit = localFont({ src: [
+  { path: "../public/fonts/outfit-regular.ttf", weight: "400", style: "normal" },
+  { path: "../public/fonts/outfit-bold.ttf", weight: "700", style: "normal" },
+  { path: "../public/fonts/outfit-extra.ttf", weight: "800", style: "normal" },
+], variable: "--font-outfit", display: "swap" })
+const caveat = localFont({ src: "../public/fonts/caveat.ttf", weight: "500", variable: "--font-handwriting", display: "swap" })
 
 export const metadata: Metadata = {
   title: {
@@ -52,7 +60,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={cn(
         "h-full antialiased",
         fraunces.variable,
-        sourceSans.variable
+        sourceSans.variable,
+        outfit.variable,
+        caveat.variable
       )}
     >
       <body className="flex min-h-full flex-col font-sans">

@@ -7,29 +7,27 @@ import { Button } from "@/components/ui/button"
 import { navItems, programMenu, site, teamMenu } from "@/lib/site"
 
 const linkClass =
-  "px-3 py-2 text-[15px] text-primary-foreground/80 transition-colors hover:text-gold whitespace-nowrap"
+  "inline-flex h-11 w-full items-center justify-center rounded-lg px-3 text-[14px] font-semibold text-primary/78 transition-colors hover:bg-primary/5 hover:text-primary whitespace-nowrap"
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 bg-primary text-primary-foreground">
-      <div className="hidden border-b border-gold/25 lg:block">
-        <Container className="flex h-8 items-center text-[11px] font-medium uppercase tracking-[0.18em] text-gold">
-          <span>{site.kicker}</span>
-        </Container>
-      </div>
-      <div className="border-b border-primary-foreground/10">
-        <Container className="flex h-[4.75rem] items-center justify-between gap-3">
+    <header className="sticky top-0 z-40 border-b border-border/70 bg-background/95 text-foreground shadow-[0_4px_22px_rgba(3,22,47,0.06)] backdrop-blur-xl">
+      <div>
+        <Container className="flex h-[5.5rem] items-center justify-between gap-4 lg:h-[6rem]">
           <Link
             href="/"
-            className="flex shrink-0 items-center gap-3"
+            className="flex shrink-0 items-center gap-2.5 xl:gap-3"
             aria-label={`${site.legalName} — home`}
           >
-            <Logo inverse size="sm" />
-            <span className="hidden font-heading text-lg tracking-tight sm:inline">
-              {site.legalName}
+            <Logo size="lg" className="drop-shadow-[0_6px_12px_rgba(3,22,47,0.16)]" />
+            <span className="site-wordmark text-[1.35rem] sm:text-[1.65rem]">
+              Lipson Foundation
             </span>
           </Link>
-          <nav className="hidden items-center lg:flex" aria-label="Primary">
+          <nav
+            className="mx-3 hidden min-w-0 flex-1 grid-cols-7 items-center gap-1.5 lg:grid xl:mx-6 xl:gap-2"
+            aria-label="Primary"
+          >
             {navItems.map((item) => {
               if (item.href === "/programs") {
                 return (
@@ -61,7 +59,7 @@ export function SiteHeader() {
           <div className="flex items-center gap-2">
             <Button
               size="lg"
-              className="hidden h-11 bg-gold px-5 text-[15px] text-primary hover:bg-gold/90 lg:inline-flex"
+              className="hidden h-12 shrink-0 rounded-xl bg-gold px-7 text-[15px] font-bold text-primary shadow-[0_9px_24px_rgba(121,93,42,0.16)] hover:bg-[#d4b16c] lg:inline-flex"
               nativeButton={false}
               render={<Link href="/donate" />}
             >
