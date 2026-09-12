@@ -61,7 +61,7 @@
 .support{display:flex;justify-content:space-between;align-items:center;gap:24px;background:#03162f;color:#f7f1e4;border-radius:14px;padding:18px 28px;margin-top:12px}
 .support h2{font-size:29px;font-weight:700;line-height:1.2;display:flex;align-items:center;gap:24px}
 .support h2>span{width:34px;height:2px;background:#d7a94e;flex-shrink:0}
-.support .goldButton{height:44px}
+.support .goldButton,.support .outlineButton{height:44px}
 @media(max-width:1200px) and (min-width:761px){
  .programs{margin:0 40px}.heroCopy{padding-left:40px}.hero h1{font-size:64px}.description{font-size:19px}
  .statement{font-size:34px;right:18px}.actions{gap:12px}.goldButton,.outlineButton{padding:0 18px!important}
@@ -95,6 +95,6 @@
  .programContent>p:not(.eyebrow){font-size:15px;margin-bottom:12px}.programContent .goldButton{height:40px}
  .support{margin-top:10px;padding:14px 14px;gap:12px;border-radius:10px}
  .support h2{font-size:17px;gap:9px}.support h2>span{width:16px}
- .support .goldButton{font-size:12px;padding:0 12px!important;height:38px}.support .goldButton svg{display:none}
+ .support .goldButton,.support .outlineButton{font-size:12px;padding:0 12px!important;height:38px}.support .goldButton svg{display:none}
 }
 @media(prefers-reduced-motion:reduce){.home *{scroll-behavior:auto;transition:none}}
