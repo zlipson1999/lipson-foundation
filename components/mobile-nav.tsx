@@ -57,7 +57,7 @@ export function MobileNav() {
           <Logo />
         </SheetHeader>
         <nav className="flex flex-col gap-1 px-4 py-2" aria-label="Site">
-          {navItems.map((item) => (
+          {navItems.filter((item) => item.href !== "/donate" && item.href !== "/forms").map((item) => (
             <div key={item.href} className="flex flex-col">
               {sections[item.href]?.navigable === false ? (
                 <p className="px-2 py-3 text-sm text-foreground">{item.label}</p>
