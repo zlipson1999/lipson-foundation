@@ -14,7 +14,7 @@ export const metadata: Metadata = pageMetadata({
 
 export default function DonatePage() {
   return (
-    <Container className="pb-20">
+    <Container className="page-shell pb-20">
       <PageIntro kicker="Donate" title="Keep it cost-free.">
         <p>{keepItFree}</p>
         <p className="mt-3">

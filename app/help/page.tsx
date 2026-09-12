@@ -21,7 +21,7 @@ export const metadata: Metadata = pageMetadata({
 
 export default function HelpPage() {
   return (
-    <Container className="pb-20">
+    <Container className="page-shell pb-20">
       <PageIntro kicker="How to help" title="Get involved.">
         <p>
           A payment link is not how this starts. Our programs are built from

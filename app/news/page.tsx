@@ -28,13 +28,13 @@ export const metadata: Metadata = pageMetadata({
 
 export default function NewsPage() {
   return (
-    <Container className="pb-20">
+    <Container className="page-shell pb-20">
       {/* Just the title (owner-directed): the empty state below already
           says there is nothing to post yet. */}
       <PageIntro kicker="Lipson Foundation" title="News" />
 
       {newsItems.length === 0 ? (
-        <Empty className="border border-dashed border-border bg-card py-16">
+        <Empty className="py-16">
           <EmptyHeader>
             <EmptyMedia variant="icon">
               <NewspaperIcon />

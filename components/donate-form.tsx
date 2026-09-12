@@ -53,7 +53,7 @@ export function DonateForm() {
   }
 
   return (
-    <form action={onSubmit} className="flex flex-col gap-8">
+    <form action={onSubmit} className="form-panel flex flex-col gap-8">
       {/* The amounts lead the page as buttons. Native radios do the work -
           one choice, arrow-key navigable, submitted with the form - with the
           input visually hidden and its label styled as the button. */}

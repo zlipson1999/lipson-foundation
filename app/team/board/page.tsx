@@ -15,7 +15,7 @@ export const metadata: Metadata = pageMetadata({
 
 export default function BoardPage() {
   return (
-    <Container className="pb-20">
+    <Container className="page-shell pb-20">
       <PageIntro kicker="The team" title="Board of Directors.">
         <p>
           The named officers of {site.legalName} Day-to-day contact is Zachary

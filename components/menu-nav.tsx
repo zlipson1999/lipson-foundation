@@ -17,7 +17,7 @@ type MenuEntry = {
 }
 
 const triggerClass =
-  "h-auto bg-transparent px-3 py-2 text-[15px] font-normal text-primary-foreground/80 hover:bg-primary-foreground/10 hover:text-gold focus:bg-primary-foreground/10 data-open:bg-primary-foreground/10 data-popup-open:bg-primary-foreground/10"
+  "h-11 w-full justify-center whitespace-nowrap rounded-lg bg-transparent px-3 py-2 text-[14px] font-semibold text-primary/78 hover:bg-primary/5 hover:text-primary focus:bg-primary/5 data-open:bg-primary/5 data-popup-open:bg-primary/5"
 
 /**
  * A top-level nav item that opens a list of pages to pick from.
@@ -37,9 +37,9 @@ export function MenuNav({
   items: readonly MenuEntry[]
 }) {
   return (
-    <NavigationMenu className="hidden lg:flex" aria-label={label}>
-      <NavigationMenuList>
-        <NavigationMenuItem>
+    <NavigationMenu className="hidden w-full max-w-none lg:flex" aria-label={label}>
+      <NavigationMenuList className="w-full">
+        <NavigationMenuItem className="w-full">
           {href ? (
             <NavigationMenuTrigger
               nativeButton={false}

@@ -22,7 +22,7 @@ export const metadata: Metadata = pageMetadata({
 
 export default function FormsPage() {
   return (
-    <Container className="pb-20">
+    <Container className="page-shell pb-20">
       <PageIntro kicker="Forms" title="Write to us. We read every note.">
         <p>
           Use the form that matches what you need. Submissions stay with Lipson

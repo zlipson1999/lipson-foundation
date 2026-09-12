@@ -13,7 +13,7 @@ export const metadata: Metadata = pageMetadata({
 
 export default function ContactPage() {
   return (
-    <Container className="pb-20">
+    <Container className="page-shell pb-20">
       <PageIntro kicker="Contact" title="Zachary Lipson, Founder and President.">
         <p>
           Offer a space, make a referral, come train, or ask a question. Every
@@ -24,7 +24,7 @@ export default function ContactPage() {
       <div className="grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
         <ContactForm />
         <aside className="flex flex-col gap-6">
-          <div className="flex flex-col gap-2 border border-border bg-card p-6">
+          <div className="flex flex-col gap-2 rounded-2xl border border-gold/35 bg-card p-6 shadow-[0_18px_50px_rgba(3,22,47,0.07)]">
             <h2 className="text-lg">Reach us</h2>
             <p className="text-sm text-muted-foreground">{site.location}</p>
             <a

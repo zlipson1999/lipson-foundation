@@ -29,7 +29,7 @@ export const metadata: Metadata = pageMetadata({
 
 export default function EventsPage() {
   return (
-    <Container className="pb-20">
+    <Container className="page-shell pb-20">
       <PageIntro kicker="Events" title="What is on the calendar.">
         <p>
           Career Exploration Night is part of In Ur Corner once a host hall
@@ -38,7 +38,7 @@ export default function EventsPage() {
       </PageIntro>
 
       {events.length === 0 ? (
-        <Empty className="border border-dashed border-border bg-card py-16">
+        <Empty className="py-16">
           <EmptyHeader>
             <EmptyMedia variant="icon">
               <CalendarBlankIcon />

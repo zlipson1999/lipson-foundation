@@ -37,11 +37,16 @@ export function MobileNav() {
           real button. The nativeButton={false} pattern is for link triggers. */}
       <SheetTrigger
         render={
-          <Button type="button" variant="secondary" size="lg" className="lg:hidden" />
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon-lg"
+            className="text-primary hover:bg-primary/5 lg:hidden"
+            aria-label="Open site menu"
+          />
         }
       >
-        <ListIcon data-icon="inline-start" />
-        Menu
+        <ListIcon className="size-7" />
       </SheetTrigger>
       <SheetContent side="right" className="w-[min(100%,20rem)] overflow-y-auto">
         <SheetHeader>
