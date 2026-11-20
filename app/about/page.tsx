@@ -36,32 +36,11 @@ export default function AboutPage() {
 
       <div className="grid gap-12 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
         <div className="flex flex-col gap-6 text-base leading-relaxed text-muted-foreground">
-          <p>
-            At the Spastic Paraplegia Foundation conference in Tampa, Zachary
-            Lipson taught adaptive boxing. He had grown up with hereditary
-            spastic paraplegia (HSP) without many role models who shared his
-            disability. Adaptive fitness gave him a way to build strength and
-            find people who believed in him. In Tampa, he put what he&rsquo;d
-            learned into four words: Positive progress is possible.
-          </p>
-          <p>
-            Zach kept finding ways to pass that on. During Rare Disease Week, he
-            talked with elementary school students about living with HSP. He also
-            co-led Dance for Kindness, an anti-bullying campaign. When he started
-            the Lipson Foundation, he wanted more people to have a chance to try
-            something new, build confidence, and find people in their corner. He
-            didn&rsquo;t want the price of admission to decide who got that chance.
-          </p>
-          <p>
-            That&rsquo;s why every Lipson Foundation program is free to the people
-            it serves. There&rsquo;s no membership to buy and no fee to participate.
-            We bring programs to schools, community halls, and other familiar
-            spaces across Palm Beach County and neighboring counties. We start
-            with fitness, wellness, and mentoring, and we listen to each
-            community about what it needs next. Positive progress is possible.
-            The Lipson Foundation exists to give more people the chance to find
-            that out for themselves.
-          </p>
+          <p>Growing up, I wanted to see someone with a disability doing something I wanted to do. I needed to be able to look at that person and think, <em>Maybe I could do that someday, too.</em> I was born with hereditary spastic paraplegia, and for a long time, I didn’t have anyone like that to look up to.</p>
+          <p>Some of my doctors knew so little about HSP that I felt like a lab rat. I was put on different medications as a kid, and I never understood why I needed them. I had unnecessary surgery as well. At school, I was told I was reading below grade level. What bothered me wasn’t being told where I was. It was being left there, not being told what I could do. I wanted somebody to say, ‘Okay, this is where you’re starting. Let’s see how far you can go.’</p>
+          <p>Working in adaptive fitness gave me a different way to think about life. If someone couldn’t do an exercise the way it was taught, we could change how we taught it. They still got to be challenged. They still got to see themselves get better. When I taught adaptive boxing at the Spastic Paraplegia Foundation conference in Tampa, I put what I’d learned into four words: <strong>Positive progress is possible.</strong> That idea stayed with me when I talked with elementary students about HSP, when I co-led Dance for Kindness, and now in Healthy Connections, where I help young adults take steps toward goals that matter to them.</p>
+          <p>I still see families trying to figure out what’s possible for their kids, often without anyone there to show them. I don’t blame them for what they haven’t been taught. But I do think those of us who have lived it have a responsibility to speak up, and all of us have a responsibility to stop passing those low expectations on to the next kid.</p>
+          <p>That’s why I started the Lipson Foundation. We bring free programs into places people already know and trust, and we build them around what each community needs. I can’t go back and give my younger self someone to look up to. But we can give the next kid a place to try, a reason to expect more for themselves, and the chance to become the person another kid looks up to.</p>
         </div>
         <aside className="flex flex-col gap-4 rounded-2xl border border-gold/35 bg-card p-6 shadow-[0_18px_50px_rgba(3,22,47,0.07)]">
           <h2 className="text-lg">On the record</h2>
