@@ -36,8 +36,8 @@ export default function EventsPage() {
             Holiday Toy Drive &amp; NICU Clothing Drive
           </h2>
           <p className="text-sm leading-relaxed">
-            Donate new toys, books or baby clothing for children and NICU families at
-            Palm Beach Children’s Hospital at St. Mary’s.
+            Donate new toys and books for children, or new baby clothes and swaddle
+            blankets for NICU families, at Palm Beach Children’s Hospital at St. Mary’s.
           </p>
           <p className="text-sm leading-relaxed">
             Ask Zach what to bring and arrange your drop-off by{" "}
@@ -49,12 +49,12 @@ export default function EventsPage() {
           </p>
         </div>
         <a
-          href="/events/lipson-holiday-drive-flyer.webp"
+          href="/events/lipson-holiday-drive-flyer.webp?v=swaddles"
           aria-label="View the full-size Holiday Toy Drive and NICU Clothing Drive flyer"
           className="block overflow-hidden rounded-lg border"
         >
           <Image
-            src="/events/lipson-holiday-drive-flyer.webp"
+            src="/events/lipson-holiday-drive-flyer.webp?v=swaddles"
             alt="Lipson Foundation holiday drive flyer"
             width={1071}
             height={1386}
