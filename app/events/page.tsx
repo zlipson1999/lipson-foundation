@@ -37,7 +37,7 @@ export default function EventsPage() {
           </h2>
           <p className="text-sm leading-relaxed">
             Donate new toys and books for children, or new baby clothes, swaddle
-            blankets, and diapers for NICU families, at Palm Beach Children’s Hospital at St. Mary’s.
+            blankets, and diapers for NICU families.
           </p>
           <p className="text-sm leading-relaxed">
             Ask Zach what to bring and arrange your drop-off by{" "}
@@ -45,16 +45,16 @@ export default function EventsPage() {
               zlipson@lipsonfoundation.org
             </a>{" "}
             or <a className="font-medium underline" href="tel:+18456421874">845-642-1874</a>.
-            The Lipson Foundation will deliver the donations to the hospital.
+            The Lipson Foundation will deliver the donations to local hospitals.
           </p>
         </div>
         <a
-          href="/events/lipson-holiday-drive-flyer.webp?v=kids-nicu"
+          href="/events/lipson-holiday-drive-flyer.webp?v=local-hospitals"
           aria-label="View the full-size Holiday Drive for Kids and NICU Babies flyer"
           className="block overflow-hidden rounded-lg border"
         >
           <Image
-            src="/events/lipson-holiday-drive-flyer.webp?v=kids-nicu"
+            src="/events/lipson-holiday-drive-flyer.webp?v=local-hospitals"
             alt="Lipson Foundation Holiday Drive for Kids and NICU Babies flyer"
             width={1071}
             height={1386}
