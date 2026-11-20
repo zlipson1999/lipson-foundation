@@ -37,27 +37,30 @@ export default function AboutPage() {
       <div className="grid gap-12 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
         <div className="flex flex-col gap-6 text-base leading-relaxed text-muted-foreground">
           <p>
-            Growing up with hereditary spastic paraplegia, Zachary Lipson rarely
-            saw people with a disability like his doing the things he wanted to
-            do. Adaptive fitness gave him a place to build strength and confidence
-            with people who believed in him. Years later, while teaching adaptive
-            boxing, he put that experience into four words: Positive progress is
-            possible. He also taught elementary school students about HSP during
-            Rare Disease Week and co-led Dance for Kindness, an anti-bullying
-            campaign. He started the Lipson Foundation to give more people the
-            chance he had.
+            At the Spastic Paraplegia Foundation conference in Tampa, Zachary
+            Lipson taught adaptive boxing. He had grown up with hereditary
+            spastic paraplegia (HSP) without many role models who shared his
+            disability. Adaptive fitness gave him a way to build strength and
+            find people who believed in him. In Tampa, he put what he&rsquo;d
+            learned into four words: Positive progress is possible.
           </p>
           <p>
-            A program can be right around the corner and still be out of reach if
-            you can&rsquo;t afford it. Every Lipson Foundation program is free to
-            the people it serves. No membership required. No participation fees.
+            Zach kept finding ways to pass that on. During Rare Disease Week, he
+            talked with elementary school students about living with HSP. He also
+            co-led Dance for Kindness, an anti-bullying campaign. When he started
+            the Lipson Foundation, he wanted more people to have a chance to try
+            something new, build confidence, and find people in their corner. He
+            didn&rsquo;t want the price of admission to decide who got that chance.
           </p>
           <p>
-            We bring programs to Palm Beach County and neighboring counties,
-            using schools, community halls, and other spaces people already know
-            and trust. Fitness, wellness, and mentoring are where we start. What
-            we offer next depends on what people in each community tell us they
-            need.
+            That&rsquo;s why every Lipson Foundation program is free to the people
+            it serves. There&rsquo;s no membership to buy and no fee to participate.
+            We bring programs to schools, community halls, and other familiar
+            spaces across Palm Beach County and neighboring counties. We start
+            with fitness, wellness, and mentoring, and we listen to each
+            community about what it needs next. Positive progress is possible.
+            The Lipson Foundation exists to give more people the chance to find
+            that out for themselves.
           </p>
         </div>
         <aside className="flex flex-col gap-4 rounded-2xl border border-gold/35 bg-card p-6 shadow-[0_18px_50px_rgba(3,22,47,0.07)]">
