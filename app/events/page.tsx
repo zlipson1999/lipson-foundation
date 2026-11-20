@@ -13,7 +13,7 @@ import { events } from "@/lib/site"
 export const metadata: Metadata = pageMetadata({
   title: "Events",
   description:
-    "Public events from Lipson Foundation, including the 2026 Holiday Toy Drive and NICU Clothing Drive.",
+    "Public events from Lipson Foundation, including the 2026 Holiday Toy Drive and NICU Essentials Drive.",
   route: "/events",
 })
 
@@ -33,7 +33,7 @@ export default function EventsPage() {
             Donation deadline: <time dateTime="2026-12-21">December 21, 2026</time>
           </p>
           <h2 id="holiday-drive-title" className="text-3xl font-semibold leading-tight">
-            Holiday Toy Drive &amp; NICU Clothing Drive
+            Holiday Toy Drive &amp; NICU Essentials Drive
           </h2>
           <p className="text-sm leading-relaxed">
             Donate new toys and books for children, or new baby clothes, swaddle
@@ -49,13 +49,13 @@ export default function EventsPage() {
           </p>
         </div>
         <a
-          href="/events/lipson-holiday-drive-flyer.webp?v=diapers"
-          aria-label="View the full-size Holiday Toy Drive and NICU Clothing Drive flyer"
+          href="/events/lipson-holiday-drive-flyer.webp?v=essentials"
+          aria-label="View the full-size Holiday Toy Drive and NICU Essentials Drive flyer"
           className="block overflow-hidden rounded-lg border"
         >
           <Image
-            src="/events/lipson-holiday-drive-flyer.webp?v=diapers"
-            alt="Lipson Foundation holiday drive flyer"
+            src="/events/lipson-holiday-drive-flyer.webp?v=essentials"
+            alt="Lipson Foundation Holiday Toy Drive and NICU Essentials Drive flyer"
             width={1071}
             height={1386}
             sizes="(min-width: 768px) 352px, (min-width: 640px) 520px, 90vw"
