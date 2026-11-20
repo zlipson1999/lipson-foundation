@@ -37,24 +37,27 @@ export default function AboutPage() {
       <div className="grid gap-12 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
         <div className="flex flex-col gap-6 text-base leading-relaxed text-muted-foreground">
           <p>
-            The Lipson Foundation was born from our founder&apos;s own fight.
-            Growing up with hereditary spastic paraplegia and no role models,
-            Zachary Lipson learned that what changes lives isn&apos;t a cure.
-            It&apos;s access — training, people who believed he could, and a
-            place that did not ask what he could afford.
+            Growing up with hereditary spastic paraplegia, Zachary Lipson rarely
+            saw people with a disability like his doing the things he wanted to
+            do. Adaptive fitness gave him a place to build strength and confidence
+            with people who believed in him. Years later, while teaching adaptive
+            boxing, he put that experience into four words: Positive progress is
+            possible. He also taught elementary school students about HSP during
+            Rare Disease Week and co-led Dance for Kindness, an anti-bullying
+            campaign. He started the Lipson Foundation to give more people the
+            chance he had.
           </p>
           <p>
-            Cost is the barrier that quietly decides who gets a shot. We remove
-            it entirely. Every Lipson Foundation program is completely cost-free to
-            the people it serves — no memberships, no fees, ever.
+            A program can be right around the corner and still be out of reach if
+            you can&rsquo;t afford it. Every Lipson Foundation program is free to
+            the people it serves. No membership required. No participation fees.
           </p>
           <p>
-            The work lives in Palm Beach County and surrounding counties. We do
-            not own a facility. We bring community programs into rooms the
-            community already trusts — halls, posts, schools, and neighborhood
-            spaces. Fitness, wellness, and mentoring are where the work starts.
-            The mandate is any cost-free program a community needs. Different
-            communities get different programs. That is the point.
+            We bring programs to Palm Beach County and neighboring counties,
+            using schools, community halls, and other spaces people already know
+            and trust. Fitness, wellness, and mentoring are where we start. What
+            we offer next depends on what people in each community tell us they
+            need.
           </p>
         </div>
         <aside className="flex flex-col gap-4 rounded-2xl border border-gold/35 bg-card p-6 shadow-[0_18px_50px_rgba(3,22,47,0.07)]">
